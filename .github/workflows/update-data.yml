@@ -1,1 +1,48 @@
+name: Build full DQM3 database
 
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/update_monsters.py"
+      - ".github/workflows/update-data.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install parser
+        run: pip install requests beautifulsoup4
+
+      - name: Build data.json
+        run: python scripts/update_monsters.py
+
+      - name: Validate count
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open("data.json",encoding="utf-8"))
+          n=len(d.get("monsters",[]))
+          print("monster count:",n)
+          if n < 500:
+              raise SystemExit("Too few monsters; refusing to publish.")
+          PY
+
+      - name: Commit generated database
+        run: |
+          git config user.name "dqm3-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet && exit 0
+          git commit -m "全モンスターデータを更新"
+          git push
