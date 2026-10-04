@@ -43,6 +43,30 @@ function render(){
     ].join(' ');
     return !term||norm(text).includes(term);
   });
+  const keyword = searchInput.value.trim().toLowerCase();
+
+const filtered = monsters
+  .filter(monster =>
+    monster.name.toLowerCase().includes(keyword)
+  )
+  .sort((a, b) => {
+    const aName = a.name.toLowerCase();
+    const bName = b.name.toLowerCase();
+
+    // 完全一致を最優先
+    if (aName === keyword && bName !== keyword) return -1;
+    if (bName === keyword && aName !== keyword) return 1;
+
+    // 次に前方一致
+    const aStarts = aName.startsWith(keyword);
+    const bStarts = bName.startsWith(keyword);
+
+    if (aStarts && !bStarts) return -1;
+    if (bStarts && !aStarts) return 1;
+
+    // 最後に図鑑番号順
+    return (a.no ?? 9999) - (b.no ?? 9999);
+  });
   statusEl.textContent=term?`検索結果：${found.length}体`:`登録：${DB.monsters.length}体`;
   results.innerHTML=found.length?found.map(card).join(''):'<div class="empty">該当するモンスターがありません。</div>';
 }
