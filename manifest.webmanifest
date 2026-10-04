@@ -2,6 +2,7 @@
   "name": "DQM3 配合検索",
   "short_name": "DQM3配合",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#f4f5f7",
   "theme_color": "#111827",

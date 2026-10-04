@@ -1,19 +1,23 @@
-iPhoneで使う手順
-1. ZIPを展開
-2. GitHub PagesなどHTTPSで公開
-3. iPhoneのSafariで公開URLを1回開く
-4. 共有 → ホーム画面に追加
-5. 以後はホーム画面から起動。初回読み込み後はオフライン利用可能
+DQM3 全モンスター版
 
-※ChatGPT内プレビューや file:// 直開きではPWAとして動きません。
-※現在は動作確認用9体データです。
+この版は GitHub Actions が data.json を自動生成します。
 
-【追加機能】
-モンスター名をタップするとGoogle画像検索で「DQM3 モンスター名」を検索します。
-※画像検索時だけインターネット接続が必要です。
+初回:
+1. このZIPを展開して既存リポジトリへ上書きアップロード
+2. .github/workflows/update-data.yml と scripts/update_monsters.py も追加
+3. GitHub の Actions → Build full DQM3 database → Run workflow
+4. 完了後 data.json が自動コミットされ、GitHub Pagesにも反映
 
+生成内容:
+- 全モンスター名
+- 図鑑No.
+- ランク
+- 系統
+- 通常配合
+- 特殊配合
+- 四体配合（ページに表があるもの）
+- 各モンスターを使う逆引き配合先
+- 名前タップでGoogle画像検索
 
-【v3 自動更新対応】
-GitHub Pages上のHTML/JS/CSS/data.jsonはネット接続中は最新版を優先します。
-更新後に古い画面が残りにくいよう、Service Workerをnetwork-first方式に変更しました。
-オフライン時のみ保存済みキャッシュへフォールバックします。
+注:
+公開攻略ページの構造変更時はスクレイパーの調整が必要になる場合があります。

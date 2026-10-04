@@ -1,68 +1,15 @@
-const CACHE = 'dqm3-v3';
-const CORE = [
-  './',
-  './index.html',
-  './style.css?v=3',
-  './app.js?v=3',
-  './data.json?v=3',
-  './manifest.webmanifest',
-  './icon-192.png',
-  './icon-512.png'
-];
-
-self.addEventListener('install', event => {
-  self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(CORE))
-  );
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
-});
-
-self.addEventListener('fetch', event => {
-  const req = event.request;
-  const url = new URL(req.url);
-
-  if (req.method !== 'GET') return;
-
-  const isAppAsset =
-    req.mode === 'navigate' ||
-    url.pathname.endsWith('.js') ||
-    url.pathname.endsWith('.css') ||
-    url.pathname.endsWith('.json') ||
-    url.pathname.endsWith('.webmanifest') ||
-    url.pathname.endsWith('/');
-
-  if (isAppAsset) {
-    event.respondWith(
-      fetch(req, { cache: 'no-store' })
-        .then(res => {
-          const copy = res.clone();
-          caches.open(CACHE).then(cache => cache.put(req, copy));
-          return res;
-        })
-        .catch(() =>
-          caches.match(req).then(cached =>
-            cached || caches.match('./index.html')
-          )
-        )
-    );
-    return;
-  }
-
-  event.respondWith(
-    caches.match(req).then(cached =>
-      cached || fetch(req).then(res => {
-        const copy = res.clone();
-        caches.open(CACHE).then(cache => cache.put(req, copy));
-        return res;
-      })
-    )
-  );
+const C='dqm3-v4';
+const CORE=['./','./index.html','./style.css?v=4','./app.js?v=4','./data.json?v=4','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(CORE)))});
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{
+ if(e.request.method!=='GET')return;
+ const u=new URL(e.request.url);
+ const fresh=e.request.mode==='navigate'||/\.(js|css|json|webmanifest)$/.test(u.pathname);
+ if(fresh){
+   e.respondWith(fetch(e.request,{cache:'no-store'}).then(r=>{let x=r.clone();caches.open(C).then(c=>c.put(e.request,x));return r})
+     .catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))));
+ }else{
+   e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request)));
+ }
 });
