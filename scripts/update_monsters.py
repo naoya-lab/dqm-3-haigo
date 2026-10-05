@@ -22,11 +22,15 @@ FILES = {
     "ranks": f"{BASE}/Rank.json",
     "syntheses": f"{BASE}/MonsterSynthesis.json",
 
-    # 生息地
+    # 野生出現
     "monster_locations": f"{BASE}/MonsterLocation.json",
     "locations": f"{BASE}/Location.json",
     "seasons": f"{BASE}/Season.json",
     "weather": f"{BASE}/Weather.json",
+
+    # 卵
+    "monster_egg_types": f"{BASE}/MonsterEggType.json",
+    "egg_types": f"{BASE}/EggType.json",
 }
 
 OUT = Path("data.json")
@@ -38,7 +42,7 @@ SESSION = requests.Session()
 
 SESSION.headers.update(
     {
-        "User-Agent": "naoya-lab-dqm3-data-builder/2.0",
+        "User-Agent": "naoya-lab-dqm3-data-builder/3.0",
         "Accept": "application/json,text/plain,*/*",
     }
 )
@@ -51,7 +55,6 @@ def fetch_json(url: str, attempts: int = 4) -> Any:
     for attempt in range(attempts):
 
         try:
-
             response = SESSION.get(
                 url,
                 timeout=30,
@@ -128,7 +131,6 @@ def parent_label(
             rank_name
             and rank_name != "Any"
         ):
-
             return (
                 f"{family_name}系"
                 f"（{rank_name}ランク）"
@@ -144,29 +146,19 @@ def parent_label(
 
 def main():
 
-    print(
-        "DQM3データ取得開始"
-    )
+    print("DQM3データ取得開始")
 
     source = {
         name: fetch_json(url)
-        for name, url
-        in FILES.items()
+        for name, url in FILES.items()
     }
 
-
-    all_monsters = (
-        source["monsters"]
-    )
-
-    syntheses = (
-        source["syntheses"]
-    )
-
+    all_monsters = source["monsters"]
+    syntheses = source["syntheses"]
 
     monsters_by_id = {
-        int(m["MonsterId"]): m
-        for m in all_monsters
+        int(x["MonsterId"]): x
+        for x in all_monsters
     }
 
     families_by_id = {
@@ -178,7 +170,6 @@ def main():
         int(x["RankId"]): x
         for x in source["ranks"]
     }
-
 
     location_by_id = {
         int(x["LocationId"]): x
@@ -195,40 +186,30 @@ def main():
         for x in source["weather"]
     }
 
+    egg_type_by_id = {
+        int(x["EggTypeId"]): x
+        for x in source["egg_types"]
+    }
 
     real_monsters = [
-
         monster
-
-        for monster
-        in all_monsters
-
+        for monster in all_monsters
         if (
-            monster.get("Number")
-            is not None
-
+            monster.get("Number") is not None
             and
-
             (
-                monster.get(
-                    "JapaneseName"
-                )
+                monster.get("JapaneseName")
                 or ""
             ).strip()
         )
     ]
 
-
     print(
         "取得モンスター数:",
-        len(real_monsters)
+        len(real_monsters),
     )
 
-
-    if (
-        len(real_monsters)
-        != EXPECTED_COUNT
-    ):
+    if len(real_monsters) != EXPECTED_COUNT:
 
         raise RuntimeError(
             "モンスター数が想定と違います。"
@@ -236,9 +217,11 @@ def main():
             f" actual={len(real_monsters)}"
         )
 
-
     records_by_id = {}
 
+    # =====================================
+    # 基本情報
+    # =====================================
 
     for monster in real_monsters:
 
@@ -262,22 +245,16 @@ def main():
             or ""
         ).strip()
 
-
         records_by_id[
             monster_id
         ] = {
-
             "name":
-                monster[
-                    "JapaneseName"
-                ].strip(),
+                monster["JapaneseName"].strip(),
 
             "reading": "",
 
             "no":
-                int(
-                    monster["Number"]
-                ),
+                int(monster["Number"]),
 
             "rank":
                 (
@@ -290,37 +267,30 @@ def main():
 
             "locations": [],
 
+            "eggs": [],
+
             "recipes": [],
 
             "uses": [],
         }
 
-
-    # =================================
+    # =====================================
     # 生息地
-    # =================================
+    # =====================================
 
     location_groups = {}
 
-
-    def weather_name(
-        weather
-    ):
+    def weather_name(weather):
 
         identifier = (
-            weather.get(
-                "Identifier"
-            )
+            weather.get("Identifier")
             or ""
         )
 
         if identifier == "sun":
             return "晴れ"
 
-        if (
-            identifier
-            == "precipitation"
-        ):
+        if identifier == "precipitation":
             return "降水時"
 
         return (
@@ -328,101 +298,64 @@ def main():
             or ""
         )
 
-
-    for item in source[
-        "monster_locations"
-    ]:
+    for item in source["monster_locations"]:
 
         monster_id = int(
             item["MonsterId"]
         )
 
-        if (
-            monster_id
-            not in records_by_id
-        ):
+        if monster_id not in records_by_id:
             continue
 
-
-        location = (
-            location_by_id.get(
-                int(
-                    item["LocationId"]
-                ),
-                {},
-            )
+        location = location_by_id.get(
+            int(item["LocationId"]),
+            {},
         )
 
-        season = (
-            season_by_id.get(
-                int(
-                    item["SeasonId"]
-                ),
-                {},
-            )
+        season = season_by_id.get(
+            int(item["SeasonId"]),
+            {},
         )
 
-        weather = (
-            weather_by_id.get(
-                int(
-                    item["WeatherId"]
-                ),
-                {},
-            )
+        weather = weather_by_id.get(
+            int(item["WeatherId"]),
+            {},
         )
-
 
         location_name = (
-            location.get(
-                "JapaneseName"
-            )
+            location.get("JapaneseName")
             or location.get("Name")
             or ""
         ).strip()
 
         season_name = (
-            season.get(
-                "JapaneseName"
-            )
+            season.get("JapaneseName")
             or season.get("Name")
             or ""
         ).strip()
 
-        weather_jp = (
-            weather_name(
-                weather
-            )
+        weather_jp = weather_name(
+            weather
         )
 
+        if not location_name:
+            continue
 
         key = (
             monster_id,
             location_name,
             weather_jp,
             bool(
-                item.get(
-                    "IsMiniBoss"
-                )
+                item.get("IsMiniBoss")
             ),
         )
 
+        if key not in location_groups:
 
-        if (
-            key
-            not in location_groups
-        ):
-
-            location_groups[
-                key
-            ] = {
-                "name":
-                    location_name,
-
+            location_groups[key] = {
+                "name": location_name,
                 "seasons": [],
-
-                "weather":
-                    weather_jp,
-
+                "weather": weather_jp,
                 "miniBoss":
                     bool(
                         item.get(
@@ -431,22 +364,19 @@ def main():
                     ),
             }
 
-
         if (
             season_name
-            and season_name
-            not in
-            location_groups[
+            and
+            season_name
+            not in location_groups[
                 key
             ]["seasons"]
         ):
-
             location_groups[
                 key
             ]["seasons"].append(
                 season_name
             )
-
 
     season_order = {
         "春": 0,
@@ -454,7 +384,6 @@ def main():
         "秋": 2,
         "冬": 3,
     }
-
 
     for key, location_data in (
         location_groups.items()
@@ -478,22 +407,90 @@ def main():
             location_data
         )
 
+    for record in records_by_id.values():
 
-    for record in (
-        records_by_id.values()
-    ):
-
-        record[
-            "locations"
-        ].sort(
-            key=lambda x:
-                x["name"]
+        record["locations"].sort(
+            key=lambda x: x["name"]
         )
 
+    # =====================================
+    # 卵
+    # =====================================
 
-    # =================================
+    egg_order = {
+        "white": 0,
+        "silver": 1,
+        "gold": 2,
+        "rainbow": 3,
+        "rainbowp": 4,
+    }
+
+    for item in source[
+        "monster_egg_types"
+    ]:
+
+        monster_id = int(
+            item["MonsterId"]
+        )
+
+        if monster_id not in records_by_id:
+            continue
+
+        egg = egg_type_by_id.get(
+            int(item["EggTypeId"]),
+            {},
+        )
+
+        egg_name = (
+            egg.get("JapaneseName")
+            or egg.get("Name")
+            or ""
+        ).strip()
+
+        identifier = (
+            egg.get("Identifier")
+            or ""
+        )
+
+        if not egg_name:
+            continue
+
+        egg_info = {
+            "name": egg_name,
+            "identifier": identifier,
+            "postGameOnly":
+                identifier == "rainbowp",
+        }
+
+        if (
+            egg_info
+            not in
+            records_by_id[
+                monster_id
+            ]["eggs"]
+        ):
+            records_by_id[
+                monster_id
+            ]["eggs"].append(
+                egg_info
+            )
+
+    for record in records_by_id.values():
+
+        record["eggs"].sort(
+            key=lambda x:
+                egg_order.get(
+                    x.get(
+                        "identifier",
+                        ""
+                    ),
+                    99,
+                )
+        )
+
+    # =====================================
     # 配合
-    # =================================
+    # =====================================
 
     recipe_parent_ids = {}
 
@@ -504,55 +501,37 @@ def main():
         "MonsterGrandParent2BId",
     )
 
-
     for synthesis in syntheses:
 
-        result_id = (
-            synthesis.get(
-                "MonsterResultId"
-            )
+        result_id = synthesis.get(
+            "MonsterResultId"
         )
 
-        if (
-            result_id
-            not in records_by_id
-        ):
+        if result_id not in records_by_id:
             continue
 
-
         grandparent_ids = [
-
             synthesis.get(key)
-
-            for key
-            in grandparent_keys
-
-            if (
-                synthesis.get(key)
-                is not None
-            )
+            for key in grandparent_keys
+            if synthesis.get(key)
+            is not None
         ]
-
 
         if grandparent_ids:
 
             parent_ids = [
-                int(x)
-                for x
+                int(value)
+                for value
                 in grandparent_ids
             ]
 
-            recipe_type = (
-                "4体配合"
-            )
+            recipe_type = "4体配合"
 
         else:
 
             parent_ids = [
-
-                int(x)
-
-                for x in (
+                int(value)
+                for value in (
                     synthesis.get(
                         "MonsterParent1Id"
                     ),
@@ -560,42 +539,33 @@ def main():
                         "MonsterParent2Id"
                     ),
                 )
-
-                if x is not None
+                if value is not None
             ]
 
             recipe_type = "配合"
 
-
         if not parent_ids:
             continue
 
-
         parent_names = [
-
             parent_label(
                 parent_id,
                 monsters_by_id,
                 families_by_id,
                 ranks_by_id,
             )
-
             for parent_id
             in parent_ids
         ]
 
-
         parent_names = [
             name
-            for name
-            in parent_names
+            for name in parent_names
             if name
         ]
 
-
         if not parent_names:
             continue
-
 
         result_name = (
             records_by_id[
@@ -603,18 +573,11 @@ def main():
             ]["name"]
         )
 
-
         recipe = {
-            "type":
-                recipe_type,
-
-            "parents":
-                parent_names,
-
-            "result":
-                result_name,
+            "type": recipe_type,
+            "parents": parent_names,
+            "result": result_name,
         }
-
 
         if (
             recipe
@@ -623,20 +586,17 @@ def main():
                 int(result_id)
             ]["recipes"]
         ):
-
             records_by_id[
                 int(result_id)
             ]["recipes"].append(
                 recipe
             )
 
-
         synthesis_id = int(
             synthesis[
                 "MonsterSynthesisId"
             ]
         )
-
 
         recipe_parent_ids[
             (
@@ -645,25 +605,18 @@ def main():
             )
         ] = parent_ids
 
-
-    # =================================
+    # =====================================
     # 逆引き
-    # =================================
+    # =====================================
 
     for synthesis in syntheses:
 
-        result_id = (
-            synthesis.get(
-                "MonsterResultId"
-            )
+        result_id = synthesis.get(
+            "MonsterResultId"
         )
 
-        if (
-            result_id
-            not in records_by_id
-        ):
+        if result_id not in records_by_id:
             continue
-
 
         synthesis_id = int(
             synthesis[
@@ -677,38 +630,29 @@ def main():
         )
 
         parent_ids = (
-            recipe_parent_ids.get(
-                key
-            )
+            recipe_parent_ids.get(key)
         )
 
         if not parent_ids:
             continue
 
-
         parent_labels = [
-
             parent_label(
                 parent_id,
                 monsters_by_id,
                 families_by_id,
                 ranks_by_id,
             )
-
             for parent_id
             in parent_ids
         ]
 
-
         is_quadruple = any(
-
             synthesis.get(key)
             is not None
-
             for key
             in grandparent_keys
         )
-
 
         use_type = (
             "4体配合"
@@ -716,13 +660,11 @@ def main():
             else "配合"
         )
 
-
         result_name = (
             records_by_id[
                 int(result_id)
             ]["name"]
         )
-
 
         for index, parent_id in (
             enumerate(parent_ids)
@@ -734,26 +676,20 @@ def main():
             ):
                 continue
 
-
             other_parents = [
-
                 label
-
                 for i, label
                 in enumerate(
                     parent_labels
                 )
-
                 if (
                     i != index
                     and label
                 )
             ]
 
-
             use = {
-                "type":
-                    use_type,
+                "type": use_type,
 
                 "source":
                     records_by_id[
@@ -767,7 +703,6 @@ def main():
                     result_name,
             }
 
-
             if (
                 use
                 not in
@@ -775,13 +710,15 @@ def main():
                     parent_id
                 ]["uses"]
             ):
-
                 records_by_id[
                     parent_id
                 ]["uses"].append(
                     use
                 )
 
+    # =====================================
+    # 出力
+    # =====================================
 
     monsters = sorted(
         records_by_id.values(),
@@ -791,9 +728,7 @@ def main():
         ),
     )
 
-
     payload = {
-
         "generatedAt":
             datetime.now(
                 timezone.utc
@@ -814,7 +749,6 @@ def main():
             monsters,
     }
 
-
     OUT.write_text(
         json.dumps(
             payload,
@@ -824,7 +758,6 @@ def main():
         + "\n",
         encoding="utf-8",
     )
-
 
     print(
         "data.json 作成完了"
@@ -837,6 +770,11 @@ def main():
     print(
         "locations="
         f"{sum(len(x['locations']) for x in monsters)}"
+    )
+
+    print(
+        "eggs="
+        f"{sum(len(x['eggs']) for x in monsters)}"
     )
 
     print(
