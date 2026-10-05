@@ -6,27 +6,71 @@
 <meta name="theme-color" content="#111827">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="DQM3配合">
+
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<link rel="stylesheet" href="./style.css?v=4">
+<link rel="stylesheet" href="./style.css?v=6">
+
 <title>DQM3 配合検索</title>
 </head>
+
 <body>
+
 <header>
+
   <div class="headrow">
     <h1>DQM3 配合検索</h1>
     <span id="net"></span>
   </div>
-  <input id="q" type="search" placeholder="モンスター名を入力" autocomplete="off">
+
+  <div class="tabs">
+
+    <button
+      id="monsterTab"
+      class="tab active"
+      type="button"
+    >
+      モンスター
+    </button>
+
+    <button
+      id="skillTab"
+      class="tab"
+      type="button"
+    >
+      スキル
+    </button>
+
+  </div>
+
+  <input
+    id="q"
+    type="search"
+    placeholder="モンスター名を入力"
+    autocomplete="off"
+  >
+
 </header>
+
 <main>
-  <div id="status" class="status">データを読み込み中…</div>
+
+  <div
+    id="status"
+    class="status"
+  >
+    データを読み込み中…
+  </div>
+
   <div id="results"></div>
+
 </main>
+
 <footer>
   モンスター名をタップすると画像検索を開きます。<br>
-  配合データ：DQM3公開攻略情報を基に整理
+  スキルでは進化条件・組み合わせを検索できます。
 </footer>
-<script src="./app.js?v=4"></script>
+
+<script src="./app.js?v=6"></script>
+
 </body>
 </html>
