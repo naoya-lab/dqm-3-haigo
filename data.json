@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T03:49:33.308631+00:00",
+  "generatedAt": "2026-10-05T22:06:44.475724+00:00",
   "source": {
     "name": "MetalKid/DQM3_Database",
     "url": "https://github.com/MetalKid/DQM3_Database",
@@ -12,6 +12,41 @@
       "no": 1,
       "rank": "G",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -62,6 +97,30 @@
       "no": 2,
       "rank": "G",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -97,6 +156,7 @@
       "no": 3,
       "rank": "G",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -132,6 +192,7 @@
       "no": 4,
       "rank": "G",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -159,6 +220,41 @@
       "no": 5,
       "rank": "G",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "大結晶の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "大結晶の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -177,6 +273,52 @@
       "no": 6,
       "rank": "G",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -228,6 +370,24 @@
       "no": 7,
       "rank": "G",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -271,6 +431,38 @@
       "no": 8,
       "rank": "G",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -306,6 +498,7 @@
       "no": 9,
       "rank": "G",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -349,6 +542,7 @@
       "no": 10,
       "rank": "G",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -400,6 +594,7 @@
       "no": 11,
       "rank": "F",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -435,6 +630,32 @@
       "no": 12,
       "rank": "F",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -478,6 +699,16 @@
       "no": 13,
       "rank": "F",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -505,6 +736,16 @@
       "no": 14,
       "rank": "F",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -540,6 +781,30 @@
       "no": 15,
       "rank": "F",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -583,6 +848,50 @@
       "no": 16,
       "rank": "F",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -642,6 +951,7 @@
       "no": 17,
       "rank": "F",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -676,6 +986,19 @@
       "no": 18,
       "rank": "F",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -735,6 +1058,7 @@
       "no": 19,
       "rank": "F",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -786,6 +1110,7 @@
       "no": 20,
       "rank": "F",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -821,6 +1146,7 @@
       "no": 21,
       "rank": "E",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -839,6 +1165,16 @@
       "no": 22,
       "rank": "E",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -900,6 +1236,27 @@
       "no": 23,
       "rank": "E",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -927,6 +1284,19 @@
       "no": 24,
       "rank": "E",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -970,6 +1340,40 @@
       "no": 25,
       "rank": "E",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1005,6 +1409,7 @@
       "no": 26,
       "rank": "E",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1042,6 +1447,28 @@
       "no": 27,
       "rank": "E",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1103,6 +1530,7 @@
       "no": 28,
       "rank": "E",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1138,6 +1566,162 @@
       "no": 29,
       "rank": "E",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -1172,6 +1756,7 @@
       "no": 30,
       "rank": "E",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1223,6 +1808,7 @@
       "no": 31,
       "rank": "D",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1258,6 +1844,7 @@
       "no": 32,
       "rank": "D",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1301,6 +1888,16 @@
       "no": 33,
       "rank": "D",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1327,6 +1924,18 @@
       "no": 34,
       "rank": "D",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1372,6 +1981,7 @@
       "no": 35,
       "rank": "D",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1407,6 +2017,30 @@
       "no": 36,
       "rank": "D",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1442,6 +2076,7 @@
       "no": 37,
       "rank": "D",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1460,6 +2095,24 @@
       "no": 38,
       "rank": "D",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1497,6 +2150,32 @@
       "no": 39,
       "rank": "D",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1532,6 +2211,24 @@
       "no": 40,
       "rank": "D",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1567,6 +2264,19 @@
       "no": 41,
       "rank": "C",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1594,6 +2304,7 @@
       "no": 42,
       "rank": "C",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1631,6 +2342,7 @@
       "no": 43,
       "rank": "C",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1674,6 +2386,19 @@
       "no": 44,
       "rank": "C",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1700,6 +2425,29 @@
       "no": 45,
       "rank": "C",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1727,6 +2475,19 @@
       "no": 46,
       "rank": "C",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1753,6 +2514,96 @@
       "no": 47,
       "rank": "C",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "竜の首",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1780,6 +2631,7 @@
       "no": 48,
       "rank": "C",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1815,6 +2667,7 @@
       "no": 49,
       "rank": "C",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1850,6 +2703,7 @@
       "no": 50,
       "rank": "B",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1887,6 +2741,7 @@
       "no": 51,
       "rank": "B",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1916,6 +2771,7 @@
       "no": 52,
       "rank": "B",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1943,6 +2799,7 @@
       "no": 53,
       "rank": "B",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -1978,6 +2835,7 @@
       "no": 54,
       "rank": "B",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2013,6 +2871,19 @@
       "no": 55,
       "rank": "B",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2058,6 +2929,7 @@
       "no": 56,
       "rank": "B",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2084,6 +2956,19 @@
       "no": 57,
       "rank": "B",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2119,6 +3004,63 @@
       "no": 58,
       "rank": "B",
       "family": "スライム系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2162,6 +3104,7 @@
       "no": 59,
       "rank": "A",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2189,6 +3132,7 @@
       "no": 60,
       "rank": "A",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2224,6 +3168,7 @@
       "no": 61,
       "rank": "A",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2259,6 +3204,7 @@
       "no": 62,
       "rank": "A",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2286,6 +3232,7 @@
       "no": 63,
       "rank": "S",
       "family": "スライム系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2321,6 +3268,7 @@
       "no": 64,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2364,6 +3312,16 @@
       "no": 65,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2423,6 +3381,30 @@
       "no": 66,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2458,6 +3440,7 @@
       "no": 67,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2501,6 +3484,54 @@
       "no": 68,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2552,6 +3583,19 @@
       "no": 69,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2587,6 +3631,41 @@
       "no": 70,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2622,6 +3701,7 @@
       "no": 71,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2665,6 +3745,7 @@
       "no": 72,
       "rank": "G",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2724,6 +3805,24 @@
       "no": 73,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2783,6 +3882,7 @@
       "no": 74,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2826,6 +3926,29 @@
       "no": 75,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "パンケーキ山の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2853,6 +3976,19 @@
       "no": 76,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2896,6 +4032,7 @@
       "no": 77,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -2914,6 +4051,7 @@
       "no": 78,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -2957,6 +4095,7 @@
       "no": 79,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3008,6 +4147,7 @@
       "no": 80,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3083,6 +4223,7 @@
       "no": 81,
       "rank": "F",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3101,6 +4242,7 @@
       "no": 82,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3160,6 +4302,24 @@
       "no": 83,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3219,6 +4379,7 @@
       "no": 84,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3254,6 +4415,7 @@
       "no": 85,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3289,6 +4451,19 @@
       "no": 86,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3324,6 +4499,19 @@
       "no": 87,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3375,6 +4563,41 @@
       "no": 88,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3410,6 +4633,19 @@
       "no": 89,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3445,6 +4681,52 @@
       "no": 90,
       "rank": "E",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3512,6 +4794,7 @@
       "no": 91,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3579,6 +4862,7 @@
       "no": 92,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3614,6 +4898,7 @@
       "no": 93,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3641,6 +4926,7 @@
       "no": 94,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3676,6 +4962,7 @@
       "no": 95,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3719,6 +5006,19 @@
       "no": 96,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3746,6 +5046,7 @@
       "no": 97,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3789,6 +5090,19 @@
       "no": 98,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3824,6 +5138,7 @@
       "no": 99,
       "rank": "D",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3859,6 +5174,7 @@
       "no": 100,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -3877,6 +5193,16 @@
       "no": 101,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3904,6 +5230,7 @@
       "no": 102,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -3947,6 +5274,19 @@
       "no": 103,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3990,6 +5330,7 @@
       "no": 104,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4017,6 +5358,7 @@
       "no": 105,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4043,6 +5385,19 @@
       "no": 106,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -4078,6 +5433,7 @@
       "no": 107,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4104,6 +5460,16 @@
       "no": 108,
       "rank": "C",
       "family": "ドラゴン系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -4147,6 +5513,7 @@
       "no": 109,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4182,6 +5549,7 @@
       "no": 110,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4209,6 +5577,7 @@
       "no": 111,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4244,6 +5613,7 @@
       "no": 112,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4279,6 +5649,7 @@
       "no": 113,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4316,6 +5687,7 @@
       "no": 114,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4334,6 +5706,7 @@
       "no": 115,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4369,6 +5742,7 @@
       "no": 116,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4396,6 +5770,7 @@
       "no": 117,
       "rank": "B",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4431,6 +5806,7 @@
       "no": 118,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4460,6 +5836,7 @@
       "no": 119,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4487,6 +5864,7 @@
       "no": 120,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4516,6 +5894,7 @@
       "no": 121,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4543,6 +5922,7 @@
       "no": 122,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4570,6 +5950,7 @@
       "no": 123,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4597,6 +5978,7 @@
       "no": 124,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4624,6 +6006,7 @@
       "no": 125,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4659,6 +6042,7 @@
       "no": 126,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4688,6 +6072,7 @@
       "no": 127,
       "rank": "A",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4715,6 +6100,7 @@
       "no": 128,
       "rank": "S",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4742,6 +6128,7 @@
       "no": 129,
       "rank": "S",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4769,6 +6156,7 @@
       "no": 130,
       "rank": "S",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4796,6 +6184,7 @@
       "no": 131,
       "rank": "S",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4833,6 +6222,7 @@
       "no": 132,
       "rank": "S",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4868,6 +6258,7 @@
       "no": 133,
       "rank": "X",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4897,6 +6288,7 @@
       "no": 134,
       "rank": "X",
       "family": "ドラゴン系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -4926,6 +6318,32 @@
       "no": 135,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -4977,6 +6395,19 @@
       "no": 136,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5020,6 +6451,7 @@
       "no": 137,
       "rank": "G",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5063,6 +6495,24 @@
       "no": 138,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5098,6 +6548,24 @@
       "no": 139,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5141,6 +6609,7 @@
       "no": 140,
       "rank": "G",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5184,6 +6653,40 @@
       "no": 141,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5211,6 +6714,24 @@
       "no": 142,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5254,6 +6775,7 @@
       "no": 143,
       "rank": "G",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5297,6 +6819,24 @@
       "no": 144,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5348,6 +6888,24 @@
       "no": 145,
       "rank": "G",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5399,6 +6957,7 @@
       "no": 146,
       "rank": "F",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5458,6 +7017,7 @@
       "no": 147,
       "rank": "F",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5485,6 +7045,24 @@
       "no": 148,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5528,6 +7106,26 @@
       "no": 149,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5563,6 +7161,30 @@
       "no": 150,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "パンケーキ山の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5614,6 +7236,19 @@
       "no": 151,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5649,6 +7284,24 @@
       "no": 152,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5708,6 +7361,7 @@
       "no": 153,
       "rank": "F",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5751,6 +7405,7 @@
       "no": 154,
       "rank": "F",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5778,6 +7433,16 @@
       "no": 155,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5804,6 +7469,16 @@
       "no": 156,
       "rank": "F",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5831,6 +7506,39 @@
       "no": 157,
       "rank": "E",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "エビルプリーストの隠れ家",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5858,6 +7566,7 @@
       "no": 158,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5917,6 +7626,7 @@
       "no": 159,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -5976,6 +7686,52 @@
       "no": 160,
       "rank": "E",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6011,6 +7767,7 @@
       "no": 161,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6062,6 +7819,7 @@
       "no": 162,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6089,6 +7847,7 @@
       "no": 163,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6124,6 +7883,7 @@
       "no": 164,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -6142,6 +7902,7 @@
       "no": 165,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6169,6 +7930,7 @@
       "no": 166,
       "rank": "E",
       "family": "自然系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -6178,6 +7940,16 @@
       "no": 167,
       "rank": "E",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6205,6 +7977,7 @@
       "no": 168,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6240,6 +8013,19 @@
       "no": 169,
       "rank": "D",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6267,6 +8053,7 @@
       "no": 170,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6285,6 +8072,7 @@
       "no": 171,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -6294,6 +8082,27 @@
       "no": 172,
       "rank": "D",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6329,6 +8138,7 @@
       "no": 173,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6374,6 +8184,16 @@
       "no": 174,
       "rank": "D",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6401,6 +8221,7 @@
       "no": 175,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6436,6 +8257,7 @@
       "no": 176,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6479,6 +8301,19 @@
       "no": 177,
       "rank": "D",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6514,6 +8349,7 @@
       "no": 178,
       "rank": "D",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6549,6 +8385,7 @@
       "no": 179,
       "rank": "C",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6592,6 +8429,19 @@
       "no": 180,
       "rank": "C",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6618,6 +8468,63 @@
       "no": 181,
       "rank": "C",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6644,6 +8551,19 @@
       "no": 182,
       "rank": "C",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6695,6 +8615,16 @@
       "no": 183,
       "rank": "C",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6738,6 +8668,7 @@
       "no": 184,
       "rank": "C",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6765,6 +8696,16 @@
       "no": 185,
       "rank": "C",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6800,6 +8741,7 @@
       "no": 186,
       "rank": "C",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6835,6 +8777,7 @@
       "no": 187,
       "rank": "C",
       "family": "自然系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -6853,6 +8796,19 @@
       "no": 188,
       "rank": "C",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6879,6 +8835,7 @@
       "no": 189,
       "rank": "B",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6914,6 +8871,7 @@
       "no": 190,
       "rank": "B",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6932,6 +8890,30 @@
       "no": 191,
       "rank": "B",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "精霊樹の森",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6967,6 +8949,7 @@
       "no": 192,
       "rank": "B",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -6993,6 +8976,24 @@
       "no": 193,
       "rank": "B",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7030,6 +9031,30 @@
       "no": 194,
       "rank": "B",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "精霊樹の森",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7065,6 +9090,7 @@
       "no": 195,
       "rank": "B",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7083,6 +9109,30 @@
       "no": 196,
       "rank": "B",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "エビルプリーストの隠れ家",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7110,6 +9160,24 @@
       "no": 197,
       "rank": "B",
       "family": "自然系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7139,6 +9207,7 @@
       "no": 198,
       "rank": "B",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7192,6 +9261,7 @@
       "no": 199,
       "rank": "A",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7219,6 +9289,7 @@
       "no": 200,
       "rank": "A",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7258,6 +9329,7 @@
       "no": 201,
       "rank": "A",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7293,6 +9365,7 @@
       "no": 202,
       "rank": "A",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7320,6 +9393,7 @@
       "no": 203,
       "rank": "S",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -7357,6 +9431,7 @@
       "no": 204,
       "rank": "S",
       "family": "自然系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7392,6 +9467,24 @@
       "no": 205,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7427,6 +9520,41 @@
       "no": 206,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7486,6 +9614,41 @@
       "no": 207,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7545,6 +9708,7 @@
       "no": 208,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7588,6 +9752,7 @@
       "no": 209,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7631,6 +9796,7 @@
       "no": 210,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7666,6 +9832,27 @@
       "no": 211,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7701,6 +9888,16 @@
       "no": 212,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7744,6 +9941,48 @@
       "no": 213,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7771,6 +10010,30 @@
       "no": 214,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "大結晶の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7830,6 +10093,38 @@
       "no": 215,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "パンケーキ山の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7865,6 +10160,7 @@
       "no": 216,
       "rank": "G",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7916,6 +10212,7 @@
       "no": 217,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -7969,6 +10266,7 @@
       "no": 218,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8020,6 +10318,41 @@
       "no": 219,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "烈火の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8071,6 +10404,19 @@
       "no": 220,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8114,6 +10460,7 @@
       "no": 221,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8149,6 +10496,7 @@
       "no": 222,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8184,6 +10532,7 @@
       "no": 223,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8211,6 +10560,7 @@
       "no": 224,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8254,6 +10604,7 @@
       "no": 225,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8289,6 +10640,7 @@
       "no": 226,
       "rank": "F",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8324,6 +10676,7 @@
       "no": 227,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8359,6 +10712,7 @@
       "no": 228,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8386,6 +10740,16 @@
       "no": 229,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8412,6 +10776,28 @@
       "no": 230,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8471,6 +10857,19 @@
       "no": 231,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8508,6 +10907,30 @@
       "no": 232,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8553,6 +10976,7 @@
       "no": 233,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8571,6 +10995,7 @@
       "no": 234,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8614,6 +11039,7 @@
       "no": 235,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8657,6 +11083,41 @@
       "no": 236,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8692,6 +11153,41 @@
       "no": 237,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8718,6 +11214,7 @@
       "no": 238,
       "rank": "E",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8736,6 +11233,7 @@
       "no": 239,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8771,6 +11269,19 @@
       "no": 240,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8798,6 +11309,16 @@
       "no": 241,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8824,6 +11345,7 @@
       "no": 242,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8869,6 +11391,7 @@
       "no": 243,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8896,6 +11419,7 @@
       "no": 244,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -8931,6 +11455,16 @@
       "no": 245,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8968,6 +11502,24 @@
       "no": 246,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8986,6 +11538,52 @@
       "no": 247,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "精霊樹の森",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9029,6 +11627,7 @@
       "no": 248,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9072,6 +11671,7 @@
       "no": 249,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9099,6 +11699,7 @@
       "no": 250,
       "rank": "D",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9134,6 +11735,7 @@
       "no": 251,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9160,6 +11762,7 @@
       "no": 252,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9187,6 +11790,35 @@
       "no": 253,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9214,6 +11846,24 @@
       "no": 254,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9249,6 +11899,7 @@
       "no": 255,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9284,6 +11935,19 @@
       "no": 256,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9313,6 +11977,24 @@
       "no": 257,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9350,6 +12032,19 @@
       "no": 258,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9377,6 +12072,7 @@
       "no": 259,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9420,6 +12116,7 @@
       "no": 260,
       "rank": "C",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9457,6 +12154,7 @@
       "no": 261,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9483,6 +12181,19 @@
       "no": 262,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9528,6 +12239,19 @@
       "no": 263,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9571,6 +12295,7 @@
       "no": 264,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9606,6 +12331,7 @@
       "no": 265,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -9615,6 +12341,7 @@
       "no": 266,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -9624,6 +12351,7 @@
       "no": 267,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9651,6 +12379,19 @@
       "no": 268,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "4体配合",
@@ -9680,6 +12421,7 @@
       "no": 269,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9731,6 +12473,16 @@
       "no": 270,
       "rank": "B",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9774,6 +12526,7 @@
       "no": 271,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9801,6 +12554,7 @@
       "no": 272,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -9819,6 +12573,7 @@
       "no": 273,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9846,6 +12601,19 @@
       "no": 274,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [
+        {
+          "name": "精霊樹の森",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9873,6 +12641,7 @@
       "no": 275,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9891,6 +12660,7 @@
       "no": 276,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9920,6 +12690,7 @@
       "no": 277,
       "rank": "A",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -9947,6 +12718,7 @@
       "no": 278,
       "rank": "S",
       "family": "魔獣系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -9984,6 +12756,62 @@
       "no": 279,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "大監視塔",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10035,6 +12863,28 @@
       "no": 280,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10078,6 +12928,7 @@
       "no": 281,
       "rank": "G",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10129,6 +12980,7 @@
       "no": 282,
       "rank": "G",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10172,6 +13024,16 @@
       "no": 283,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10223,6 +13085,25 @@
       "no": 284,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10274,6 +13155,7 @@
       "no": 285,
       "rank": "G",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10309,6 +13191,28 @@
       "no": 286,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10360,6 +13264,38 @@
       "no": 287,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10411,6 +13347,51 @@
       "no": 288,
       "rank": "G",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "烈火の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10446,6 +13427,7 @@
       "no": 289,
       "rank": "G",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10497,6 +13479,16 @@
       "no": 290,
       "rank": "F",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10540,6 +13532,7 @@
       "no": 291,
       "rank": "F",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10575,6 +13568,7 @@
       "no": 292,
       "rank": "F",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10618,6 +13612,16 @@
       "no": 293,
       "rank": "F",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10653,6 +13657,39 @@
       "no": 294,
       "rank": "F",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10696,6 +13733,7 @@
       "no": 295,
       "rank": "F",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10730,6 +13768,7 @@
       "no": 296,
       "rank": "F",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10773,6 +13812,16 @@
       "no": 297,
       "rank": "F",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10816,6 +13865,184 @@
       "no": 298,
       "rank": "F",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "アイスの迷宮",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "パンケーキ山の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10863,6 +14090,41 @@
       "no": 299,
       "rank": "F",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "災厄の魔宮 - 中層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 低層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10922,6 +14184,7 @@
       "no": 300,
       "rank": "F",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -10965,6 +14228,7 @@
       "no": 301,
       "rank": "E",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11018,6 +14282,7 @@
       "no": 302,
       "rank": "E",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11045,6 +14310,7 @@
       "no": 303,
       "rank": "E",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11096,6 +14362,41 @@
       "no": 304,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11122,6 +14423,24 @@
       "no": 305,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11149,6 +14468,7 @@
       "no": 306,
       "rank": "E",
       "family": "物質系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -11167,6 +14487,18 @@
       "no": 307,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11194,6 +14526,19 @@
       "no": 308,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11220,6 +14565,19 @@
       "no": 309,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11255,6 +14613,52 @@
       "no": 310,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11298,6 +14702,28 @@
       "no": 311,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11333,6 +14759,43 @@
       "no": 312,
       "rank": "E",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "アイスの迷宮",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11384,6 +14847,7 @@
       "no": 313,
       "rank": "D",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11451,6 +14915,32 @@
       "no": 314,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11486,6 +14976,7 @@
       "no": 315,
       "rank": "D",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11531,6 +15022,7 @@
       "no": 316,
       "rank": "D",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11574,6 +15066,30 @@
       "no": 317,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11619,6 +15135,51 @@
       "no": 318,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "アイスの迷宮",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11645,6 +15206,24 @@
       "no": 319,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11672,6 +15251,16 @@
       "no": 320,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11717,6 +15306,96 @@
       "no": 321,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11754,6 +15433,7 @@
       "no": 322,
       "rank": "D",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11823,6 +15503,27 @@
       "no": 323,
       "rank": "D",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "竜の首",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11892,6 +15593,7 @@
       "no": 324,
       "rank": "D",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -11947,6 +15649,30 @@
       "no": 325,
       "rank": "C",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "エビルプリーストの隠れ家",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11974,6 +15700,19 @@
       "no": 326,
       "rank": "C",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11992,6 +15731,7 @@
       "no": 327,
       "rank": "C",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12019,6 +15759,19 @@
       "no": 328,
       "rank": "C",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12045,6 +15798,7 @@
       "no": 329,
       "rank": "C",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12080,6 +15834,7 @@
       "no": 330,
       "rank": "C",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12115,6 +15870,7 @@
       "no": 331,
       "rank": "C",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12158,6 +15914,7 @@
       "no": 332,
       "rank": "C",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12193,6 +15950,19 @@
       "no": 333,
       "rank": "C",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "精霊樹の森",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "4体配合",
@@ -12222,6 +15992,7 @@
       "no": 334,
       "rank": "C",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12257,6 +16028,16 @@
       "no": 335,
       "rank": "C",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12283,6 +16064,7 @@
       "no": 336,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12310,6 +16092,7 @@
       "no": 337,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -12347,6 +16130,7 @@
       "no": 338,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12382,6 +16166,7 @@
       "no": 339,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -12419,6 +16204,7 @@
       "no": 340,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12446,6 +16232,7 @@
       "no": 341,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12481,6 +16268,16 @@
       "no": 342,
       "rank": "B",
       "family": "物質系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12507,6 +16304,7 @@
       "no": 343,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12550,6 +16348,7 @@
       "no": 344,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12585,6 +16384,7 @@
       "no": 345,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12612,6 +16412,7 @@
       "no": 346,
       "rank": "B",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12647,6 +16448,7 @@
       "no": 347,
       "rank": "A",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12674,6 +16476,7 @@
       "no": 348,
       "rank": "A",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12701,6 +16504,7 @@
       "no": 349,
       "rank": "A",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12730,6 +16534,7 @@
       "no": 350,
       "rank": "A",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12759,6 +16564,7 @@
       "no": 351,
       "rank": "S",
       "family": "物質系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12788,6 +16594,7 @@
       "no": 352,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -12839,6 +16646,30 @@
       "no": 353,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "パンケーキ山の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12890,6 +16721,54 @@
       "no": 354,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12941,6 +16820,74 @@
       "no": 355,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "大結晶の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12984,6 +16931,7 @@
       "no": 356,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13019,6 +16967,7 @@
       "no": 357,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13062,6 +17011,41 @@
       "no": 358,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "パンケーキ山の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "大監視塔",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "烈火の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13113,6 +17097,54 @@
       "no": 359,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13172,6 +17204,24 @@
       "no": 360,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "人間界",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13199,6 +17249,30 @@
       "no": 361,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13234,6 +17308,7 @@
       "no": 362,
       "rank": "G",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13277,6 +17352,7 @@
       "no": 363,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13320,6 +17396,7 @@
       "no": 364,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13355,6 +17432,30 @@
       "no": 365,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "災厄の魔宮 - 低層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13390,6 +17491,7 @@
       "no": 366,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13425,6 +17527,7 @@
       "no": 367,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13452,6 +17555,27 @@
       "no": 368,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13479,6 +17603,7 @@
       "no": 369,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13522,6 +17647,7 @@
       "no": 370,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13581,6 +17707,30 @@
       "no": 371,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "アイスの迷宮",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13640,6 +17790,7 @@
       "no": 372,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13667,6 +17818,41 @@
       "no": 373,
       "rank": "F",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13710,6 +17896,7 @@
       "no": 374,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -13761,6 +17948,16 @@
       "no": 375,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13822,6 +18019,19 @@
       "no": 376,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13865,6 +18075,27 @@
       "no": 377,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13908,6 +18139,39 @@
       "no": 378,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13951,6 +18215,32 @@
       "no": 379,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13986,6 +18276,30 @@
       "no": 380,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14012,6 +18326,43 @@
       "no": 381,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14065,6 +18416,30 @@
       "no": 382,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14124,6 +18499,82 @@
       "no": 383,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "アイスの迷宮",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "エビルプリーストの隠れ家",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14167,6 +18618,7 @@
       "no": 384,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14210,6 +18662,19 @@
       "no": 385,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14253,6 +18718,7 @@
       "no": 386,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14296,6 +18762,7 @@
       "no": 387,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -14314,6 +18781,27 @@
       "no": 388,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14340,6 +18828,35 @@
       "no": 389,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14367,6 +18884,7 @@
       "no": 390,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14410,6 +18928,7 @@
       "no": 391,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14436,6 +18955,19 @@
       "no": 392,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14471,6 +19003,7 @@
       "no": 393,
       "rank": "D",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14522,6 +19055,7 @@
       "no": 394,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14565,6 +19099,19 @@
       "no": 395,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14616,6 +19163,19 @@
       "no": 396,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14667,6 +19227,7 @@
       "no": 397,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14704,6 +19265,7 @@
       "no": 398,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14730,6 +19292,7 @@
       "no": 399,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14773,6 +19336,7 @@
       "no": 400,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14808,6 +19372,52 @@
       "no": 401,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "ヘルバトラー城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 中層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14835,6 +19445,7 @@
       "no": 402,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -14862,6 +19473,19 @@
       "no": 403,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14889,6 +19513,19 @@
       "no": 404,
       "rank": "C",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "お菓子の城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14916,6 +19553,19 @@
       "no": 405,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14951,6 +19601,19 @@
       "no": 406,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14994,6 +19657,7 @@
       "no": 407,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15023,6 +19687,7 @@
       "no": 408,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15050,6 +19715,7 @@
       "no": 409,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15093,6 +19759,7 @@
       "no": 410,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15144,6 +19811,7 @@
       "no": 411,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15181,6 +19849,19 @@
       "no": 412,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15218,6 +19899,7 @@
       "no": 413,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15253,6 +19935,7 @@
       "no": 414,
       "rank": "B",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -15271,6 +19954,7 @@
       "no": 415,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15300,6 +19984,7 @@
       "no": 416,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15329,6 +20014,7 @@
       "no": 417,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15366,6 +20052,7 @@
       "no": 418,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15395,6 +20082,7 @@
       "no": 419,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15424,6 +20112,7 @@
       "no": 420,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15451,6 +20140,7 @@
       "no": 421,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15478,6 +20168,7 @@
       "no": 422,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15507,6 +20198,7 @@
       "no": 423,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15534,6 +20226,7 @@
       "no": 424,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15563,6 +20256,7 @@
       "no": 425,
       "rank": "A",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15592,6 +20286,7 @@
       "no": 426,
       "rank": "S",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15629,6 +20324,7 @@
       "no": 427,
       "rank": "S",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15656,6 +20352,40 @@
       "no": 428,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15699,6 +20429,30 @@
       "no": 429,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15734,6 +20488,7 @@
       "no": 430,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -15777,6 +20532,38 @@
       "no": 431,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15820,6 +20607,16 @@
       "no": 432,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15887,6 +20684,56 @@
       "no": 433,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "人間界",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15938,6 +20785,24 @@
       "no": 434,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15973,6 +20838,7 @@
       "no": 435,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16000,6 +20866,24 @@
       "no": 436,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16035,6 +20919,38 @@
       "no": 437,
       "rank": "G",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16070,6 +20986,7 @@
       "no": 438,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16105,6 +21022,7 @@
       "no": 439,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16156,6 +21074,41 @@
       "no": 440,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "大監視塔",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "常夜の要塞",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16207,6 +21160,70 @@
       "no": 441,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "竜の首",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16250,6 +21267,7 @@
       "no": 442,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16293,6 +21311,16 @@
       "no": 443,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16328,6 +21356,7 @@
       "no": 444,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16371,6 +21400,27 @@
       "no": 445,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流砂の宮殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16406,6 +21456,24 @@
       "no": 446,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "鉄鋼砦の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "鉄鋼砦の魔界 - 初級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16449,6 +21517,7 @@
       "no": 447,
       "rank": "F",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16476,6 +21545,16 @@
       "no": 448,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16519,6 +21598,28 @@
       "no": 449,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16570,6 +21671,7 @@
       "no": 450,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16621,6 +21723,7 @@
       "no": 451,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -16656,6 +21759,16 @@
       "no": 452,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16691,6 +21804,7 @@
       "no": 453,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -16700,6 +21814,41 @@
       "no": 454,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "アイスの迷宮",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "炎の神殿",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16737,6 +21886,41 @@
       "no": 455,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "災厄の魔宮 - 中層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 低層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "災厄の魔宮 - 高層",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16772,6 +21956,29 @@
       "no": 456,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "白冥の洞窟",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 中級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16815,6 +22022,7 @@
       "no": 457,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -16833,6 +22041,19 @@
       "no": 458,
       "rank": "E",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 初級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": true
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16868,6 +22089,27 @@
       "no": 459,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16921,6 +22163,40 @@
       "no": 460,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "エビルプリーストの隠れ家",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "竜の首",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16988,6 +22264,7 @@
       "no": 461,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17023,6 +22300,24 @@
       "no": 462,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "甘味楼の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        },
+        {
+          "name": "甘味楼の魔界 - 中級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17050,6 +22345,7 @@
       "no": 463,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17077,6 +22373,7 @@
       "no": 464,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17120,6 +22417,26 @@
       "no": 465,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "春"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17155,6 +22472,19 @@
       "no": 466,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 中級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17214,6 +22544,27 @@
       "no": 467,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "煉獄峠の魔界 - 上級",
+          "seasons": [
+            "秋"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        },
+        {
+          "name": "竜の首",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17249,6 +22600,7 @@
       "no": 468,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -17258,6 +22610,7 @@
       "no": 469,
       "rank": "D",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17303,6 +22656,7 @@
       "no": 470,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17329,6 +22683,7 @@
       "no": 471,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17356,6 +22711,18 @@
       "no": 472,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "覇王城の魔界 - 上級",
+          "seasons": [
+            "春",
+            "秋",
+            "冬"
+          ],
+          "weather": "降水時",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17399,6 +22766,7 @@
       "no": 473,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17417,6 +22785,7 @@
       "no": 474,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17460,6 +22829,19 @@
       "no": 475,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "覇王城",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17495,6 +22877,16 @@
       "no": 476,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "夏"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17521,6 +22913,7 @@
       "no": 477,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17556,6 +22949,7 @@
       "no": 478,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17599,6 +22993,7 @@
       "no": 479,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17634,6 +23029,7 @@
       "no": 480,
       "rank": "C",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17669,6 +23065,7 @@
       "no": 481,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17704,6 +23101,19 @@
       "no": 482,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "流神殿の魔界 - 上級",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17731,6 +23141,7 @@
       "no": 483,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17766,6 +23177,7 @@
       "no": 484,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17801,6 +23213,7 @@
       "no": 485,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17827,6 +23240,7 @@
       "no": 486,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17870,6 +23284,19 @@
       "no": 487,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [
+        {
+          "name": "精霊樹の森",
+          "seasons": [
+            "春",
+            "夏",
+            "秋",
+            "冬"
+          ],
+          "weather": "晴れ",
+          "miniBoss": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17905,6 +23332,7 @@
       "no": 488,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17932,6 +23360,7 @@
       "no": 489,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -17983,6 +23412,7 @@
       "no": 490,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18010,6 +23440,7 @@
       "no": 491,
       "rank": "B",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18037,6 +23468,7 @@
       "no": 492,
       "rank": "A",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18066,6 +23498,7 @@
       "no": 493,
       "rank": "A",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18093,6 +23526,7 @@
       "no": 494,
       "rank": "A",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18120,6 +23554,7 @@
       "no": 495,
       "rank": "A",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18147,6 +23582,7 @@
       "no": 496,
       "rank": "S",
       "family": "ゾンビ系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18176,6 +23612,7 @@
       "no": 497,
       "rank": "C",
       "family": "？？？系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -18194,6 +23631,7 @@
       "no": 498,
       "rank": "A",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18221,6 +23659,7 @@
       "no": 499,
       "rank": "A",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18248,6 +23687,7 @@
       "no": 500,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18277,6 +23717,7 @@
       "no": 501,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18306,6 +23747,7 @@
       "no": 502,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18343,6 +23785,7 @@
       "no": 503,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18372,6 +23815,7 @@
       "no": 504,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18401,6 +23845,7 @@
       "no": 505,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18428,6 +23873,7 @@
       "no": 506,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18455,6 +23901,7 @@
       "no": 507,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18484,6 +23931,7 @@
       "no": 508,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18515,6 +23963,7 @@
       "no": 509,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18546,6 +23995,7 @@
       "no": 510,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18573,6 +24023,7 @@
       "no": 511,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18602,6 +24053,7 @@
       "no": 512,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [],
       "uses": []
     },
@@ -18611,6 +24063,7 @@
       "no": 513,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18638,6 +24091,7 @@
       "no": 514,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18669,6 +24123,7 @@
       "no": 515,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18698,6 +24153,7 @@
       "no": 516,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18735,6 +24191,7 @@
       "no": 517,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18772,6 +24229,7 @@
       "no": 518,
       "rank": "S",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18807,6 +24265,7 @@
       "no": 519,
       "rank": "X",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18827,6 +24286,7 @@
       "no": 520,
       "rank": "X",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "配合",
@@ -18856,6 +24316,7 @@
       "no": 521,
       "rank": "X",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18876,6 +24337,7 @@
       "no": 522,
       "rank": "X",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18896,6 +24358,7 @@
       "no": 523,
       "rank": "X",
       "family": "？？？系",
+      "locations": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -18927,6 +24390,7 @@
       "no": 524,
       "rank": "G",
       "family": "スライム系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -18945,6 +24409,7 @@
       "no": 525,
       "rank": "E",
       "family": "悪魔系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
@@ -18963,6 +24428,7 @@
       "no": 526,
       "rank": "D",
       "family": "物質系",
+      "locations": [],
       "recipes": [],
       "uses": [
         {
