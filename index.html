@@ -9,7 +9,7 @@
 
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<link rel="stylesheet" href="./style.css?v=6">
+<link rel="stylesheet" href="./style.css?v=8">
 
 <title>DQM3 配合検索</title>
 </head>
@@ -50,7 +50,39 @@
     autocomplete="off"
   >
 
+  <div
+    id="sortRow"
+    class="sortrow"
+  >
+
+    <label for="sortSelect">
+      並び順
+    </label>
+
+    <select id="sortSelect">
+
+      <option value="number">
+        図鑑番号順
+      </option>
+
+      <option value="name">
+        名前順
+      </option>
+
+      <option value="rank">
+        ランク順
+      </option>
+
+      <option value="family">
+        種族順
+      </option>
+
+    </select>
+
+  </div>
+
 </header>
+
 
 <main>
 
@@ -65,12 +97,18 @@
 
 </main>
 
+
 <footer>
+
   モンスター名をタップすると画像検索を開きます。<br>
-  スキルでは進化条件・組み合わせを検索できます。
+
+  スキルでは
+  進化条件・覚える特技・上位スキルを検索できます。
+
 </footer>
 
-<script src="./app.js?v=6"></script>
+
+<script src="./app.js?v=8"></script>
 
 </body>
 </html>
