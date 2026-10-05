@@ -22,3 +22,46 @@ h2{font-size:15px;margin:16px 0 7px}
 .small{font-size:12px;color:#6b7280}
 button.jump{border:0;background:none;color:#4338ca;text-decoration:underline;padding:0;font:inherit}
 footer{text-align:center;color:#6b7280;font-size:11px;padding:20px 14px 40px}
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:10px
+}
+
+.tab{
+  flex:1;
+  border:1px solid #4b5563;
+  background:#1f2937;
+  color:#d1d5db;
+  padding:9px;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:700
+}
+
+.tab.active{
+  background:#fff;
+  color:#111827;
+  border-color:#fff
+}
+
+.skillname{
+  font-size:22px;
+  font-weight:800
+}
+
+.skilljump{
+  font-weight:700
+}
+
+.skillroute{
+  padding-top:10px;
+  padding-bottom:10px
+}
+
+.skillnote{
+  margin-top:5px;
+  margin-left:4px;
+  font-size:12px;
+  color:#6b7280
+}
