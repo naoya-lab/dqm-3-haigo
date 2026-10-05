@@ -27,16 +27,34 @@ const monsterTab=
 const skillTab=
   document.getElementById('skillTab');
 
+const planTab=
+  document.getElementById('planTab');
+
 const sortSelect=
   document.getElementById('sortSelect');
 
 const sortRow=
   document.getElementById('sortRow');
 
+const normalSearch=
+  document.getElementById('normalSearch');
 
-/* =========================
+const planControls=
+  document.getElementById('planControls');
+
+const planTarget=
+  document.getElementById('planTarget');
+
+const buildPlanButton=
+  document.getElementById('buildPlan');
+
+const monsterOptions=
+  document.getElementById('monsterOptions');
+
+
+/* =====================================
    共通
-========================= */
+===================================== */
 
 function esc(s){
 
@@ -65,9 +83,13 @@ function norm(s){
 }
 
 
-/* =========================
-   モンスター
-========================= */
+function findMonster(name){
+
+  return DB.monsters.find(
+    m=>m.name===name
+  );
+}
+
 
 function imgUrl(name){
 
@@ -80,6 +102,10 @@ function imgUrl(name){
   );
 }
 
+
+/* =====================================
+   モンスター移動
+===================================== */
 
 function jumpMonster(name){
 
@@ -148,9 +174,82 @@ function skillButton(name){
 }
 
 
-/* =========================
-   モンスター配合表示
-========================= */
+/* =====================================
+   生息地
+===================================== */
+
+function locationText(location){
+
+  const seasons=
+    (location.seasons||[])
+      .join('・');
+
+
+  return `
+    <div class="location-row">
+
+      <div class="location-name">
+        📍 ${esc(location.name)}
+      </div>
+
+      <div class="location-detail">
+
+        ${
+          seasons
+            ? `季節：${esc(seasons)}`
+            : ''
+        }
+
+        ${
+          location.weather
+            ? `　天候：${esc(location.weather)}`
+            : ''
+        }
+
+        ${
+          location.miniBoss
+            ? '　ミニボス'
+            : ''
+        }
+
+      </div>
+
+    </div>
+  `;
+}
+
+
+function locationsHtml(monster){
+
+  const locations=
+    monster.locations||[];
+
+
+  if(!locations.length){
+
+    return `
+      <div class="small">
+        野生出現なし／未登録
+      </div>
+    `;
+  }
+
+
+  return `
+    <div class="locations">
+      ${
+        locations
+          .map(locationText)
+          .join('')
+      }
+    </div>
+  `;
+}
+
+
+/* =====================================
+   モンスター配合
+===================================== */
 
 function recipeText(r){
 
@@ -214,9 +313,9 @@ function useText(u){
 }
 
 
-/* =========================
+/* =====================================
    モンスターカード
-========================= */
+===================================== */
 
 function monsterCard(m){
 
@@ -264,37 +363,30 @@ function monsterCard(m){
 
         ${
           m.no
-            ? `
-              <span class="badge">
-                No.${esc(m.no)}
-              </span>
-            `
+            ? `<span class="badge">No.${esc(m.no)}</span>`
             : ''
         }
-
 
         ${
           m.rank
-            ? `
-              <span class="badge">
-                ${esc(m.rank)}ランク
-              </span>
-            `
+            ? `<span class="badge">${esc(m.rank)}ランク</span>`
             : ''
         }
 
-
         ${
           m.family
-            ? `
-              <span class="badge">
-                ${esc(m.family)}
-              </span>
-            `
+            ? `<span class="badge">${esc(m.family)}</span>`
             : ''
         }
 
       </div>
+
+
+      <h2>
+        生息地
+      </h2>
+
+      ${locationsHtml(m)}
 
 
       <h2>
@@ -315,11 +407,14 @@ function monsterCard(m){
 }
 
 
-/* =========================
-   検索優先度
-========================= */
+/* =====================================
+   検索・並び替え
+===================================== */
 
-function searchScore(name,term){
+function searchScore(
+  name,
+  term
+){
 
   if(!term){
     return 0;
@@ -328,16 +423,19 @@ function searchScore(name,term){
   const value=
     norm(name);
 
-
   if(value===term){
     return 0;
   }
 
-  if(value.startsWith(term)){
+  if(
+    value.startsWith(term)
+  ){
     return 1;
   }
 
-  if(value.includes(term)){
+  if(
+    value.includes(term)
+  ){
     return 2;
   }
 
@@ -345,16 +443,12 @@ function searchScore(name,term){
 }
 
 
-/* =========================
-   モンスター並び替え
-========================= */
+function compareMonsters(
+  a,
+  b,
+  term
+){
 
-function compareMonsters(a,b,term){
-
-  /*
-   * 検索中は
-   * 完全一致を最優先
-   */
   if(term){
 
     const as=
@@ -369,147 +463,94 @@ function compareMonsters(a,b,term){
         term
       );
 
-
     if(as!==bs){
       return as-bs;
     }
   }
 
 
-  /*
-   * 名前順
-   */
   if(
     sortSelect.value==='name'
   ){
 
-    const aName=
+    const aa=
       a.reading
-      ||
-      a.name
-      ||
-      '';
+      || a.name
+      || '';
 
-    const bName=
+    const bb=
       b.reading
-      ||
-      b.name
-      ||
-      '';
+      || b.name
+      || '';
 
+    const c=
+      aa.localeCompare(
+        bb,
+        'ja'
+      );
 
-    const compare=
-      String(aName)
-        .localeCompare(
-          String(bName),
-          'ja'
-        );
-
-
-    if(compare!==0){
-      return compare;
+    if(c!==0){
+      return c;
     }
-
-
-    return (
-      (a.no??9999)
-      -
-      (b.no??9999)
-    );
   }
 
 
-  /*
-   * ランク順
-   *
-   * X → S → A → B → C
-   * → D → E → F → G
-   */
   if(
     sortSelect.value==='rank'
   ){
 
     const rankOrder={
-      'X':0,
-      'S':1,
-      'A':2,
-      'B':3,
-      'C':4,
-      'D':5,
-      'E':6,
-      'F':7,
-      'G':8
+      X:0,
+      S:1,
+      A:2,
+      B:3,
+      C:4,
+      D:5,
+      E:6,
+      F:7,
+      G:8
     };
-
 
     const ar=
       rankOrder[
-        String(a.rank||'')
-          .toUpperCase()
-      ]
-      ?? 99;
-
+        String(
+          a.rank||''
+        ).toUpperCase()
+      ] ?? 99;
 
     const br=
       rankOrder[
-        String(b.rank||'')
-          .toUpperCase()
-      ]
-      ?? 99;
-
+        String(
+          b.rank||''
+        ).toUpperCase()
+      ] ?? 99;
 
     if(ar!==br){
       return ar-br;
     }
-
-
-    /*
-     * 同ランクなら図鑑番号順
-     */
-    return (
-      (a.no??9999)
-      -
-      (b.no??9999)
-    );
   }
 
 
-  /*
-   * 種族順
-   */
   if(
     sortSelect.value==='family'
   ){
 
-    const familyCompare=
-      String(a.family||'')
-        .localeCompare(
-          String(b.family||''),
-          'ja'
-        );
+    const c=
+      String(
+        a.family||''
+      ).localeCompare(
+        String(
+          b.family||''
+        ),
+        'ja'
+      );
 
-
-    if(familyCompare!==0){
-      return familyCompare;
+    if(c!==0){
+      return c;
     }
-
-
-    /*
-     * 同じ種族なら
-     * 図鑑番号順
-     */
-    return (
-      (a.no??9999)
-      -
-      (b.no??9999)
-    );
   }
 
 
-  /*
-   * デフォルト：
-   * 図鑑番号順
-   */
   return (
     (a.no??9999)
     -
@@ -517,10 +558,6 @@ function compareMonsters(a,b,term){
   );
 }
 
-
-/* =========================
-   モンスター検索
-========================= */
 
 function renderMonsters(){
 
@@ -531,6 +568,15 @@ function renderMonsters(){
   const found=
     DB.monsters.filter(m=>{
 
+      const locations=
+        (m.locations||[])
+          .flatMap(x=>[
+            x.name,
+            ...(x.seasons||[]),
+            x.weather
+          ]);
+
+
       const text=[
 
         m.name,
@@ -538,6 +584,8 @@ function renderMonsters(){
         m.rank,
         m.family,
         m.no,
+
+        ...locations,
 
         ...(m.recipes||[])
           .flatMap(r=>[
@@ -593,9 +641,9 @@ function renderMonsters(){
 }
 
 
-/* =========================
-   スキル一覧
-========================= */
+/* =====================================
+   スキル
+===================================== */
 
 function allSkillNames(){
 
@@ -616,11 +664,10 @@ function allSkillNames(){
       (skill.recipes||[])
         .forEach(recipe=>{
 
-          recipe.forEach(name=>{
-
-            names.add(name);
-
-          });
+          recipe.forEach(
+            name=>
+              names.add(name)
+          );
 
         });
 
@@ -629,22 +676,18 @@ function allSkillNames(){
         .forEach(evo=>{
 
           if(evo.result){
-
             names.add(
               evo.result
             );
           }
 
-
           (evo.required||[])
             .forEach(req=>{
 
               if(req.skill){
-
                 names.add(
                   req.skill
                 );
-
               }
 
             });
@@ -661,15 +704,10 @@ function allSkillNames(){
 function findSkill(name){
 
   return SKILL_DB.skills.find(
-    skill=>
-      skill.name===name
+    x=>x.name===name
   );
 }
 
-
-/* =========================
-   スキル作成方法
-========================= */
 
 function skillRecipesFor(name){
 
@@ -679,14 +717,14 @@ function skillRecipesFor(name){
   SKILL_DB.skills
     .forEach(skill=>{
 
-
-      if(skill.name===name){
+      if(
+        skill.name===name
+      ){
 
         (skill.recipes||[])
           .forEach(recipe=>{
 
             recipes.push({
-
               type:
                 '組み合わせ',
 
@@ -698,7 +736,6 @@ function skillRecipesFor(name){
 
               note:
                 skill.note||''
-
             });
 
           });
@@ -715,24 +752,21 @@ function skillRecipesFor(name){
             return;
           }
 
-
           recipes.push({
 
-            type:
-              '進化',
+            type:'進化',
 
             parents:
               (evo.required||[])
-                .map(req=>(
+                .map(req=>
                   `${req.skill} ${req.points}P`
-                )),
+                ),
 
             result:
               evo.result,
 
             note:
               evo.note||''
-
           });
 
         });
@@ -740,39 +774,11 @@ function skillRecipesFor(name){
     });
 
 
-  const unique=[];
-  const seen=new Set();
-
-
-  recipes.forEach(recipe=>{
-
-    const key=
-      JSON.stringify(
-        recipe
-      );
-
-
-    if(
-      !seen.has(key)
-    ){
-
-      seen.add(key);
-
-      unique.push(
-        recipe
-      );
-    }
-
-  });
-
-
-  return unique;
+  return uniqueObjects(
+    recipes
+  );
 }
 
-
-/* =========================
-   このスキルから作れるもの
-========================= */
 
 function skillUsesFor(name){
 
@@ -782,7 +788,6 @@ function skillUsesFor(name){
   SKILL_DB.skills
     .forEach(skill=>{
 
-
       (skill.recipes||[])
         .forEach(recipe=>{
 
@@ -791,7 +796,6 @@ function skillUsesFor(name){
           ){
 
             uses.push({
-
               type:
                 '組み合わせ',
 
@@ -803,7 +807,6 @@ function skillUsesFor(name){
 
               note:
                 skill.note||''
-
             });
 
           }
@@ -816,7 +819,6 @@ function skillUsesFor(name){
 
           const required=
             evo.required||[];
-
 
           if(
             required.some(
@@ -832,9 +834,8 @@ function skillUsesFor(name){
 
               parents:
                 required.map(
-                  req=>(
+                  req=>
                     `${req.skill} ${req.points}P`
-                  )
                 ),
 
               result:
@@ -842,7 +843,6 @@ function skillUsesFor(name){
 
               note:
                 evo.note||''
-
             });
 
           }
@@ -852,35 +852,36 @@ function skillUsesFor(name){
     });
 
 
-  const unique=[];
-  const seen=new Set();
-
-
-  uses.forEach(use=>{
-
-    const key=
-      JSON.stringify(use);
-
-
-    if(
-      !seen.has(key)
-    ){
-
-      seen.add(key);
-
-      unique.push(use);
-    }
-
-  });
-
-
-  return unique;
+  return uniqueObjects(
+    uses
+  );
 }
 
 
-/* =========================
-   スキル経路
-========================= */
+function uniqueObjects(items){
+
+  const seen=
+    new Set();
+
+  return items.filter(
+    item=>{
+
+      const key=
+        JSON.stringify(item);
+
+      if(
+        seen.has(key)
+      ){
+        return false;
+      }
+
+      seen.add(key);
+
+      return true;
+    }
+  );
+}
+
 
 function skillRoute(route){
 
@@ -894,21 +895,23 @@ function skillRoute(route){
               /^(.*?)(?:\s+(\d+)P)?$/
             );
 
-
         const skillName=
           match
             ? match[1]
             : value;
 
-
         const points=
-          match && match[2]
+          (
+            match
+            && match[2]
+          )
             ? ` ${match[2]}P`
             : '';
 
-
         return (
-          skillButton(skillName)
+          skillButton(
+            skillName
+          )
           +
           `<strong>${esc(points)}</strong>`
         );
@@ -935,10 +938,10 @@ function skillRoute(route){
       ${
         route.note
           ? `
-            <div class="skillnote">
-              ${esc(route.note)}
-            </div>
-          `
+              <div class="skillnote">
+                ${esc(route.note)}
+              </div>
+            `
           : ''
       }
 
@@ -946,10 +949,6 @@ function skillRoute(route){
   `;
 }
 
-
-/* =========================
-   覚える特技・効果
-========================= */
 
 function abilityTable(skill){
 
@@ -969,64 +968,48 @@ function abilityTable(skill){
   }
 
 
-  const rows=
-    abilities
-      .slice()
-      .sort(
-        (a,b)=>
-          Number(a.points||0)
-          -
-          Number(b.points||0)
-      )
-      .map(ability=>`
-
-        <div class="skillability">
-
-          <span class="skillpoints">
-            ${esc(ability.points)}P
-          </span>
-
-          <span class="abilityname">
-            ${esc(ability.name)}
-          </span>
-
-          ${
-            ability.note
-              ? `
-                <span class="abilitynote">
-                  ${esc(ability.note)}
-                </span>
-              `
-              : ''
-          }
-
-        </div>
-
-      `)
-      .join('');
-
-
   return `
     <div class="skilltable">
-      ${rows}
+
+      ${
+        abilities
+          .slice()
+          .sort(
+            (a,b)=>
+              Number(a.points||0)
+              -
+              Number(b.points||0)
+          )
+          .map(
+            ability=>`
+              <div class="skillability">
+
+                <span class="skillpoints">
+                  ${esc(ability.points)}P
+                </span>
+
+                <span class="abilityname">
+                  ${esc(ability.name)}
+                </span>
+
+              </div>
+            `
+          )
+          .join('')
+      }
+
     </div>
   `;
 }
 
-
-/* =========================
-   スキルカード
-========================= */
 
 function skillCard(name){
 
   const skill=
     findSkill(name);
 
-
   const recipes=
     skillRecipesFor(name);
-
 
   const uses=
     skillUsesFor(name);
@@ -1039,27 +1022,15 @@ function skillCard(name){
         ${esc(name)}
       </div>
 
-
       <div class="meta">
 
         ${
           skill?.maxPoints
             ? `
-              <span class="badge">
-                最大 ${esc(skill.maxPoints)}P
-              </span>
-            `
-            : ''
-        }
-
-
-        ${
-          skill?.category
-            ? `
-              <span class="badge">
-                ${esc(skill.category)}
-              </span>
-            `
+                <span class="badge">
+                  最大 ${esc(skill.maxPoints)}P
+                </span>
+              `
             : ''
         }
 
@@ -1083,10 +1054,10 @@ function skillCard(name){
               .map(skillRoute)
               .join('')
           : `
-            <div class="small">
-              進化・配合での作成条件なし／未登録
-            </div>
-          `
+              <div class="small">
+                作成条件なし／未登録
+              </div>
+            `
       }
 
 
@@ -1100,10 +1071,10 @@ function skillCard(name){
               .map(skillRoute)
               .join('')
           : `
-            <div class="small">
-              上位スキルなし／未登録
-            </div>
-          `
+              <div class="small">
+                上位スキルなし／未登録
+              </div>
+            `
       }
 
     </section>
@@ -1111,80 +1082,58 @@ function skillCard(name){
 }
 
 
-/* =========================
-   スキル検索
-========================= */
-
 function renderSkills(){
 
   const term=
     norm(q.value);
 
 
-  let found=
+  const found=
     allSkillNames()
       .filter(name=>{
 
         const skill=
           findSkill(name);
 
-
         const abilityText=
           (skill?.abilities||[])
-            .map(a=>a.name)
+            .map(x=>x.name)
             .join(' ');
-
-
-        const text=
-          `${name} ${abilityText}`;
-
 
         return (
           !term
           ||
-          norm(text)
-            .includes(term)
+          norm(
+            `${name} ${abilityText}`
+          ).includes(term)
         );
 
-      });
+      })
+      .sort(
+        (a,b)=>{
 
+          const as=
+            searchScore(
+              a,
+              term
+            );
 
-  found.sort(
-    (a,b)=>{
+          const bs=
+            searchScore(
+              b,
+              term
+            );
 
-      if(!term){
+          if(as!==bs){
+            return as-bs;
+          }
 
-        return a.localeCompare(
-          b,
-          'ja'
-        );
-      }
-
-
-      const as=
-        searchScore(
-          a,
-          term
-        );
-
-      const bs=
-        searchScore(
-          b,
-          term
-        );
-
-
-      if(as!==bs){
-        return as-bs;
-      }
-
-
-      return a.localeCompare(
-        b,
-        'ja'
+          return a.localeCompare(
+            b,
+            'ja'
+          );
+        }
       );
-    }
-  );
 
 
   statusEl.textContent=
@@ -1206,9 +1155,698 @@ function renderSkills(){
 }
 
 
-/* =========================
+/* =====================================
+   配合計画
+===================================== */
+
+const PLAN_KEY=
+  'dqm3-plan-v1';
+
+
+let planState={
+  target:'',
+  checked:{},
+  routes:{}
+};
+
+
+function loadPlanState(){
+
+  try{
+
+    const saved=
+      localStorage.getItem(
+        PLAN_KEY
+      );
+
+    if(saved){
+
+      planState={
+        ...planState,
+        ...JSON.parse(saved)
+      };
+
+    }
+
+  }
+  catch(error){
+
+    console.warn(error);
+
+  }
+}
+
+
+function savePlanState(){
+
+  localStorage.setItem(
+    PLAN_KEY,
+    JSON.stringify(
+      planState
+    )
+  );
+}
+
+
+function nodeKey(
+  target,
+  path
+){
+
+  return (
+    target
+    +'::'
+    +path
+  );
+}
+
+
+function buildPlanNode(
+  name,
+  path='0',
+  stack=[]
+){
+
+  const monster=
+    findMonster(name);
+
+
+  const key=
+    nodeKey(
+      planState.target,
+      path
+    );
+
+
+  if(!monster){
+
+    return {
+      name,
+      key,
+      monster:null,
+      generic:true,
+      children:[]
+    };
+  }
+
+
+  if(
+    stack.includes(name)
+  ){
+
+    return {
+      name,
+      key,
+      monster,
+      cycle:true,
+      children:[]
+    };
+  }
+
+
+  const recipes=
+    monster.recipes||[];
+
+
+  if(
+    !recipes.length
+  ){
+
+    return {
+      name,
+      key,
+      monster,
+      children:[]
+    };
+  }
+
+
+  let routeIndex=
+    Number(
+      planState.routes[key]
+      ?? 0
+    );
+
+
+  if(
+    routeIndex
+    >= recipes.length
+  ){
+
+    routeIndex=0;
+
+  }
+
+
+  const recipe=
+    recipes[
+      routeIndex
+    ];
+
+
+  const children=
+    (recipe.parents||[])
+      .map(
+        (parent,index)=>
+          buildPlanNode(
+            parent,
+            `${path}.${index}`,
+            [...stack,name]
+          )
+      );
+
+
+  return {
+    name,
+    key,
+    monster,
+    recipes,
+    routeIndex,
+    recipe,
+    children
+  };
+}
+
+
+function planNodeHtml(
+  node,
+  depth=0
+){
+
+  const checked=
+    Boolean(
+      planState.checked[
+        node.key
+      ]
+    );
+
+
+  const indent=
+    Math.min(
+      depth,
+      8
+    );
+
+
+  const routeSelect=
+    (
+      node.recipes
+      &&
+      node.recipes.length>1
+    )
+      ? `
+          <select
+            class="route-select"
+            onchange='changePlanRoute(
+              ${JSON.stringify(node.key)},
+              this.value
+            )'
+          >
+
+            ${
+              node.recipes
+                .map(
+                  (recipe,index)=>`
+                    <option
+                      value="${index}"
+                      ${
+                        index===node.routeIndex
+                          ? 'selected'
+                          : ''
+                      }
+                    >
+                      ${esc(
+                        (recipe.parents||[])
+                          .join(' ＋ ')
+                      )}
+                    </option>
+                  `
+                )
+                .join('')
+            }
+
+          </select>
+        `
+      : '';
+
+
+  const location=
+    node.monster
+      ? shortLocation(
+          node.monster
+        )
+      : '';
+
+
+  return `
+    <div
+      class="plan-node"
+      style="--depth:${indent}"
+    >
+
+      <div class="plan-node-head">
+
+        <input
+          type="checkbox"
+          class="plan-check"
+          ${
+            checked
+              ? 'checked'
+              : ''
+          }
+          onchange='togglePlanCheck(
+            ${JSON.stringify(node.key)},
+            this.checked
+          )'
+        >
+
+        <button
+          class="plan-name"
+          onclick='jumpMonster(
+            ${JSON.stringify(node.name)}
+          )'
+          ${
+            !node.monster
+              ? 'disabled'
+              : ''
+          }
+        >
+          ${esc(node.name)}
+        </button>
+
+        ${
+          node.monster?.rank
+            ? `
+                <span class="mini-badge">
+                  ${esc(node.monster.rank)}
+                </span>
+              `
+            : ''
+        }
+
+      </div>
+
+
+      ${
+        location
+          ? `
+              <div class="plan-location">
+                📍 ${esc(location)}
+              </div>
+            `
+          : ''
+      }
+
+
+      ${routeSelect}
+
+
+      ${
+        node.cycle
+          ? `
+              <div class="small">
+                循環する配合のため展開停止
+              </div>
+            `
+          : ''
+      }
+
+    </div>
+
+
+    ${
+      (
+        !checked
+        && node.children.length
+      )
+        ? node.children
+            .map(
+              child=>
+                planNodeHtml(
+                  child,
+                  depth+1
+                )
+            )
+            .join('')
+        : ''
+    }
+  `;
+}
+
+
+function shortLocation(monster){
+
+  const locations=
+    monster.locations||[];
+
+  if(!locations.length){
+    return '';
+  }
+
+  return locations[
+    0
+  ].name;
+}
+
+
+function collectPlanStats(
+  node,
+  stats
+){
+
+  stats.total++;
+
+
+  if(
+    planState.checked[
+      node.key
+    ]
+  ){
+
+    stats.checked++;
+
+    return;
+  }
+
+
+  if(
+    !node.children.length
+  ){
+
+    stats.leaves[
+      node.name
+    ] =
+      (
+        stats.leaves[
+          node.name
+        ]
+        || 0
+      )
+      + 1;
+
+    return;
+  }
+
+
+  node.children.forEach(
+    child=>
+      collectPlanStats(
+        child,
+        stats
+      )
+  );
+}
+
+
+function remainingHtml(
+  stats
+){
+
+  const items=
+    Object.entries(
+      stats.leaves
+    )
+      .sort(
+        (a,b)=>
+          b[1]-a[1]
+          ||
+          a[0].localeCompare(
+            b[0],
+            'ja'
+          )
+      );
+
+
+  if(!items.length){
+
+    return `
+      <div class="plan-complete">
+        🎉 必要素材はすべて準備済みです
+      </div>
+    `;
+  }
+
+
+  return items.map(
+    ([name,count])=>{
+
+      const monster=
+        findMonster(name);
+
+      const locations=
+        monster?.locations||[];
+
+
+      return `
+        <div class="material-row">
+
+          <div>
+
+            <strong>
+              ${esc(name)}
+            </strong>
+
+            <span class="material-count">
+              ×${count}
+            </span>
+
+          </div>
+
+          ${
+            locations.length
+              ? `
+                  <div class="material-location">
+                    📍
+                    ${esc(
+                      locations
+                        .slice(0,2)
+                        .map(x=>x.name)
+                        .join(' / ')
+                    )}
+                  </div>
+                `
+              : ''
+          }
+
+        </div>
+      `;
+
+    }
+  ).join('');
+}
+
+
+function renderPlan(){
+
+  const target=
+    planState.target;
+
+
+  if(!target){
+
+    statusEl.textContent=
+      '作りたいモンスターを入力してください';
+
+
+    results.innerHTML=
+      `
+        <div class="empty">
+          上の欄から目標モンスターを選び、
+          「配合ルートを作成」を押してください。
+        </div>
+      `;
+
+    return;
+  }
+
+
+  const monster=
+    findMonster(target);
+
+
+  if(!monster){
+
+    statusEl.textContent=
+      'モンスターが見つかりません';
+
+
+    results.innerHTML=
+      `
+        <div class="empty">
+          正しいモンスター名を選択してください。
+        </div>
+      `;
+
+    return;
+  }
+
+
+  const root=
+    buildPlanNode(
+      target
+    );
+
+
+  const stats={
+    total:0,
+    checked:0,
+    leaves:{}
+  };
+
+
+  collectPlanStats(
+    root,
+    stats
+  );
+
+
+  statusEl.textContent=
+    `目標：${target}`;
+
+
+  results.innerHTML=
+    `
+
+      <section class="card plan-summary">
+
+        <div class="skillname">
+          ${esc(target)}
+        </div>
+
+        <div class="progress-text">
+          作成済み：
+          ${stats.checked}
+          /
+          ${stats.total}
+        </div>
+
+
+        <div class="progressbar">
+
+          <div
+            class="progressbar-inner"
+            style="width:${
+              stats.total
+                ? (
+                    stats.checked
+                    /stats.total
+                    *100
+                  )
+                : 0
+            }%"
+          ></div>
+
+        </div>
+
+
+        <button
+          class="clearbutton"
+          onclick="clearPlanChecks()"
+        >
+          チェックをすべて解除
+        </button>
+
+      </section>
+
+
+      <section class="card">
+
+        <h2 class="plan-title">
+          配合系統図
+        </h2>
+
+        <div class="plan-tree">
+          ${planNodeHtml(root)}
+        </div>
+
+      </section>
+
+
+      <section class="card">
+
+        <h2 class="plan-title">
+          残り必要素材
+        </h2>
+
+        ${remainingHtml(stats)}
+
+      </section>
+    `;
+}
+
+
+window.togglePlanCheck=
+  function(
+    key,
+    checked
+  ){
+
+    planState.checked[
+      key
+    ] =
+      checked;
+
+    savePlanState();
+
+    renderPlan();
+  };
+
+
+window.changePlanRoute=
+  function(
+    key,
+    value
+  ){
+
+    planState.routes[
+      key
+    ] =
+      Number(value);
+
+    savePlanState();
+
+    renderPlan();
+  };
+
+
+window.clearPlanChecks=
+  function(){
+
+    planState.checked={};
+
+    savePlanState();
+
+    renderPlan();
+  };
+
+
+function createPlan(){
+
+  const name=
+    planTarget.value.trim();
+
+
+  if(!findMonster(name)){
+
+    statusEl.textContent=
+      'モンスターが見つかりません';
+
+    return;
+  }
+
+
+  planState.target=
+    name;
+
+  savePlanState();
+
+  renderPlan();
+}
+
+
+/* =====================================
    タブ
-========================= */
+===================================== */
 
 function updateTabs(){
 
@@ -1217,27 +1855,59 @@ function updateTabs(){
     mode==='monster'
   );
 
-
   skillTab.classList.toggle(
     'active',
     mode==='skill'
   );
 
+  planTab.classList.toggle(
+    'active',
+    mode==='plan'
+  );
 
-  q.placeholder=
+
+  const isPlan=
+    mode==='plan';
+
+
+  normalSearch.hidden=
+    isPlan;
+
+  planControls.hidden=
+    !isPlan;
+
+
+  if(
     mode==='monster'
-      ? 'モンスター名を入力'
-      : 'スキル名・特技名を入力';
+  ){
+
+    q.placeholder=
+      'モンスター名・生息地を入力';
+
+    sortRow.style.display=
+      'flex';
+  }
 
 
-  /*
-   * 並び替えは
-   * モンスター画面だけ表示
-   */
-  sortRow.style.display=
-    mode==='monster'
-      ? 'flex'
-      : 'none';
+  if(
+    mode==='skill'
+  ){
+
+    q.placeholder=
+      'スキル名・特技名を入力';
+
+    sortRow.style.display=
+      'none';
+  }
+
+
+  if(isPlan){
+
+    planTarget.value=
+      planState.target
+      || '';
+
+  }
 }
 
 
@@ -1271,11 +1941,56 @@ skillTab.addEventListener(
 );
 
 
-/* =========================
-   表示イベント
-========================= */
+planTab.addEventListener(
+  'click',
+  ()=>{
+
+    mode='plan';
+
+    updateTabs();
+
+    render();
+  }
+);
+
+
+buildPlanButton.addEventListener(
+  'click',
+  createPlan
+);
+
+
+planTarget.addEventListener(
+  'keydown',
+  event=>{
+
+    if(
+      event.key==='Enter'
+    ){
+
+      createPlan();
+
+    }
+
+  }
+);
+
+
+/* =====================================
+   描画
+===================================== */
 
 function render(){
+
+  if(
+    mode==='monster'
+  ){
+
+    renderMonsters();
+
+    return;
+  }
+
 
   if(
     mode==='skill'
@@ -1283,12 +1998,11 @@ function render(){
 
     renderSkills();
 
+    return;
   }
-  else{
 
-    renderMonsters();
 
-  }
+  renderPlan();
 }
 
 
@@ -1304,9 +2018,9 @@ sortSelect.addEventListener(
 );
 
 
-/* =========================
-   オンライン状態
-========================= */
+/* =====================================
+   ネット状態
+===================================== */
 
 function updateNet(){
 
@@ -1322,24 +2036,25 @@ addEventListener(
   updateNet
 );
 
-
 addEventListener(
   'offline',
   updateNet
 );
 
-
 updateNet();
 
 
-/* =========================
+/* =====================================
    データ読み込み
-========================= */
+===================================== */
+
+loadPlanState();
+
 
 Promise.all([
 
   fetch(
-    './data.json?v=8',
+    './data.json?v=9',
     {
       cache:'no-store'
     }
@@ -1347,20 +2062,17 @@ Promise.all([
   .then(r=>{
 
     if(!r.ok){
-
       throw new Error(
         'data.json'
       );
-
     }
 
     return r.json();
-
   }),
 
 
   fetch(
-    './skills.json?v=8',
+    './skills.json?v=9',
     {
       cache:'no-store'
     }
@@ -1368,15 +2080,12 @@ Promise.all([
   .then(r=>{
 
     if(!r.ok){
-
       throw new Error(
         'skills.json'
       );
-
     }
 
     return r.json();
-
   })
 
 ])
@@ -1392,19 +2101,33 @@ Promise.all([
     SKILL_DB=
       skillData;
 
+
+    monsterOptions.innerHTML=
+      DB.monsters
+        .map(
+          m=>`
+            <option
+              value="${esc(m.name)}"
+            ></option>
+          `
+        )
+        .join('');
+
+
     updateTabs();
 
     render();
 
   }
 )
-.catch(err=>{
+.catch(error=>{
 
-  console.error(err);
+  console.error(
+    error
+  );
 
   statusEl.textContent=
     'データ読み込みエラー';
-
 
   results.innerHTML=
     `
@@ -1413,13 +2136,12 @@ Promise.all([
         skills.json を確認してください。
       </div>
     `;
-
 });
 
 
-/* =========================
+/* =====================================
    Service Worker
-========================= */
+===================================== */
 
 if(
   'serviceWorker'
@@ -1429,7 +2151,7 @@ if(
   navigator
     .serviceWorker
     .register(
-      './sw.js?v=8'
+      './sw.js?v=9'
     )
     .catch(()=>{});
 
