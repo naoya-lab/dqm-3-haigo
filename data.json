@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T22:06:44.475724+00:00",
+  "generatedAt": "2026-10-05T23:08:06.376918+00:00",
   "source": {
     "name": "MetalKid/DQM3_Database",
     "url": "https://github.com/MetalKid/DQM3_Database",
@@ -45,6 +45,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [],
@@ -121,6 +128,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -157,6 +165,7 @@
       "rank": "G",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -193,6 +202,7 @@
       "rank": "G",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -253,6 +263,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -317,6 +334,13 @@
           ],
           "weather": "降水時",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -386,6 +410,13 @@
           ],
           "weather": "降水時",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -463,6 +494,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -499,6 +531,7 @@
       "rank": "G",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -543,6 +576,7 @@
       "rank": "G",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -595,6 +629,7 @@
       "rank": "F",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -656,6 +691,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -709,6 +745,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -744,6 +781,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -803,6 +847,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -892,6 +943,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -952,6 +1010,7 @@
       "rank": "F",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -999,6 +1058,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1059,6 +1119,7 @@
       "rank": "F",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1111,6 +1172,7 @@
       "rank": "F",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1147,6 +1209,13 @@
       "rank": "E",
       "family": "スライム系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1175,6 +1244,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1257,6 +1327,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1297,6 +1368,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1374,6 +1446,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1410,6 +1483,13 @@
       "rank": "E",
       "family": "スライム系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -1467,6 +1547,13 @@
           ],
           "weather": "降水時",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -1531,6 +1618,7 @@
       "rank": "E",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1722,6 +1810,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -1757,6 +1846,7 @@
       "rank": "E",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1809,6 +1899,7 @@
       "rank": "D",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1845,6 +1936,7 @@
       "rank": "D",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1898,6 +1990,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1936,6 +2029,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -1982,6 +2076,7 @@
       "rank": "D",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2041,6 +2136,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2077,6 +2173,7 @@
       "rank": "D",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2113,6 +2210,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2176,6 +2274,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2229,6 +2328,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2277,6 +2377,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2305,6 +2412,7 @@
       "rank": "C",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2343,6 +2451,13 @@
       "rank": "C",
       "family": "スライム系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2399,6 +2514,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2448,6 +2564,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2486,6 +2603,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -2604,6 +2728,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2632,6 +2763,7 @@
       "rank": "C",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2668,6 +2800,7 @@
       "rank": "C",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2704,6 +2837,7 @@
       "rank": "B",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2742,6 +2876,7 @@
       "rank": "B",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2772,6 +2907,7 @@
       "rank": "B",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2800,6 +2936,13 @@
       "rank": "B",
       "family": "スライム系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -2836,6 +2979,7 @@
       "rank": "B",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2884,6 +3028,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2930,6 +3075,7 @@
       "rank": "B",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -2969,6 +3115,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3061,6 +3208,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3105,6 +3253,7 @@
       "rank": "A",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3133,6 +3282,7 @@
       "rank": "A",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3169,6 +3319,7 @@
       "rank": "A",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3205,6 +3356,7 @@
       "rank": "A",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3233,6 +3385,7 @@
       "rank": "S",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3269,6 +3422,7 @@
       "rank": "G",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3322,6 +3476,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3405,6 +3560,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3441,6 +3603,7 @@
       "rank": "G",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3532,6 +3695,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3596,6 +3760,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3666,6 +3831,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3702,6 +3874,7 @@
       "rank": "G",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3746,6 +3919,7 @@
       "rank": "G",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3823,6 +3997,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -3883,6 +4064,7 @@
       "rank": "F",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3949,6 +4131,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -3987,6 +4170,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -4033,6 +4223,7 @@
       "rank": "F",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -4052,6 +4243,7 @@
       "rank": "F",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4096,6 +4288,7 @@
       "rank": "F",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4148,6 +4341,7 @@
       "rank": "F",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4224,6 +4418,7 @@
       "rank": "F",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4243,6 +4438,7 @@
       "rank": "E",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4320,6 +4516,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4380,6 +4577,7 @@
       "rank": "E",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4416,6 +4614,13 @@
       "rank": "E",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -4462,6 +4667,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": true
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -4512,6 +4724,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4598,6 +4811,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4646,6 +4860,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4727,6 +4942,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4795,6 +5011,7 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4863,6 +5080,7 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4899,6 +5117,7 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -4927,6 +5146,13 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -4963,6 +5189,7 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5019,6 +5246,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5047,6 +5275,7 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5103,6 +5332,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5139,6 +5369,7 @@
       "rank": "D",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5175,6 +5406,13 @@
       "rank": "C",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -5201,6 +5439,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -5231,6 +5476,7 @@
       "rank": "C",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5287,6 +5533,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5331,6 +5584,7 @@
       "rank": "C",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5359,6 +5613,7 @@
       "rank": "C",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5398,6 +5653,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5434,6 +5696,7 @@
       "rank": "C",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5470,6 +5733,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5514,6 +5778,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5550,6 +5815,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5578,6 +5844,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5614,6 +5881,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5650,6 +5918,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5688,6 +5957,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5707,6 +5977,13 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5743,6 +6020,7 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5771,6 +6049,13 @@
       "rank": "B",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5807,6 +6092,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5837,6 +6123,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5865,6 +6152,13 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -5895,6 +6189,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5923,6 +6218,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5951,6 +6247,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -5979,6 +6276,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6007,6 +6305,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6043,6 +6342,7 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6073,6 +6373,13 @@
       "rank": "A",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6101,6 +6408,7 @@
       "rank": "S",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6129,6 +6437,7 @@
       "rank": "S",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6157,6 +6466,7 @@
       "rank": "S",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6185,6 +6495,7 @@
       "rank": "S",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6223,6 +6534,7 @@
       "rank": "S",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6259,6 +6571,7 @@
       "rank": "X",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6289,6 +6602,7 @@
       "rank": "X",
       "family": "ドラゴン系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6344,6 +6658,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6408,6 +6723,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6452,6 +6774,7 @@
       "rank": "G",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6513,6 +6836,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6566,6 +6890,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6610,6 +6941,7 @@
       "rank": "G",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6687,6 +7019,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6732,6 +7071,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6776,6 +7116,7 @@
       "rank": "G",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -6835,6 +7176,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -6906,6 +7254,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -6958,6 +7313,7 @@
       "rank": "F",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7018,6 +7374,7 @@
       "rank": "F",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7063,6 +7420,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7126,6 +7484,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7183,6 +7548,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -7249,6 +7621,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7302,6 +7675,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7362,6 +7736,7 @@
       "rank": "F",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7406,6 +7781,7 @@
       "rank": "F",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7441,6 +7817,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -7479,6 +7862,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7539,6 +7923,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7567,6 +7958,13 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7627,6 +8025,7 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7732,6 +8131,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7768,6 +8168,7 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7820,6 +8221,7 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7848,6 +8250,13 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -7884,6 +8293,7 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -7903,6 +8313,7 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7931,6 +8342,7 @@
       "rank": "E",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": []
     },
@@ -7950,6 +8362,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -7978,6 +8391,7 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8026,6 +8440,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8054,6 +8469,7 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8073,6 +8489,7 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": []
     },
@@ -8103,6 +8520,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8139,6 +8557,7 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8194,6 +8613,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8222,6 +8642,7 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8258,6 +8679,13 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8314,6 +8742,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -8350,6 +8785,7 @@
       "rank": "D",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8386,6 +8822,7 @@
       "rank": "C",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8442,6 +8879,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8525,6 +8963,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8564,6 +9003,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8625,6 +9065,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8669,6 +9110,7 @@
       "rank": "C",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8706,6 +9148,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8742,6 +9185,7 @@
       "rank": "C",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8778,6 +9222,13 @@
       "rank": "C",
       "family": "自然系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -8809,6 +9260,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8836,6 +9288,7 @@
       "rank": "B",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8872,6 +9325,7 @@
       "rank": "B",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8914,6 +9368,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8950,6 +9405,7 @@
       "rank": "B",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -8992,6 +9448,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -9055,6 +9518,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9091,6 +9555,7 @@
       "rank": "B",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9133,6 +9598,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9178,6 +9644,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9208,6 +9675,13 @@
       "rank": "B",
       "family": "自然系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9262,6 +9736,7 @@
       "rank": "A",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9290,6 +9765,13 @@
       "rank": "A",
       "family": "自然系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9330,6 +9812,7 @@
       "rank": "A",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9366,6 +9849,7 @@
       "rank": "A",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9394,6 +9878,7 @@
       "rank": "S",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -9432,6 +9917,7 @@
       "rank": "S",
       "family": "自然系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9485,6 +9971,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9553,6 +10040,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -9649,6 +10143,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9709,6 +10204,7 @@
       "rank": "G",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9753,6 +10249,7 @@
       "rank": "G",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9797,6 +10294,7 @@
       "rank": "G",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -9853,6 +10351,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -9896,6 +10401,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -9983,6 +10495,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10034,6 +10553,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10125,6 +10645,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10161,6 +10688,7 @@
       "rank": "G",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10213,6 +10741,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10267,6 +10796,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10353,6 +10883,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -10417,6 +10954,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10461,6 +10999,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10497,6 +11036,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10533,6 +11073,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10561,6 +11102,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10605,6 +11147,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10641,6 +11184,7 @@
       "rank": "F",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10677,6 +11221,7 @@
       "rank": "E",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10713,6 +11258,7 @@
       "rank": "E",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10748,6 +11294,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -10798,6 +11351,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10870,6 +11424,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10931,6 +11486,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10977,6 +11533,7 @@
       "rank": "E",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -10996,6 +11553,7 @@
       "rank": "E",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11040,6 +11598,7 @@
       "rank": "E",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11118,6 +11677,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11188,6 +11748,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11215,6 +11782,7 @@
       "rank": "E",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11234,6 +11802,13 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11282,6 +11857,13 @@
           "miniBoss": true
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11319,6 +11901,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11346,6 +11929,7 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11392,6 +11976,13 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11420,6 +12011,7 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11465,6 +12057,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11520,6 +12113,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11584,6 +12178,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11628,6 +12223,13 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11672,6 +12274,13 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11700,6 +12309,13 @@
       "rank": "D",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11736,6 +12352,7 @@
       "rank": "C",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11763,6 +12380,13 @@
       "rank": "C",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -11819,6 +12443,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11864,6 +12489,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11900,6 +12526,7 @@
       "rank": "C",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11948,6 +12575,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -11995,6 +12623,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12045,6 +12674,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12073,6 +12703,7 @@
       "rank": "C",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12117,6 +12748,13 @@
       "rank": "C",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12155,6 +12793,7 @@
       "rank": "B",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12194,6 +12833,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12252,6 +12892,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12296,6 +12937,13 @@
       "rank": "B",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12332,6 +12980,7 @@
       "rank": "B",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": []
     },
@@ -12342,6 +12991,13 @@
       "rank": "B",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": []
     },
@@ -12352,6 +13008,7 @@
       "rank": "B",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12392,6 +13049,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -12422,6 +13080,7 @@
       "rank": "B",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12483,6 +13142,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12527,6 +13187,7 @@
       "rank": "A",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12555,6 +13216,13 @@
       "rank": "A",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -12574,6 +13242,7 @@
       "rank": "A",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12614,6 +13283,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12642,6 +13312,7 @@
       "rank": "A",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12661,6 +13332,7 @@
       "rank": "A",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12691,6 +13363,7 @@
       "rank": "A",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12719,6 +13392,7 @@
       "rank": "S",
       "family": "魔獣系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -12812,6 +13486,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12885,6 +13566,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -12929,6 +13617,7 @@
       "rank": "G",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -12981,6 +13670,7 @@
       "rank": "G",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13034,6 +13724,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13104,6 +13795,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13156,6 +13854,7 @@
       "rank": "G",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13211,6 +13910,13 @@
           ],
           "weather": "降水時",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -13294,6 +14000,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -13392,6 +14105,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13428,6 +14148,7 @@
       "rank": "G",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13489,6 +14210,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -13533,6 +14261,7 @@
       "rank": "F",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13569,6 +14298,7 @@
       "rank": "F",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13622,6 +14352,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13690,6 +14421,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13734,6 +14466,7 @@
       "rank": "F",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13769,6 +14502,7 @@
       "rank": "F",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -13822,6 +14556,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14043,6 +14778,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14125,6 +14861,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14185,6 +14922,7 @@
       "rank": "F",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14229,6 +14967,7 @@
       "rank": "E",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14283,6 +15022,7 @@
       "rank": "E",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14311,6 +15051,7 @@
       "rank": "E",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14397,6 +15138,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14441,6 +15189,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14469,6 +15218,7 @@
       "rank": "E",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -14499,6 +15249,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14539,6 +15290,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14578,6 +15330,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14659,6 +15412,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -14722,6 +15482,13 @@
           ],
           "weather": "降水時",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -14796,6 +15563,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14848,6 +15616,7 @@
       "rank": "D",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14941,6 +15710,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -14977,6 +15747,7 @@
       "rank": "D",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15023,6 +15794,7 @@
       "rank": "D",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15090,6 +15862,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15180,6 +15953,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15224,6 +15998,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15259,6 +16034,13 @@
           ],
           "weather": "降水時",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -15396,6 +16178,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -15434,6 +16223,7 @@
       "rank": "D",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15524,6 +16314,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15594,6 +16385,7 @@
       "rank": "D",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15673,6 +16465,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15713,6 +16506,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15732,6 +16526,7 @@
       "rank": "C",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15772,6 +16567,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15799,6 +16595,7 @@
       "rank": "C",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15835,6 +16632,7 @@
       "rank": "C",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15871,6 +16669,7 @@
       "rank": "C",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15915,6 +16714,7 @@
       "rank": "C",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -15963,6 +16763,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -15993,6 +16794,7 @@
       "rank": "C",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16038,6 +16840,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16065,6 +16874,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16093,6 +16903,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -16131,6 +16942,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16167,6 +16979,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -16205,6 +17018,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16233,6 +17047,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16278,6 +17093,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16305,6 +17121,13 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16349,6 +17172,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16385,6 +17209,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16413,6 +17238,7 @@
       "rank": "B",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16449,6 +17275,7 @@
       "rank": "A",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16477,6 +17304,13 @@
       "rank": "A",
       "family": "物質系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16505,6 +17339,13 @@
       "rank": "A",
       "family": "物質系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16535,6 +17376,13 @@
       "rank": "A",
       "family": "物質系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16565,6 +17413,7 @@
       "rank": "S",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16595,6 +17444,7 @@
       "rank": "G",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16668,6 +17518,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -16767,6 +17624,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -16888,6 +17752,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -16932,6 +17803,7 @@
       "rank": "G",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -16968,6 +17840,7 @@
       "rank": "G",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17044,6 +17917,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -17145,6 +18025,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17222,6 +18109,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17273,6 +18161,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17309,6 +18204,7 @@
       "rank": "G",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17353,6 +18249,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17397,6 +18294,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17456,6 +18354,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17492,6 +18391,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17528,6 +18428,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17576,6 +18477,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17604,6 +18512,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17648,6 +18557,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17731,6 +18641,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17791,6 +18702,7 @@
       "rank": "F",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17853,6 +18765,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -17897,6 +18810,13 @@
       "rank": "E",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -17958,6 +18878,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18032,6 +18953,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18096,6 +19018,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18172,6 +19095,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18241,6 +19165,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18300,6 +19225,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18361,6 +19287,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -18440,6 +19373,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18575,6 +19509,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -18619,6 +19560,13 @@
       "rank": "D",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -18675,6 +19623,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -18719,6 +19674,7 @@
       "rank": "D",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18763,6 +19719,7 @@
       "rank": "D",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -18802,6 +19759,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18857,6 +19815,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18885,6 +19844,7 @@
       "rank": "D",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18929,6 +19889,7 @@
       "rank": "D",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -18968,6 +19929,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19004,6 +19966,7 @@
       "rank": "D",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19056,6 +20019,7 @@
       "rank": "C",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19110,6 +20074,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -19176,6 +20147,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19228,6 +20200,13 @@
       "rank": "C",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -19266,6 +20245,7 @@
       "rank": "C",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19293,6 +20273,13 @@
       "rank": "C",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -19337,6 +20324,7 @@
       "rank": "C",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19418,6 +20406,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19446,6 +20435,13 @@
       "rank": "C",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -19486,6 +20482,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19524,6 +20521,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -19566,6 +20570,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19614,6 +20619,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -19658,6 +20670,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19688,6 +20701,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19716,6 +20730,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19760,6 +20775,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19812,6 +20828,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19862,6 +20879,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19900,6 +20918,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -19936,6 +20955,7 @@
       "rank": "B",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -19955,6 +20975,13 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -19985,6 +21012,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20015,6 +21043,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20053,6 +21082,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20083,6 +21113,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20113,6 +21144,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20141,6 +21173,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20169,6 +21202,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20199,6 +21233,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20227,6 +21262,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20257,6 +21293,7 @@
       "rank": "A",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20287,6 +21324,7 @@
       "rank": "S",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20325,6 +21363,7 @@
       "rank": "S",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20384,6 +21423,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -20453,6 +21499,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -20489,6 +21542,7 @@
       "rank": "G",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20564,6 +21618,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -20615,6 +21676,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -20734,6 +21802,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20803,6 +21872,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -20839,6 +21915,7 @@
       "rank": "G",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20884,6 +21961,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -20951,6 +22029,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -20987,6 +22072,7 @@
       "rank": "F",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21023,6 +22109,7 @@
       "rank": "F",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21107,6 +22194,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -21224,6 +22318,13 @@
           "miniBoss": false
         }
       ],
+      "eggs": [
+        {
+          "name": "白",
+          "identifier": "white",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -21268,6 +22369,7 @@
       "rank": "F",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21321,6 +22423,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21357,6 +22460,7 @@
       "rank": "F",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21421,6 +22525,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21474,6 +22579,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21518,6 +22624,7 @@
       "rank": "F",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21553,6 +22660,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -21620,6 +22734,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21672,6 +22787,7 @@
       "rank": "E",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21724,6 +22840,13 @@
       "rank": "E",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -21769,6 +22892,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21805,6 +22929,7 @@
       "rank": "E",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": []
     },
@@ -21847,6 +22972,13 @@
           ],
           "weather": "晴れ",
           "miniBoss": false
+        }
+      ],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
         }
       ],
       "recipes": [
@@ -21921,6 +23053,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -21979,6 +23112,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22023,6 +23157,13 @@
       "rank": "E",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -22054,6 +23195,7 @@
           "miniBoss": true
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22110,6 +23252,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22197,6 +23340,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22265,6 +23409,7 @@
       "rank": "D",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22318,6 +23463,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22346,6 +23492,7 @@
       "rank": "D",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22374,6 +23521,7 @@
       "rank": "D",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22437,6 +23585,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22485,6 +23634,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22565,6 +23715,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22601,6 +23752,7 @@
       "rank": "D",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": []
     },
@@ -22611,6 +23763,7 @@
       "rank": "D",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22657,6 +23810,13 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -22684,6 +23844,7 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22723,6 +23884,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22767,6 +23929,7 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22786,6 +23949,13 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -22842,6 +24012,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22887,6 +24058,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22914,6 +24086,7 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22950,6 +24123,7 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -22994,6 +24168,7 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23030,6 +24205,7 @@
       "rank": "C",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23066,6 +24242,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23114,6 +24291,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23142,6 +24320,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23178,6 +24357,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23214,6 +24394,13 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -23241,6 +24428,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23297,6 +24485,7 @@
           "miniBoss": false
         }
       ],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23333,6 +24522,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23361,6 +24551,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23413,6 +24604,7 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23441,6 +24633,13 @@
       "rank": "B",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -23469,6 +24668,7 @@
       "rank": "A",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23499,6 +24699,7 @@
       "rank": "A",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23527,6 +24728,7 @@
       "rank": "A",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23555,6 +24757,7 @@
       "rank": "A",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23583,6 +24786,7 @@
       "rank": "S",
       "family": "ゾンビ系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23613,6 +24817,7 @@
       "rank": "C",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -23632,6 +24837,7 @@
       "rank": "A",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23660,6 +24866,13 @@
       "rank": "A",
       "family": "？？？系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -23688,6 +24901,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23718,6 +24932,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -23748,6 +24963,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23786,6 +25002,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23816,6 +25033,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23846,6 +25064,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23874,6 +25093,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -23902,6 +25122,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -23932,6 +25153,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -23964,6 +25186,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -23996,6 +25219,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -24024,6 +25248,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -24054,6 +25279,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": []
     },
@@ -24064,6 +25290,13 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -24092,6 +25325,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -24124,6 +25358,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -24154,6 +25389,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -24192,6 +25428,13 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "虹",
+          "identifier": "rainbow",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [
         {
           "type": "配合",
@@ -24230,6 +25473,7 @@
       "rank": "S",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -24266,6 +25510,7 @@
       "rank": "X",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -24287,6 +25532,7 @@
       "rank": "X",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "配合",
@@ -24317,6 +25563,7 @@
       "rank": "X",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -24338,6 +25585,7 @@
       "rank": "X",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -24359,6 +25607,7 @@
       "rank": "X",
       "family": "？？？系",
       "locations": [],
+      "eggs": [],
       "recipes": [
         {
           "type": "4体配合",
@@ -24391,6 +25640,7 @@
       "rank": "G",
       "family": "スライム系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
@@ -24410,6 +25660,13 @@
       "rank": "E",
       "family": "悪魔系",
       "locations": [],
+      "eggs": [
+        {
+          "name": "銀",
+          "identifier": "silver",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
@@ -24429,6 +25686,7 @@
       "rank": "D",
       "family": "物質系",
       "locations": [],
+      "eggs": [],
       "recipes": [],
       "uses": [
         {
