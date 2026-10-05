@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""Build data.json for the DQM3 synthesis search app.
-
-Source:
-  MetalKid/DQM3_Database (MIT)
-  https://github.com/MetalKid/DQM3_Database
-"""
 
 from __future__ import annotations
 
@@ -17,18 +11,26 @@ from typing import Any
 import requests
 
 
-BASE = "https://raw.githubusercontent.com/MetalKid/DQM3_Database/main/data/json/raw"
+BASE = (
+    "https://raw.githubusercontent.com/"
+    "MetalKid/DQM3_Database/main/data/json/raw"
+)
 
 FILES = {
     "monsters": f"{BASE}/Monster.json",
     "families": f"{BASE}/Family.json",
     "ranks": f"{BASE}/Rank.json",
     "syntheses": f"{BASE}/MonsterSynthesis.json",
+
+    # 生息地
+    "monster_locations": f"{BASE}/MonsterLocation.json",
+    "locations": f"{BASE}/Location.json",
+    "seasons": f"{BASE}/Season.json",
+    "weather": f"{BASE}/Weather.json",
 }
 
 OUT = Path("data.json")
 
-# DQM3の図鑑登録モンスター数
 EXPECTED_COUNT = 526
 
 
@@ -36,20 +38,20 @@ SESSION = requests.Session()
 
 SESSION.headers.update(
     {
-        "User-Agent": "naoya-lab-dqm3-data-builder/1.0",
+        "User-Agent": "naoya-lab-dqm3-data-builder/2.0",
         "Accept": "application/json,text/plain,*/*",
     }
 )
 
 
 def fetch_json(url: str, attempts: int = 4) -> Any:
-    """JSONを取得。失敗時は数回リトライする。"""
 
     last_error = None
 
     for attempt in range(attempts):
 
         try:
+
             response = SESSION.get(
                 url,
                 timeout=30,
@@ -80,25 +82,25 @@ def parent_label(
     families_by_id,
     ranks_by_id,
 ):
-    """親モンスターIDを日本語名に変換する。"""
 
     if monster_id is None:
         return ""
 
-    monster = monsters_by_id.get(monster_id)
+    monster = monsters_by_id.get(
+        monster_id
+    )
 
     if not monster:
         return f"ID:{monster_id}"
 
     japanese_name = (
-        monster.get("JapaneseName") or ""
+        monster.get("JapaneseName")
+        or ""
     ).strip()
 
-    # 通常モンスターなら日本語名
     if japanese_name:
         return japanese_name
 
-    # ○○系、○ランクなどの汎用親
     family = families_by_id.get(
         monster.get("FamilyId"),
         {},
@@ -116,12 +118,16 @@ def parent_label(
     ).strip()
 
     rank_name = (
-        rank.get("Name") or ""
+        rank.get("Name")
+        or ""
     ).strip()
 
     if family_name:
 
-        if rank_name and rank_name != "Any":
+        if (
+            rank_name
+            and rank_name != "Any"
+        ):
 
             return (
                 f"{family_name}系"
@@ -138,63 +144,91 @@ def parent_label(
 
 def main():
 
-    print("DQM3データ取得開始")
-
-    # -----------------------------
-    # データ取得
-    # -----------------------------
+    print(
+        "DQM3データ取得開始"
+    )
 
     source = {
         name: fetch_json(url)
-        for name, url in FILES.items()
+        for name, url
+        in FILES.items()
     }
 
-    all_monsters = source["monsters"]
 
-    syntheses = source["syntheses"]
+    all_monsters = (
+        source["monsters"]
+    )
+
+    syntheses = (
+        source["syntheses"]
+    )
+
 
     monsters_by_id = {
-        int(monster["MonsterId"]): monster
-        for monster in all_monsters
+        int(m["MonsterId"]): m
+        for m in all_monsters
     }
 
     families_by_id = {
-        int(family["FamilyId"]): family
-        for family in source["families"]
+        int(x["FamilyId"]): x
+        for x in source["families"]
     }
 
     ranks_by_id = {
-        int(rank["RankId"]): rank
-        for rank in source["ranks"]
+        int(x["RankId"]): x
+        for x in source["ranks"]
     }
 
-    # -----------------------------
-    # 実モンスターだけ抽出
-    # -----------------------------
+
+    location_by_id = {
+        int(x["LocationId"]): x
+        for x in source["locations"]
+    }
+
+    season_by_id = {
+        int(x["SeasonId"]): x
+        for x in source["seasons"]
+    }
+
+    weather_by_id = {
+        int(x["WeatherId"]): x
+        for x in source["weather"]
+    }
+
 
     real_monsters = [
 
         monster
 
-        for monster in all_monsters
+        for monster
+        in all_monsters
 
         if (
-            monster.get("Number") is not None
+            monster.get("Number")
+            is not None
+
             and
+
             (
-                monster.get("JapaneseName")
+                monster.get(
+                    "JapaneseName"
+                )
                 or ""
             ).strip()
         )
-
     ]
+
 
     print(
         "取得モンスター数:",
-        len(real_monsters),
+        len(real_monsters)
     )
 
-    if len(real_monsters) != EXPECTED_COUNT:
+
+    if (
+        len(real_monsters)
+        != EXPECTED_COUNT
+    ):
 
         raise RuntimeError(
             "モンスター数が想定と違います。"
@@ -202,13 +236,15 @@ def main():
             f" actual={len(real_monsters)}"
         )
 
-    # -----------------------------
-    # モンスター基本データ
-    # -----------------------------
 
     records_by_id = {}
 
+
     for monster in real_monsters:
+
+        monster_id = int(
+            monster["MonsterId"]
+        )
 
         family = families_by_id.get(
             monster.get("FamilyId"),
@@ -220,25 +256,28 @@ def main():
             {},
         )
 
-        monster_id = int(
-            monster["MonsterId"]
-        )
-
         family_name = (
             family.get("JapaneseName")
             or family.get("Name")
             or ""
         ).strip()
 
-        records_by_id[monster_id] = {
+
+        records_by_id[
+            monster_id
+        ] = {
 
             "name":
-                monster["JapaneseName"].strip(),
+                monster[
+                    "JapaneseName"
+                ].strip(),
 
             "reading": "",
 
             "no":
-                int(monster["Number"]),
+                int(
+                    monster["Number"]
+                ),
 
             "rank":
                 (
@@ -249,86 +288,288 @@ def main():
             "family":
                 f"{family_name}系",
 
+            "locations": [],
+
             "recipes": [],
 
             "uses": [],
-
         }
 
-    # -----------------------------
-    # 配合データ作成
-    # -----------------------------
+
+    # =================================
+    # 生息地
+    # =================================
+
+    location_groups = {}
+
+
+    def weather_name(
+        weather
+    ):
+
+        identifier = (
+            weather.get(
+                "Identifier"
+            )
+            or ""
+        )
+
+        if identifier == "sun":
+            return "晴れ"
+
+        if (
+            identifier
+            == "precipitation"
+        ):
+            return "降水時"
+
+        return (
+            weather.get("Name")
+            or ""
+        )
+
+
+    for item in source[
+        "monster_locations"
+    ]:
+
+        monster_id = int(
+            item["MonsterId"]
+        )
+
+        if (
+            monster_id
+            not in records_by_id
+        ):
+            continue
+
+
+        location = (
+            location_by_id.get(
+                int(
+                    item["LocationId"]
+                ),
+                {},
+            )
+        )
+
+        season = (
+            season_by_id.get(
+                int(
+                    item["SeasonId"]
+                ),
+                {},
+            )
+        )
+
+        weather = (
+            weather_by_id.get(
+                int(
+                    item["WeatherId"]
+                ),
+                {},
+            )
+        )
+
+
+        location_name = (
+            location.get(
+                "JapaneseName"
+            )
+            or location.get("Name")
+            or ""
+        ).strip()
+
+        season_name = (
+            season.get(
+                "JapaneseName"
+            )
+            or season.get("Name")
+            or ""
+        ).strip()
+
+        weather_jp = (
+            weather_name(
+                weather
+            )
+        )
+
+
+        key = (
+            monster_id,
+            location_name,
+            weather_jp,
+            bool(
+                item.get(
+                    "IsMiniBoss"
+                )
+            ),
+        )
+
+
+        if (
+            key
+            not in location_groups
+        ):
+
+            location_groups[
+                key
+            ] = {
+                "name":
+                    location_name,
+
+                "seasons": [],
+
+                "weather":
+                    weather_jp,
+
+                "miniBoss":
+                    bool(
+                        item.get(
+                            "IsMiniBoss"
+                        )
+                    ),
+            }
+
+
+        if (
+            season_name
+            and season_name
+            not in
+            location_groups[
+                key
+            ]["seasons"]
+        ):
+
+            location_groups[
+                key
+            ]["seasons"].append(
+                season_name
+            )
+
+
+    season_order = {
+        "春": 0,
+        "夏": 1,
+        "秋": 2,
+        "冬": 3,
+    }
+
+
+    for key, location_data in (
+        location_groups.items()
+    ):
+
+        monster_id = key[0]
+
+        location_data[
+            "seasons"
+        ].sort(
+            key=lambda value:
+                season_order.get(
+                    value,
+                    99,
+                )
+        )
+
+        records_by_id[
+            monster_id
+        ]["locations"].append(
+            location_data
+        )
+
+
+    for record in (
+        records_by_id.values()
+    ):
+
+        record[
+            "locations"
+        ].sort(
+            key=lambda x:
+                x["name"]
+        )
+
+
+    # =================================
+    # 配合
+    # =================================
 
     recipe_parent_ids = {}
 
     grandparent_keys = (
-
         "MonsterGrandParent1AId",
-
         "MonsterGrandParent1BId",
-
         "MonsterGrandParent2AId",
-
         "MonsterGrandParent2BId",
-
     )
+
 
     for synthesis in syntheses:
 
-        result_id = synthesis.get(
-            "MonsterResultId"
+        result_id = (
+            synthesis.get(
+                "MonsterResultId"
+            )
         )
 
-        if result_id not in records_by_id:
+        if (
+            result_id
+            not in records_by_id
+        ):
             continue
 
-        # 4体配合
+
         grandparent_ids = [
 
             synthesis.get(key)
 
-            for key in grandparent_keys
+            for key
+            in grandparent_keys
 
-            if synthesis.get(key) is not None
-
+            if (
+                synthesis.get(key)
+                is not None
+            )
         ]
+
 
         if grandparent_ids:
 
             parent_ids = [
-                int(value)
-                for value in grandparent_ids
+                int(x)
+                for x
+                in grandparent_ids
             ]
 
-            recipe_type = "4体配合"
+            recipe_type = (
+                "4体配合"
+            )
 
         else:
 
-            parent1 = synthesis.get(
-                "MonsterParent1Id"
-            )
-
-            parent2 = synthesis.get(
-                "MonsterParent2Id"
-            )
-
             parent_ids = [
 
-                int(value)
+                int(x)
 
-                for value in (
-                    parent1,
-                    parent2,
+                for x in (
+                    synthesis.get(
+                        "MonsterParent1Id"
+                    ),
+                    synthesis.get(
+                        "MonsterParent2Id"
+                    ),
                 )
 
-                if value is not None
-
+                if x is not None
             ]
 
             recipe_type = "配合"
 
+
         if not parent_ids:
             continue
+
 
         parent_names = [
 
@@ -339,18 +580,22 @@ def main():
                 ranks_by_id,
             )
 
-            for parent_id in parent_ids
-
+            for parent_id
+            in parent_ids
         ]
+
 
         parent_names = [
             name
-            for name in parent_names
+            for name
+            in parent_names
             if name
         ]
 
+
         if not parent_names:
             continue
+
 
         result_name = (
             records_by_id[
@@ -358,15 +603,18 @@ def main():
             ]["name"]
         )
 
+
         recipe = {
+            "type":
+                recipe_type,
 
-            "type": recipe_type,
+            "parents":
+                parent_names,
 
-            "parents": parent_names,
-
-            "result": result_name,
-
+            "result":
+                result_name,
         }
+
 
         if (
             recipe
@@ -382,11 +630,13 @@ def main():
                 recipe
             )
 
+
         synthesis_id = int(
             synthesis[
                 "MonsterSynthesisId"
             ]
         )
+
 
         recipe_parent_ids[
             (
@@ -395,18 +645,25 @@ def main():
             )
         ] = parent_ids
 
-    # -----------------------------
-    # 逆引き配合データ
-    # -----------------------------
+
+    # =================================
+    # 逆引き
+    # =================================
 
     for synthesis in syntheses:
 
-        result_id = synthesis.get(
-            "MonsterResultId"
+        result_id = (
+            synthesis.get(
+                "MonsterResultId"
+            )
         )
 
-        if result_id not in records_by_id:
+        if (
+            result_id
+            not in records_by_id
+        ):
             continue
+
 
         synthesis_id = int(
             synthesis[
@@ -420,11 +677,14 @@ def main():
         )
 
         parent_ids = (
-            recipe_parent_ids.get(key)
+            recipe_parent_ids.get(
+                key
+            )
         )
 
         if not parent_ids:
             continue
+
 
         parent_labels = [
 
@@ -435,9 +695,10 @@ def main():
                 ranks_by_id,
             )
 
-            for parent_id in parent_ids
-
+            for parent_id
+            in parent_ids
         ]
+
 
         is_quadruple = any(
 
@@ -446,8 +707,8 @@ def main():
 
             for key
             in grandparent_keys
-
         )
+
 
         use_type = (
             "4体配合"
@@ -455,20 +716,24 @@ def main():
             else "配合"
         )
 
+
         result_name = (
             records_by_id[
                 int(result_id)
             ]["name"]
         )
 
-        for index, parent_id in enumerate(
-            parent_ids
+
+        for index, parent_id in (
+            enumerate(parent_ids)
         ):
 
-            # ○○系などは
-            # 個別モンスターではないので除外
-            if parent_id not in records_by_id:
+            if (
+                parent_id
+                not in records_by_id
+            ):
                 continue
+
 
             other_parents = [
 
@@ -483,12 +748,12 @@ def main():
                     i != index
                     and label
                 )
-
             ]
 
-            use = {
 
-                "type": use_type,
+            use = {
+                "type":
+                    use_type,
 
                 "source":
                     records_by_id[
@@ -500,8 +765,8 @@ def main():
 
                 "result":
                     result_name,
-
             }
+
 
             if (
                 use
@@ -517,24 +782,15 @@ def main():
                     use
                 )
 
-    # -----------------------------
-    # 図鑑番号順に並べる
-    # -----------------------------
 
     monsters = sorted(
-
         records_by_id.values(),
-
-        key=lambda monster: (
-            monster["no"],
-            monster["name"],
+        key=lambda m: (
+            m["no"],
+            m["name"],
         ),
-
     )
 
-    # -----------------------------
-    # data.json作成
-    # -----------------------------
 
     payload = {
 
@@ -544,7 +800,6 @@ def main():
             ).isoformat(),
 
         "source": {
-
             "name":
                 "MetalKid/DQM3_Database",
 
@@ -553,42 +808,23 @@ def main():
 
             "license":
                 "MIT",
-
         },
 
         "monsters":
             monsters,
-
     }
 
-    OUT.write_text(
 
+    OUT.write_text(
         json.dumps(
             payload,
             ensure_ascii=False,
             indent=2,
         )
         + "\n",
-
         encoding="utf-8",
-
     )
 
-    recipe_count = sum(
-
-        len(monster["recipes"])
-
-        for monster in monsters
-
-    )
-
-    use_count = sum(
-
-        len(monster["uses"])
-
-        for monster in monsters
-
-    )
 
     print(
         "data.json 作成完了"
@@ -599,11 +835,18 @@ def main():
     )
 
     print(
-        f"recipes={recipe_count}"
+        "locations="
+        f"{sum(len(x['locations']) for x in monsters)}"
     )
 
     print(
-        f"uses={use_count}"
+        "recipes="
+        f"{sum(len(x['recipes']) for x in monsters)}"
+    )
+
+    print(
+        "uses="
+        f"{sum(len(x['uses']) for x in monsters)}"
     )
 
 
