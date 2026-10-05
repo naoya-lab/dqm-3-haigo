@@ -1,67 +1,555 @@
+:root{
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Sans",
+    "Yu Gothic",
+    sans-serif;
 
-:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;background:#f4f5f7;color:#111827}
-*{box-sizing:border-box} body{margin:0}
-header{position:sticky;top:0;z-index:10;background:#111827;color:white;padding:14px}
-.headrow{display:flex;justify-content:space-between;align-items:center}
-h1{font-size:20px;margin:0 0 10px}
-#net{font-size:12px;background:#374151;padding:4px 8px;border-radius:999px}
-input{width:100%;font-size:18px;padding:12px;border:0;border-radius:12px;outline:none}
-main{padding:14px;max-width:760px;margin:auto}
-.status{font-size:13px;color:#6b7280;margin-bottom:12px}
-.card{background:#fff;border-radius:15px;padding:14px;margin-bottom:12px;box-shadow:0 1px 4px #0001}
-.name{font-size:22px;font-weight:800}
-.name a{color:#111827;text-decoration:none}.name a:after{content:" 🔎";font-size:.8em}
-.meta{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0 13px}
-.badge{font-size:12px;background:#eef2ff;padding:5px 8px;border-radius:999px}
-h2{font-size:15px;margin:16px 0 7px}
-.route{padding:9px 0;border-top:1px solid #eee;line-height:1.5}
-.route:first-of-type{border-top:0}
-.rtype{display:inline-block;font-size:11px;background:#f3f4f6;border-radius:999px;padding:3px 7px;margin-right:5px;color:#4b5563}
-.arrow{font-weight:800;color:#4f46e5}
-.empty{text-align:center;color:#6b7280;padding:30px}
-.small{font-size:12px;color:#6b7280}
-button.jump{border:0;background:none;color:#4338ca;text-decoration:underline;padding:0;font:inherit}
-footer{text-align:center;color:#6b7280;font-size:11px;padding:20px 14px 40px}
+  background:#f4f5f7;
+
+  color:#111827;
+}
+
+
+*{
+  box-sizing:border-box;
+}
+
+
+body{
+  margin:0;
+}
+
+
+header{
+  position:sticky;
+
+  top:0;
+
+  z-index:10;
+
+  background:#111827;
+
+  color:white;
+
+  padding:14px;
+}
+
+
+.headrow{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:center;
+}
+
+
+h1{
+  font-size:20px;
+
+  margin:
+    0
+    0
+    10px;
+}
+
+
+#net{
+  font-size:12px;
+
+  background:#374151;
+
+  padding:
+    4px
+    8px;
+
+  border-radius:
+    999px;
+}
+
+
+/* =========================
+   タブ
+========================= */
+
 .tabs{
   display:flex;
+
   gap:8px;
-  margin-bottom:10px
+
+  margin-bottom:
+    10px;
 }
+
 
 .tab{
   flex:1;
-  border:1px solid #4b5563;
-  background:#1f2937;
-  color:#d1d5db;
-  padding:9px;
-  border-radius:10px;
-  font-size:15px;
-  font-weight:700
+
+  border:
+    1px
+    solid
+    #4b5563;
+
+  background:
+    #1f2937;
+
+  color:
+    #d1d5db;
+
+  padding:
+    9px;
+
+  border-radius:
+    10px;
+
+  font-size:
+    15px;
+
+  font-weight:
+    700;
 }
+
 
 .tab.active{
-  background:#fff;
-  color:#111827;
-  border-color:#fff
+  background:
+    #fff;
+
+  color:
+    #111827;
+
+  border-color:
+    #fff;
 }
 
-.skillname{
-  font-size:22px;
-  font-weight:800
+
+/* =========================
+   検索欄
+========================= */
+
+input{
+  width:100%;
+
+  font-size:
+    18px;
+
+  padding:
+    12px;
+
+  border:
+    0;
+
+  border-radius:
+    12px;
+
+  outline:
+    none;
 }
+
+
+/* =========================
+   並び替え
+========================= */
+
+.sortrow{
+  display:flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  margin-top:
+    10px;
+}
+
+
+.sortrow label{
+  font-size:
+    12px;
+
+  color:
+    #d1d5db;
+
+  white-space:
+    nowrap;
+}
+
+
+#sortSelect{
+  flex:1;
+
+  padding:
+    9px
+    10px;
+
+  border:
+    0;
+
+  border-radius:
+    10px;
+
+  font-size:
+    15px;
+
+  background:
+    #fff;
+
+  color:
+    #111827;
+}
+
+
+/* =========================
+   メイン
+========================= */
+
+main{
+  padding:
+    14px;
+
+  max-width:
+    760px;
+
+  margin:
+    auto;
+}
+
+
+.status{
+  font-size:
+    13px;
+
+  color:
+    #6b7280;
+
+  margin-bottom:
+    12px;
+}
+
+
+/* =========================
+   カード
+========================= */
+
+.card{
+  background:
+    #fff;
+
+  border-radius:
+    15px;
+
+  padding:
+    14px;
+
+  margin-bottom:
+    12px;
+
+  box-shadow:
+    0
+    1px
+    4px
+    #0001;
+}
+
+
+.name{
+  font-size:
+    22px;
+
+  font-weight:
+    800;
+}
+
+
+.name a{
+  color:
+    #111827;
+
+  text-decoration:
+    none;
+}
+
+
+.name a:after{
+  content:
+    " 🔎";
+
+  font-size:
+    .8em;
+}
+
+
+/* =========================
+   メタ情報
+========================= */
+
+.meta{
+  display:flex;
+
+  gap:6px;
+
+  flex-wrap:
+    wrap;
+
+  margin:
+    7px
+    0
+    13px;
+}
+
+
+.badge{
+  font-size:
+    12px;
+
+  background:
+    #eef2ff;
+
+  padding:
+    5px
+    8px;
+
+  border-radius:
+    999px;
+}
+
+
+/* =========================
+   見出し
+========================= */
+
+h2{
+  font-size:
+    15px;
+
+  margin:
+    16px
+    0
+    7px;
+}
+
+
+/* =========================
+   配合経路
+========================= */
+
+.route{
+  padding:
+    9px
+    0;
+
+  border-top:
+    1px
+    solid
+    #eee;
+
+  line-height:
+    1.5;
+}
+
+
+.route:first-of-type{
+  border-top:
+    0;
+}
+
+
+.rtype{
+  display:inline-block;
+
+  font-size:
+    11px;
+
+  background:
+    #f3f4f6;
+
+  border-radius:
+    999px;
+
+  padding:
+    3px
+    7px;
+
+  margin-right:
+    5px;
+
+  color:
+    #4b5563;
+}
+
+
+.arrow{
+  font-weight:
+    800;
+
+  color:
+    #4f46e5;
+}
+
+
+/* =========================
+   ボタンリンク
+========================= */
+
+button.jump{
+  border:0;
+
+  background:none;
+
+  color:
+    #4338ca;
+
+  text-decoration:
+    underline;
+
+  padding:0;
+
+  font:inherit;
+}
+
 
 .skilljump{
-  font-weight:700
+  font-weight:
+    700;
 }
+
+
+/* =========================
+   スキル
+========================= */
+
+.skillname{
+  font-size:
+    22px;
+
+  font-weight:
+    800;
+}
+
 
 .skillroute{
-  padding-top:10px;
-  padding-bottom:10px
+  padding-top:
+    10px;
+
+  padding-bottom:
+    10px;
 }
 
+
 .skillnote{
-  margin-top:5px;
-  margin-left:4px;
-  font-size:12px;
-  color:#6b7280
+  margin-top:
+    5px;
+
+  margin-left:
+    4px;
+
+  font-size:
+    12px;
+
+  color:
+    #6b7280;
+}
+
+
+/* =========================
+   スキル内容
+========================= */
+
+.skilltable{
+  border-top:
+    1px
+    solid
+    #eee;
+}
+
+
+.skillability{
+  display:grid;
+
+  grid-template-columns:
+    62px
+    1fr;
+
+  gap:
+    8px;
+
+  align-items:center;
+
+  padding:
+    9px
+    0;
+
+  border-bottom:
+    1px
+    solid
+    #eee;
+}
+
+
+.skillpoints{
+  font-weight:
+    800;
+
+  color:
+    #4338ca;
+}
+
+
+.abilityname{
+  font-size:
+    14px;
+}
+
+
+.abilitynote{
+  grid-column:
+    2;
+
+  font-size:
+    11px;
+
+  color:
+    #6b7280;
+}
+
+
+/* =========================
+   その他
+========================= */
+
+.empty{
+  text-align:center;
+
+  color:
+    #6b7280;
+
+  padding:
+    30px;
+}
+
+
+.small{
+  font-size:
+    12px;
+
+  color:
+    #6b7280;
+}
+
+
+footer{
+  text-align:center;
+
+  color:
+    #6b7280;
+
+  font-size:
+    11px;
+
+  padding:
+    20px
+    14px
+    40px;
 }
