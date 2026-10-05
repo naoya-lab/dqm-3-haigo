@@ -1,35 +1,67 @@
-let DB={monsters:[]};
-let SKILL_DB={skills:[]};
+let DB={
+  monsters:[]
+};
+
+let SKILL_DB={
+  skills:[]
+};
 
 let mode='monster';
 
-const q=document.getElementById('q');
-const results=document.getElementById('results');
-const statusEl=document.getElementById('status');
-const net=document.getElementById('net');
 
-const monsterTab=document.getElementById('monsterTab');
-const skillTab=document.getElementById('skillTab');
+const q=
+  document.getElementById('q');
 
+const results=
+  document.getElementById('results');
+
+const statusEl=
+  document.getElementById('status');
+
+const net=
+  document.getElementById('net');
+
+const monsterTab=
+  document.getElementById('monsterTab');
+
+const skillTab=
+  document.getElementById('skillTab');
+
+const sortSelect=
+  document.getElementById('sortSelect');
+
+const sortRow=
+  document.getElementById('sortRow');
+
+
+/* =========================
+   共通
+========================= */
 
 function esc(s){
-  return String(s??'').replace(
-    /[&<>"']/g,
-    c=>({
-      '&':'&amp;',
-      '<':'&lt;',
-      '>':'&gt;',
-      '"':'&quot;',
-      "'":'&#39;'
-    }[c])
-  );
+
+  return String(s??'')
+    .replace(
+      /[&<>"']/g,
+      c=>({
+        '&':'&amp;',
+        '<':'&lt;',
+        '>':'&gt;',
+        '"':'&quot;',
+        "'":'&#39;'
+      }[c])
+    );
 }
 
 
 function norm(s){
+
   return String(s??'')
     .toLowerCase()
-    .replace(/[\s・･ー]/g,'');
+    .replace(
+      /[\s・･ー]/g,
+      ''
+    );
 }
 
 
@@ -38,15 +70,21 @@ function norm(s){
 ========================= */
 
 function imgUrl(name){
+
   return (
     'https://www.google.com/search?tbm=isch&q='
-    + encodeURIComponent('DQM3 '+name)
+    +
+    encodeURIComponent(
+      'DQM3 '+name
+    )
   );
 }
 
 
 function jumpMonster(name){
+
   mode='monster';
+
   updateTabs();
 
   q.value=name;
@@ -61,7 +99,9 @@ function jumpMonster(name){
 
 
 function jumpSkill(name){
+
   mode='skill';
+
   updateTabs();
 
   q.value=name;
@@ -75,8 +115,11 @@ function jumpSkill(name){
 }
 
 
-window.jumpMonster=jumpMonster;
-window.jumpSkill=jumpSkill;
+window.jumpMonster=
+  jumpMonster;
+
+window.jumpSkill=
+  jumpSkill;
 
 
 function monsterButton(name){
@@ -105,11 +148,17 @@ function skillButton(name){
 }
 
 
+/* =========================
+   モンスター配合表示
+========================= */
+
 function recipeText(r){
 
-  const parents=(r.parents||[])
-    .map(monsterButton)
-    .join(' ＋ ');
+  const parents=
+    (r.parents||[])
+      .map(monsterButton)
+      .join(' ＋ ');
+
 
   return `
     <div class="route">
@@ -133,9 +182,11 @@ function recipeText(r){
 
 function useText(u){
 
-  const other=(u.otherParents||[])
-    .map(monsterButton)
-    .join(' ＋ ');
+  const other=
+    (u.otherParents||[])
+      .map(monsterButton)
+      .join(' ＋ ');
+
 
   return `
     <div class="route">
@@ -163,19 +214,35 @@ function useText(u){
 }
 
 
+/* =========================
+   モンスターカード
+========================= */
+
 function monsterCard(m){
 
-  const recipes=(m.recipes||[])
-    .map(recipeText)
-    .join('')
+  const recipes=
+    (m.recipes||[])
+      .map(recipeText)
+      .join('')
     ||
-    '<div class="small">配合での入手なし／未登録</div>';
+    `
+      <div class="small">
+        配合での入手なし／未登録
+      </div>
+    `;
 
-  const uses=(m.uses||[])
-    .map(useText)
-    .join('')
+
+  const uses=
+    (m.uses||[])
+      .map(useText)
+      .join('')
     ||
-    '<div class="small">特殊な配合先なし／未登録</div>';
+    `
+      <div class="small">
+        特殊な配合先なし／未登録
+      </div>
+    `;
+
 
   return `
     <section class="card">
@@ -192,33 +259,50 @@ function monsterCard(m){
 
       </div>
 
+
       <div class="meta">
 
         ${
           m.no
-            ? `<span class="badge">No.${esc(m.no)}</span>`
+            ? `
+              <span class="badge">
+                No.${esc(m.no)}
+              </span>
+            `
             : ''
         }
+
 
         ${
           m.rank
-            ? `<span class="badge">${esc(m.rank)}ランク</span>`
+            ? `
+              <span class="badge">
+                ${esc(m.rank)}ランク
+              </span>
+            `
             : ''
         }
 
+
         ${
           m.family
-            ? `<span class="badge">${esc(m.family)}</span>`
+            ? `
+              <span class="badge">
+                ${esc(m.family)}
+              </span>
+            `
             : ''
         }
 
       </div>
+
 
       <h2>
         このモンスターの作り方
       </h2>
 
       ${recipes}
+
 
       <h2>
         このモンスターを使う配合先
@@ -231,80 +315,263 @@ function monsterCard(m){
 }
 
 
-function renderMonsters(){
+/* =========================
+   検索優先度
+========================= */
 
-  const term=norm(q.value);
+function searchScore(name,term){
 
-  const found=DB.monsters.filter(m=>{
+  if(!term){
+    return 0;
+  }
 
-    const text=[
-      m.name,
-      m.reading,
-      m.rank,
-      m.family,
-      m.no,
-
-      ...(m.recipes||[])
-        .flatMap(r=>[
-          ...(r.parents||[]),
-          r.result
-        ]),
-
-      ...(m.uses||[])
-        .flatMap(u=>[
-          ...(u.otherParents||[]),
-          u.result
-        ])
-
-    ].join(' ');
-
-    return (
-      !term
-      ||
-      norm(text).includes(term)
-    );
-  });
+  const value=
+    norm(name);
 
 
-  found.sort((a,b)=>{
+  if(value===term){
+    return 0;
+  }
 
-    if(!term){
-      return (a.no??9999)-(b.no??9999);
-    }
+  if(value.startsWith(term)){
+    return 1;
+  }
 
-    const an=norm(a.name);
-    const bn=norm(b.name);
+  if(value.includes(term)){
+    return 2;
+  }
 
-    const score=name=>{
+  return 3;
+}
 
-      if(name===term){
-        return 0;
-      }
 
-      if(name.startsWith(term)){
-        return 1;
-      }
+/* =========================
+   モンスター並び替え
+========================= */
 
-      if(name.includes(term)){
-        return 2;
-      }
+function compareMonsters(a,b,term){
 
-      return 3;
-    };
+  /*
+   * 検索中は
+   * 完全一致を最優先
+   */
+  if(term){
 
-    const as=score(an);
-    const bs=score(bn);
+    const as=
+      searchScore(
+        a.name,
+        term
+      );
+
+    const bs=
+      searchScore(
+        b.name,
+        term
+      );
+
 
     if(as!==bs){
       return as-bs;
     }
+  }
+
+
+  /*
+   * 名前順
+   */
+  if(
+    sortSelect.value==='name'
+  ){
+
+    const aName=
+      a.reading
+      ||
+      a.name
+      ||
+      '';
+
+    const bName=
+      b.reading
+      ||
+      b.name
+      ||
+      '';
+
+
+    const compare=
+      String(aName)
+        .localeCompare(
+          String(bName),
+          'ja'
+        );
+
+
+    if(compare!==0){
+      return compare;
+    }
+
 
     return (
       (a.no??9999)
       -
       (b.no??9999)
     );
-  });
+  }
+
+
+  /*
+   * ランク順
+   *
+   * X → S → A → B → C
+   * → D → E → F → G
+   */
+  if(
+    sortSelect.value==='rank'
+  ){
+
+    const rankOrder={
+      'X':0,
+      'S':1,
+      'A':2,
+      'B':3,
+      'C':4,
+      'D':5,
+      'E':6,
+      'F':7,
+      'G':8
+    };
+
+
+    const ar=
+      rankOrder[
+        String(a.rank||'')
+          .toUpperCase()
+      ]
+      ?? 99;
+
+
+    const br=
+      rankOrder[
+        String(b.rank||'')
+          .toUpperCase()
+      ]
+      ?? 99;
+
+
+    if(ar!==br){
+      return ar-br;
+    }
+
+
+    /*
+     * 同ランクなら図鑑番号順
+     */
+    return (
+      (a.no??9999)
+      -
+      (b.no??9999)
+    );
+  }
+
+
+  /*
+   * 種族順
+   */
+  if(
+    sortSelect.value==='family'
+  ){
+
+    const familyCompare=
+      String(a.family||'')
+        .localeCompare(
+          String(b.family||''),
+          'ja'
+        );
+
+
+    if(familyCompare!==0){
+      return familyCompare;
+    }
+
+
+    /*
+     * 同じ種族なら
+     * 図鑑番号順
+     */
+    return (
+      (a.no??9999)
+      -
+      (b.no??9999)
+    );
+  }
+
+
+  /*
+   * デフォルト：
+   * 図鑑番号順
+   */
+  return (
+    (a.no??9999)
+    -
+    (b.no??9999)
+  );
+}
+
+
+/* =========================
+   モンスター検索
+========================= */
+
+function renderMonsters(){
+
+  const term=
+    norm(q.value);
+
+
+  const found=
+    DB.monsters.filter(m=>{
+
+      const text=[
+
+        m.name,
+        m.reading,
+        m.rank,
+        m.family,
+        m.no,
+
+        ...(m.recipes||[])
+          .flatMap(r=>[
+            ...(r.parents||[]),
+            r.result
+          ]),
+
+        ...(m.uses||[])
+          .flatMap(u=>[
+            ...(u.otherParents||[]),
+            u.result
+          ])
+
+      ].join(' ');
+
+
+      return (
+        !term
+        ||
+        norm(text)
+          .includes(term)
+      );
+
+    });
+
+
+  found.sort(
+    (a,b)=>
+      compareMonsters(
+        a,
+        b,
+        term
+      )
+  );
 
 
   statusEl.textContent=
@@ -315,55 +582,77 @@ function renderMonsters(){
 
   results.innerHTML=
     found.length
-      ? found.map(monsterCard).join('')
-      : '<div class="empty">該当するモンスターがありません。</div>';
+      ? found
+          .map(monsterCard)
+          .join('')
+      : `
+          <div class="empty">
+            該当するモンスターがありません。
+          </div>
+        `;
 }
 
 
 /* =========================
-   スキル
+   スキル一覧
 ========================= */
 
 function allSkillNames(){
 
-  const names=new Set();
-
-  SKILL_DB.skills.forEach(skill=>{
-
-    if(skill.name){
-      names.add(skill.name);
-    }
+  const names=
+    new Set();
 
 
-    (skill.recipes||[])
-      .forEach(recipe=>{
+  SKILL_DB.skills
+    .forEach(skill=>{
 
-        recipe.forEach(name=>{
-          names.add(name);
-        });
+      if(skill.name){
+        names.add(
+          skill.name
+        );
+      }
 
-      });
 
+      (skill.recipes||[])
+        .forEach(recipe=>{
 
-    (skill.evolvesTo||[])
-      .forEach(evo=>{
+          recipe.forEach(name=>{
 
-        if(evo.result){
-          names.add(evo.result);
-        }
-
-        (evo.required||[])
-          .forEach(req=>{
-
-            if(req.skill){
-              names.add(req.skill);
-            }
+            names.add(name);
 
           });
 
-      });
+        });
 
-  });
+
+      (skill.evolvesTo||[])
+        .forEach(evo=>{
+
+          if(evo.result){
+
+            names.add(
+              evo.result
+            );
+          }
+
+
+          (evo.required||[])
+            .forEach(req=>{
+
+              if(req.skill){
+
+                names.add(
+                  req.skill
+                );
+
+              }
+
+            });
+
+        });
+
+    });
+
 
   return [...names];
 }
@@ -372,13 +661,14 @@ function allSkillNames(){
 function findSkill(name){
 
   return SKILL_DB.skills.find(
-    skill=>skill.name===name
+    skill=>
+      skill.name===name
   );
 }
 
 
 /* =========================
-   スキルの作り方
+   スキル作成方法
 ========================= */
 
 function skillRecipesFor(name){
@@ -386,76 +676,95 @@ function skillRecipesFor(name){
   const recipes=[];
 
 
-  SKILL_DB.skills.forEach(skill=>{
+  SKILL_DB.skills
+    .forEach(skill=>{
 
-    /*
-     * SPなど
-     * 2つ以上のスキルを組み合わせて作る場合
-     */
-    if(skill.name===name){
 
-      (skill.recipes||[])
-        .forEach(recipe=>{
+      if(skill.name===name){
+
+        (skill.recipes||[])
+          .forEach(recipe=>{
+
+            recipes.push({
+
+              type:
+                '組み合わせ',
+
+              parents:
+                recipe,
+
+              result:
+                skill.name,
+
+              note:
+                skill.note||''
+
+            });
+
+          });
+
+      }
+
+
+      (skill.evolvesTo||[])
+        .forEach(evo=>{
+
+          if(
+            evo.result!==name
+          ){
+            return;
+          }
+
 
           recipes.push({
-            type:'組み合わせ',
-            parents:recipe,
-            result:skill.name,
-            note:skill.note||''
+
+            type:
+              '進化',
+
+            parents:
+              (evo.required||[])
+                .map(req=>(
+                  `${req.skill} ${req.points}P`
+                )),
+
+            result:
+              evo.result,
+
+            note:
+              evo.note||''
+
           });
 
         });
 
-    }
+    });
 
 
-    /*
-     * 火の心 → 火の極意など
-     */
-    (skill.evolvesTo||[])
-      .forEach(evo=>{
-
-        if(evo.result!==name){
-          return;
-        }
-
-        recipes.push({
-          type:'進化',
-
-          parents:
-            (evo.required||[])
-              .map(req=>(
-                `${req.skill} ${req.points}P`
-              )),
-
-          result:evo.result,
-
-          note:evo.note||''
-        });
-
-      });
-
-  });
-
-
-  /*
-   * 重複削除
-   */
   const unique=[];
   const seen=new Set();
 
+
   recipes.forEach(recipe=>{
 
-    const key=JSON.stringify(recipe);
+    const key=
+      JSON.stringify(
+        recipe
+      );
 
-    if(!seen.has(key)){
+
+    if(
+      !seen.has(key)
+    ){
 
       seen.add(key);
 
-      unique.push(recipe);
+      unique.push(
+        recipe
+      );
     }
 
   });
+
 
   return unique;
 }
@@ -470,75 +779,92 @@ function skillUsesFor(name){
   const uses=[];
 
 
-  SKILL_DB.skills.forEach(skill=>{
-
-    /*
-     * SPスキルの素材
-     */
-    (skill.recipes||[])
-      .forEach(recipe=>{
-
-        if(recipe.includes(name)){
-
-          uses.push({
-            type:'組み合わせ',
-            parents:recipe,
-            result:skill.name,
-            note:skill.note||''
-          });
-
-        }
-
-      });
+  SKILL_DB.skills
+    .forEach(skill=>{
 
 
-    /*
-     * 心 → 極意
-     */
-    (skill.evolvesTo||[])
-      .forEach(evo=>{
+      (skill.recipes||[])
+        .forEach(recipe=>{
 
-        const required=evo.required||[];
+          if(
+            recipe.includes(name)
+          ){
 
-        if(
-          required.some(
-            req=>req.skill===name
-          )
-        ){
+            uses.push({
 
-          uses.push({
-            type:'進化',
+              type:
+                '組み合わせ',
 
-            parents:
-              required.map(
-                req=>(
-                  `${req.skill} ${req.points}P`
-                )
-              ),
+              parents:
+                recipe,
 
-            result:evo.result,
+              result:
+                skill.name,
 
-            note:evo.note||''
-          });
+              note:
+                skill.note||''
 
-        }
+            });
 
-      });
+          }
 
-  });
+        });
 
 
-  /*
-   * 重複削除
-   */
+      (skill.evolvesTo||[])
+        .forEach(evo=>{
+
+          const required=
+            evo.required||[];
+
+
+          if(
+            required.some(
+              req=>
+                req.skill===name
+            )
+          ){
+
+            uses.push({
+
+              type:
+                '進化',
+
+              parents:
+                required.map(
+                  req=>(
+                    `${req.skill} ${req.points}P`
+                  )
+                ),
+
+              result:
+                evo.result,
+
+              note:
+                evo.note||''
+
+            });
+
+          }
+
+        });
+
+    });
+
+
   const unique=[];
   const seen=new Set();
 
+
   uses.forEach(use=>{
 
-    const key=JSON.stringify(use);
+    const key=
+      JSON.stringify(use);
 
-    if(!seen.has(key)){
+
+    if(
+      !seen.has(key)
+    ){
 
       seen.add(key);
 
@@ -547,46 +873,48 @@ function skillUsesFor(name){
 
   });
 
+
   return unique;
 }
 
 
 /* =========================
-   スキル経路表示
+   スキル経路
 ========================= */
 
 function skillRoute(route){
 
-  const parents=(route.parents||[])
-    .map(value=>{
+  const parents=
+    (route.parents||[])
+      .map(value=>{
 
-      /*
-       * 例：
-       * 火の心 100P
-       */
-      const match=
-        String(value).match(
-          /^(.*?)(?:\s+(\d+)P)?$/
+        const match=
+          String(value)
+            .match(
+              /^(.*?)(?:\s+(\d+)P)?$/
+            );
+
+
+        const skillName=
+          match
+            ? match[1]
+            : value;
+
+
+        const points=
+          match && match[2]
+            ? ` ${match[2]}P`
+            : '';
+
+
+        return (
+          skillButton(skillName)
+          +
+          `<strong>${esc(points)}</strong>`
         );
 
-      const skillName=
-        match
-          ? match[1]
-          : value;
-
-      const points=
-        match && match[2]
-          ? ` ${match[2]}P`
-          : '';
-
-      return (
-        skillButton(skillName)
-        +
-        `<strong>${esc(points)}</strong>`
-      );
-
-    })
-    .join(' ＋ ');
+      })
+      .join(' ＋ ');
 
 
   return `
@@ -628,7 +956,10 @@ function abilityTable(skill){
   const abilities=
     skill?.abilities||[];
 
-  if(!abilities.length){
+
+  if(
+    !abilities.length
+  ){
 
     return `
       <div class="small">
@@ -638,40 +969,41 @@ function abilityTable(skill){
   }
 
 
-  const rows=abilities
-    .slice()
-    .sort(
-      (a,b)=>
-        Number(a.points||0)
-        -
-        Number(b.points||0)
-    )
-    .map(ability=>`
+  const rows=
+    abilities
+      .slice()
+      .sort(
+        (a,b)=>
+          Number(a.points||0)
+          -
+          Number(b.points||0)
+      )
+      .map(ability=>`
 
-      <div class="skillability">
+        <div class="skillability">
 
-        <span class="skillpoints">
-          ${esc(ability.points)}P
-        </span>
+          <span class="skillpoints">
+            ${esc(ability.points)}P
+          </span>
 
-        <span class="abilityname">
-          ${esc(ability.name)}
-        </span>
+          <span class="abilityname">
+            ${esc(ability.name)}
+          </span>
 
-        ${
-          ability.note
-            ? `
-              <span class="abilitynote">
-                ${esc(ability.note)}
-              </span>
-            `
-            : ''
-        }
+          ${
+            ability.note
+              ? `
+                <span class="abilitynote">
+                  ${esc(ability.note)}
+                </span>
+              `
+              : ''
+          }
 
-      </div>
+        </div>
 
-    `)
-    .join('');
+      `)
+      .join('');
 
 
   return `
@@ -688,10 +1020,13 @@ function abilityTable(skill){
 
 function skillCard(name){
 
-  const skill=findSkill(name);
+  const skill=
+    findSkill(name);
+
 
   const recipes=
     skillRecipesFor(name);
+
 
   const uses=
     skillUsesFor(name);
@@ -704,6 +1039,7 @@ function skillCard(name){
         ${esc(name)}
       </div>
 
+
       <div class="meta">
 
         ${
@@ -715,6 +1051,7 @@ function skillCard(name){
             `
             : ''
         }
+
 
         ${
           skill?.category
@@ -745,7 +1082,6 @@ function skillCard(name){
           ? recipes
               .map(skillRoute)
               .join('')
-
           : `
             <div class="small">
               進化・配合での作成条件なし／未登録
@@ -763,7 +1099,6 @@ function skillCard(name){
           ? uses
               .map(skillRoute)
               .join('')
-
           : `
             <div class="small">
               上位スキルなし／未登録
@@ -782,78 +1117,74 @@ function skillCard(name){
 
 function renderSkills(){
 
-  const term=norm(q.value);
+  const term=
+    norm(q.value);
+
 
   let found=
     allSkillNames()
       .filter(name=>{
 
-        const skill=findSkill(name);
+        const skill=
+          findSkill(name);
+
 
         const abilityText=
           (skill?.abilities||[])
             .map(a=>a.name)
             .join(' ');
 
+
         const text=
           `${name} ${abilityText}`;
+
 
         return (
           !term
           ||
-          norm(text).includes(term)
+          norm(text)
+            .includes(term)
         );
 
       });
 
 
-  found.sort((a,b)=>{
+  found.sort(
+    (a,b)=>{
 
-    if(!term){
+      if(!term){
+
+        return a.localeCompare(
+          b,
+          'ja'
+        );
+      }
+
+
+      const as=
+        searchScore(
+          a,
+          term
+        );
+
+      const bs=
+        searchScore(
+          b,
+          term
+        );
+
+
+      if(as!==bs){
+        return as-bs;
+      }
+
 
       return a.localeCompare(
         b,
         'ja'
       );
     }
-
-
-    const an=norm(a);
-    const bn=norm(b);
-
-
-    const score=name=>{
-
-      if(name===term){
-        return 0;
-      }
-
-      if(name.startsWith(term)){
-        return 1;
-      }
-
-      if(name.includes(term)){
-        return 2;
-      }
-
-      return 3;
-    };
-
-
-    const as=score(an);
-    const bs=score(bn);
-
-
-    if(as!==bs){
-      return as-bs;
-    }
-
-
-    return a.localeCompare(
-      b,
-      'ja'
-    );
-  });
+  );
 
 
   statusEl.textContent=
@@ -864,8 +1195,14 @@ function renderSkills(){
 
   results.innerHTML=
     found.length
-      ? found.map(skillCard).join('')
-      : '<div class="empty">該当するスキルがありません。</div>';
+      ? found
+          .map(skillCard)
+          .join('')
+      : `
+          <div class="empty">
+            該当するスキルがありません。
+          </div>
+        `;
 }
 
 
@@ -880,6 +1217,7 @@ function updateTabs(){
     mode==='monster'
   );
 
+
   skillTab.classList.toggle(
     'active',
     mode==='skill'
@@ -890,6 +1228,16 @@ function updateTabs(){
     mode==='monster'
       ? 'モンスター名を入力'
       : 'スキル名・特技名を入力';
+
+
+  /*
+   * 並び替えは
+   * モンスター画面だけ表示
+   */
+  sortRow.style.display=
+    mode==='monster'
+      ? 'flex'
+      : 'none';
 }
 
 
@@ -924,12 +1272,14 @@ skillTab.addEventListener(
 
 
 /* =========================
-   表示
+   表示イベント
 ========================= */
 
 function render(){
 
-  if(mode==='skill'){
+  if(
+    mode==='skill'
+  ){
 
     renderSkills();
 
@@ -944,6 +1294,12 @@ function render(){
 
 q.addEventListener(
   'input',
+  render
+);
+
+
+sortSelect.addEventListener(
+  'change',
   render
 );
 
@@ -966,10 +1322,12 @@ addEventListener(
   updateNet
 );
 
+
 addEventListener(
   'offline',
   updateNet
 );
+
 
 updateNet();
 
@@ -981,7 +1339,7 @@ updateNet();
 Promise.all([
 
   fetch(
-    './data.json?v=7',
+    './data.json?v=8',
     {
       cache:'no-store'
     }
@@ -989,17 +1347,20 @@ Promise.all([
   .then(r=>{
 
     if(!r.ok){
+
       throw new Error(
         'data.json'
       );
+
     }
 
     return r.json();
+
   }),
 
 
   fetch(
-    './skills.json?v=7',
+    './skills.json?v=8',
     {
       cache:'no-store'
     }
@@ -1007,21 +1368,29 @@ Promise.all([
   .then(r=>{
 
     if(!r.ok){
+
       throw new Error(
         'skills.json'
       );
+
     }
 
     return r.json();
+
   })
 
 ])
 .then(
-  ([monsterData,skillData])=>{
+  ([
+    monsterData,
+    skillData
+  ])=>{
 
-    DB=monsterData;
+    DB=
+      monsterData;
 
-    SKILL_DB=skillData;
+    SKILL_DB=
+      skillData;
 
     updateTabs();
 
@@ -1036,10 +1405,12 @@ Promise.all([
   statusEl.textContent=
     'データ読み込みエラー';
 
+
   results.innerHTML=
     `
       <div class="empty">
-        data.json または skills.json を確認してください。
+        data.json または
+        skills.json を確認してください。
       </div>
     `;
 
@@ -1050,9 +1421,16 @@ Promise.all([
    Service Worker
 ========================= */
 
-if('serviceWorker' in navigator){
+if(
+  'serviceWorker'
+  in navigator
+){
 
-  navigator.serviceWorker
-    .register('./sw.js?v=7')
+  navigator
+    .serviceWorker
+    .register(
+      './sw.js?v=8'
+    )
     .catch(()=>{});
+
 }
