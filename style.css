@@ -7,7 +7,6 @@
     sans-serif;
 
   background:#f4f5f7;
-
   color:#111827;
 }
 
@@ -22,15 +21,17 @@ body{
 }
 
 
+[hidden]{
+  display:none !important;
+}
+
+
 header{
   position:sticky;
-
   top:0;
-
   z-index:10;
 
   background:#111827;
-
   color:white;
 
   padding:14px;
@@ -39,370 +40,291 @@ header{
 
 .headrow{
   display:flex;
-
-  justify-content:
-    space-between;
-
+  justify-content:space-between;
   align-items:center;
 }
 
 
 h1{
   font-size:20px;
-
-  margin:
-    0
-    0
-    10px;
+  margin:0 0 10px;
 }
 
 
 #net{
   font-size:12px;
-
   background:#374151;
-
-  padding:
-    4px
-    8px;
-
-  border-radius:
-    999px;
+  padding:4px 8px;
+  border-radius:999px;
 }
 
 
-/* =========================
-   タブ
-========================= */
+/* タブ */
 
 .tabs{
   display:flex;
-
-  gap:8px;
-
-  margin-bottom:
-    10px;
+  gap:6px;
+  margin-bottom:10px;
 }
 
 
 .tab{
   flex:1;
 
-  border:
-    1px
-    solid
-    #4b5563;
+  border:1px solid #4b5563;
+  background:#1f2937;
+  color:#d1d5db;
 
-  background:
-    #1f2937;
+  padding:9px 4px;
 
-  color:
-    #d1d5db;
+  border-radius:10px;
 
-  padding:
-    9px;
-
-  border-radius:
-    10px;
-
-  font-size:
-    15px;
-
-  font-weight:
-    700;
+  font-size:14px;
+  font-weight:700;
 }
 
 
 .tab.active{
-  background:
-    #fff;
-
-  color:
-    #111827;
-
-  border-color:
-    #fff;
+  background:#fff;
+  color:#111827;
+  border-color:#fff;
 }
 
 
-/* =========================
-   検索欄
-========================= */
+/* 入力 */
 
 input{
   width:100%;
 
-  font-size:
-    18px;
+  font-size:17px;
 
-  padding:
-    12px;
+  padding:12px;
 
-  border:
-    0;
+  border:0;
+  border-radius:12px;
 
-  border-radius:
-    12px;
-
-  outline:
-    none;
+  outline:none;
 }
 
 
-/* =========================
-   並び替え
-========================= */
-
 .sortrow{
   display:flex;
-
   align-items:center;
-
   gap:8px;
 
-  margin-top:
-    10px;
+  margin-top:10px;
 }
 
 
 .sortrow label{
-  font-size:
-    12px;
-
-  color:
-    #d1d5db;
-
-  white-space:
-    nowrap;
+  font-size:12px;
+  color:#d1d5db;
+  white-space:nowrap;
 }
 
 
 #sortSelect{
   flex:1;
 
-  padding:
-    9px
-    10px;
+  padding:9px 10px;
 
-  border:
-    0;
+  border:0;
+  border-radius:10px;
 
-  border-radius:
-    10px;
+  font-size:15px;
 
-  font-size:
-    15px;
-
-  background:
-    #fff;
-
-  color:
-    #111827;
+  background:#fff;
+  color:#111827;
 }
 
 
-/* =========================
-   メイン
-========================= */
+.plan-controls{
+  display:flex;
+  gap:8px;
+}
+
+
+.plan-controls input{
+  flex:1;
+}
+
+
+.mainbutton{
+  flex:none;
+
+  border:0;
+  border-radius:12px;
+
+  padding:0 14px;
+
+  background:#4f46e5;
+  color:white;
+
+  font-weight:700;
+}
+
+
+/* メイン */
 
 main{
-  padding:
-    14px;
+  padding:14px;
 
-  max-width:
-    760px;
+  max-width:760px;
 
-  margin:
-    auto;
+  margin:auto;
 }
 
 
 .status{
-  font-size:
-    13px;
+  font-size:13px;
+  color:#6b7280;
 
-  color:
-    #6b7280;
-
-  margin-bottom:
-    12px;
+  margin-bottom:12px;
 }
 
 
-/* =========================
-   カード
-========================= */
+/* カード */
 
 .card{
-  background:
-    #fff;
+  background:#fff;
 
-  border-radius:
-    15px;
+  border-radius:15px;
 
-  padding:
-    14px;
+  padding:14px;
 
-  margin-bottom:
-    12px;
+  margin-bottom:12px;
 
-  box-shadow:
-    0
-    1px
-    4px
-    #0001;
+  box-shadow:0 1px 4px #0001;
 }
 
 
 .name{
-  font-size:
-    22px;
-
-  font-weight:
-    800;
+  font-size:22px;
+  font-weight:800;
 }
 
 
 .name a{
-  color:
-    #111827;
-
-  text-decoration:
-    none;
+  color:#111827;
+  text-decoration:none;
 }
 
 
 .name a:after{
-  content:
-    " 🔎";
-
-  font-size:
-    .8em;
+  content:" 🔎";
+  font-size:.8em;
 }
 
-
-/* =========================
-   メタ情報
-========================= */
 
 .meta{
   display:flex;
-
   gap:6px;
+  flex-wrap:wrap;
 
-  flex-wrap:
-    wrap;
-
-  margin:
-    7px
-    0
-    13px;
+  margin:7px 0 13px;
 }
 
 
-.badge{
-  font-size:
-    12px;
+.badge,
+.mini-badge{
+  font-size:12px;
 
-  background:
-    #eef2ff;
+  background:#eef2ff;
 
-  padding:
-    5px
-    8px;
+  padding:5px 8px;
 
-  border-radius:
-    999px;
+  border-radius:999px;
 }
 
 
-/* =========================
-   見出し
-========================= */
+.mini-badge{
+  padding:2px 6px;
+  font-size:10px;
+}
+
 
 h2{
-  font-size:
-    15px;
+  font-size:15px;
 
-  margin:
-    16px
-    0
-    7px;
+  margin:16px 0 7px;
 }
 
 
-/* =========================
-   配合経路
-========================= */
+/* 生息地 */
+
+.location-row{
+  padding:8px 0;
+
+  border-top:1px solid #eee;
+}
+
+
+.location-row:first-child{
+  border-top:0;
+}
+
+
+.location-name{
+  font-weight:700;
+  font-size:14px;
+}
+
+
+.location-detail{
+  margin-top:3px;
+
+  color:#6b7280;
+
+  font-size:12px;
+}
+
+
+/* 配合 */
 
 .route{
-  padding:
-    9px
-    0;
+  padding:9px 0;
 
-  border-top:
-    1px
-    solid
-    #eee;
+  border-top:1px solid #eee;
 
-  line-height:
-    1.5;
+  line-height:1.5;
 }
 
 
 .route:first-of-type{
-  border-top:
-    0;
+  border-top:0;
 }
 
 
 .rtype{
   display:inline-block;
 
-  font-size:
-    11px;
+  font-size:11px;
 
-  background:
-    #f3f4f6;
+  background:#f3f4f6;
 
-  border-radius:
-    999px;
+  border-radius:999px;
 
-  padding:
-    3px
-    7px;
+  padding:3px 7px;
 
-  margin-right:
-    5px;
+  margin-right:5px;
 
-  color:
-    #4b5563;
+  color:#4b5563;
 }
 
 
 .arrow{
-  font-weight:
-    800;
-
-  color:
-    #4f46e5;
+  font-weight:800;
+  color:#4f46e5;
 }
 
 
-/* =========================
-   ボタンリンク
-========================= */
-
 button.jump{
   border:0;
-
   background:none;
 
-  color:
-    #4338ca;
+  color:#4338ca;
 
-  text-decoration:
-    underline;
+  text-decoration:underline;
 
   padding:0;
 
@@ -410,58 +332,36 @@ button.jump{
 }
 
 
-.skilljump{
-  font-weight:
-    700;
+/* スキル */
+
+.skillname{
+  font-size:22px;
+  font-weight:800;
 }
 
 
-/* =========================
-   スキル
-========================= */
-
-.skillname{
-  font-size:
-    22px;
-
-  font-weight:
-    800;
+.skilljump{
+  font-weight:700;
 }
 
 
 .skillroute{
-  padding-top:
-    10px;
-
-  padding-bottom:
-    10px;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 
 .skillnote{
-  margin-top:
-    5px;
+  margin-top:5px;
 
-  margin-left:
-    4px;
+  font-size:12px;
 
-  font-size:
-    12px;
-
-  color:
-    #6b7280;
+  color:#6b7280;
 }
 
 
-/* =========================
-   スキル内容
-========================= */
-
 .skilltable{
-  border-top:
-    1px
-    solid
-    #eee;
+  border-top:1px solid #eee;
 }
 
 
@@ -472,84 +372,268 @@ button.jump{
     62px
     1fr;
 
-  gap:
-    8px;
+  gap:8px;
 
-  align-items:center;
+  padding:9px 0;
 
-  padding:
-    9px
-    0;
-
-  border-bottom:
-    1px
-    solid
-    #eee;
+  border-bottom:1px solid #eee;
 }
 
 
 .skillpoints{
-  font-weight:
-    800;
-
-  color:
-    #4338ca;
+  color:#4338ca;
+  font-weight:800;
 }
 
 
 .abilityname{
-  font-size:
-    14px;
+  font-size:14px;
 }
 
 
-.abilitynote{
-  grid-column:
-    2;
+/* 配合計画 */
 
-  font-size:
-    11px;
-
-  color:
-    #6b7280;
+.plan-summary{
+  position:relative;
 }
 
 
-/* =========================
-   その他
-========================= */
+.progress-text{
+  margin-top:8px;
+
+  font-size:13px;
+
+  color:#4b5563;
+}
+
+
+.progressbar{
+  width:100%;
+  height:9px;
+
+  margin-top:7px;
+
+  background:#e5e7eb;
+
+  border-radius:999px;
+
+  overflow:hidden;
+}
+
+
+.progressbar-inner{
+  height:100%;
+
+  background:#4f46e5;
+
+  transition:width .2s;
+}
+
+
+.clearbutton{
+  margin-top:12px;
+
+  border:1px solid #d1d5db;
+
+  background:#fff;
+
+  color:#374151;
+
+  padding:8px 10px;
+
+  border-radius:9px;
+}
+
+
+.plan-title{
+  margin-top:0;
+
+  font-size:17px;
+}
+
+
+.plan-tree{
+  overflow-x:auto;
+}
+
+
+.plan-node{
+  margin-left:
+    calc(
+      var(--depth)
+      * 18px
+    );
+
+  padding:8px 0;
+
+  border-bottom:
+    1px solid #f1f1f1;
+}
+
+
+.plan-node-head{
+  display:flex;
+  align-items:center;
+
+  gap:6px;
+}
+
+
+.plan-check{
+  width:20px;
+  height:20px;
+
+  flex:none;
+}
+
+
+.plan-name{
+  border:0;
+
+  background:none;
+
+  padding:0;
+
+  color:#312e81;
+
+  font-size:15px;
+
+  font-weight:700;
+
+  text-decoration:underline;
+}
+
+
+.plan-name:disabled{
+  color:#374151;
+  text-decoration:none;
+}
+
+
+.plan-location{
+  margin-left:27px;
+  margin-top:3px;
+
+  color:#6b7280;
+
+  font-size:11px;
+}
+
+
+.route-select{
+  width:calc(100% - 27px);
+
+  margin:
+    6px
+    0
+    0
+    27px;
+
+  padding:7px;
+
+  border:
+    1px
+    solid
+    #d1d5db;
+
+  border-radius:8px;
+
+  background:#fff;
+}
+
+
+.material-row{
+  padding:10px 0;
+
+  border-bottom:1px solid #eee;
+}
+
+
+.material-row:last-child{
+  border-bottom:0;
+}
+
+
+.material-count{
+  margin-left:7px;
+
+  color:#4f46e5;
+
+  font-weight:800;
+
+  font-size:16px;
+}
+
+
+.material-location{
+  margin-top:4px;
+
+  font-size:11px;
+
+  color:#6b7280;
+}
+
+
+.plan-complete{
+  padding:16px;
+
+  text-align:center;
+
+  background:#ecfdf5;
+
+  border-radius:10px;
+
+  color:#065f46;
+
+  font-weight:700;
+}
+
+
+/* その他 */
 
 .empty{
   text-align:center;
 
-  color:
-    #6b7280;
+  color:#6b7280;
 
-  padding:
-    30px;
+  padding:30px;
 }
 
 
 .small{
-  font-size:
-    12px;
-
-  color:
-    #6b7280;
+  font-size:12px;
+  color:#6b7280;
 }
 
 
 footer{
   text-align:center;
 
-  color:
-    #6b7280;
+  color:#6b7280;
 
-  font-size:
-    11px;
+  font-size:11px;
 
   padding:
     20px
     14px
     40px;
+}
+
+
+@media(
+  max-width:420px
+){
+
+  .tab{
+    font-size:12px;
+  }
+
+  .plan-controls{
+    flex-direction:column;
+  }
+
+  .mainbutton{
+    padding:10px;
+  }
+
 }
