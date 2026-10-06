@@ -1,482 +1,1083 @@
 let DB={monsters:[]};
 let SKILL_DB={skills:[]};
-
 let mode='monster';
 
-
-const q=
-  document.getElementById('q');
-
-const results=
-  document.getElementById('results');
-
-const statusEl=
-  document.getElementById('status');
-
-const net=
-  document.getElementById('net');
-
-const monsterTab=
-  document.getElementById('monsterTab');
-
-const skillTab=
-  document.getElementById('skillTab');
-
-const planTab=
-  document.getElementById('planTab');
-
-const sortSelect=
-  document.getElementById('sortSelect');
-
-const sortRow=
-  document.getElementById('sortRow');
-
-const normalSearch=
-  document.getElementById('normalSearch');
-
-const planControls=
-  document.getElementById('planControls');
-
-const planTarget=
-  document.getElementById('planTarget');
-
-const buildPlanButton=
-  document.getElementById('buildPlan');
-
-const monsterOptions=
-  document.getElementById('monsterOptions');
-
-
-/* =====================================
-   共通
-===================================== */
+const q=document.getElementById('q');
+const results=document.getElementById('results');
+const statusEl=document.getElementById('status');
+const net=document.getElementById('net');
+const monsterTab=document.getElementById('monsterTab');
+const skillTab=document.getElementById('skillTab');
+const planTab=document.getElementById('planTab');
+const sortSelect=document.getElementById('sortSelect');
+const sortRow=document.getElementById('sortRow');
+const normalSearch=document.getElementById('normalSearch');
+const planControls=document.getElementById('planControls');
+const planTarget=document.getElementById('planTarget');
+const buildPlanButton=document.getElementById('buildPlan');
+const monsterOptions=document.getElementById('monsterOptions');
 
 function esc(s){
-
-  return String(s??'')
-    .replace(
-      /[&<>"']/g,
-      c=>({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;',
-        "'":'&#39;'
-      }[c])
-    );
+  return String(s??'').replace(/[&<>"']/g,c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
 }
-
 
 function norm(s){
-
-  return String(s??'')
-    .toLowerCase()
-    .replace(
-      /[\s・･ー]/g,
-      ''
-    );
+  return String(s??'').toLowerCase().replace(/[\s・･ー]/g,'');
 }
-
 
 function findMonster(name){
-
-  return DB.monsters.find(
-    m=>m.name===name
-  );
+  return DB.monsters.find(m=>m.name===name);
 }
-
 
 function imgUrl(name){
-
-  return (
-    'https://www.google.com/search?tbm=isch&q='
-    +
-    encodeURIComponent(
-      'DQM3 '+name
-    )
-  );
+  return 'https://www.google.com/search?tbm=isch&q='+encodeURIComponent('DQM3 '+name);
 }
-
-
-/* =====================================
-   移動
-===================================== */
 
 function jumpMonster(name){
-
   mode='monster';
-
   updateTabs();
-
   q.value=name;
-
   render();
-
-  scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+  scrollTo({top:0,behavior:'smooth'});
 }
-
 
 function jumpSkill(name){
-
   mode='skill';
-
   updateTabs();
-
   q.value=name;
-
   render();
+  scrollTo({top:0,behavior:'smooth'});
+}
 
-  scrollTo({
-    top:0,
-    behavior:'smooth'
+window.jumpMonster=jumpMonster;
+window.jumpSkill=jumpSkill;
+
+function monsterButton(name){
+  return `<button class="jump" onclick='jumpMonster(${JSON.stringify(name)})'>${esc(name)}</button>`;
+}
+
+function skillButton(name){
+  return `<button class="jump skilljump" onclick='jumpSkill(${JSON.stringify(name)})'>${esc(name)}</button>`;
+}
+
+function locationText(location){
+  const seasons=(location.seasons||[]).join('・');
+  return `
+    <div class="location-row">
+      <div class="location-name">📍 ${esc(location.name)}</div>
+      <div class="location-detail">
+        ${seasons?`季節：${esc(seasons)}`:''}
+        ${location.weather?`　天候：${esc(location.weather)}`:''}
+        ${location.miniBoss?'　ミニボス':''}
+      </div>
+    </div>`;
+}
+
+function locationsHtml(monster){
+  const locations=monster.locations||[];
+  if(!locations.length) return '<div class="small">野生出現なし／未登録</div>';
+  return `<div class="locations">${locations.map(locationText).join('')}</div>`;
+}
+
+function eggsHtml(monster){
+  const eggs=monster.eggs||[];
+  if(!eggs.length) return '<div class="small">卵からの入手なし</div>';
+  return `<div class="eggs">${eggs.map(egg=>`
+    <div class="egg-row">
+      <span class="egg-icon">🥚</span>
+      <strong>${esc(egg.name)}の卵</strong>
+      ${egg.postGameOnly?'<span class="egg-postgame">クリア後</span>':''}
+    </div>`).join('')}</div>`;
+}
+
+function recipeText(r){
+  const parents=(r.parents||[]).map(monsterButton).join(' ＋ ');
+  return `<div class="route"><span class="rtype">${esc(r.type||'配合')}</span>${parents}<span class="arrow"> → </span>${esc(r.result||'')}</div>`;
+}
+
+function useText(u){
+  const other=(u.otherParents||[]).map(monsterButton).join(' ＋ ');
+  return `<div class="route"><span class="rtype">${esc(u.type||'配合')}</span>${esc(u.source||'')}${other?` ＋ ${other}`:''}<span class="arrow"> → </span>${monsterButton(u.result)}</div>`;
+}
+
+function monsterCard(m){
+  const recipes=(m.recipes||[]).map(recipeText).join('') || '<div class="small">配合での入手なし／未登録</div>';
+  const uses=(m.uses||[]).map(useText).join('') || '<div class="small">特殊な配合先なし／未登録</div>';
+
+  return `
+    <section class="card">
+      <div class="name"><a target="_blank" rel="noopener" href="${imgUrl(m.name)}">${esc(m.name)}</a></div>
+      <div class="meta">
+        ${m.no?`<span class="badge">No.${esc(m.no)}</span>`:''}
+        ${m.rank?`<span class="badge">${esc(m.rank)}ランク</span>`:''}
+        ${m.family?`<span class="badge">${esc(m.family)}</span>`:''}
+      </div>
+      <h2>🌍 生息地</h2>
+      ${locationsHtml(m)}
+      <h2>🥚 卵からの入手</h2>
+      ${eggsHtml(m)}
+      <h2>🧬 このモンスターの作り方</h2>
+      ${recipes}
+      <h2>このモンスターを使う配合先</h2>
+      ${uses}
+    </section>`;
+}
+
+function searchScore(name,term){
+  if(!term) return 0;
+  const value=norm(name);
+  if(value===term) return 0;
+  if(value.startsWith(term)) return 1;
+  if(value.includes(term)) return 2;
+  return 3;
+}
+
+function compareMonsters(a,b,term){
+  if(term){
+    const as=searchScore(a.name,term);
+    const bs=searchScore(b.name,term);
+    if(as!==bs) return as-bs;
+  }
+
+  if(sortSelect.value==='name'){
+    const aa=a.reading||a.name||'';
+    const bb=b.reading||b.name||'';
+    const c=String(aa).localeCompare(String(bb),'ja');
+    if(c!==0) return c;
+  }
+
+  if(sortSelect.value==='rank'){
+    const order={X:0,S:1,A:2,B:3,C:4,D:5,E:6,F:7,G:8};
+    const ar=order[String(a.rank||'').toUpperCase()]??99;
+    const br=order[String(b.rank||'').toUpperCase()]??99;
+    if(ar!==br) return ar-br;
+  }
+
+  if(sortSelect.value==='family'){
+    const c=String(a.family||'').localeCompare(String(b.family||''),'ja');
+    if(c!==0) return c;
+  }
+
+  return (a.no??9999)-(b.no??9999);
+}
+
+function renderMonsters(){
+  const term=norm(q.value);
+
+  const found=DB.monsters.filter(m=>{
+    const locations=(m.locations||[]).flatMap(x=>[
+      x.name,
+      ...(x.seasons||[]),
+      x.weather
+    ]);
+
+    const eggs=(m.eggs||[]).flatMap(x=>[
+      x.name,
+      `${x.name}の卵`,
+      x.postGameOnly?'クリア後':''
+    ]);
+
+    const text=[
+      m.name,
+      m.reading,
+      m.rank,
+      m.family,
+      m.no,
+      ...locations,
+      ...eggs,
+      ...(m.recipes||[]).flatMap(r=>[
+        ...(r.parents||[]),
+        r.result
+      ]),
+      ...(m.uses||[]).flatMap(u=>[
+        ...(u.otherParents||[]),
+        u.result
+      ])
+    ].join(' ');
+
+    return !term || norm(text).includes(term);
+  });
+
+  found.sort((a,b)=>compareMonsters(a,b,term));
+
+  statusEl.textContent=
+    term
+      ? `検索結果：${found.length}体`
+      : `登録：${DB.monsters.length}体`;
+
+  results.innerHTML=
+    found.length
+      ? found.map(monsterCard).join('')
+      : '<div class="empty">該当するモンスターがありません。</div>';
+}
+
+function allSkillNames(){
+  const names=new Set();
+
+  SKILL_DB.skills.forEach(skill=>{
+    if(skill.name){
+      names.add(skill.name);
+    }
+
+    (skill.recipes||[]).forEach(recipe=>{
+      recipe.forEach(name=>{
+        names.add(name);
+      });
+    });
+
+    (skill.evolvesTo||[]).forEach(evo=>{
+      if(evo.result){
+        names.add(evo.result);
+      }
+
+      (evo.required||[]).forEach(req=>{
+        if(req.skill){
+          names.add(req.skill);
+        }
+      });
+    });
+  });
+
+  return [...names];
+}
+
+function findSkill(name){
+  return SKILL_DB.skills.find(x=>x.name===name);
+}
+
+function uniqueObjects(items){
+  const seen=new Set();
+
+  return items.filter(item=>{
+    const key=JSON.stringify(item);
+
+    if(seen.has(key)){
+      return false;
+    }
+
+    seen.add(key);
+    return true;
   });
 }
 
+function skillRecipesFor(name){
+  const recipes=[];
 
-window.jumpMonster=
-  jumpMonster;
+  SKILL_DB.skills.forEach(skill=>{
 
-window.jumpSkill=
-  jumpSkill;
+    if(skill.name===name){
 
+      (skill.recipes||[]).forEach(recipe=>{
+        recipes.push({
+          type:'組み合わせ',
+          parents:recipe,
+          result:skill.name,
+          note:skill.note||''
+        });
+      });
 
-function monsterButton(name){
+    }
 
-  return `
-    <button
-      class="jump"
-      onclick='jumpMonster(${JSON.stringify(name)})'
-    >
-      ${esc(name)}
-    </button>
-  `;
-}
+    (skill.evolvesTo||[]).forEach(evo=>{
 
-
-function skillButton(name){
-
-  return `
-    <button
-      class="jump skilljump"
-      onclick='jumpSkill(${JSON.stringify(name)})'
-    >
-      ${esc(name)}
-    </button>
-  `;
-}
-
-
-/* =====================================
-   生息地
-===================================== */
-
-function locationText(location){
-
-  const seasons=
-    (location.seasons||[])
-      .join('・');
-
-
-  return `
-    <div class="location-row">
-
-      <div class="location-name">
-        📍 ${esc(location.name)}
-      </div>
-
-      <div class="location-detail">
-
-        ${
-          seasons
-            ? `季節：${esc(seasons)}`
-            : ''
-        }
-
-        ${
-          location.weather
-            ? `　天候：${esc(location.weather)}`
-            : ''
-        }
-
-        ${
-          location.miniBoss
-            ? '　ミニボス'
-            : ''
-        }
-
-      </div>
-
-    </div>
-  `;
-}
-
-
-function locationsHtml(monster){
-
-  const locations=
-    monster.locations||[];
-
-
-  if(!locations.length){
-
-    return `
-      <div class="small">
-        野生出現なし／未登録
-      </div>
-    `;
-  }
-
-
-  return `
-    <div class="locations">
-      ${
-        locations
-          .map(locationText)
-          .join('')
+      if(evo.result!==name){
+        return;
       }
-    </div>
-  `;
+
+      recipes.push({
+        type:'進化',
+        parents:(evo.required||[]).map(req=>`${req.skill} ${req.points}P`),
+        result:evo.result,
+        note:evo.note||''
+      });
+
+    });
+
+  });
+
+  return uniqueObjects(recipes);
 }
 
+function skillUsesFor(name){
+  const uses=[];
 
-/* =====================================
-   卵
-===================================== */
+  SKILL_DB.skills.forEach(skill=>{
 
-function eggsHtml(monster){
+    (skill.recipes||[]).forEach(recipe=>{
 
-  const eggs=
-    monster.eggs||[];
+      if(recipe.includes(name)){
+        uses.push({
+          type:'組み合わせ',
+          parents:recipe,
+          result:skill.name,
+          note:skill.note||''
+        });
+      }
 
+    });
 
-  if(!eggs.length){
+    (skill.evolvesTo||[]).forEach(evo=>{
 
-    return `
-      <div class="small">
-        卵からの入手なし
-      </div>
-    `;
-  }
+      const required=evo.required||[];
 
+      if(
+        required.some(
+          req=>req.skill===name
+        )
+      ){
+        uses.push({
+          type:'進化',
+          parents:required.map(req=>`${req.skill} ${req.points}P`),
+          result:evo.result,
+          note:evo.note||''
+        });
+      }
+
+    });
+
+  });
+
+  return uniqueObjects(uses);
+}
+
+function skillRoute(route){
+  const parents=(route.parents||[]).map(value=>{
+
+    const match=String(value).match(/^(.*?)(?:\s+(\d+)P)?$/);
+
+    const skillName=
+      match
+        ? match[1]
+        : value;
+
+    const points=
+      match&&match[2]
+        ? ` ${match[2]}P`
+        : '';
+
+    return skillButton(skillName)+`<strong>${esc(points)}</strong>`;
+
+  }).join(' ＋ ');
 
   return `
-    <div class="eggs">
+    <div class="route skillroute">
+      <span class="rtype">${esc(route.type||'進化')}</span>
+      ${parents}
+      <span class="arrow"> → </span>
+      ${skillButton(route.result)}
+      ${route.note?`<div class="skillnote">${esc(route.note)}</div>`:''}
+    </div>`;
+}
 
+function abilityTable(skill){
+  const abilities=skill?.abilities||[];
+
+  if(!abilities.length){
+    return '<div class="small">特技・効果データ未登録</div>';
+  }
+
+  return `
+    <div class="skilltable">
       ${
-        eggs
-          .map(egg=>`
-
-            <div class="egg-row">
-
-              <span class="egg-icon">
-                🥚
-              </span>
-
-              <strong>
-                ${esc(egg.name)}の卵
-              </strong>
-
-              ${
-                egg.postGameOnly
-                  ? `
-                      <span class="egg-postgame">
-                        クリア後
-                      </span>
-                    `
-                  : ''
-              }
-
+        abilities
+          .slice()
+          .sort(
+            (a,b)=>
+              Number(a.points||0)
+              -
+              Number(b.points||0)
+          )
+          .map(ability=>`
+            <div class="skillability">
+              <span class="skillpoints">${esc(ability.points)}P</span>
+              <span class="abilityname">${esc(ability.name)}</span>
             </div>
-
           `)
           .join('')
       }
-
-    </div>
-  `;
+    </div>`;
 }
 
-
-function eggSummary(monster){
-
-  return (
-    monster?.eggs||[]
-  )
-    .map(
-      egg=>
-        `${egg.name}の卵${
-          egg.postGameOnly
-            ? '（クリア後）'
-            : ''
-        }`
-    );
-}
-
-
-/* =====================================
-   配合
-===================================== */
-
-function recipeText(r){
-
-  const parents=
-    (r.parents||[])
-      .map(monsterButton)
-      .join(' ＋ ');
-
-
-  return `
-    <div class="route">
-
-      <span class="rtype">
-        ${esc(r.type||'配合')}
-      </span>
-
-      ${parents}
-
-      <span class="arrow">
-        →
-      </span>
-
-      ${esc(r.result||'')}
-
-    </div>
-  `;
-}
-
-
-function useText(u){
-
-  const other=
-    (u.otherParents||[])
-      .map(monsterButton)
-      .join(' ＋ ');
-
-
-  return `
-    <div class="route">
-
-      <span class="rtype">
-        ${esc(u.type||'配合')}
-      </span>
-
-      ${esc(u.source||'')}
-
-      ${
-        other
-          ? `＋ ${other}`
-          : ''
-      }
-
-      <span class="arrow">
-        →
-      </span>
-
-      ${monsterButton(u.result)}
-
-    </div>
-  `;
-}
-
-
-/* =====================================
-   モンスターカード
-===================================== */
-
-function monsterCard(m){
-
-  const recipes=
-    (m.recipes||[])
-      .map(recipeText)
-      .join('')
-    ||
-    `
-      <div class="small">
-        配合での入手なし／未登録
-      </div>
-    `;
-
-
-  const uses=
-    (m.uses||[])
-      .map(useText)
-      .join('')
-    ||
-    `
-      <div class="small">
-        特殊な配合先なし／未登録
-      </div>
-    `;
-
+function skillCard(name){
+  const skill=findSkill(name);
+  const recipes=skillRecipesFor(name);
+  const uses=skillUsesFor(name);
 
   return `
     <section class="card">
 
-      <div class="name">
-
-        <a
-          target="_blank"
-          rel="noopener"
-          href="${imgUrl(m.name)}"
-        >
-          ${esc(m.name)}
-        </a>
-
+      <div class="skillname">
+        ${esc(name)}
       </div>
-
 
       <div class="meta">
-
         ${
-          m.no
-            ? `<span class="badge">No.${esc(m.no)}</span>`
+          skill?.maxPoints
+            ? `<span class="badge">最大 ${esc(skill.maxPoints)}P</span>`
             : ''
         }
+      </div>
 
-        ${
-          m.rank
-            ? `<span class="badge">${esc(m.rank)}ランク</span>`
-            : ''
+      <h2>
+        覚える特技・効果
+      </h2>
+
+      ${abilityTable(skill)}
+
+      <h2>
+        このスキルの作り方
+      </h2>
+
+      ${
+        recipes.length
+          ? recipes.map(skillRoute).join('')
+          : '<div class="small">作成条件なし／未登録</div>'
+      }
+
+      <h2>
+        このスキルから作れるもの
+      </h2>
+
+      ${
+        uses.length
+          ? uses.map(skillRoute).join('')
+          : '<div class="small">上位スキルなし／未登録</div>'
+      }
+
+    </section>`;
+}
+
+function renderSkills(){
+  const term=norm(q.value);
+
+  const found=
+    allSkillNames()
+      .filter(name=>{
+
+        const skill=findSkill(name);
+
+        const abilityText=
+          (skill?.abilities||[])
+            .map(x=>x.name)
+            .join(' ');
+
+        return (
+          !term
+          ||
+          norm(
+            `${name} ${abilityText}`
+          ).includes(term)
+        );
+
+      })
+      .sort((a,b)=>{
+
+        const as=searchScore(a,term);
+        const bs=searchScore(b,term);
+
+        if(as!==bs){
+          return as-bs;
         }
 
+        return a.localeCompare(
+          b,
+          'ja'
+        );
+
+      });
+
+  statusEl.textContent=
+    term
+      ? `検索結果：${found.length}件`
+      : `スキル：${found.length}件`;
+
+  results.innerHTML=
+    found.length
+      ? found.map(skillCard).join('')
+      : '<div class="empty">該当するスキルがありません。</div>';
+}
+
+
+/* =====================================
+   配合計画
+===================================== */
+
+const PLAN_KEY='dqm3-plan-v2';
+
+let planState={
+  target:'',
+  checked:{},
+  routes:{}
+};
+
+
+function loadPlanState(){
+
+  try{
+
+    const saved=
+      localStorage.getItem(
+        PLAN_KEY
+      );
+
+    if(saved){
+      planState={
+        ...planState,
+        ...JSON.parse(saved)
+      };
+    }
+
+  }
+  catch(error){
+    console.warn(error);
+  }
+
+}
+
+
+function savePlanState(){
+
+  localStorage.setItem(
+    PLAN_KEY,
+    JSON.stringify(
+      planState
+    )
+  );
+
+}
+
+
+function nodeKey(
+  target,
+  path
+){
+
+  return target+'::'+path;
+
+}
+
+
+function buildPlanNode(
+  name,
+  path='0',
+  stack=[]
+){
+
+  const monster=
+    findMonster(name);
+
+  const key=
+    nodeKey(
+      planState.target,
+      path
+    );
+
+
+  if(!monster){
+
+    return {
+      name,
+      key,
+      monster:null,
+      generic:true,
+      children:[]
+    };
+
+  }
+
+
+  if(
+    stack.includes(name)
+  ){
+
+    return {
+      name,
+      key,
+      monster,
+      cycle:true,
+      children:[]
+    };
+
+  }
+
+
+  const recipes=
+    monster.recipes||[];
+
+
+  if(
+    !recipes.length
+  ){
+
+    return {
+      name,
+      key,
+      monster,
+      children:[]
+    };
+
+  }
+
+
+  let routeIndex=
+    Number(
+      planState.routes[key]
+      ?? 0
+    );
+
+
+  if(
+    routeIndex>=recipes.length
+  ){
+    routeIndex=0;
+  }
+
+
+  const recipe=
+    recipes[routeIndex];
+
+
+  const children=
+    (recipe.parents||[])
+      .map(
+        (parent,index)=>
+          buildPlanNode(
+            parent,
+            `${path}.${index}`,
+            [...stack,name]
+          )
+      );
+
+
+  return {
+    name,
+    key,
+    monster,
+    recipes,
+    routeIndex,
+    recipe,
+    children
+  };
+
+}
+
+
+function shortLocation(monster){
+
+  const locations=
+    monster?.locations||[];
+
+  return locations.length
+    ? locations[0].name
+    : '';
+
+}
+
+
+function shortEgg(monster){
+
+  const eggs=
+    monster?.eggs||[];
+
+  if(!eggs.length){
+    return '';
+  }
+
+  const egg=
+    eggs[0];
+
+  return (
+    `${egg.name}の卵`
+    +
+    (
+      egg.postGameOnly
+        ? '（クリア後）'
+        : ''
+    )
+  );
+
+}
+
+
+function planNodeHtml(
+  node,
+  depth=0
+){
+
+  const checked=
+    Boolean(
+      planState.checked[
+        node.key
+      ]
+    );
+
+
+  const indent=
+    Math.min(
+      depth,
+      8
+    );
+
+
+  const routeSelect=
+    (
+      node.recipes
+      &&
+      node.recipes.length>1
+    )
+      ? `
+          <select
+            class="route-select"
+            onchange='changePlanRoute(
+              ${JSON.stringify(node.key)},
+              this.value
+            )'
+          >
+            ${
+              node.recipes
+                .map(
+                  (recipe,index)=>`
+                    <option
+                      value="${index}"
+                      ${
+                        index===node.routeIndex
+                          ? 'selected'
+                          : ''
+                      }
+                    >
+                      ${esc(
+                        (recipe.parents||[])
+                          .join(' ＋ ')
+                      )}
+                    </option>
+                  `
+                )
+                .join('')
+            }
+          </select>
+        `
+      : '';
+
+
+  const location=
+    shortLocation(
+      node.monster
+    );
+
+
+  const egg=
+    shortEgg(
+      node.monster
+    );
+
+
+  return `
+    <div
+      class="plan-node"
+      style="--depth:${indent}"
+    >
+
+      <div class="plan-node-head">
+
+        <input
+          type="checkbox"
+          class="plan-check"
+          ${
+            checked
+              ? 'checked'
+              : ''
+          }
+          onchange='togglePlanCheck(
+            ${JSON.stringify(node.key)},
+            this.checked
+          )'
+        >
+
+        <button
+          class="plan-name"
+          onclick='jumpMonster(
+            ${JSON.stringify(node.name)}
+          )'
+          ${
+            !node.monster
+              ? 'disabled'
+              : ''
+          }
+        >
+          ${esc(node.name)}
+        </button>
+
         ${
-          m.family
-            ? `<span class="badge">${esc(m.family)}</span>`
+          node.monster?.rank
+            ? `
+                <span class="mini-badge">
+                  ${esc(node.monster.rank)}
+                </span>
+              `
             : ''
         }
 
       </div>
 
 
-      <h2>
-        🌍 生息地
-      </h2>
-
-      ${locationsHtml(m)}
-
-
-      <h2>
-        🥚 卵からの入手
-      </h2>
-
-      ${eggsHtml(m)}
+      ${
+        location
+          ? `
+              <div class="plan-location">
+                📍 ${esc(location)}
+              </div>
+            `
+          : ''
+      }
 
 
-      <h2>
-        🧬 このモンスターの作り方
-      </h2>
+      ${
+        egg
+          ? `
+              <div class="plan-egg">
+                🥚 ${esc(egg)}
+              </div>
+            `
+          : ''
+      }
 
-      ${recipes}
+
+      ${routeSelect}
 
 
-      <h2>
-        このモンスターを使う配合先
-      </h2>
+      ${
+        node.cycle
+          ? `
+              <div class="small">
+                循環する配合のため展開停止
+              </div>
+            `
+          : ''
+      }
 
-      ${uses}
+    </div>
 
-    </section>
- 
+
+    ${
+      (
+        !checked
+        &&
+        node.children.length
+      )
+        ? node.children
+            .map(
+              child=>
+                planNodeHtml(
+                  child,
+                  depth+1
+                )
+            )
+            .join('')
+        : ''
+    }
+  `;
+
+}
+
+
+function collectPlanStats(
+  node,
+  stats
+){
+
+  stats.total++;
+
+
+  if(
+    planState.checked[
+      node.key
+    ]
+  ){
+
+    stats.checked++;
+
+    return;
+
+  }
+
+
+  if(
+    !node.children.length
+  ){
+
+    stats.leaves[
+      node.name
+    ] =
+      (
+        stats.leaves[
+          node.name
+        ]
+        || 0
+      )
+      + 1;
+
+    return;
+
+  }
+
+
+  node.children.forEach(
+    child=>
+      collectPlanStats(
+        child,
+        stats
+      )
+  );
+
+}
+
+
+function remainingHtml(
+  stats
+){
+
+  const items=
+    Object.entries(
+      stats.leaves
+    )
+      .sort(
+        (a,b)=>
+          b[1]-a[1]
+          ||
+          a[0].localeCompare(
+            b[0],
+            'ja'
+          )
+      );
+
+
+  if(!items.length){
+
+    return `
+      <div class="plan-complete">
+        🎉 必要素材はすべて準備済みです
+      </div>
+    `;
+
+  }
+
+
+  return items
+    .map(
+      ([name,count])=>{
+
+        const monster=
+          findMonster(name);
+
+        const locations=
+          monster?.locations||[];
+
+        const eggs=
+          monster?.eggs||[];
+
+
+        return `
+          <div class="material-row">
+
+            <div>
+
+              <strong>
+                ${esc(name)}
+              </strong>
+
+              <span class="material-count">
+                ×${count}
+              </span>
+
+            </div>
+
+
+            ${
+              locations.length
+                ? `
+                    <div class="material-location">
+                      📍
+                      ${esc(
+                        locations
+                          .slice(0,2)
+                          .map(
+                            x=>x.name
+                          )
+                          .join(' / ')
+                      )}
+                    </div>
+                  `
+                : ''
+            }
+
+
+            ${
+              eggs.length
+                ? `
+                    <div class="material-egg">
+                      🥚
+                      ${esc(
+                        eggs
+                          .map(
+                            egg=>
+                              `${egg.name}の卵${
+                                egg.postGameOnly
+                                  ? '（クリア後）'
+                                  : ''
+                              }`
+                          )
+                          .join(' / ')
+                      )}
+                    </div>
+                  `
+                : ''
+            }
+
+          </div>
+        `;
+
+      }
+    )
+    .join('');
+
+}
+
+
+function renderPlan(){
+
+  const target=
+    planState.target;
+
+
+  if(!target){
+
+    statusEl.textContent=
+      '作りたいモンスターを入力してください';
+
+
+    results.innerHTML=
+      `
+        <div class="empty">
+          上の欄から目標モンスターを選び、
+          「配合ルートを作成」を押してください。
+        </div>
+      `;
+
+    return;
+
+  }
+
+
+  const monster=
+    findMonster(target);
+
+
+  if(!monster){
+
+    statusEl.textContent=
+      'モンスターが見つかりません';
+
+
+    results
