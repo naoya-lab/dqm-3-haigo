@@ -9,10 +9,14 @@ const net=document.getElementById('net');
 const monsterTab=document.getElementById('monsterTab');
 const skillTab=document.getElementById('skillTab');
 const planTab=document.getElementById('planTab');
+const recommendTab=document.getElementById('recommendTab');
 const sortSelect=document.getElementById('sortSelect');
 const sortRow=document.getElementById('sortRow');
 const normalSearch=document.getElementById('normalSearch');
 const planControls=document.getElementById('planControls');
+const recommendControls=document.getElementById('recommendControls');
+const recommendTarget=document.getElementById('recommendTarget');
+const recommendStrategy=document.getElementById('recommendStrategy');
 const planTarget=document.getElementById('planTarget');
 const buildPlanButton=document.getElementById('buildPlan');
 const monsterOptions=document.getElementById('monsterOptions');
@@ -904,6 +908,573 @@ function renderSkills(){
       `;
 }
 
+
+const REC_CONFIG={
+  fire:{
+    label:'\u706b',
+    icon:'\ud83d\udd25',
+    kind:'element',
+    traits:['\u706b\u306e\u30b3\u30c4','\u706b\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30b2\u30de','\u3084\u307e\u305f\u306e\u304a\u308d\u3061'],
+    skills:['\u706b\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  water:{
+    label:'\u6c34',
+    icon:'\ud83d\udca7',
+    kind:'element',
+    traits:['\u6c34\u306e\u30b3\u30c4','\u6c34\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u3046\u305a\u3057\u304a\u30ad\u30f3\u30b0','\u30a4\u30eb\u30ab\u3061\u3087\u3046\u3061\u3093'],
+    skills:['\u6c34\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  wind:{
+    label:'\u98a8',
+    icon:'\ud83c\udf2a\ufe0f',
+    kind:'element',
+    traits:['\u98a8\u306e\u30b3\u30c4','\u98a8\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30d0\u30ba\u30ba','\u30b2\u30ea\u30e5\u30aa\u30f3'],
+    skills:['\u98a8\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  earth:{
+    label:'\u5730',
+    icon:'\ud83e\udea8',
+    kind:'element',
+    traits:['\u5730\u306e\u30b3\u30c4','\u5730\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u307e\u304b\u3044\u3058\u3085\u3046','\u30c9\u30ed\u30b6\u30e9\u30fc'],
+    skills:['\u5730\u306e\u6975\u610f','\u653b\u6483\u529b\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  explosion:{
+    label:'\u7206\u767a',
+    icon:'\ud83d\udca5',
+    kind:'element',
+    traits:['\u7206\u767a\u306e\u30b3\u30c4','\u7206\u767a\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30a2\u30fc\u30af\u30c7\u30fc\u30e2\u30f3','\u304c\u3044\u3053\u3064\u3051\u3093\u3057'],
+    skills:['\u7206\u767a\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  ice:{
+    label:'\u6c37\u7d50',
+    icon:'\u2744\ufe0f',
+    kind:'element',
+    traits:['\u6c37\u7d50\u306e\u30b3\u30c4','\u6c37\u7d50\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30ea\u30fc\u30ba\u30ec\u30c3\u30c8','\u30db\u30fc\u30af\u30d6\u30ea\u30b6\u30fc\u30c9'],
+    skills:['\u6c37\u7d50\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  electric:{
+    label:'\u96fb\u6483',
+    icon:'\u26a1',
+    kind:'element',
+    traits:['\u96fb\u6483\u306e\u30b3\u30c4','\u96fb\u6483\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30b7\u30eb\u30d0\u30fc\u30ca\u30fc\u30ac','\u30ad\u30e9\u30fc\u30de\u30b8\u30f3\u30ac'],
+    skills:['\u96fb\u6483\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  light:{
+    label:'\u5149',
+    icon:'\u2728',
+    kind:'element',
+    traits:['\u5149\u306e\u30b3\u30c4','\u5149\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30ed\u30a4\u30e4\u30eb\u30d6\u30eb\u30fc\u30e0','\u30ed\u30c3\u30af\u3061\u3087\u3046'],
+    skills:['\u5149\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  dark:{
+    label:'\u95c7',
+    icon:'\ud83c\udf11',
+    kind:'element',
+    traits:['\u95c7\u306e\u30b3\u30c4','\u95c7\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u3088\u308b\u306e\u3066\u3044\u304a\u3046'],
+    skills:['\u95c7\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
+  },
+  sleep:{
+    label:'\u7720\u308a',
+    icon:'\ud83d\ude34',
+    kind:'status',
+    traits:['\u306d\u3080\u308a\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u3088\u308b\u306e\u3066\u3044\u304a\u3046','\u308f\u3089\u3044\u3076\u304f\u308d'],
+    skills:['\u7720\u308a\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  confusion:{
+    label:'\u6df7\u4e71',
+    icon:'\ud83c\udf00',
+    kind:'status',
+    traits:['\u3053\u3093\u3089\u3093\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30dd\u30f3\u30dd\u30b3\u3060\u306c\u304d','\u30a2\u30fc\u30af\u30c7\u30fc\u30e2\u30f3'],
+    skills:['\u6df7\u4e71\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  paralysis:{
+    label:'\u30de\u30d2',
+    icon:'\u26a1',
+    kind:'status',
+    traits:['\u30de\u30d2\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30b7\u30eb\u30d0\u30fc\u30ca\u30fc\u30ac'],
+    skills:['\u30de\u30d2\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  stun:{
+    label:'\u4f11\u307f',
+    icon:'\ud83d\udcab',
+    kind:'status',
+    traits:['\u4f11\u307f\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30d5\u30a7\u30a2\u30ea\u30fc\u30c9\u30e9\u30b4\u30f3','\u307e\u304b\u3044\u3058\u3085\u3046'],
+    skills:['\u4f11\u307f\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  poison:{
+    label:'\u6bd2',
+    icon:'\u2620\ufe0f',
+    kind:'status',
+    traits:['\u3069\u304f\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30d0\u30c3\u30d5\u30a1\u30ed\u30f3'],
+    skills:['\u6bd2\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  blind:{
+    label:'\u5e7b\u60d1',
+    icon:'\ud83c\udf2b\ufe0f',
+    kind:'status',
+    traits:['\u5e7b\u60d1\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30d5\u30a7\u30a2\u30ea\u30fc\u30c9\u30e9\u30b4\u30f3','\u30c9\u30ed\u30b6\u30e9\u30fc'],
+    skills:['\u5e7b\u60d1\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  seal:{
+    label:'\u5c01\u3058',
+    icon:'\ud83d\udd12',
+    kind:'status',
+    traits:['\u5c01\u3058\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30d0\u30c3\u30d5\u30a1\u30ed\u30f3','\u30c9\u30ed\u30b6\u30e9\u30fc'],
+    skills:['\u5c01\u3058\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  debuff:{
+    label:'\u5f31\u4f53\u5316',
+    icon:'\ud83d\udcc9',
+    kind:'status',
+    traits:['\u5f31\u4f53\u5316\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u304c\u3044\u3053\u3064\u3051\u3093\u3057','\u304d\u308a\u304b\u3076\u304a\u3070\u3051'],
+    skills:['\u5f31\u4f53\u5316\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  },
+  death:{
+    label:'\u5373\u6b7b',
+    icon:'\ud83d\udc80',
+    kind:'status',
+    traits:['\u5373\u6b7b\u30d6\u30ec\u30a4\u30af\u5927'],
+    preferred:['\u30d6\u30e9\u30d0\u30cb\u30af\u30a4\u30fc\u30f3'],
+    skills:['\u5373\u6b7b\u7cfb\u30b9\u30ad\u30eb','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74']
+  }
+};
+
+function recTraitNames(monster){
+  return (monster.traits?.S||[])
+    .map(x=>x.name)
+    .filter(Boolean);
+}
+
+function recTalentNames(monster){
+  return (monster.talents||[])
+    .map(x=>x.name)
+    .filter(Boolean);
+}
+
+function recScore(monster,cfg){
+  const traits=recTraitNames(monster);
+  let score=0;
+
+  cfg.traits.forEach((name,index)=>{
+    if(traits.includes(name)){
+      score+=index===0?5:7;
+    }
+  });
+
+  const preferredIndex=cfg.preferred.indexOf(monster.name);
+  if(preferredIndex>=0){
+    score+=6-preferredIndex;
+  }
+
+  if(cfg.kind==='status'){
+    if(traits.some(x=>x.includes('\u30d6\u30ec\u30a4\u30af\u5927'))){
+      score+=1;
+    }
+    if(traits.some(x=>x.includes('\u3059\u3070\u3084\u3055'))){
+      score+=1;
+    }
+  }
+
+  return score;
+}
+
+function recCandidates(cfg){
+  return DB.monsters
+    .map(monster=>({
+      monster,
+      score:recScore(monster,cfg)
+    }))
+    .filter(x=>x.score>0)
+    .sort((a,b)=>
+      b.score-a.score
+      ||
+      String(a.monster.no||'').localeCompare(
+        String(b.monster.no||''),
+        'ja',
+        {numeric:true}
+      )
+    );
+}
+
+function recReason(monster,cfg){
+  const traits=recTraitNames(monster);
+  const matched=cfg.traits.filter(x=>traits.includes(x));
+
+  if(matched.length){
+    return matched.join(' + ');
+  }
+
+  if(cfg.preferred.includes(monster.name)){
+    return '\u3053\u306e\u30c6\u30fc\u30de\u306e\u63a8\u5968\u5019\u88dc';
+  }
+
+  return '\u7279\u6027\u69cb\u6210\u304b\u3089\u9078\u51fa';
+}
+
+function recSkillHtml(name){
+  if(findSkill(name)){
+    return skillButton(name);
+  }
+
+  return \`<span class="rec-skill">\${esc(name)}</span>\`;
+}
+
+function recRecommendedSkills(cfg,role){
+  if(role==='\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45'){
+    return ['\u9a0e\u58eb\u9053','HP\u30a2\u30c3\u30d74','\u5b88\u5099\u529b\u30a2\u30c3\u30d74'];
+  }
+
+  if(role==='\u56de\u5fa9'){
+    return ['\u8d85\u56de\u5fa9SP','MP\u30a2\u30c3\u30d74','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74'];
+  }
+
+  return cfg.skills;
+}
+
+function recPickByName(name,used){
+  const monster=findMonster(name);
+  if(!monster || used.has(monster.name)){
+    return null;
+  }
+
+  used.add(monster.name);
+  return monster;
+}
+
+function recPickCandidate(candidates,used){
+  const item=candidates.find(
+    x=>!used.has(x.monster.name)
+  );
+
+  if(!item){
+    return null;
+  }
+
+  used.add(item.monster.name);
+  return item.monster;
+}
+
+function recFallbackHealer(used){
+  const exact=recPickByName('\u30d9\u30db\u30de\u30b9\u30e9\u30a4\u30e0',used);
+  if(exact){
+    return exact;
+  }
+
+  const monster=DB.monsters.find(m=>
+    !used.has(m.name)
+    &&
+    recTalentNames(m).some(name=>
+      name.includes('\u56de\u5fa9')
+      ||
+      name.includes('\u30d2\u30fc\u30e9\u30fc')
+    )
+  );
+
+  if(monster){
+    used.add(monster.name);
+  }
+
+  return monster||null;
+}
+
+function recFallbackTank(used){
+  const exact=recPickByName('\u30b4\u30fc\u30eb\u30c7\u30f3\u30b9\u30e9\u30a4\u30e0',used);
+  if(exact){
+    return exact;
+  }
+
+  const monster=DB.monsters.find(m=>
+    !used.has(m.name)
+    &&
+    recTraitNames(m).some(name=>
+      name.includes('\u30e1\u30bf\u30eb\u30dc\u30c7\u30a3')
+      ||
+      name.includes('\u304f\u3058\u3051\u306c\u5fc3')
+    )
+  );
+
+  if(monster){
+    used.add(monster.name);
+  }
+
+  return monster||null;
+}
+
+function buildRecommendedTeam(cfg,strategy){
+  const candidates=recCandidates(cfg);
+  const used=new Set();
+  const team=[];
+
+  const add=(monster,role)=>{
+    if(monster){
+      team.push({monster,role});
+    }
+  };
+
+  add(
+    recPickCandidate(candidates,used),
+    cfg.kind==='element'
+      ? '\u30e1\u30a4\u30f3\u30a2\u30bf\u30c3\u30ab\u30fc'
+      : '\u30e1\u30a4\u30f3\u4ed8\u4e0e\u5f79'
+  );
+
+  add(
+    recPickCandidate(candidates,used),
+    cfg.kind==='element'
+      ? '\u30b5\u30d6\u30a2\u30bf\u30c3\u30ab\u30fc'
+      : '\u30b5\u30d6\u4ed8\u4e0e\u30fb\u653b\u6483'
+  );
+
+  if(strategy==='power'){
+    add(
+      recPickCandidate(candidates,used),
+      '\u706b\u529b\u88dc\u52a9'
+    );
+    add(
+      recFallbackHealer(used),
+      '\u56de\u5fa9'
+    );
+  }
+  else if(strategy==='control'){
+    add(
+      recPickCandidate(candidates,used),
+      cfg.kind==='status'
+        ? '\u59a8\u5bb3\u88dc\u52a9'
+        : '\u706b\u529b\u30fb\u59a8\u5bb3\u88dc\u52a9'
+    );
+    add(
+      recFallbackHealer(used),
+      '\u56de\u5fa9'
+    );
+  }
+  else{
+    add(
+      recFallbackTank(used),
+      '\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45'
+    );
+    add(
+      recFallbackHealer(used),
+      '\u56de\u5fa9'
+    );
+  }
+
+  while(team.length<4){
+    const next=recPickCandidate(candidates,used)
+      || DB.monsters.find(m=>!used.has(m.name));
+
+    if(!next){
+      break;
+    }
+
+    used.add(next.name);
+    team.push({
+      monster:next,
+      role:'\u88dc\u52a9\u5019\u88dc'
+    });
+  }
+
+  return {
+    team,
+    candidates
+  };
+}
+
+function recStars(score){
+  const value=Math.max(
+    1,
+    Math.min(
+      5,
+      Math.ceil(score/3)
+    )
+  );
+
+  return '\u2605'.repeat(value)
+    +'\u2606'.repeat(5-value);
+}
+
+function recommendationCard(item,index,cfg,candidates){
+  const monster=item.monster;
+  const score=(
+    candidates.find(x=>x.monster.name===monster.name)?.score
+    ||0
+  );
+
+  const skills=recRecommendedSkills(
+    cfg,
+    item.role
+  );
+
+  return \`
+    <section class="card rec-card">
+      <div class="rec-rank">#\${index+1}</div>
+
+      <div class="rec-name">
+        \${monsterButton(monster.name)}
+      </div>
+
+      <div class="rec-role">
+        \${esc(item.role)}
+      </div>
+
+      <div class="rec-stars">
+        \${recStars(score||3)}
+      </div>
+
+      <div class="rec-reason">
+        <strong>\u9078\u51fa\u7406\u7531:</strong>
+        \${esc(recReason(monster,cfg))}
+      </div>
+
+      <div class="rec-skills-title">
+        \u63a8\u5968\u30b9\u30ad\u30eb
+      </div>
+
+      <div class="rec-skills">
+        \${skills.map(recSkillHtml).join(' / ')}
+      </div>
+
+      <div class="rec-actions">
+        <button
+          class="mainbutton rec-action"
+          type="button"
+          onclick='jumpMonster(\${JSON.stringify(monster.name)})'
+        >
+          \u56f3\u9451\u3067\u898b\u308b
+        </button>
+
+        <button
+          class="clearbutton rec-action"
+          type="button"
+          onclick='openPlanFor(\${JSON.stringify(monster.name)})'
+        >
+          \u914d\u5408\u30eb\u30fc\u30c8
+        </button>
+      </div>
+    </section>
+  \`;
+}
+
+window.openPlanFor=function(name){
+  mode='plan';
+  planState.target=name;
+  savePlanState();
+  updateTabs();
+  renderPlan();
+  scrollTo({top:0,behavior:'smooth'});
+};
+
+function renderRecommendations(){
+  const cfg=REC_CONFIG[
+    recommendTarget.value
+  ]||REC_CONFIG.fire;
+
+  const strategy=
+    recommendStrategy.value
+    ||'stable';
+
+  const built=
+    buildRecommendedTeam(
+      cfg,
+      strategy
+    );
+
+  statusEl.textContent=
+    \`\${cfg.icon} \${cfg.label} \u30fb S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210\`;
+
+  const strategyText={
+    stable:'\u653b\u64832 + \u307f\u304c\u308f\u308a1 + \u56de\u5fa91',
+    power:'\u653b\u64833 + \u56de\u5fa91',
+    control:'\u4e3b\u529b2 + \u59a8\u5bb31 + \u56de\u5fa91'
+  }[strategy];
+
+  const alternates=built.candidates
+    .filter(x=>
+      !built.team.some(
+        y=>y.monster.name===x.monster.name
+      )
+    )
+    .slice(0,5);
+
+  results.innerHTML=\`
+    <section class="card rec-summary">
+      <div class="skillname">
+        \${cfg.icon} \${esc(cfg.label)}\u304a\u3059\u3059\u3081\u7de8\u6210
+      </div>
+
+      <div class="rec-summary-text">
+        \u57fa\u672c\u69cb\u6210: \${esc(strategyText)}
+      </div>
+
+      <div class="rec-summary-text">
+        \u56f3\u9451\u306eS\u30b5\u30a4\u30ba\u7279\u6027\u3092\u81ea\u52d5\u63a1\u70b9\u3057\u3001
+        \u300c\u30b3\u30c4\u300d\u300c\u30d6\u30ec\u30a4\u30af\u5927\u300d\u307e\u305f\u306f
+        \u5bfe\u5fdc\u72b6\u614b\u7570\u5e38\u30d6\u30ec\u30a4\u30af\u3092\u512a\u5148\u3057\u3066\u3044\u307e\u3059\u3002
+      </div>
+    </section>
+
+    <div class="rec-grid">
+      \${built.team
+        .map((item,index)=>
+          recommendationCard(
+            item,
+            index,
+            cfg,
+            built.candidates
+          )
+        )
+        .join('')}
+    </div>
+
+    <section class="card">
+      <h2 class="plan-title">
+        \u5165\u308c\u66ff\u3048\u5019\u88dc
+      </h2>
+
+      \${
+        alternates.length
+          ? alternates.map(x=>\`
+              <div class="rec-alt">
+                \${monsterButton(x.monster.name)}
+                <span>
+                  \${esc(recReason(x.monster,cfg))}
+                </span>
+              </div>
+            \`).join('')
+          : \`
+              <div class="small">
+                \u8ffd\u52a0\u5019\u88dc\u304c\u3042\u308a\u307e\u305b\u3093\u3002
+              </div>
+            \`
+      }
+    </section>
+
+    <section class="card rec-note">
+      <strong>\u6ce8\u610f</strong><br>
+      \u30dc\u30b9\u306e\u8010\u6027\u3084L\u30b5\u30a4\u30ba\u8ffd\u52a0\u7279\u6027\u306b\u3088\u3063\u3066
+      \u6700\u9069\u89e3\u306f\u5909\u308f\u308a\u307e\u3059\u3002
+      \u3053\u306e\u7de8\u6210\u306f\u30b9\u30c8\u30fc\u30ea\u30fc\u5f8c\u534a\uff5e\u30af\u30ea\u30a2\u5f8c\u306e
+      \u6c4e\u7528S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210\u5411\u3051\u3067\u3059\u3002
+    </section>
+  \`;
+}
+
 const PLAN_KEY='dqm3-plan-v2';
 
 let planState={
@@ -1469,14 +2040,26 @@ function updateTabs(){
     mode==='plan'
   );
 
+  recommendTab.classList.toggle(
+    'active',
+    mode==='recommend'
+  );
+
   const isPlan=
     mode==='plan';
 
+  const isRecommend=
+    mode==='recommend';
+
   normalSearch.hidden=
-    isPlan;
+    isPlan
+    ||isRecommend;
 
   planControls.hidden=
     !isPlan;
+
+  recommendControls.hidden=
+    !isRecommend;
 
   if(mode==='monster'){
     q.placeholder=
@@ -1530,6 +2113,25 @@ planTab.addEventListener(
   }
 );
 
+recommendTab.addEventListener(
+  'click',
+  ()=>{
+    mode='recommend';
+    updateTabs();
+    render();
+  }
+);
+
+recommendTarget.addEventListener(
+  'change',
+  render
+);
+
+recommendStrategy.addEventListener(
+  'change',
+  render
+);
+
 buildPlanButton.addEventListener(
   'click',
   createPlan
@@ -1552,6 +2154,11 @@ function render(){
 
   if(mode==='skill'){
     renderSkills();
+    return;
+  }
+
+  if(mode==='recommend'){
+    renderRecommendations();
     return;
   }
 
@@ -1590,7 +2197,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=12',
+    './data.json?v=15',
     {
       cache:'no-store'
     }
@@ -1605,7 +2212,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=12',
+    './skills.json?v=15',
     {
       cache:'no-store'
     }
@@ -1659,7 +2266,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=12'
+      './sw.js?v=15'
     )
     .catch(error=>
       console.warn(
