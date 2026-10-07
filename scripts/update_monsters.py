@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -37,7 +38,7 @@ EXPECTED_COUNT = 526
 SESSION = requests.Session()
 SESSION.headers.update(
     {
-        "User-Agent": "naoya-lab-dqm3-data-builder/5.0",
+        "User-Agent": "naoya-lab-dqm3-data-builder/6.0",
         "Accept": "application/json,text/plain,*/*",
     }
 )
@@ -103,10 +104,10 @@ def parent_label(
     if family_name:
         if rank_name and rank_name != "Any":
             return (
-                f"{family_name}系"
-                f"（{rank_name}ランク）"
+                f"{family_name}\u7cfb"
+                f"\uff08{rank_name}\u30e9\u30f3\u30af\uff09"
             )
-        return f"{family_name}系"
+        return f"{family_name}\u7cfb"
 
     return (
         monster.get("Name")
@@ -115,7 +116,7 @@ def parent_label(
 
 
 def trait_description_ja(trait: dict) -> str:
-    """元DBの英語説明を、可能な範囲で日本語化する。"""
+    """Translate trait descriptions to concise Japanese when safely possible."""
 
     name = (
         trait.get("Name")
@@ -127,69 +128,151 @@ def trait_description_ja(trait: dict) -> str:
         or ""
     ).strip()
 
-    # 数値上昇系は確実に日本語化
+    # Stat bonuses
     bonus_map = [
-        ("HPBonus", "最大HP"),
-        ("MPBonus", "最大MP"),
-        ("AttackBonus", "攻撃力"),
-        ("DefenceBonus", "守備力"),
-        ("AgilityBonus", "すばやさ"),
-        ("WisdomBonus", "かしこさ"),
+        ("HPBonus", "\u6700\u5927HP"),
+        ("MPBonus", "\u6700\u5927MP"),
+        ("AttackBonus", "\u653b\u6483\u529b"),
+        ("DefenceBonus", "\u5b88\u5099\u529b"),
+        ("AgilityBonus", "\u3059\u3070\u3084\u3055"),
+        ("WisdomBonus", "\u304b\u3057\u3053\u3055"),
     ]
 
     for field, jp_name in bonus_map:
         value = trait.get(field)
+
         if value is not None:
-            return f"{jp_name}が{value}上がる。"
+            return (
+                f"{jp_name}\u304c"
+                f"{value}\u4e0a\u304c\u308b\u3002"
+            )
 
-    # よく使う特性
-    known = {
-        "Absorbent Touch":
-            "通常攻撃時、ときどき敵のMPを吸収する。",
-        "Ace Evader":
-            "敵からの攻撃をかわしやすくなる。",
-        "Adrenaline Rush":
-            "会心の一撃を出すと、攻撃力が大きく上がる。",
-        "Agent of Chaos":
-            "混乱している間も敵を攻撃し、攻撃が当たると会心の一撃になる。",
-        "Antitoxidant":
-            "毒・猛毒への耐性が少し上がる。",
-        "Fidget":
-            "マヒへの耐性が少し上がる。",
+    # High-confidence direct translations
+    exact = {
+        "Regular attacks sometimes absorb a portion of the enemy's MP.":
+            "\u901a\u5e38\u653b\u6483\u6642\u3001\u3068\u304d\u3069\u304d\u6575\u306eMP\u3092\u5438\u53ce\u3059\u308b\u3002",
+
+        "Makes it somewhat easier to avoid enemy attacks.":
+            "\u6575\u304b\u3089\u306e\u653b\u6483\u3092\u304b\u308f\u3057\u3084\u3059\u304f\u306a\u308b\u3002",
+
+        "Greatly increases the attack after inflicting a critical hit.":
+            "\u4f1a\u5fc3\u306e\u4e00\u6483\u3092\u51fa\u3059\u3068\u3001\u653b\u6483\u529b\u304c\u5927\u304d\u304f\u4e0a\u304c\u308b\u3002",
+
+        "Always attacks an enemy when the monster is confused. Successful strikes inflict critical hits.":
+            "\u6df7\u4e71\u3057\u3066\u3044\u308b\u9593\u3082\u6575\u3092\u653b\u6483\u3057\u3001\u653b\u6483\u304c\u5f53\u305f\u308b\u3068\u4f1a\u5fc3\u306e\u4e00\u6483\u306b\u306a\u308b\u3002",
+
+        "Makes it somewhat easier to inflict critical hits.":
+            "\u4f1a\u5fc3\u306e\u4e00\u6483\u304c\u51fa\u3084\u3059\u304f\u306a\u308b\u3002",
+
+        "Increases damage inflicted on L-size monsters.":
+            "L\u30b5\u30a4\u30ba\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u306b\u4e0e\u3048\u308b\u30c0\u30e1\u30fc\u30b8\u304c\u5897\u3048\u308b\u3002",
+
+        "Increases damage inflicted on S-size monsters.":
+            "S\u30b5\u30a4\u30ba\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u306b\u4e0e\u3048\u308b\u30c0\u30e1\u30fc\u30b8\u304c\u5897\u3048\u308b\u3002",
+
+        "Sometimes performs 2 or 3 actions in a row.":
+            "\u3068\u304d\u3069\u304d1\u30bf\u30fc\u30f3\u306b2\uff5e3\u56de\u884c\u52d5\u3059\u308b\u3002",
+
+        "Sometimes performs 1 to 3 actions in a row.":
+            "\u3068\u304d\u3069\u304d1\u30bf\u30fc\u30f3\u306b1\uff5e3\u56de\u884c\u52d5\u3059\u308b\u3002",
+
+        "Sometimes performs 2 actions in a row.":
+            "\u3068\u304d\u3069\u304d1\u30bf\u30fc\u30f3\u306b2\u56de\u884c\u52d5\u3059\u308b\u3002",
     }
 
-    if name in known:
-        return known[name]
+    if description in exact:
+        return exact[description]
 
-    # 定型文
-    replacements = {
-        "Slightly increases resistance to poison and severe poison.":
-            "毒・猛毒への耐性が少し上がる。",
-        "Slightly increases resistance to paralysis.":
-            "マヒへの耐性が少し上がる。",
-        "Slightly increases resistance to sleep.":
-            "眠りへの耐性が少し上がる。",
-        "Slightly increases resistance to confusion.":
-            "混乱への耐性が少し上がる。",
-        "Slightly increases resistance to instant death.":
-            "即死への耐性が少し上がる。",
-        "Slightly increases resistance to bedazzlement.":
-            "幻惑への耐性が少し上がる。",
-        "Slightly increases resistance to antimagic.":
-            "封じへの耐性が少し上がる。",
-        "Slightly increases resistance to MP absorption.":
-            "MP吸収への耐性が少し上がる。",
+    # Elemental potency / MP-cost traits
+    element_map = {
+        "fire": "\u706b",
+        "ice": "\u6c37\u7d50",
+        "wind": "\u98a8",
+        "earth": "\u5730",
+        "explosion": "\u7206\u767a",
+        "electrical": "\u96fb\u6483",
+        "light": "\u5149",
+        "dark": "\u95c7",
     }
 
-    if description in replacements:
-        return replacements[description]
+    m = re.fullmatch(
+        r"Increases the potency of ([A-Za-z]+) attacks "
+        r"and decreases their MP consumption\.",
+        description,
+    )
 
-    # 日本語化できないものは空欄にせず原文を残す
+    if m:
+        element = element_map.get(
+            m.group(1).lower()
+        )
+
+        if element:
+            return (
+                f"{element}\u5c5e\u6027\u306e\u653b\u6483\u304c\u5f37\u304f\u306a\u308a\u3001"
+                "\u6d88\u8cbbMP\u3082\u5c11\u306a\u304f\u306a\u308b\u3002"
+            )
+
+    # Resistance traits
+    resistance_map = {
+        "poison and severe poison": "\u6bd2\u30fb\u731b\u6bd2",
+        "paralysis": "\u30de\u30d2",
+        "sleep": "\u7720\u308a",
+        "confusion": "\u6df7\u4e71",
+        "instant death": "\u5373\u6b7b",
+        "bedazzlement": "\u5e7b\u60d1",
+        "antimagic": "\u5c01\u3058",
+        "MP absorption": "MP\u5438\u53ce",
+        "stun": "\u4f11\u307f",
+    }
+
+    resistance_patterns = [
+        (
+            r"Slightly increases resistance to (.+)\.",
+            "\u3078\u306e\u8010\u6027\u304c\u5c11\u3057\u4e0a\u304c\u308b\u3002",
+        ),
+        (
+            r"Greatly increases resistance to (.+)\.",
+            "\u3078\u306e\u8010\u6027\u304c\u5927\u304d\u304f\u4e0a\u304c\u308b\u3002",
+        ),
+        (
+            r"Increases resistance to (.+)\.",
+            "\u3078\u306e\u8010\u6027\u304c\u4e0a\u304c\u308b\u3002",
+        ),
+    ]
+
+    for pattern, suffix in resistance_patterns:
+        m = re.fullmatch(
+            pattern,
+            description,
+        )
+
+        if m:
+            target = resistance_map.get(
+                m.group(1),
+                m.group(1),
+            )
+
+            if target != m.group(1):
+                return f"{target}{suffix}"
+
+    # Generic multi-action phrasing
+    m = re.fullmatch(
+        r"Sometimes performs (\d+) or (\d+) actions in a row\.",
+        description,
+    )
+
+    if m:
+        return (
+            "\u3068\u304d\u3069\u304d1\u30bf\u30fc\u30f3\u306b"
+            f"{m.group(1)}\uff5e{m.group(2)}"
+            "\u56de\u884c\u52d5\u3059\u308b\u3002"
+        )
+
+    # Keep the source text when no safe translation rule is available.
     return description
 
-
 def main():
-    print("DQM3データ取得開始")
+    print("DQM3\u30c7\u30fc\u30bf\u53d6\u5f97\u958b\u59cb")
 
     source = {
         name: fetch_json(url)
@@ -250,13 +333,13 @@ def main():
     ]
 
     print(
-        "取得モンスター数:",
+        "\u53d6\u5f97\u30e2\u30f3\u30b9\u30bf\u30fc\u6570:",
         len(real_monsters),
     )
 
     if len(real_monsters) != EXPECTED_COUNT:
         raise RuntimeError(
-            "モンスター数が想定と違います。"
+            "\u30e2\u30f3\u30b9\u30bf\u30fc\u6570\u304c\u60f3\u5b9a\u3068\u9055\u3044\u307e\u3059\u3002"
             f" expected={EXPECTED_COUNT}"
             f" actual={len(real_monsters)}"
         )
@@ -295,7 +378,7 @@ def main():
                     or ""
                 ).strip(),
             "family":
-                f"{family_name}系",
+                f"{family_name}\u7cfb",
             "talents": [],
             "traits": {
                 "S": [],
@@ -307,7 +390,7 @@ def main():
             "uses": [],
         }
 
-    # 所持スキル
+    # \u6240\u6301\u30b9\u30ad\u30eb
     for item in source["monster_talents"]:
         monster_id = int(
             item["MonsterId"]
@@ -356,7 +439,7 @@ def main():
             )
         )
 
-    # 特性
+    # \u7279\u6027
     for item in source["monster_traits"]:
         monster_id = int(
             item["MonsterId"]
@@ -427,7 +510,7 @@ def main():
                 )
             )
 
-    # 生息地
+    # \u751f\u606f\u5730
     location_groups = {}
 
     def weather_name(weather):
@@ -437,10 +520,10 @@ def main():
         )
 
         if identifier == "sun":
-            return "晴れ"
+            return "\u6674\u308c"
 
         if identifier == "precipitation":
-            return "降水時"
+            return "\u964d\u6c34\u6642"
 
         return (
             weather.get("Name")
@@ -524,10 +607,10 @@ def main():
             )
 
     season_order = {
-        "春": 0,
-        "夏": 1,
-        "秋": 2,
-        "冬": 3,
+        "\u6625": 0,
+        "\u590f": 1,
+        "\u79cb": 2,
+        "\u51ac": 3,
     }
 
     for key, location_data in (
@@ -556,7 +639,7 @@ def main():
             key=lambda x: x["name"]
         )
 
-    # 卵
+    # \u5375
     egg_order = {
         "white": 0,
         "silver": 1,
@@ -627,7 +710,7 @@ def main():
                 )
         )
 
-    # 配合
+    # \u914d\u5408
     recipe_parent_ids = {}
 
     grandparent_keys = (
@@ -658,7 +741,7 @@ def main():
                 for value
                 in grandparent_ids
             ]
-            recipe_type = "4体配合"
+            recipe_type = "4\u4f53\u914d\u5408"
         else:
             parent_ids = [
                 int(value)
@@ -672,7 +755,7 @@ def main():
                 )
                 if value is not None
             ]
-            recipe_type = "配合"
+            recipe_type = "\u914d\u5408"
 
         if not parent_ids:
             continue
@@ -737,7 +820,7 @@ def main():
             )
         ] = parent_ids
 
-    # 逆引き
+    # \u9006\u5f15\u304d
     for synthesis in syntheses:
         result_id = synthesis.get(
             "MonsterResultId"
@@ -783,9 +866,9 @@ def main():
         )
 
         use_type = (
-            "4体配合"
+            "4\u4f53\u914d\u5408"
             if is_quadruple
-            else "配合"
+            else "\u914d\u5408"
         )
 
         result_name = (
@@ -876,7 +959,7 @@ def main():
         encoding="utf-8",
     )
 
-    print("data.json 作成完了")
+    print("data.json \u4f5c\u6210\u5b8c\u4e86")
     print(f"monsters={len(monsters)}")
     print(
         "talents="
