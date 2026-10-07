@@ -1,0 +1,481 @@
+{
+  "game": "DQM4",
+  "status": "準備版・特殊配合6件のみ。未登録項目は確認待ち。",
+  "checkedAt": "2026-10-07",
+  "monsters": [
+    {
+      "name": "スライムつむり",
+      "no": 4,
+      "family": "スライム系",
+      "rank": "",
+      "recipes": [
+        {
+          "type": "特殊配合",
+          "parents": [
+            "パールスライム",
+            "テールイーター"
+          ],
+          "sourceUrl": "https://gamewith.jp/monsters4/563442",
+          "result": "スライムつむり"
+        }
+      ],
+      "id": "m1",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [
+        {
+          "name": "カレキ地方-ジメジメ湿原（昼夜）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ],
+      "uses": []
+    },
+    {
+      "name": "パールスライム",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m2",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "パールスライム",
+          "otherParents": [
+            "テールイーター"
+          ],
+          "result": "スライムつむり",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "テールイーター",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m3",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "テールイーター",
+          "otherParents": [
+            "パールスライム"
+          ],
+          "result": "スライムつむり",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "マンドラ",
+      "no": 11,
+      "family": "スライム系",
+      "rank": "",
+      "recipes": [
+        {
+          "type": "特殊配合",
+          "parents": [
+            "スライムツリー",
+            "ナスビナーラ"
+          ],
+          "sourceUrl": "https://gamewith.jp/monsters4/563442",
+          "result": "マンドラ"
+        }
+      ],
+      "id": "m4",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [
+        {
+          "name": "カレキ地方-カレキ平原（昼夜）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ],
+      "uses": []
+    },
+    {
+      "name": "スライムツリー",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m5",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "スライムツリー",
+          "otherParents": [
+            "ナスビナーラ"
+          ],
+          "result": "マンドラ",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "ナスビナーラ",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m6",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "ナスビナーラ",
+          "otherParents": [
+            "スライムツリー"
+          ],
+          "result": "マンドラ",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "フェアリードラゴン",
+      "no": 76,
+      "family": "ドラゴン系",
+      "rank": "",
+      "recipes": [
+        {
+          "type": "特殊配合",
+          "parents": [
+            "はなまきドラゴ",
+            "はねスライム"
+          ],
+          "sourceUrl": "https://gamewith.jp/monsters4/563442",
+          "result": "フェアリードラゴン"
+        }
+      ],
+      "id": "m7",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [
+        {
+          "name": "カレキ地方-ジメジメ湿原（昼夜）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ],
+      "uses": []
+    },
+    {
+      "name": "はなまきドラゴ",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m8",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "はなまきドラゴ",
+          "otherParents": [
+            "はねスライム"
+          ],
+          "result": "フェアリードラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "はねスライム",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m9",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "はねスライム",
+          "otherParents": [
+            "はなまきドラゴ"
+          ],
+          "result": "フェアリードラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "おおがらす",
+      "no": 144,
+      "family": "自然系",
+      "rank": "",
+      "recipes": [
+        {
+          "type": "特殊配合",
+          "parents": [
+            "ピッキー",
+            "がいこつ"
+          ],
+          "sourceUrl": "https://gamewith.jp/monsters4/563442",
+          "result": "おおがらす"
+        }
+      ],
+      "id": "m10",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [
+        {
+          "name": "カレキ地方-カラット荒野（昼夜）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        },
+        {
+          "name": "カレキ地方-カレキ平原（昼夜）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "おおがらす",
+          "otherParents": [
+            "とさかへび"
+          ],
+          "result": "おおにわとり",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "ピッキー",
+      "no": 154,
+      "rank": "",
+      "family": "自然系",
+      "recipes": [
+        {
+          "type": "特殊配合",
+          "parents": [
+            "メタッピー",
+            "しましまキャット"
+          ],
+          "sourceUrl": "https://gamewith.jp/monsters4/563442",
+          "result": "ピッキー"
+        }
+      ],
+      "id": "m11",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [
+        {
+          "name": "カレキ地方-カレキ平原（昼夜／草むら限定）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        },
+        {
+          "name": "カレキ地方-ジメジメ湿原（昼夜／草むら限定）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "ピッキー",
+          "otherParents": [
+            "がいこつ"
+          ],
+          "result": "おおがらす",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "がいこつ",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m12",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "がいこつ",
+          "otherParents": [
+            "ピッキー"
+          ],
+          "result": "おおがらす",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "おおにわとり",
+      "no": 145,
+      "family": "自然系",
+      "rank": "",
+      "recipes": [
+        {
+          "type": "特殊配合",
+          "parents": [
+            "おおがらす",
+            "とさかへび"
+          ],
+          "sourceUrl": "https://gamewith.jp/monsters4/563442",
+          "result": "おおにわとり"
+        }
+      ],
+      "id": "m13",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [
+        {
+          "name": "カレキ地方-カレキ平原（昼夜）",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ],
+      "uses": []
+    },
+    {
+      "name": "とさかへび",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m14",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "とさかへび",
+          "otherParents": [
+            "おおがらす"
+          ],
+          "result": "おおにわとり",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "メタッピー",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m15",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "メタッピー",
+          "otherParents": [
+            "しましまキャット"
+          ],
+          "result": "ピッキー",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    },
+    {
+      "name": "しましまキャット",
+      "no": null,
+      "rank": "",
+      "family": "",
+      "recipes": [],
+      "id": "m16",
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "locations": [],
+      "uses": [
+        {
+          "type": "特殊配合",
+          "source": "しましまキャット",
+          "otherParents": [
+            "メタッピー"
+          ],
+          "result": "ピッキー",
+          "sourceUrl": "https://gamewith.jp/monsters4/563442"
+        }
+      ]
+    }
+  ]
+}
