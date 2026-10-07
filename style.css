@@ -564,7 +564,152 @@ footer{
   padding:20px 14px 40px;
 }
 
+.recommend-controls{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:10px;
+}
+
+.recommend-controls label{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  color:#d1d5db;
+  font-size:12px;
+  font-weight:700;
+}
+
+.recommend-controls select{
+  width:100%;
+  padding:10px;
+  border:1px solid #374151;
+  border-radius:10px;
+  background:#fff;
+  color:#111827;
+  font-size:14px;
+}
+
+.rec-summary{
+  border-left:4px solid #4f46e5;
+}
+
+.rec-summary-text{
+  margin-top:8px;
+  color:#4b5563;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.rec-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.rec-card{
+  position:relative;
+}
+
+.rec-rank{
+  position:absolute;
+  top:14px;
+  right:14px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:#4338ca;
+  font-size:11px;
+  font-weight:800;
+}
+
+.rec-name{
+  padding-right:48px;
+  font-size:21px;
+  font-weight:800;
+}
+
+.rec-role{
+  margin-top:5px;
+  color:#374151;
+  font-size:13px;
+  font-weight:700;
+}
+
+.rec-stars{
+  margin-top:5px;
+  color:#92400e;
+  letter-spacing:1px;
+}
+
+.rec-reason{
+  margin-top:10px;
+  padding:9px 10px;
+  border-radius:9px;
+  background:#f9fafb;
+  color:#4b5563;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.rec-skills-title{
+  margin-top:12px;
+  font-size:12px;
+  font-weight:800;
+  color:#374151;
+}
+
+.rec-skills{
+  margin-top:5px;
+  line-height:1.8;
+}
+
+.rec-skill{
+  color:#374151;
+  font-size:13px;
+}
+
+.rec-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px;
+}
+
+.rec-action{
+  flex:1;
+  margin-top:0;
+}
+
+.rec-alt{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 0;
+  border-bottom:1px solid #eee;
+  font-size:13px;
+}
+
+.rec-alt:last-child{
+  border-bottom:0;
+}
+
+.rec-alt span{
+  color:#6b7280;
+  text-align:right;
+  font-size:11px;
+}
+
+.rec-note{
+  color:#6b7280;
+  font-size:12px;
+  line-height:1.6;
+}
+
 @media(max-width:420px){
+  .recommend-controls{
+    grid-template-columns:1fr;
+  }
+
   .tab{
     font-size:12px;
   }
