@@ -656,6 +656,109 @@ footer{
     40px;
 }
 
+/* =========================
+   モンスター所持スキル
+========================= */
+
+.monster-talents{
+  border-top:1px solid #eee;
+}
+
+.monster-talent-row{
+  padding:8px 0;
+
+  border-bottom:
+    1px solid #eee;
+
+  line-height:1.7;
+}
+
+.talent-label{
+  display:inline-block;
+
+  margin-right:6px;
+
+  padding:3px 7px;
+
+  border-radius:999px;
+
+  background:#dbeafe;
+
+  color:#1e40af;
+
+  font-size:11px;
+
+  font-weight:700;
+}
+
+.talent-label.secondary{
+  background:#f3f4f6;
+
+  color:#4b5563;
+}
+
+
+/* =========================
+   モンスター特性
+========================= */
+
+.monster-traits{
+  border-top:
+    1px solid #eee;
+}
+
+.trait-size-title{
+  margin-top:8px;
+
+  padding:5px 8px;
+
+  border-radius:8px;
+
+  background:#eef2ff;
+
+  color:#3730a3;
+
+  font-size:12px;
+
+  font-weight:800;
+}
+
+.trait-size-title.large{
+  margin-top:12px;
+
+  background:#fef3c7;
+
+  color:#92400e;
+}
+
+.trait-row{
+  display:grid;
+
+  grid-template-columns:
+    54px
+    1fr;
+
+  gap:8px;
+
+  padding:7px 4px;
+
+  border-bottom:
+    1px solid #f1f1f1;
+}
+
+.trait-level{
+  color:#6b7280;
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+.trait-name{
+  font-size:14px;
+
+  font-weight:600;
+}
 
 @media(
   max-width:420px
