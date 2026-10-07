@@ -330,17 +330,18 @@ function monsterCard(m){
         <button
           class="collapse-button"
           type="button"
-          aria-expanded="true"
+          aria-expanded="false"
           aria-controls="${cardId}"
           onclick="toggleMonsterCard('${cardId}',this)"
         >
-          &#9660;
+          &#9654;
         </button>
       </div>
 
       <div
         id="${cardId}"
         class="monster-card-body"
+        hidden
       >
         <div class="meta">
           ${
