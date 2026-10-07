@@ -1133,7 +1133,7 @@ function recSkillHtml(name){
     return skillButton(name);
   }
 
-  return \`<span class="rec-skill">\${esc(name)}</span>\`;
+  return `<span class="rec-skill">${esc(name)}</span>`;
 }
 
 function recRecommendedSkills(cfg,role){
@@ -1321,25 +1321,25 @@ function recommendationCard(item,index,cfg,candidates){
     item.role
   );
 
-  return \`
+  return `
     <section class="card rec-card">
-      <div class="rec-rank">#\${index+1}</div>
+      <div class="rec-rank">#${index+1}</div>
 
       <div class="rec-name">
-        \${monsterButton(monster.name)}
+        ${monsterButton(monster.name)}
       </div>
 
       <div class="rec-role">
-        \${esc(item.role)}
+        ${esc(item.role)}
       </div>
 
       <div class="rec-stars">
-        \${recStars(score||3)}
+        ${recStars(score||3)}
       </div>
 
       <div class="rec-reason">
         <strong>\u9078\u51fa\u7406\u7531:</strong>
-        \${esc(recReason(monster,cfg))}
+        ${esc(recReason(monster,cfg))}
       </div>
 
       <div class="rec-skills-title">
@@ -1347,14 +1347,14 @@ function recommendationCard(item,index,cfg,candidates){
       </div>
 
       <div class="rec-skills">
-        \${skills.map(recSkillHtml).join(' / ')}
+        ${skills.map(recSkillHtml).join(' / ')}
       </div>
 
       <div class="rec-actions">
         <button
           class="mainbutton rec-action"
           type="button"
-          onclick='jumpMonster(\${JSON.stringify(monster.name)})'
+          onclick='jumpMonster(${JSON.stringify(monster.name)})'
         >
           \u56f3\u9451\u3067\u898b\u308b
         </button>
@@ -1362,13 +1362,13 @@ function recommendationCard(item,index,cfg,candidates){
         <button
           class="clearbutton rec-action"
           type="button"
-          onclick='openPlanFor(\${JSON.stringify(monster.name)})'
+          onclick='openPlanFor(${JSON.stringify(monster.name)})'
         >
           \u914d\u5408\u30eb\u30fc\u30c8
         </button>
       </div>
     </section>
-  \`;
+  `;
 }
 
 window.openPlanFor=function(name){
@@ -1396,7 +1396,7 @@ function renderRecommendations(){
     );
 
   statusEl.textContent=
-    \`\${cfg.icon} \${cfg.label} \u30fb S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210\`;
+    `${cfg.icon} ${cfg.label} \u30fb S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210`;
 
   const strategyText={
     stable:'\u653b\u64832 + \u307f\u304c\u308f\u308a1 + \u56de\u5fa91',
@@ -1412,14 +1412,14 @@ function renderRecommendations(){
     )
     .slice(0,5);
 
-  results.innerHTML=\`
+  results.innerHTML=`
     <section class="card rec-summary">
       <div class="skillname">
-        \${cfg.icon} \${esc(cfg.label)}\u304a\u3059\u3059\u3081\u7de8\u6210
+        ${cfg.icon} ${esc(cfg.label)}\u304a\u3059\u3059\u3081\u7de8\u6210
       </div>
 
       <div class="rec-summary-text">
-        \u57fa\u672c\u69cb\u6210: \${esc(strategyText)}
+        \u57fa\u672c\u69cb\u6210: ${esc(strategyText)}
       </div>
 
       <div class="rec-summary-text">
@@ -1430,7 +1430,7 @@ function renderRecommendations(){
     </section>
 
     <div class="rec-grid">
-      \${built.team
+      ${built.team
         .map((item,index)=>
           recommendationCard(
             item,
@@ -1447,21 +1447,21 @@ function renderRecommendations(){
         \u5165\u308c\u66ff\u3048\u5019\u88dc
       </h2>
 
-      \${
+      ${
         alternates.length
-          ? alternates.map(x=>\`
+          ? alternates.map(x=>`
               <div class="rec-alt">
-                \${monsterButton(x.monster.name)}
+                ${monsterButton(x.monster.name)}
                 <span>
-                  \${esc(recReason(x.monster,cfg))}
+                  ${esc(recReason(x.monster,cfg))}
                 </span>
               </div>
-            \`).join('')
-          : \`
+            `).join('')
+          : `
               <div class="small">
                 \u8ffd\u52a0\u5019\u88dc\u304c\u3042\u308a\u307e\u305b\u3093\u3002
               </div>
-            \`
+            `
       }
     </section>
 
@@ -1472,7 +1472,7 @@ function renderRecommendations(){
       \u3053\u306e\u7de8\u6210\u306f\u30b9\u30c8\u30fc\u30ea\u30fc\u5f8c\u534a\uff5e\u30af\u30ea\u30a2\u5f8c\u306e
       \u6c4e\u7528S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210\u5411\u3051\u3067\u3059\u3002
     </section>
-  \`;
+  `;
 }
 
 const PLAN_KEY='dqm3-plan-v2';
@@ -2197,7 +2197,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=15',
+    './data.json?v=16',
     {
       cache:'no-store'
     }
@@ -2212,7 +2212,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=15',
+    './skills.json?v=16',
     {
       cache:'no-store'
     }
@@ -2266,7 +2266,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=15'
+      './sw.js?v=16'
     )
     .catch(error=>
       console.warn(
