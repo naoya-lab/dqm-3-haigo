@@ -298,6 +298,176 @@ function eggsHtml(monster){
     </div>
   `;
 }
+/* =====================================
+   モンスター所持スキル
+===================================== */
+
+function monsterTalentsHtml(monster){
+
+  const talents=
+    monster.talents||[];
+
+
+  if(!talents.length){
+
+    return `
+      <div class="small">
+        スキルデータ未登録
+      </div>
+    `;
+
+  }
+
+
+  const primary=
+    talents.filter(
+      x=>x.primary
+    );
+
+
+  const others=
+    talents.filter(
+      x=>!x.primary
+    );
+
+
+  return `
+    <div class="monster-talents">
+
+      ${
+        primary.length
+          ? `
+              <div class="monster-talent-row">
+
+                <span class="talent-label">
+                  基本
+                </span>
+
+                ${
+                  primary
+                    .map(
+                      x=>
+                        skillButton(
+                          x.name
+                        )
+                    )
+                    .join(' / ')
+                }
+
+              </div>
+            `
+          : ''
+      }
+
+
+      ${
+        others.length
+          ? `
+              <div class="monster-talent-row">
+
+                <span class="talent-label secondary">
+                  追加候補
+                </span>
+
+                ${
+                  others
+                    .map(
+                      x=>
+                        skillButton(
+                          x.name
+                        )
+                    )
+                    .join(' / ')
+                }
+
+              </div>
+            `
+          : ''
+      }
+
+    </div>
+  `;
+}
+
+
+/* =====================================
+   モンスター特性
+===================================== */
+
+function traitRows(
+  traits
+){
+
+  if(
+    !traits.length
+  ){
+
+    return `
+      <div class="small">
+        なし／未登録
+      </div>
+    `;
+
+  }
+
+
+  return traits
+    .map(
+      trait=>`
+
+        <div class="trait-row">
+
+          <span class="trait-level">
+            Lv${esc(trait.level)}
+          </span>
+
+          <span class="trait-name">
+            ${esc(trait.name)}
+          </span>
+
+        </div>
+
+      `
+    )
+    .join('');
+}
+
+
+function monsterTraitsHtml(
+  monster
+){
+
+  const traits=
+    monster.traits
+    || {
+      S:[],
+      L:[]
+    };
+
+
+  return `
+    <div class="monster-traits">
+
+      <div class="trait-size-title">
+        Sサイズ
+      </div>
+
+      ${traitRows(
+        traits.S||[]
+      )}
+
+
+      <div class="trait-size-title large">
+        Lサイズ追加特性
+      </div>
+
+      ${traitRows(
+        traits.L||[]
+      )}
+
+    </div>
+  `;
+}
 
 
 /* =====================================
@@ -446,7 +616,18 @@ function monsterCard(m){
 
       </div>
 
+　　　　<h2>
+         📘 所持スキル
+　　　　</h2>
 
+　　　　${monsterTalentsHtml(m)}
+
+
+　　　　<h2>
+         ⭐ 特性
+　　　　</h2>
+
+　　　　${monsterTraitsHtml(m)}
       <h2>
         🌍 生息地
       </h2>
@@ -691,6 +872,20 @@ function renderMonsters(){
           m.rank,
           m.family,
           m.no,
+          ...(m.talents||[])
+          .map(
+            x=>x.name
+           ),
+
+　　　　　　　...(m.traits?.S||[])
+          .map(
+            x=>x.name
+           ),
+
+　　　　　　　...(m.traits?.L||[])
+          .map(
+            x=>x.name
+           ),
 
           ...locations,
           ...eggs,
