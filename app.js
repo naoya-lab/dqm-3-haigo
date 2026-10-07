@@ -312,58 +312,100 @@ function monsterCard(m){
       </div>
     `;
 
+  const cardId=`monster-${m.no}`;
+
   return `
     <section class="card">
-      <div class="name">
-        <a
-          target="_blank"
-          rel="noopener"
-          href="${imgUrl(m.name)}"
+      <div class="monster-card-header">
+        <div class="name">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="${imgUrl(m.name)}"
+          >
+            ${esc(m.name)}
+          </a>
+        </div>
+
+        <button
+          class="collapse-button"
+          type="button"
+          aria-expanded="true"
+          aria-controls="${cardId}"
+          onclick="toggleMonsterCard('${cardId}',this)"
         >
-          ${esc(m.name)}
-        </a>
+          &#9660;
+        </button>
       </div>
 
-      <div class="meta">
-        ${
-          m.no
-            ? `<span class="badge">No.${esc(m.no)}</span>`
-            : ''
-        }
+      <div
+        id="${cardId}"
+        class="monster-card-body"
+      >
+        <div class="meta">
+          ${
+            m.no
+              ? `<span class="badge">No.${esc(m.no)}</span>`
+              : ''
+          }
 
-        ${
-          m.rank
-            ? `<span class="badge">${esc(m.rank)}\u30e9\u30f3\u30af</span>`
-            : ''
-        }
+          ${
+            m.rank
+              ? `<span class="badge">${esc(m.rank)}\u30e9\u30f3\u30af</span>`
+              : ''
+          }
 
-        ${
-          m.family
-            ? `<span class="badge">${esc(m.family)}</span>`
-            : ''
-        }
+          ${
+            m.family
+              ? `<span class="badge">${esc(m.family)}</span>`
+              : ''
+          }
+        </div>
+
+        <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
+        ${monsterTalentsHtml(m)}
+
+        <h2>\u2b50 \u7279\u6027</h2>
+        ${monsterTraitsHtml(m)}
+
+        <h2>\ud83c\udf0d \u751f\u606f\u5730</h2>
+        ${locationsHtml(m)}
+
+        <h2>\ud83e\udd5a \u5375\u304b\u3089\u306e\u5165\u624b</h2>
+        ${eggsHtml(m)}
+
+        <h2>\ud83e\uddec \u3053\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u306e\u4f5c\u308a\u65b9</h2>
+        ${recipes}
+
+        <h2>\u3053\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u3092\u4f7f\u3046\u914d\u5408\u5148</h2>
+        ${uses}
       </div>
-
-      <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
-      ${monsterTalentsHtml(m)}
-
-      <h2>\u2b50 \u7279\u6027</h2>
-      ${monsterTraitsHtml(m)}
-
-      <h2>\ud83c\udf0d \u751f\u606f\u5730</h2>
-      ${locationsHtml(m)}
-
-      <h2>\ud83e\udd5a \u5375\u304b\u3089\u306e\u5165\u624b</h2>
-      ${eggsHtml(m)}
-
-      <h2>\ud83e\uddec \u3053\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u306e\u4f5c\u308a\u65b9</h2>
-      ${recipes}
-
-      <h2>\u3053\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u3092\u4f7f\u3046\u914d\u5408\u5148</h2>
-      ${uses}
     </section>
   `;
 }
+
+window.toggleMonsterCard=function(id,button){
+  const body=document.getElementById(id);
+
+  if(!body){
+    return;
+  }
+
+  const willOpen=body.hidden;
+  body.hidden=!willOpen;
+
+  button.textContent=
+    willOpen
+      ? '\u25bc'
+      : '\u25b6';
+
+  button.setAttribute(
+    'aria-expanded',
+    willOpen
+      ? 'true'
+      : 'false'
+  );
+};
 
 function searchScore(name,term){
   if(!term) return 0;
