@@ -1,0 +1,40 @@
+name: Update DQM4 database
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'dqm4/scripts/**'
+      - '.github/workflows/update-dqm4-data.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dqm4-database
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install HTML parser
+        run: pip install lxml
+      - name: Collect and validate current DQM4 data
+        run: |
+          python dqm4/scripts/update_database.py
+          python dqm4/scripts/build_data.py
+          node --check dqm4/app.js
+      - name: Commit updated DQM4 databases
+        run: |
+          git config user.name 'dqm4-data-bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add dqm4/monsters.source.json dqm4/data.json dqm4/skills.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Update currently listed DQM4 monsters and skills'
+          git pull --rebase
+          git push

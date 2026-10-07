@@ -1,5 +1,3806 @@
 {
   "game": "DQM4",
-  "status": "未登録・確認待ち",
-  "skills": []
+  "checkedAt": "2026-10-07",
+  "sourceUrl": "https://gamewith.jp/monsters4/563338",
+  "skills": [
+    {
+      "name": "スラフォース",
+      "abilities": [
+        {
+          "name": "メラ",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "スライムたたき",
+          "points": 20
+        },
+        {
+          "name": "デイン",
+          "points": 30
+        },
+        {
+          "name": "ピオラ",
+          "points": 50
+        },
+        {
+          "name": "まぶしい光",
+          "points": 70
+        },
+        {
+          "name": "ベホイミ",
+          "points": 85
+        },
+        {
+          "name": "自動HP回復",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576434"
+    },
+    {
+      "name": "闇の心",
+      "abilities": [
+        {
+          "name": "ドルマ",
+          "points": 3
+        },
+        {
+          "name": "やいばくだき",
+          "points": 10
+        },
+        {
+          "name": "タナトスハント",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "こんらんこうげき",
+          "points": 50
+        },
+        {
+          "name": "ルカニ",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "ドルクマ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576433"
+    },
+    {
+      "name": "火の心",
+      "abilities": [
+        {
+          "name": "メラ",
+          "points": 3
+        },
+        {
+          "name": "かえん斬り",
+          "points": 10
+        },
+        {
+          "name": "ドラゴン斬り",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "火の息",
+          "points": 50
+        },
+        {
+          "name": "バイキルト",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "メラミ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576432"
+    },
+    {
+      "name": "爆発の心",
+      "abilities": [
+        {
+          "name": "イオ",
+          "points": 3
+        },
+        {
+          "name": "かぶとわり",
+          "points": 10
+        },
+        {
+          "name": "だいせつだん",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "アンカーナックル",
+          "points": 50
+        },
+        {
+          "name": "バイキルト",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "イオラ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576431"
+    },
+    {
+      "name": "水の心",
+      "abilities": [
+        {
+          "name": "ザバ",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "スライムたたき",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "みずしぶき",
+          "points": 50
+        },
+        {
+          "name": "ヘナトス",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "ザバラ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576430"
+    },
+    {
+      "name": "風の心",
+      "abilities": [
+        {
+          "name": "バギ",
+          "points": 3
+        },
+        {
+          "name": "しんくう斬り",
+          "points": 10
+        },
+        {
+          "name": "しぜん斬り",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "かまいたち",
+          "points": 50
+        },
+        {
+          "name": "バーハ",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "バギマ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576429"
+    },
+    {
+      "name": "氷結の心",
+      "abilities": [
+        {
+          "name": "ヒャド",
+          "points": 3
+        },
+        {
+          "name": "マヒャド斬り",
+          "points": 10
+        },
+        {
+          "name": "ゆきだま",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "つめたい息",
+          "points": 50
+        },
+        {
+          "name": "ラリホー",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "ヒャダルコ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576428"
+    },
+    {
+      "name": "電撃の心",
+      "abilities": [
+        {
+          "name": "デイン",
+          "points": 3
+        },
+        {
+          "name": "いなずま斬り",
+          "points": 10
+        },
+        {
+          "name": "シビー",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "せいけんづき",
+          "points": 50
+        },
+        {
+          "name": "ピオラ",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "ライデイン",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576427"
+    },
+    {
+      "name": "地の心",
+      "abilities": [
+        {
+          "name": "ジバリア",
+          "points": 3
+        },
+        {
+          "name": "けもの斬り",
+          "points": 10
+        },
+        {
+          "name": "いわなげ",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "スカラ",
+          "points": 50
+        },
+        {
+          "name": "じひびき",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "ジバリカ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576426"
+    },
+    {
+      "name": "光の心",
+      "abilities": [
+        {
+          "name": "ギラ",
+          "points": 3
+        },
+        {
+          "name": "まぶしい光",
+          "points": 10
+        },
+        {
+          "name": "ゾンビ斬り",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "マダンチョ",
+          "points": 50
+        },
+        {
+          "name": "インテ",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "ベギラマ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576425"
+    },
+    {
+      "name": "グリーンソード",
+      "abilities": [
+        {
+          "name": "しんくう斬り",
+          "points": 3
+        },
+        {
+          "name": "バギ",
+          "points": 10
+        },
+        {
+          "name": "しぜん斬り",
+          "points": 20
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 30
+        },
+        {
+          "name": "キアリク",
+          "points": 50
+        },
+        {
+          "name": "かまいたち",
+          "points": 70
+        },
+        {
+          "name": "バギマ",
+          "points": 85
+        },
+        {
+          "name": "すばやさ+16",
+          "points": 100
+        },
+        {
+          "name": "空裂斬",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576412"
+    },
+    {
+      "name": "レッドソード",
+      "abilities": [
+        {
+          "name": "かえん斬り",
+          "points": 3
+        },
+        {
+          "name": "メラ",
+          "points": 10
+        },
+        {
+          "name": "ドラゴン斬り",
+          "points": 20
+        },
+        {
+          "name": "攻撃力+4",
+          "points": 30
+        },
+        {
+          "name": "キアリー",
+          "points": 50
+        },
+        {
+          "name": "メラミ",
+          "points": 70
+        },
+        {
+          "name": "火炎の息",
+          "points": 85
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 100
+        },
+        {
+          "name": "灼熱斬",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576411"
+    },
+    {
+      "name": "イエローソード",
+      "abilities": [
+        {
+          "name": "いなずま斬り",
+          "points": 3
+        },
+        {
+          "name": "ジバリア",
+          "points": 10
+        },
+        {
+          "name": "けもの斬り",
+          "points": 20
+        },
+        {
+          "name": "守備力+8",
+          "points": 30
+        },
+        {
+          "name": "キアラル",
+          "points": 50
+        },
+        {
+          "name": "いわなげ",
+          "points": 70
+        },
+        {
+          "name": "ジバリカ",
+          "points": 85
+        },
+        {
+          "name": "守備力+16",
+          "points": 100
+        },
+        {
+          "name": "閃光斬",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576410"
+    },
+    {
+      "name": "ブルーソード",
+      "abilities": [
+        {
+          "name": "マヒャド斬り",
+          "points": 3
+        },
+        {
+          "name": "ザバ",
+          "points": 10
+        },
+        {
+          "name": "スライムたたき",
+          "points": 20
+        },
+        {
+          "name": "かしこさ+8",
+          "points": 30
+        },
+        {
+          "name": "ザメハ",
+          "points": 50
+        },
+        {
+          "name": "ザバラ",
+          "points": 70
+        },
+        {
+          "name": "こおりの息",
+          "points": 85
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 100
+        },
+        {
+          "name": "海波斬",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576409"
+    },
+    {
+      "name": "HPアップ1",
+      "abilities": [
+        {
+          "name": "最大HP+4",
+          "points": 5
+        },
+        {
+          "name": "最大HP+4",
+          "points": 10
+        },
+        {
+          "name": "最大HP+4",
+          "points": 20
+        },
+        {
+          "name": "最大HP+4",
+          "points": 30
+        },
+        {
+          "name": "最大HP+8",
+          "points": 50
+        },
+        {
+          "name": "最大HP+8",
+          "points": 70
+        },
+        {
+          "name": "最大HP+8",
+          "points": 85
+        },
+        {
+          "name": "最大HP+12",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576403"
+    },
+    {
+      "name": "あくしゅう",
+      "abilities": [
+        {
+          "name": "ヴェレ",
+          "points": 3
+        },
+        {
+          "name": "メダパニ",
+          "points": 10
+        },
+        {
+          "name": "どくの息",
+          "points": 20
+        },
+        {
+          "name": "くちをふさぐ",
+          "points": 30
+        },
+        {
+          "name": "ザキ",
+          "points": 50
+        },
+        {
+          "name": "あまい息",
+          "points": 70
+        },
+        {
+          "name": "おたけび",
+          "points": 85
+        },
+        {
+          "name": "やけつく息",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576399"
+    },
+    {
+      "name": "ジャマー",
+      "abilities": [
+        {
+          "name": "ルカニ",
+          "points": 3
+        },
+        {
+          "name": "ラリホー",
+          "points": 10
+        },
+        {
+          "name": "ヴェレ",
+          "points": 20
+        },
+        {
+          "name": "どくこうげき",
+          "points": 30
+        },
+        {
+          "name": "シビー",
+          "points": 50
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 70
+        },
+        {
+          "name": "アサシンアタック",
+          "points": 85
+        },
+        {
+          "name": "シビリーニョ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576398"
+    },
+    {
+      "name": "ドラゴンソウル",
+      "abilities": [
+        {
+          "name": "火の息",
+          "points": 3
+        },
+        {
+          "name": "つめたい息",
+          "points": 10
+        },
+        {
+          "name": "けもの斬り",
+          "points": 20
+        },
+        {
+          "name": "すなけむり",
+          "points": 30
+        },
+        {
+          "name": "息をすいこむ",
+          "points": 50
+        },
+        {
+          "name": "おたけび",
+          "points": 70
+        },
+        {
+          "name": "火炎の息",
+          "points": 85
+        },
+        {
+          "name": "こおりの息",
+          "points": 100
+        },
+        {
+          "name": "自動HP回復",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576397"
+    },
+    {
+      "name": "ダウナー",
+      "abilities": [
+        {
+          "name": "ボミエ",
+          "points": 3
+        },
+        {
+          "name": "ルカニ",
+          "points": 10
+        },
+        {
+          "name": "フール",
+          "points": 20
+        },
+        {
+          "name": "ヘナトス",
+          "points": 30
+        },
+        {
+          "name": "ボミオス",
+          "points": 50
+        },
+        {
+          "name": "ルカナン",
+          "points": 70
+        },
+        {
+          "name": "マフール",
+          "points": 85
+        },
+        {
+          "name": "ひゃくれつなめ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576396"
+    },
+    {
+      "name": "けもの道",
+      "abilities": [
+        {
+          "name": "ハートブレイク",
+          "points": 3
+        },
+        {
+          "name": "すなけむり",
+          "points": 10
+        },
+        {
+          "name": "やいばくだき",
+          "points": 20
+        },
+        {
+          "name": "しっぷうづき",
+          "points": 30
+        },
+        {
+          "name": "なめまわし",
+          "points": 50
+        },
+        {
+          "name": "おたけび",
+          "points": 70
+        },
+        {
+          "name": "魔神斬り",
+          "points": 85
+        },
+        {
+          "name": "自動HP回復",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576395"
+    },
+    {
+      "name": "アンデッド",
+      "abilities": [
+        {
+          "name": "どくこうげき",
+          "points": 3
+        },
+        {
+          "name": "ボミエ",
+          "points": 10
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 20
+        },
+        {
+          "name": "あまい息",
+          "points": 30
+        },
+        {
+          "name": "やけつく息",
+          "points": 50
+        },
+        {
+          "name": "こんらんこうげき",
+          "points": 70
+        },
+        {
+          "name": "ザキ",
+          "points": 85
+        },
+        {
+          "name": "メガンテ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576394"
+    },
+    {
+      "name": "つむじ風",
+      "abilities": [
+        {
+          "name": "ピオラ",
+          "points": 3
+        },
+        {
+          "name": "バギ",
+          "points": 10
+        },
+        {
+          "name": "すなけむり",
+          "points": 20
+        },
+        {
+          "name": "ピオリム",
+          "points": 30
+        },
+        {
+          "name": "バーハ",
+          "points": 50
+        },
+        {
+          "name": "かまいたち",
+          "points": 70
+        },
+        {
+          "name": "フバーハ",
+          "points": 85
+        },
+        {
+          "name": "ぎゃくふう",
+          "points": 100
+        },
+        {
+          "name": "しんくうは",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576393"
+    },
+    {
+      "name": "スリラー",
+      "abilities": [
+        {
+          "name": "ボミエ",
+          "points": 3
+        },
+        {
+          "name": "ヒャド",
+          "points": 10
+        },
+        {
+          "name": "つめたい息",
+          "points": 20
+        },
+        {
+          "name": "ルカニ",
+          "points": 30
+        },
+        {
+          "name": "おたけび",
+          "points": 50
+        },
+        {
+          "name": "ザキ",
+          "points": 70
+        },
+        {
+          "name": "メダパニ",
+          "points": 85
+        },
+        {
+          "name": "かしこさ+24",
+          "points": 100
+        },
+        {
+          "name": "ヒャダルコ",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576392"
+    },
+    {
+      "name": "いしあたま",
+      "abilities": [
+        {
+          "name": "かぶとわり",
+          "points": 3
+        },
+        {
+          "name": "メタル斬り",
+          "points": 10
+        },
+        {
+          "name": "だいせつだん",
+          "points": 20
+        },
+        {
+          "name": "いわなげ",
+          "points": 30
+        },
+        {
+          "name": "スクルト",
+          "points": 50
+        },
+        {
+          "name": "マホトーン",
+          "points": 70
+        },
+        {
+          "name": "せいけんづき",
+          "points": 85
+        },
+        {
+          "name": "メガンテ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576391"
+    },
+    {
+      "name": "妖精",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "ギラ",
+          "points": 10
+        },
+        {
+          "name": "スカラ",
+          "points": 20
+        },
+        {
+          "name": "バーハ",
+          "points": 30
+        },
+        {
+          "name": "ラリホー",
+          "points": 50
+        },
+        {
+          "name": "キラキラポーン",
+          "points": 70
+        },
+        {
+          "name": "おたけび",
+          "points": 85
+        },
+        {
+          "name": "まもりの霧",
+          "points": 100
+        },
+        {
+          "name": "いやしの雨",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576390"
+    },
+    {
+      "name": "ちからもち",
+      "abilities": [
+        {
+          "name": "かぶとわり",
+          "points": 3
+        },
+        {
+          "name": "スライムたたき",
+          "points": 10
+        },
+        {
+          "name": "メタル斬り",
+          "points": 20
+        },
+        {
+          "name": "たぎる",
+          "points": 30
+        },
+        {
+          "name": "魔神斬り",
+          "points": 50
+        },
+        {
+          "name": "バイキルト",
+          "points": 70
+        },
+        {
+          "name": "攻撃力+12",
+          "points": 85
+        },
+        {
+          "name": "アンカーナックル",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576389"
+    },
+    {
+      "name": "電撃ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "最大MP+16",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "電撃ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576388"
+    },
+    {
+      "name": "悪魔のささやき",
+      "abilities": [
+        {
+          "name": "ドルマ",
+          "points": 3
+        },
+        {
+          "name": "ルカニ",
+          "points": 10
+        },
+        {
+          "name": "フール",
+          "points": 20
+        },
+        {
+          "name": "あくま斬り",
+          "points": 30
+        },
+        {
+          "name": "マホトラ",
+          "points": 50
+        },
+        {
+          "name": "マホトーン",
+          "points": 70
+        },
+        {
+          "name": "ザキ",
+          "points": 85
+        },
+        {
+          "name": "ドルクマ",
+          "points": 100
+        },
+        {
+          "name": "自動MP回復",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576387"
+    },
+    {
+      "name": "アサシン",
+      "abilities": [
+        {
+          "name": "ハートブレイク",
+          "points": 3
+        },
+        {
+          "name": "すなけむり",
+          "points": 10
+        },
+        {
+          "name": "しっぷうづき",
+          "points": 20
+        },
+        {
+          "name": "たぎる",
+          "points": 30
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 50
+        },
+        {
+          "name": "魔神斬り",
+          "points": 70
+        },
+        {
+          "name": "ザキ",
+          "points": 85
+        },
+        {
+          "name": "アサシンアタック",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576386"
+    },
+    {
+      "name": "アッパー",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "ピオラ",
+          "points": 10
+        },
+        {
+          "name": "スカラ",
+          "points": 20
+        },
+        {
+          "name": "インテ",
+          "points": 30
+        },
+        {
+          "name": "バイキルト",
+          "points": 50
+        },
+        {
+          "name": "バーハ",
+          "points": 70
+        },
+        {
+          "name": "ベホイミ",
+          "points": 85
+        },
+        {
+          "name": "バイシオン",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576385"
+    },
+    {
+      "name": "あばれんぼう",
+      "abilities": [
+        {
+          "name": "すなけむり",
+          "points": 3
+        },
+        {
+          "name": "みなごろし",
+          "points": 10
+        },
+        {
+          "name": "やいばくだき",
+          "points": 20
+        },
+        {
+          "name": "攻撃力+4",
+          "points": 30
+        },
+        {
+          "name": "こんらんこうげき",
+          "points": 50
+        },
+        {
+          "name": "おたけび",
+          "points": 70
+        },
+        {
+          "name": "ヒュプノスハント",
+          "points": 85
+        },
+        {
+          "name": "メダパニダンス",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576384"
+    },
+    {
+      "name": "アンチスペル",
+      "abilities": [
+        {
+          "name": "フール",
+          "points": 3
+        },
+        {
+          "name": "マホトーン",
+          "points": 10
+        },
+        {
+          "name": "インテ",
+          "points": 20
+        },
+        {
+          "name": "マホトラ",
+          "points": 30
+        },
+        {
+          "name": "まもりの霧",
+          "points": 50
+        },
+        {
+          "name": "マフール",
+          "points": 70
+        },
+        {
+          "name": "セイハーバ",
+          "points": 85
+        },
+        {
+          "name": "マホカンタ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576383"
+    },
+    {
+      "name": "アンチブレス",
+      "abilities": [
+        {
+          "name": "くちをふさぐ",
+          "points": 3
+        },
+        {
+          "name": "バーハ",
+          "points": 10
+        },
+        {
+          "name": "ドラゴン斬り",
+          "points": 20
+        },
+        {
+          "name": "フバーハ",
+          "points": 30
+        },
+        {
+          "name": "最大HP+4",
+          "points": 50
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 70
+        },
+        {
+          "name": "まもりの霧",
+          "points": 85
+        },
+        {
+          "name": "ぎゃくふう",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576382"
+    },
+    {
+      "name": "異常回復",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "キアリー",
+          "points": 10
+        },
+        {
+          "name": "キアリク",
+          "points": 20
+        },
+        {
+          "name": "キアラル",
+          "points": 30
+        },
+        {
+          "name": "ザメハ",
+          "points": 50
+        },
+        {
+          "name": "マホトラ",
+          "points": 70
+        },
+        {
+          "name": "キラキラポーン",
+          "points": 85
+        },
+        {
+          "name": "ザオラル",
+          "points": 100
+        },
+        {
+          "name": "ひかりのはどう",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576381"
+    },
+    {
+      "name": "いたずら",
+      "abilities": [
+        {
+          "name": "なめまわし",
+          "points": 3
+        },
+        {
+          "name": "ハートブレイク",
+          "points": 10
+        },
+        {
+          "name": "どくこうげき",
+          "points": 20
+        },
+        {
+          "name": "マヌーサ",
+          "points": 30
+        },
+        {
+          "name": "くちをふさぐ",
+          "points": 50
+        },
+        {
+          "name": "メダパニ",
+          "points": 70
+        },
+        {
+          "name": "すばやさ+4",
+          "points": 85
+        },
+        {
+          "name": "やけつく息",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576380"
+    },
+    {
+      "name": "息吹",
+      "abilities": [
+        {
+          "name": "火の息",
+          "points": 3
+        },
+        {
+          "name": "つめたい息",
+          "points": 10
+        },
+        {
+          "name": "攻撃力+4",
+          "points": 20
+        },
+        {
+          "name": "すなけむり",
+          "points": 30
+        },
+        {
+          "name": "息をすいこむ",
+          "points": 50
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 70
+        },
+        {
+          "name": "火炎の息",
+          "points": 85
+        },
+        {
+          "name": "こおりの息",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576378"
+    },
+    {
+      "name": "ウォリアー",
+      "abilities": [
+        {
+          "name": "かぶとわり",
+          "points": 3
+        },
+        {
+          "name": "ハートブレイク",
+          "points": 10
+        },
+        {
+          "name": "ウィングブロウ",
+          "points": 20
+        },
+        {
+          "name": "いわなげ",
+          "points": 30
+        },
+        {
+          "name": "魔神斬り",
+          "points": 50
+        },
+        {
+          "name": "まわしげり",
+          "points": 70
+        },
+        {
+          "name": "おたけび",
+          "points": 85
+        },
+        {
+          "name": "せいけんづき",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576377"
+    },
+    {
+      "name": "HP回復",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "スカラ",
+          "points": 10
+        },
+        {
+          "name": "キアリー",
+          "points": 20
+        },
+        {
+          "name": "バーハ",
+          "points": 30
+        },
+        {
+          "name": "ベホイミ",
+          "points": 50
+        },
+        {
+          "name": "ザオラル",
+          "points": 70
+        },
+        {
+          "name": "めいそう",
+          "points": 85
+        },
+        {
+          "name": "まもりの霧",
+          "points": 100
+        },
+        {
+          "name": "ザオリク",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576376"
+    },
+    {
+      "name": "MPアップ1",
+      "abilities": [
+        {
+          "name": "最大MP+4",
+          "points": 5
+        },
+        {
+          "name": "最大MP+4",
+          "points": 10
+        },
+        {
+          "name": "最大MP+8",
+          "points": 20
+        },
+        {
+          "name": "最大MP+8",
+          "points": 30
+        },
+        {
+          "name": "最大MP+8",
+          "points": 50
+        },
+        {
+          "name": "最大MP+8",
+          "points": 70
+        },
+        {
+          "name": "最大MP+16",
+          "points": 85
+        },
+        {
+          "name": "最大MP+24",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576375"
+    },
+    {
+      "name": "MP吸収ガード",
+      "abilities": [
+        {
+          "name": "最大MP+16",
+          "points": 5
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 10
+        },
+        {
+          "name": "最大MP+16",
+          "points": 20
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 40
+        },
+        {
+          "name": "MP吸収ガード大",
+          "points": 60
+        },
+        {
+          "name": "最大MP+16",
+          "points": 90
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 120
+        },
+        {
+          "name": "自動MP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576371"
+    },
+    {
+      "name": "火炎",
+      "abilities": [
+        {
+          "name": "火の息",
+          "points": 3
+        },
+        {
+          "name": "メラ",
+          "points": 10
+        },
+        {
+          "name": "守備力+8",
+          "points": 20
+        },
+        {
+          "name": "ひばしら",
+          "points": 30
+        },
+        {
+          "name": "メダパニ",
+          "points": 50
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 70
+        },
+        {
+          "name": "すなけむり",
+          "points": 85
+        },
+        {
+          "name": "火炎の息",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576370"
+    },
+    {
+      "name": "かしこさアップ1",
+      "abilities": [
+        {
+          "name": "かしこさ+4",
+          "points": 5
+        },
+        {
+          "name": "最大MP+4",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+8",
+          "points": 20
+        },
+        {
+          "name": "最大MP+4",
+          "points": 30
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 50
+        },
+        {
+          "name": "最大MP+8",
+          "points": 70
+        },
+        {
+          "name": "かしこさ+24",
+          "points": 85
+        }
+      ],
+      "maxPoints": 85,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576369"
+    },
+    {
+      "name": "風ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "風ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576365"
+    },
+    {
+      "name": "カース",
+      "abilities": [
+        {
+          "name": "ドルマ",
+          "points": 3
+        },
+        {
+          "name": "ルカニ",
+          "points": 10
+        },
+        {
+          "name": "つめたい息",
+          "points": 20
+        },
+        {
+          "name": "ヘナトス",
+          "points": 30
+        },
+        {
+          "name": "メダパニ",
+          "points": 50
+        },
+        {
+          "name": "シビー",
+          "points": 70
+        },
+        {
+          "name": "ザキ",
+          "points": 85
+        },
+        {
+          "name": "かしこさ+24",
+          "points": 100
+        },
+        {
+          "name": "ドルクマ",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576364"
+    },
+    {
+      "name": "騎士道",
+      "abilities": [
+        {
+          "name": "あくま斬り",
+          "points": 3
+        },
+        {
+          "name": "スカラ",
+          "points": 10
+        },
+        {
+          "name": "しっぷうづき",
+          "points": 20
+        },
+        {
+          "name": "バイキルト",
+          "points": 30
+        },
+        {
+          "name": "かまいたち",
+          "points": 50
+        },
+        {
+          "name": "はやぶさ斬り",
+          "points": 70
+        },
+        {
+          "name": "ベホイミ",
+          "points": 85
+        },
+        {
+          "name": "みがわり",
+          "points": 100
+        },
+        {
+          "name": "キングダムソード",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576363"
+    },
+    {
+      "name": "キューピッド",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "スカラ",
+          "points": 10
+        },
+        {
+          "name": "ギラ",
+          "points": 20
+        },
+        {
+          "name": "ハートブレイク",
+          "points": 30
+        },
+        {
+          "name": "ベギラマ",
+          "points": 50
+        },
+        {
+          "name": "まぶしい光",
+          "points": 70
+        },
+        {
+          "name": "最大HP+8",
+          "points": 85
+        },
+        {
+          "name": "シャイニングボウ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576362"
+    },
+    {
+      "name": "巨体",
+      "abilities": [
+        {
+          "name": "かぶとわり",
+          "points": 3
+        },
+        {
+          "name": "スライムたたき",
+          "points": 10
+        },
+        {
+          "name": "だいぼうぎょ",
+          "points": 20
+        },
+        {
+          "name": "おたけび",
+          "points": 30
+        },
+        {
+          "name": "最大HP+8",
+          "points": 50
+        },
+        {
+          "name": "みがわり",
+          "points": 70
+        },
+        {
+          "name": "アンカーナックル",
+          "points": 85
+        },
+        {
+          "name": "じひびき",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576361"
+    },
+    {
+      "name": "剣術",
+      "abilities": [
+        {
+          "name": "かえん斬り",
+          "points": 3
+        },
+        {
+          "name": "しんくう斬り",
+          "points": 10
+        },
+        {
+          "name": "メタル斬り",
+          "points": 20
+        },
+        {
+          "name": "マヒャド斬り",
+          "points": 30
+        },
+        {
+          "name": "いなずま斬り",
+          "points": 50
+        },
+        {
+          "name": "はやぶさ斬り",
+          "points": 70
+        },
+        {
+          "name": "さみだれ斬り",
+          "points": 85
+        },
+        {
+          "name": "ミラクルソード",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576359"
+    },
+    {
+      "name": "幻惑ガード",
+      "abilities": [
+        {
+          "name": "最大MP+16",
+          "points": 5
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 10
+        },
+        {
+          "name": "守備力+16",
+          "points": 20
+        },
+        {
+          "name": "最大HP+8",
+          "points": 40
+        },
+        {
+          "name": "幻惑ガード大",
+          "points": 60
+        },
+        {
+          "name": "最大MP+16",
+          "points": 90
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 120
+        },
+        {
+          "name": "自動MP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576358"
+    },
+    {
+      "name": "攻撃力アップ1",
+      "abilities": [
+        {
+          "name": "攻撃力+4",
+          "points": 5
+        },
+        {
+          "name": "最大HP+4",
+          "points": 10
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 20
+        },
+        {
+          "name": "最大HP+4",
+          "points": 30
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 50
+        },
+        {
+          "name": "最大HP+4",
+          "points": 70
+        },
+        {
+          "name": "攻撃力+12",
+          "points": 85
+        }
+      ],
+      "maxPoints": 85,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576357"
+    },
+    {
+      "name": "こんらんガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "守備力+16",
+          "points": 10
+        },
+        {
+          "name": "最大HP+8",
+          "points": 20
+        },
+        {
+          "name": "守備力+16",
+          "points": 40
+        },
+        {
+          "name": "こんらんガード大",
+          "points": 60
+        },
+        {
+          "name": "最大HP+8",
+          "points": 90
+        },
+        {
+          "name": "守備力+16",
+          "points": 120
+        },
+        {
+          "name": "自動HP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576353"
+    },
+    {
+      "name": "サポーター",
+      "abilities": [
+        {
+          "name": "キアリー",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "キアリク",
+          "points": 20
+        },
+        {
+          "name": "スカラ",
+          "points": 30
+        },
+        {
+          "name": "ピオラ",
+          "points": 50
+        },
+        {
+          "name": "インテ",
+          "points": 70
+        },
+        {
+          "name": "バイキルト",
+          "points": 85
+        },
+        {
+          "name": "バーハ",
+          "points": 100
+        },
+        {
+          "name": "ベホイミ",
+          "points": 120
+        },
+        {
+          "name": "最大MP+24",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576351"
+    },
+    {
+      "name": "守備力アップ1",
+      "abilities": [
+        {
+          "name": "守備力+4",
+          "points": 5
+        },
+        {
+          "name": "最大HP+4",
+          "points": 10
+        },
+        {
+          "name": "守備力+8",
+          "points": 20
+        },
+        {
+          "name": "最大HP+4",
+          "points": 30
+        },
+        {
+          "name": "守備力+16",
+          "points": 50
+        },
+        {
+          "name": "最大HP+4",
+          "points": 70
+        },
+        {
+          "name": "守備力+24",
+          "points": 85
+        }
+      ],
+      "maxPoints": 85,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576350"
+    },
+    {
+      "name": "しんそく",
+      "abilities": [
+        {
+          "name": "ピオラ",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "ボミエ",
+          "points": 20
+        },
+        {
+          "name": "すばやさ+4",
+          "points": 30
+        },
+        {
+          "name": "みかわしきゃく",
+          "points": 50
+        },
+        {
+          "name": "ピオリム",
+          "points": 70
+        },
+        {
+          "name": "しっぷうづき",
+          "points": 85
+        },
+        {
+          "name": "はやぶさ斬り",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576344"
+    },
+    {
+      "name": "じこぎせい",
+      "abilities": [
+        {
+          "name": "ザキ",
+          "points": 3
+        },
+        {
+          "name": "最大HP+8",
+          "points": 10
+        },
+        {
+          "name": "だいぼうぎょ",
+          "points": 20
+        },
+        {
+          "name": "守備力+8",
+          "points": 30
+        },
+        {
+          "name": "みがわり",
+          "points": 50
+        },
+        {
+          "name": "アンカーナックル",
+          "points": 70
+        },
+        {
+          "name": "メガンテ",
+          "points": 85
+        },
+        {
+          "name": "メガザル",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576343"
+    },
+    {
+      "name": "弱体化ガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 10
+        },
+        {
+          "name": "最大MP+16",
+          "points": 20
+        },
+        {
+          "name": "守備力+16",
+          "points": 40
+        },
+        {
+          "name": "弱体化ガード大",
+          "points": 60
+        },
+        {
+          "name": "最大HP+8",
+          "points": 90
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 120
+        },
+        {
+          "name": "自動MP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576342"
+    },
+    {
+      "name": "睡魔",
+      "abilities": [
+        {
+          "name": "ラリホー",
+          "points": 3
+        },
+        {
+          "name": "マヌーサ",
+          "points": 10
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 20
+        },
+        {
+          "name": "メダパニ",
+          "points": 30
+        },
+        {
+          "name": "あまい息",
+          "points": 50
+        },
+        {
+          "name": "こんらんこうげき",
+          "points": 70
+        },
+        {
+          "name": "ラリホーマ",
+          "points": 85
+        },
+        {
+          "name": "メダパーニャ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576341"
+    },
+    {
+      "name": "スイート",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "なめまわし",
+          "points": 10
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 20
+        },
+        {
+          "name": "スカラ",
+          "points": 30
+        },
+        {
+          "name": "最大HP+8",
+          "points": 50
+        },
+        {
+          "name": "あまい息",
+          "points": 70
+        },
+        {
+          "name": "ミラクルソード",
+          "points": 85
+        },
+        {
+          "name": "自動MP回復",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576340"
+    },
+    {
+      "name": "すばやさアップ1",
+      "abilities": [
+        {
+          "name": "すばやさ+4",
+          "points": 5
+        },
+        {
+          "name": "最大HP+4",
+          "points": 10
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 20
+        },
+        {
+          "name": "最大HP+4",
+          "points": 30
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 50
+        },
+        {
+          "name": "最大HP+4",
+          "points": 70
+        },
+        {
+          "name": "すばやさ+12",
+          "points": 85
+        }
+      ],
+      "maxPoints": 85,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576339"
+    },
+    {
+      "name": "即死ガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "最大MP+16",
+          "points": 10
+        },
+        {
+          "name": "最大HP+8",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "即死ガード大",
+          "points": 60
+        },
+        {
+          "name": "最大HP+8",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "自動HP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576335"
+    },
+    {
+      "name": "ダンサー",
+      "abilities": [
+        {
+          "name": "ふしぎな踊り",
+          "points": 3
+        },
+        {
+          "name": "さそう踊り",
+          "points": 10
+        },
+        {
+          "name": "しっぷうづき",
+          "points": 20
+        },
+        {
+          "name": "すばやさ+4",
+          "points": 30
+        },
+        {
+          "name": "スカラ",
+          "points": 50
+        },
+        {
+          "name": "マホトラ踊り",
+          "points": 70
+        },
+        {
+          "name": "最大MP+8",
+          "points": 85
+        },
+        {
+          "name": "つるぎのまい",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576334"
+    },
+    {
+      "name": "地ガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "守備力+16",
+          "points": 10
+        },
+        {
+          "name": "最大MP+16",
+          "points": 20
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 40
+        },
+        {
+          "name": "地ガード大",
+          "points": 60
+        },
+        {
+          "name": "守備力+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576333"
+    },
+    {
+      "name": "てっぺき",
+      "abilities": [
+        {
+          "name": "バーハ",
+          "points": 3
+        },
+        {
+          "name": "守備力+4",
+          "points": 10
+        },
+        {
+          "name": "スクルト",
+          "points": 20
+        },
+        {
+          "name": "まもりの霧",
+          "points": 30
+        },
+        {
+          "name": "キラキラポーン",
+          "points": 50
+        },
+        {
+          "name": "だいぼうぎょ",
+          "points": 70
+        },
+        {
+          "name": "会心封じ",
+          "points": 85
+        },
+        {
+          "name": "みがわり",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576332"
+    },
+    {
+      "name": "トリッキー",
+      "abilities": [
+        {
+          "name": "ヴェレ",
+          "points": 3
+        },
+        {
+          "name": "みかわしきゃく",
+          "points": 10
+        },
+        {
+          "name": "くちをふさぐ",
+          "points": 20
+        },
+        {
+          "name": "すなけむり",
+          "points": 30
+        },
+        {
+          "name": "会心封じ",
+          "points": 50
+        },
+        {
+          "name": "ぎゃくふう",
+          "points": 70
+        },
+        {
+          "name": "ヴェレーノ",
+          "points": 85
+        },
+        {
+          "name": "ひゃくれつなめ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576331"
+    },
+    {
+      "name": "トロピカル",
+      "abilities": [
+        {
+          "name": "ふしぎな踊り",
+          "points": 3
+        },
+        {
+          "name": "ザバ",
+          "points": 10
+        },
+        {
+          "name": "さそう踊り",
+          "points": 20
+        },
+        {
+          "name": "あまい息",
+          "points": 30
+        },
+        {
+          "name": "メラミ",
+          "points": 50
+        },
+        {
+          "name": "火炎の息",
+          "points": 70
+        },
+        {
+          "name": "ベギラマ",
+          "points": 85
+        },
+        {
+          "name": "ハッスルダンス",
+          "points": 100
+        },
+        {
+          "name": "自動MP回復",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576330"
+    },
+    {
+      "name": "どくガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "最大MP+16",
+          "points": 10
+        },
+        {
+          "name": "最大HP+8",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "どくガード大",
+          "points": 60
+        },
+        {
+          "name": "最大HP+8",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "自動HP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576329"
+    },
+    {
+      "name": "毒舌",
+      "abilities": [
+        {
+          "name": "ヴェレ",
+          "points": 3
+        },
+        {
+          "name": "どくこうげき",
+          "points": 10
+        },
+        {
+          "name": "なめまわし",
+          "points": 20
+        },
+        {
+          "name": "ハートブレイク",
+          "points": 30
+        },
+        {
+          "name": "どくの息",
+          "points": 50
+        },
+        {
+          "name": "フール",
+          "points": 70
+        },
+        {
+          "name": "ヴェレーノ",
+          "points": 85
+        },
+        {
+          "name": "ひゃくれつなめ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576328"
+    },
+    {
+      "name": "ナチュラル",
+      "abilities": [
+        {
+          "name": "キアリー",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "マホトラ",
+          "points": 20
+        },
+        {
+          "name": "ラリホー",
+          "points": 30
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 50
+        },
+        {
+          "name": "マヌーサ",
+          "points": 70
+        },
+        {
+          "name": "マホトーン",
+          "points": 85
+        },
+        {
+          "name": "ミラクルソード",
+          "points": 100
+        },
+        {
+          "name": "自動MP回復",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576327"
+    },
+    {
+      "name": "ぬすっと",
+      "abilities": [
+        {
+          "name": "ピオラ",
+          "points": 3
+        },
+        {
+          "name": "どくこうげき",
+          "points": 10
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 20
+        },
+        {
+          "name": "すなけむり",
+          "points": 30
+        },
+        {
+          "name": "みかわしきゃく",
+          "points": 50
+        },
+        {
+          "name": "しっぷうづき",
+          "points": 70
+        },
+        {
+          "name": "タナトスハント",
+          "points": 85
+        },
+        {
+          "name": "ヒュプノスハント",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576326"
+    },
+    {
+      "name": "ヌメヌメ",
+      "abilities": [
+        {
+          "name": "なめまわし",
+          "points": 3
+        },
+        {
+          "name": "ザバ",
+          "points": 10
+        },
+        {
+          "name": "ボミエ",
+          "points": 20
+        },
+        {
+          "name": "マホトラ",
+          "points": 30
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 50
+        },
+        {
+          "name": "まぶしい光",
+          "points": 70
+        },
+        {
+          "name": "あまい息",
+          "points": 85
+        },
+        {
+          "name": "ひゃくれつなめ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576325"
+    },
+    {
+      "name": "ねむりガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 10
+        },
+        {
+          "name": "最大HP+8",
+          "points": 20
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 40
+        },
+        {
+          "name": "ねむりガード大",
+          "points": 60
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 90
+        },
+        {
+          "name": "最大HP+8",
+          "points": 120
+        },
+        {
+          "name": "自動HP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576324"
+    },
+    {
+      "name": "パニック",
+      "abilities": [
+        {
+          "name": "メダパニ",
+          "points": 3
+        },
+        {
+          "name": "マヌーサ",
+          "points": 10
+        },
+        {
+          "name": "どくの息",
+          "points": 20
+        },
+        {
+          "name": "ハートブレイク",
+          "points": 30
+        },
+        {
+          "name": "おたけび",
+          "points": 50
+        },
+        {
+          "name": "こんらんこうげき",
+          "points": 70
+        },
+        {
+          "name": "ヒュプノスハント",
+          "points": 85
+        },
+        {
+          "name": "メダパニダンス",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576323"
+    },
+    {
+      "name": "爆発ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "攻撃力+8",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "爆発ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576322"
+    },
+    {
+      "name": "バンデッド",
+      "abilities": [
+        {
+          "name": "かぶとわり",
+          "points": 3
+        },
+        {
+          "name": "なめまわし",
+          "points": 10
+        },
+        {
+          "name": "メタル斬り",
+          "points": 20
+        },
+        {
+          "name": "どくこうげき",
+          "points": 30
+        },
+        {
+          "name": "いわなげ",
+          "points": 50
+        },
+        {
+          "name": "おたけび",
+          "points": 70
+        },
+        {
+          "name": "蒼天魔斬",
+          "points": 85
+        },
+        {
+          "name": "ハッスルダンス",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576320"
+    },
+    {
+      "name": "火遊び",
+      "abilities": [
+        {
+          "name": "メラ",
+          "points": 3
+        },
+        {
+          "name": "かえん斬り",
+          "points": 10
+        },
+        {
+          "name": "ギラ",
+          "points": 20
+        },
+        {
+          "name": "ひばしら",
+          "points": 30
+        },
+        {
+          "name": "ルカニ",
+          "points": 50
+        },
+        {
+          "name": "こんらんこうげき",
+          "points": 70
+        },
+        {
+          "name": "メラミ",
+          "points": 85
+        },
+        {
+          "name": "火炎の息",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576319"
+    },
+    {
+      "name": "光ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 10
+        },
+        {
+          "name": "最大HP+8",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "光ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大HP+8",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576318"
+    },
+    {
+      "name": "火ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "最大HP+8",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "火ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大HP+8",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576317"
+    },
+    {
+      "name": "氷結ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "守備力+16",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "氷結ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576316"
+    },
+    {
+      "name": "封じガード",
+      "abilities": [
+        {
+          "name": "最大MP+16",
+          "points": 5
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 10
+        },
+        {
+          "name": "最大MP+16",
+          "points": 20
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 40
+        },
+        {
+          "name": "封じガード大",
+          "points": 60
+        },
+        {
+          "name": "最大MP+16",
+          "points": 90
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 120
+        },
+        {
+          "name": "自動MP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576314"
+    },
+    {
+      "name": "吹雪",
+      "abilities": [
+        {
+          "name": "つめたい息",
+          "points": 3
+        },
+        {
+          "name": "ヒャド",
+          "points": 10
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 20
+        },
+        {
+          "name": "ゆきだま",
+          "points": 30
+        },
+        {
+          "name": "ラリホー",
+          "points": 50
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 70
+        },
+        {
+          "name": "まぶしい光",
+          "points": 85
+        },
+        {
+          "name": "こおりの息",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576313"
+    },
+    {
+      "name": "プリンセス",
+      "abilities": [
+        {
+          "name": "ホイミ",
+          "points": 3
+        },
+        {
+          "name": "スクルト",
+          "points": 10
+        },
+        {
+          "name": "みかわしきゃく",
+          "points": 20
+        },
+        {
+          "name": "最大HP+4",
+          "points": 30
+        },
+        {
+          "name": "キラキラポーン",
+          "points": 50
+        },
+        {
+          "name": "氷結らんげき",
+          "points": 70
+        },
+        {
+          "name": "最大MP+12",
+          "points": 85
+        },
+        {
+          "name": "ベホマラー",
+          "points": 100
+        },
+        {
+          "name": "セイハーバ",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576312"
+    },
+    {
+      "name": "ヘドロ",
+      "abilities": [
+        {
+          "name": "ボミエ",
+          "points": 3
+        },
+        {
+          "name": "ジバリア",
+          "points": 10
+        },
+        {
+          "name": "すなけむり",
+          "points": 20
+        },
+        {
+          "name": "いわなげ",
+          "points": 30
+        },
+        {
+          "name": "ヴェレ",
+          "points": 50
+        },
+        {
+          "name": "ジバリカ",
+          "points": 70
+        },
+        {
+          "name": "どくの息",
+          "points": 85
+        },
+        {
+          "name": "じひびき",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576310"
+    },
+    {
+      "name": "ぼうぎょ",
+      "abilities": [
+        {
+          "name": "スカラ",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "やいばくだき",
+          "points": 20
+        },
+        {
+          "name": "まぶしい光",
+          "points": 30
+        },
+        {
+          "name": "スクルト",
+          "points": 50
+        },
+        {
+          "name": "だいぼうぎょ",
+          "points": 70
+        },
+        {
+          "name": "ベホイミ",
+          "points": 85
+        },
+        {
+          "name": "みがわり",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576309"
+    },
+    {
+      "name": "魔術",
+      "abilities": [
+        {
+          "name": "メラ",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "ヒャド",
+          "points": 20
+        },
+        {
+          "name": "マホトラ",
+          "points": 30
+        },
+        {
+          "name": "ルカニ",
+          "points": 50
+        },
+        {
+          "name": "ギラ",
+          "points": 70
+        },
+        {
+          "name": "バギ",
+          "points": 85
+        },
+        {
+          "name": "バイキルト",
+          "points": 100
+        },
+        {
+          "name": "ザバラ",
+          "points": 120
+        },
+        {
+          "name": "イオラ",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576308"
+    },
+    {
+      "name": "マヒガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "守備力+16",
+          "points": 10
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 20
+        },
+        {
+          "name": "最大HP+8",
+          "points": 40
+        },
+        {
+          "name": "マヒガード大",
+          "points": 60
+        },
+        {
+          "name": "守備力+16",
+          "points": 90
+        },
+        {
+          "name": "最大HP+8",
+          "points": 120
+        },
+        {
+          "name": "自動HP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576307"
+    },
+    {
+      "name": "水ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "最大HP+8",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "水ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576306"
+    },
+    {
+      "name": "みずげい",
+      "abilities": [
+        {
+          "name": "ザバ",
+          "points": 3
+        },
+        {
+          "name": "ホイミ",
+          "points": 10
+        },
+        {
+          "name": "みずしぶき",
+          "points": 20
+        },
+        {
+          "name": "ラリホー",
+          "points": 30
+        },
+        {
+          "name": "ベホイミ",
+          "points": 50
+        },
+        {
+          "name": "こおりの息",
+          "points": 70
+        },
+        {
+          "name": "てっぽう水",
+          "points": 85
+        },
+        {
+          "name": "ザバラ",
+          "points": 100
+        },
+        {
+          "name": "自動MP回復",
+          "points": 120
+        }
+      ],
+      "maxPoints": 120,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576305"
+    },
+    {
+      "name": "みわく",
+      "abilities": [
+        {
+          "name": "さそう踊り",
+          "points": 3
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 10
+        },
+        {
+          "name": "マヌーサ",
+          "points": 20
+        },
+        {
+          "name": "マホトラ",
+          "points": 30
+        },
+        {
+          "name": "あまい息",
+          "points": 50
+        },
+        {
+          "name": "メダパニダンス",
+          "points": 70
+        },
+        {
+          "name": "おうぎのまい",
+          "points": 85
+        },
+        {
+          "name": "ギガマホトラ",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576304"
+    },
+    {
+      "name": "むしのしらせ",
+      "abilities": [
+        {
+          "name": "スカラ",
+          "points": 3
+        },
+        {
+          "name": "ラリホー",
+          "points": 10
+        },
+        {
+          "name": "ハートブレイク",
+          "points": 20
+        },
+        {
+          "name": "ねむりこうげき",
+          "points": 30
+        },
+        {
+          "name": "マヒこうげき",
+          "points": 50
+        },
+        {
+          "name": "しぜん斬り",
+          "points": 70
+        },
+        {
+          "name": "だいぼうぎょ",
+          "points": 85
+        },
+        {
+          "name": "メダパニダンス",
+          "points": 100
+        }
+      ],
+      "maxPoints": 100,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576303"
+    },
+    {
+      "name": "休みガード",
+      "abilities": [
+        {
+          "name": "最大HP+8",
+          "points": 5
+        },
+        {
+          "name": "守備力+16",
+          "points": 10
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 20
+        },
+        {
+          "name": "最大HP+8",
+          "points": 40
+        },
+        {
+          "name": "休みガード大",
+          "points": 60
+        },
+        {
+          "name": "守備力+16",
+          "points": 90
+        },
+        {
+          "name": "すばやさ+8",
+          "points": 120
+        },
+        {
+          "name": "自動HP回復",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576302"
+    },
+    {
+      "name": "闇ガード",
+      "abilities": [
+        {
+          "name": "かしこさ+16",
+          "points": 5
+        },
+        {
+          "name": "最大MP+16",
+          "points": 10
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 20
+        },
+        {
+          "name": "最大MP+16",
+          "points": 40
+        },
+        {
+          "name": "闇ガード大",
+          "points": 60
+        },
+        {
+          "name": "かしこさ+16",
+          "points": 90
+        },
+        {
+          "name": "最大MP+16",
+          "points": 120
+        },
+        {
+          "name": "消費MP半分",
+          "points": 150
+        }
+      ],
+      "maxPoints": 150,
+      "recipes": [],
+      "evolvesTo": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/576301"
+    }
+  ]
 }

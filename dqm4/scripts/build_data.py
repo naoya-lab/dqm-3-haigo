@@ -21,11 +21,13 @@ def build():
             assert recipe.get('sourceUrl', '').startswith('https://'), 'Source required'
             recipe['result'] = m['name']
             for i, parent in enumerate(parents):
-                assert parent in by_name, f'Unknown parent: {parent}'
+                if parent not in by_name:
+                    assert parent.endswith('系'), f'Unknown parent: {parent}'
+                    continue
                 by_name[parent]['uses'].append({
                     'type': recipe.get('type', '配合'), 'source': parent,
                     'otherParents': parents[:i] + parents[i+1:],
-                    'result': m['name'], 'sourceUrl': recipe['sourceUrl']})
+                    'result': m['name'], 'sourceUrl': recipe['sourceUrl'], 'note': recipe.get('note', '')})
     for file, key in [('skills.json', 'skills'), ('recommendations.json', 'teams')]:
         data = json.loads((ROOT / file).read_text(encoding='utf-8'))
         assert data['game'] == 'DQM4' and isinstance(data[key], list)

@@ -1,5 +1,5 @@
-const CACHE='dqm4-v1';
-const CORE=['./','./index.html','./style.css?v=1','./app.js?v=1','./data.json?v=1','./skills.json?v=1','./recommendations.json?v=1','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const CACHE='dqm4-v2';
+const CORE=['./','./index.html','./style.css?v=2','./app.js?v=2','./data.json?v=2','./skills.json?v=2','./recommendations.json?v=2','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).then(()=>self.skipWaiting()));
 });

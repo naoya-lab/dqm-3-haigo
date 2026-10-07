@@ -211,7 +211,7 @@ function traitRows(traits){
   return traits.map(trait=>`
     <div class="trait-row">
       <span class="trait-level">
-        Lv${esc(trait.level)}
+        ${trait.level==null?'習得Lv未確認':'Lv'+esc(trait.level)}
       </span>
 
       <div class="trait-content">
@@ -271,7 +271,9 @@ function recipeText(r){
 
       <span class="arrow">\u2192</span>
 
-      ${esc(r.result||'')} ${sourceLink(r.sourceUrl)}
+      ${esc(r.result||'')}
+      ${r.note?`<div class="small">条件：${esc(r.note)}</div>`:''}
+      ${sourceLink(r.sourceUrl)}
     </div>
   `;
 }
@@ -294,6 +296,7 @@ function useText(u){
       <span class="arrow">\u2192</span>
 
       ${monsterButton(u.result)}
+      ${u.note?`<div class="small">条件：${esc(u.note)}</div>`:''}
     </div>
   `;
 }
@@ -349,6 +352,8 @@ function monsterCard(m){
         hidden
       >
         <div class="meta">
+          <span class="badge">${m.dataStatus==='announced'?'登場確認・詳細待ち':'詳細データあり'}</span>
+          ${m.nameStatus?`<span class="badge">${esc(m.nameStatus)}</span>`:''}
           ${
             m.no
               ? `<span class="badge">No.${esc(m.no)}</span>`
@@ -368,6 +373,7 @@ function monsterCard(m){
           }
         </div>
 
+        ${sourceLink(m.sourceUrl)}
         <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
         ${monsterTalentsHtml(m)}
 
@@ -574,7 +580,7 @@ function renderMonsters(){
   statusEl.textContent=
     term
       ? `\u691c\u7d22\u7d50\u679c\uff1a${found.length}\u4f53`
-      : `\u767b\u9332\uff1a${DB.monsters.length}\u4f53`;
+      : `登録：${DB.monsters.length}体（詳細あり：${DB.detailCount??0}体）`;
 
   results.innerHTML=
     found.length
@@ -832,6 +838,7 @@ function skillCard(name){
         }
       </div>
 
+      ${sourceLink(skill?.sourceUrl)}
       <h2>\u899a\u3048\u308b\u7279\u6280\u30fb\u52b9\u679c</h2>
       ${abilityTable(skill)}
 
@@ -1117,8 +1124,7 @@ function planNodeHtml(node,depth=0){
                     }
                   >
                     ${esc(
-                      (recipe.parents||[])
-                        .join(' \uff0b ')
+                      recipe.note || (recipe.parents||[]).join(' \uff0b ')
                     )}
                   </option>
                 `
@@ -1193,6 +1199,7 @@ function planNodeHtml(node,depth=0){
       }
 
       ${routeSelect}
+      ${node.recipe?.note?`<div class="plan-location">条件：${esc(node.recipe.note)}</div>`:''}
 
       ${
         node.cycle
@@ -1656,9 +1663,9 @@ updateNet();
 loadPlanState();
 
 Promise.all([
-  fetch('./recommendations.json?v=1',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('recommendations.json');return r.json();}),
+  fetch('./recommendations.json?v=2',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('recommendations.json');return r.json();}),
   fetch(
-    './data.json?v=1',
+    './data.json?v=2',
     {
       cache:'no-store'
     }
@@ -1673,7 +1680,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=1',
+    './skills.json?v=2',
     {
       cache:'no-store'
     }
@@ -1730,7 +1737,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=1'
+      './sw.js?v=2'
     )
     .catch(error=>
       console.warn(
