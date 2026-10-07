@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T10:07:11.801213+00:00",
+  "generatedAt": "2026-10-07T10:33:56.483779+00:00",
   "source": {
     "name": "MetalKid/DQM3_Database",
     "url": "https://github.com/MetalKid/DQM3_Database",
@@ -31,12 +31,12 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ラージキラー",
@@ -1370,7 +1370,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "みかわし無効",
@@ -1380,7 +1380,7 @@
           {
             "name": "スモールキラー",
             "level": 40,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ],
         "L": [
@@ -3188,7 +3188,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "いてつくはどう",
@@ -3288,7 +3288,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -3515,7 +3515,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ちからため",
@@ -3532,7 +3532,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "いきなりバイキルト",
@@ -4085,7 +4085,7 @@
           {
             "name": "会心率アップ大",
             "level": 40,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ],
         "L": [
@@ -4623,7 +4623,7 @@
           {
             "name": "電撃のコツ",
             "level": 40,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ],
         "L": [
@@ -5200,7 +5200,7 @@
           {
             "name": "スモールキラー",
             "level": 20,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "しっぺがえし",
@@ -5291,7 +5291,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "爆発ブレイク大",
@@ -6080,7 +6080,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "秘めたるチカラ",
@@ -6178,7 +6178,7 @@
           {
             "name": "電撃のコツ",
             "level": 60,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ]
       },
@@ -6553,7 +6553,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ラージキラー",
@@ -7621,7 +7621,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "氷結のコツ",
@@ -7887,7 +7887,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "火ブレイク大",
@@ -8167,7 +8167,7 @@
           {
             "name": "スモールキラー",
             "level": 40,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ],
         "L": [
@@ -8304,7 +8304,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -8649,7 +8649,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "光のコツ",
@@ -8871,7 +8871,7 @@
           {
             "name": "会心率アップ大",
             "level": 40,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ],
         "L": [
@@ -9229,7 +9229,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "超みかわしアップ",
@@ -9304,7 +9304,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "ときどきピオラ",
@@ -9659,7 +9659,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -10051,7 +10051,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ギャンブルボディ",
@@ -10306,7 +10306,7 @@
           {
             "name": "爆発のコツ",
             "level": 20,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "爆発ブレイク大",
@@ -10881,7 +10881,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "火のコツ",
@@ -11630,12 +11630,12 @@
           {
             "name": "電撃のコツ",
             "level": 20,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "爆発のコツ",
             "level": 40,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ],
         "L": [
@@ -11767,7 +11767,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "スライムキラー",
@@ -11846,7 +11846,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "いきなりスカラ",
@@ -11996,7 +11996,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "MP吸収ブレイク大",
@@ -12673,7 +12673,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "ツッコミ",
@@ -13075,7 +13075,7 @@
           {
             "name": "爆発のコツ",
             "level": 40,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ],
         "L": [
@@ -15548,7 +15548,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ファイターズハイ",
@@ -15989,7 +15989,7 @@
           {
             "name": "爆発のコツ",
             "level": 40,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ],
         "L": [
@@ -16041,7 +16041,7 @@
           {
             "name": "電撃のコツ",
             "level": 20,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ぼうえいほんのう",
@@ -16313,7 +16313,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "しっぺがえし",
@@ -16515,7 +16515,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -18534,7 +18534,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ときどきスカラ",
@@ -19062,12 +19062,12 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -19328,7 +19328,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "メタルハンター",
@@ -21319,7 +21319,7 @@
           {
             "name": "会心率アップ大",
             "level": 40,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ],
         "L": [
@@ -21416,7 +21416,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "プレッシャー",
@@ -21518,7 +21518,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "いきなりピオラ",
@@ -22277,7 +22277,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ラブリー",
@@ -22535,7 +22535,7 @@
           {
             "name": "スモールキラー",
             "level": 40,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ],
         "L": [
@@ -22623,7 +22623,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "みかわしアップ大",
@@ -23977,7 +23977,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -24312,7 +24312,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -24396,7 +24396,7 @@
           {
             "name": "爆発のコツ",
             "level": 40,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ],
         "L": [
@@ -24490,7 +24490,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ラージキラー",
@@ -24650,7 +24650,7 @@
           {
             "name": "爆発のコツ",
             "level": 60,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ]
       },
@@ -24687,7 +24687,7 @@
           {
             "name": "爆発のコツ",
             "level": 20,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "爆発ブレイク大",
@@ -24933,7 +24933,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ピンチで魔力暴走",
@@ -25029,7 +25029,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "メタルハンター",
@@ -25249,7 +25249,7 @@
           {
             "name": "会心率アップ大",
             "level": 40,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ],
         "L": [
@@ -25462,7 +25462,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "休みブレイク大",
@@ -26498,7 +26498,7 @@
           {
             "name": "電撃のコツ",
             "level": 20,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "かいひほんのう",
@@ -26660,7 +26660,7 @@
           {
             "name": "爆発のコツ",
             "level": 60,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ]
       },
@@ -27155,7 +27155,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "いてつくはどう",
@@ -28233,7 +28233,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -29283,7 +29283,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "休みブレイク大",
@@ -30297,7 +30297,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "魔力暴走率アップ大",
@@ -30624,7 +30624,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "いきなりバイキルト",
@@ -31285,7 +31285,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "マホキテボディ",
@@ -32181,7 +32181,7 @@
           {
             "name": "電撃のコツ",
             "level": 20,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ときどきバイキルト",
@@ -32431,7 +32431,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ロケットスタート",
@@ -32485,7 +32485,7 @@
           {
             "name": "電撃のコツ",
             "level": 20,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "とうそうほんのう",
@@ -34182,7 +34182,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "風のコツ",
@@ -34204,7 +34204,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ときどきまもりの霧",
@@ -34368,12 +34368,12 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "スモールキラー",
             "level": 40,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ],
         "L": [
@@ -34614,7 +34614,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "いきなりインテ",
@@ -34809,7 +34809,7 @@
           {
             "name": "爆発のコツ",
             "level": 20,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "マジシャンズハイ",
@@ -35006,7 +35006,7 @@
           {
             "name": "爆発のコツ",
             "level": 20,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "爆発ブレイク大",
@@ -35367,7 +35367,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "全体攻撃",
@@ -35444,7 +35444,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "風のコツ",
@@ -35674,7 +35674,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "ファイターズハイ",
@@ -36770,7 +36770,7 @@
           {
             "name": "爆発のコツ",
             "level": 20,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ザキ攻撃",
@@ -36965,7 +36965,7 @@
           {
             "name": "爆発のコツ",
             "level": 40,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ],
         "L": [
@@ -37863,7 +37863,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ちからため",
@@ -38236,7 +38236,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "爆発ブレイク大",
@@ -38354,7 +38354,7 @@
           {
             "name": "爆発のコツ",
             "level": 60,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ]
       },
@@ -38536,7 +38536,7 @@
           {
             "name": "スモールキラー",
             "level": 60,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ]
       },
@@ -39023,7 +39023,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "どく攻撃",
@@ -39090,7 +39090,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "爆発ブレイク大",
@@ -39264,7 +39264,7 @@
           {
             "name": "会心率アップ大",
             "level": 60,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ]
       },
@@ -39679,7 +39679,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "プレッシャー",
@@ -39777,7 +39777,7 @@
           {
             "name": "爆発のコツ",
             "level": 60,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           }
         ]
       },
@@ -42889,7 +42889,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "かいひほんのう",
@@ -43395,7 +43395,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "弱体化ブレイク大",
@@ -44432,7 +44432,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "いてつくはどう",
@@ -44992,7 +44992,7 @@
           {
             "name": "会心率アップ大",
             "level": 20,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "メタルキラー",
@@ -45009,7 +45009,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "みかわし無効",
@@ -45153,7 +45153,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "ショック攻撃",
@@ -46505,7 +46505,7 @@
           {
             "name": "会心率アップ大",
             "level": 40,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ],
         "L": [
@@ -46517,7 +46517,7 @@
           {
             "name": "スモールキラー",
             "level": 1,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           },
           {
             "name": "くじけぬ心",
@@ -47159,7 +47159,7 @@
           {
             "name": "会心率アップ大",
             "level": 40,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           }
         ],
         "L": [
@@ -47315,7 +47315,7 @@
           {
             "name": "爆発のコツ",
             "level": 1,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "いきなりバイキルト",
@@ -47644,7 +47644,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "闇ブレイク大",
@@ -48456,7 +48456,7 @@
           {
             "name": "電撃のコツ",
             "level": 1,
-            "description": "Increases the potency of electrical attacks and decreases their MP consumption."
+            "description": "電撃属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "みかわし無効",
@@ -48466,7 +48466,7 @@
           {
             "name": "スモールキラー",
             "level": 40,
-            "description": "Increases damage inflicted on S-size monsters."
+            "description": "Sサイズのモンスターに与えるダメージが増える。"
           }
         ],
         "L": [
@@ -48523,7 +48523,7 @@
           {
             "name": "爆発のコツ",
             "level": 20,
-            "description": "Increases the potency of explosion attacks and decreases their MP consumption."
+            "description": "爆発属性の攻撃が強くなり、消費MPも少なくなる。"
           },
           {
             "name": "マジシャンズハイ",
@@ -48586,7 +48586,7 @@
           {
             "name": "会心率アップ大",
             "level": 1,
-            "description": "Makes it somewhat easier to inflict critical hits."
+            "description": "会心の一撃が出やすくなる。"
           },
           {
             "name": "マホキテボディ",
