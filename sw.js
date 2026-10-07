@@ -1,4 +1,4 @@
-const C='dqm3-v16';
+const C='dqm3-v17';
 
 const CORE=[
   './',
@@ -45,7 +45,7 @@ self.addEventListener(
 
               keys
                 .filter(
-                  key=>key!==C
+                  key=>key.startsWith('dqm3-')&&key!==C
                 )
                 .map(
                   key=>
@@ -82,6 +82,10 @@ self.addEventListener(
         event.request.url
       );
 
+
+    if(url.origin!==self.location.origin || url.pathname.startsWith(new URL('./dqm4/', self.registration.scope).pathname)){
+      return;
+    }
 
     const fresh=
       event.request.mode==='navigate'
