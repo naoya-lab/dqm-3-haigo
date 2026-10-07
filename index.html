@@ -38,7 +38,7 @@
 
 <link
   rel="stylesheet"
-  href="./style.css?v=14"
+  href="./style.css?v=15"
 >
 
 <title>
@@ -90,6 +90,14 @@ DQM3 配合検索
       配合計画
     </button>
 
+    <button
+      id="recommendTab"
+      class="tab"
+      type="button"
+    >
+      おすすめ編成
+    </button>
+
   </div>
 
 
@@ -136,6 +144,49 @@ DQM3 配合検索
 
   </div>
 
+
+  <div
+    id="recommendControls"
+    class="recommend-controls"
+    hidden
+  >
+    <label>
+      テーマ
+      <select id="recommendTarget">
+        <optgroup label="属性">
+          <option value="fire">🔥 火</option>
+          <option value="water">💧 水</option>
+          <option value="wind">🌪️ 風</option>
+          <option value="earth">🪨 地</option>
+          <option value="explosion">💥 爆発</option>
+          <option value="ice">❄️ 氷結</option>
+          <option value="electric">⚡ 電撃</option>
+          <option value="light">✨ 光</option>
+          <option value="dark">🌑 闇</option>
+        </optgroup>
+        <optgroup label="状態異常・妨害">
+          <option value="sleep">😴 眠り</option>
+          <option value="confusion">🌀 混乱</option>
+          <option value="paralysis">⚡ マヒ</option>
+          <option value="stun">💫 休み</option>
+          <option value="poison">☠️ 毒</option>
+          <option value="blind">🌫️ 幻惑</option>
+          <option value="seal">🔒 封じ</option>
+          <option value="debuff">📉 弱体化</option>
+          <option value="death">💀 即死</option>
+        </optgroup>
+      </select>
+    </label>
+
+    <label>
+      方針
+      <select id="recommendStrategy">
+        <option value="stable">安定攻略</option>
+        <option value="power">火力重視</option>
+        <option value="control">妨害重視</option>
+      </select>
+    </label>
+  </div>
 
   <div
     id="planControls"
@@ -193,7 +244,7 @@ DQM3 配合検索
 
 
 <script
-  src="./app.js?v=14"
+  src="./app.js?v=15"
 ></script>
 
 </body>
