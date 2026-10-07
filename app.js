@@ -30,7 +30,7 @@ function esc(s){
 function norm(s){
   return String(s??'')
     .toLowerCase()
-    .replace(/[\sã»ï½¥ã¼]/g,'');
+    .replace(/[\s\u30fb\uff65\u30fc]/g,'');
 }
 
 function findMonster(name){
@@ -80,18 +80,18 @@ function skillButton(name){
 }
 
 function locationText(location){
-  const seasons=(location.seasons||[]).join('ã»');
+  const seasons=(location.seasons||[]).join('\u30fb');
 
   return `
     <div class="location-row">
       <div class="location-name">
-        ð ${esc(location.name)}
+        \ud83d\udccd ${esc(location.name)}
       </div>
 
       <div class="location-detail">
-        ${seasons?`å­£ç¯ï¼${esc(seasons)}`:''}
-        ${location.weather?`ãå¤©åï¼${esc(location.weather)}`:''}
-        ${location.miniBoss?'ããããã¹':''}
+        ${seasons?`\u5b63\u7bc0\uff1a${esc(seasons)}`:''}
+        ${location.weather?`\u3000\u5929\u5019\uff1a${esc(location.weather)}`:''}
+        ${location.miniBoss?'\u3000\u30df\u30cb\u30dc\u30b9':''}
       </div>
     </div>
   `;
@@ -103,7 +103,7 @@ function locationsHtml(monster){
   if(!locations.length){
     return `
       <div class="small">
-        éçåºç¾ãªãï¼æªç»é²
+        \u91ce\u751f\u51fa\u73fe\u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
   }
@@ -121,7 +121,7 @@ function eggsHtml(monster){
   if(!eggs.length){
     return `
       <div class="small">
-        åµããã®å¥æãªã
+        \u5375\u304b\u3089\u306e\u5165\u624b\u306a\u3057
       </div>
     `;
   }
@@ -130,11 +130,11 @@ function eggsHtml(monster){
     <div class="eggs">
       ${eggs.map(egg=>`
         <div class="egg-row">
-          <span class="egg-icon">ð¥</span>
-          <strong>${esc(egg.name)}ã®åµ</strong>
+          <span class="egg-icon">\ud83e\udd5a</span>
+          <strong>${esc(egg.name)}\u306e\u5375</strong>
           ${
             egg.postGameOnly
-              ? `<span class="egg-postgame">ã¯ãªã¢å¾</span>`
+              ? `<span class="egg-postgame">\u30af\u30ea\u30a2\u5f8c</span>`
               : ''
           }
         </div>
@@ -149,7 +149,7 @@ function monsterTalentsHtml(monster){
   if(!talents.length){
     return `
       <div class="small">
-        ã¹ã­ã«ãã¼ã¿æªç»é²
+        \u30b9\u30ad\u30eb\u30c7\u30fc\u30bf\u672a\u767b\u9332
       </div>
     `;
   }
@@ -163,7 +163,7 @@ function monsterTalentsHtml(monster){
         primary.length
           ? `
             <div class="monster-talent-row">
-              <span class="talent-label">åºæ¬</span>
+              <span class="talent-label">\u57fa\u672c</span>
               ${
                 primary
                   .map(x=>skillButton(x.name))
@@ -179,7 +179,7 @@ function monsterTalentsHtml(monster){
           ? `
             <div class="monster-talent-row">
               <span class="talent-label secondary">
-                è¿½å åè£
+                \u8ffd\u52a0\u5019\u88dc
               </span>
               ${
                 others
@@ -198,7 +198,7 @@ function traitRows(traits){
   if(!traits.length){
     return `
       <div class="small">
-        ãªãï¼æªç»é²
+        \u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
   }
@@ -237,13 +237,13 @@ function monsterTraitsHtml(monster){
   return `
     <div class="monster-traits">
       <div class="trait-size-title">
-        Sãµã¤ãº
+        S\u30b5\u30a4\u30ba
       </div>
 
       ${traitRows(traits.S||[])}
 
       <div class="trait-size-title large">
-        Lãµã¤ãºè¿½å ç¹æ§
+        L\u30b5\u30a4\u30ba\u8ffd\u52a0\u7279\u6027
       </div>
 
       ${traitRows(traits.L||[])}
@@ -254,17 +254,17 @@ function monsterTraitsHtml(monster){
 function recipeText(r){
   const parents=(r.parents||[])
     .map(monsterButton)
-    .join(' ï¼ ');
+    .join(' \uff0b ');
 
   return `
     <div class="route">
       <span class="rtype">
-        ${esc(r.type||'éå')}
+        ${esc(r.type||'\u914d\u5408')}
       </span>
 
       ${parents}
 
-      <span class="arrow">â</span>
+      <span class="arrow">\u2192</span>
 
       ${esc(r.result||'')}
     </div>
@@ -274,19 +274,19 @@ function recipeText(r){
 function useText(u){
   const other=(u.otherParents||[])
     .map(monsterButton)
-    .join(' ï¼ ');
+    .join(' \uff0b ');
 
   return `
     <div class="route">
       <span class="rtype">
-        ${esc(u.type||'éå')}
+        ${esc(u.type||'\u914d\u5408')}
       </span>
 
       ${esc(u.source||'')}
 
-      ${other?`ï¼ ${other}`:''}
+      ${other?`\uff0b ${other}`:''}
 
-      <span class="arrow">â</span>
+      <span class="arrow">\u2192</span>
 
       ${monsterButton(u.result)}
     </div>
@@ -299,7 +299,7 @@ function monsterCard(m){
     .join('')
     || `
       <div class="small">
-        éåã§ã®å¥æãªãï¼æªç»é²
+        \u914d\u5408\u3067\u306e\u5165\u624b\u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
 
@@ -308,7 +308,7 @@ function monsterCard(m){
     .join('')
     || `
       <div class="small">
-        ç¹æ®ãªéååãªãï¼æªç»é²
+        \u7279\u6b8a\u306a\u914d\u5408\u5148\u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
 
@@ -333,7 +333,7 @@ function monsterCard(m){
 
         ${
           m.rank
-            ? `<span class="badge">${esc(m.rank)}ã©ã³ã¯</span>`
+            ? `<span class="badge">${esc(m.rank)}\u30e9\u30f3\u30af</span>`
             : ''
         }
 
@@ -344,22 +344,22 @@ function monsterCard(m){
         }
       </div>
 
-      <h2>ð ææã¹ã­ã«</h2>
+      <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
       ${monsterTalentsHtml(m)}
 
-      <h2>â­ ç¹æ§</h2>
+      <h2>\u2b50 \u7279\u6027</h2>
       ${monsterTraitsHtml(m)}
 
-      <h2>ð çæ¯å°</h2>
+      <h2>\ud83c\udf0d \u751f\u606f\u5730</h2>
       ${locationsHtml(m)}
 
-      <h2>ð¥ åµããã®å¥æ</h2>
+      <h2>\ud83e\udd5a \u5375\u304b\u3089\u306e\u5165\u624b</h2>
       ${eggsHtml(m)}
 
-      <h2>ð§¬ ãã®ã¢ã³ã¹ã¿ã¼ã®ä½ãæ¹</h2>
+      <h2>\ud83e\uddec \u3053\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u306e\u4f5c\u308a\u65b9</h2>
       ${recipes}
 
-      <h2>ãã®ã¢ã³ã¹ã¿ã¼ãä½¿ãéåå</h2>
+      <h2>\u3053\u306e\u30e2\u30f3\u30b9\u30bf\u30fc\u3092\u4f7f\u3046\u914d\u5408\u5148</h2>
       ${uses}
     </section>
   `;
@@ -465,8 +465,8 @@ function renderMonsters(){
     const eggs=(m.eggs||[])
       .flatMap(x=>[
         x.name,
-        `${x.name}ã®åµ`,
-        x.postGameOnly?'ã¯ãªã¢å¾':''
+        `${x.name}\u306e\u5375`,
+        x.postGameOnly?'\u30af\u30ea\u30a2\u5f8c':''
       ]);
 
     const text=[
@@ -525,15 +525,15 @@ function renderMonsters(){
 
   statusEl.textContent=
     term
-      ? `æ¤ç´¢çµæï¼${found.length}ä½`
-      : `ç»é²ï¼${DB.monsters.length}ä½`;
+      ? `\u691c\u7d22\u7d50\u679c\uff1a${found.length}\u4f53`
+      : `\u767b\u9332\uff1a${DB.monsters.length}\u4f53`;
 
   results.innerHTML=
     found.length
       ? found.map(monsterCard).join('')
       : `
         <div class="empty">
-          è©²å½ããã¢ã³ã¹ã¿ã¼ãããã¾ããã
+          \u8a72\u5f53\u3059\u308b\u30e2\u30f3\u30b9\u30bf\u30fc\u304c\u3042\u308a\u307e\u305b\u3093\u3002
         </div>
       `;
 }
@@ -600,7 +600,7 @@ function skillRecipesFor(name){
       (skill.recipes||[])
         .forEach(recipe=>{
           recipes.push({
-            type:'çµã¿åãã',
+            type:'\u7d44\u307f\u5408\u308f\u305b',
             parents:recipe,
             result:skill.name,
             note:skill.note||''
@@ -615,7 +615,7 @@ function skillRecipesFor(name){
         }
 
         recipes.push({
-          type:'é²å',
+          type:'\u9032\u5316',
           parents:(evo.required||[])
             .map(
               req=>
@@ -638,7 +638,7 @@ function skillUsesFor(name){
       .forEach(recipe=>{
         if(recipe.includes(name)){
           uses.push({
-            type:'çµã¿åãã',
+            type:'\u7d44\u307f\u5408\u308f\u305b',
             parents:recipe,
             result:skill.name,
             note:skill.note||''
@@ -656,7 +656,7 @@ function skillUsesFor(name){
           )
         ){
           uses.push({
-            type:'é²å',
+            type:'\u9032\u5316',
             parents:required.map(
               req=>
                 `${req.skill} ${req.points}P`
@@ -695,17 +695,17 @@ function skillRoute(route){
         `<strong>${esc(points)}</strong>`
       );
     })
-    .join(' ï¼ ');
+    .join(' \uff0b ');
 
   return `
     <div class="route skillroute">
       <span class="rtype">
-        ${esc(route.type||'é²å')}
+        ${esc(route.type||'\u9032\u5316')}
       </span>
 
       ${parents}
 
-      <span class="arrow">â</span>
+      <span class="arrow">\u2192</span>
 
       ${skillButton(route.result)}
 
@@ -728,7 +728,7 @@ function abilityTable(skill){
   if(!abilities.length){
     return `
       <div class="small">
-        ç¹æã»å¹æãã¼ã¿æªç»é²
+        \u7279\u6280\u30fb\u52b9\u679c\u30c7\u30fc\u30bf\u672a\u767b\u9332
       </div>
     `;
   }
@@ -777,34 +777,34 @@ function skillCard(name){
           skill?.maxPoints
             ? `
               <span class="badge">
-                æå¤§ ${esc(skill.maxPoints)}P
+                \u6700\u5927 ${esc(skill.maxPoints)}P
               </span>
             `
             : ''
         }
       </div>
 
-      <h2>è¦ããç¹æã»å¹æ</h2>
+      <h2>\u899a\u3048\u308b\u7279\u6280\u30fb\u52b9\u679c</h2>
       ${abilityTable(skill)}
 
-      <h2>ãã®ã¹ã­ã«ã®ä½ãæ¹</h2>
+      <h2>\u3053\u306e\u30b9\u30ad\u30eb\u306e\u4f5c\u308a\u65b9</h2>
       ${
         recipes.length
           ? recipes.map(skillRoute).join('')
           : `
             <div class="small">
-              ä½ææ¡ä»¶ãªãï¼æªç»é²
+              \u4f5c\u6210\u6761\u4ef6\u306a\u3057\uff0f\u672a\u767b\u9332
             </div>
           `
       }
 
-      <h2>ãã®ã¹ã­ã«ããä½ãããã®</h2>
+      <h2>\u3053\u306e\u30b9\u30ad\u30eb\u304b\u3089\u4f5c\u308c\u308b\u3082\u306e</h2>
       ${
         uses.length
           ? uses.map(skillRoute).join('')
           : `
             <div class="small">
-              ä¸ä½ã¹ã­ã«ãªãï¼æªç»é²
+              \u4e0a\u4f4d\u30b9\u30ad\u30eb\u306a\u3057\uff0f\u672a\u767b\u9332
             </div>
           `
       }
@@ -848,15 +848,15 @@ function renderSkills(){
 
   statusEl.textContent=
     term
-      ? `æ¤ç´¢çµæï¼${found.length}ä»¶`
-      : `ã¹ã­ã«ï¼${found.length}ä»¶`;
+      ? `\u691c\u7d22\u7d50\u679c\uff1a${found.length}\u4ef6`
+      : `\u30b9\u30ad\u30eb\uff1a${found.length}\u4ef6`;
 
   results.innerHTML=
     found.length
       ? found.map(skillCard).join('')
       : `
         <div class="empty">
-          è©²å½ããã¹ã­ã«ãããã¾ããã
+          \u8a72\u5f53\u3059\u308b\u30b9\u30ad\u30eb\u304c\u3042\u308a\u307e\u305b\u3093\u3002
         </div>
       `;
 }
@@ -995,11 +995,11 @@ function shortEgg(monster){
   const egg=eggs[0];
 
   return (
-    `${egg.name}ã®åµ`
+    `${egg.name}\u306e\u5375`
     +
     (
       egg.postGameOnly
-        ? 'ï¼ã¯ãªã¢å¾ï¼'
+        ? '\uff08\u30af\u30ea\u30a2\u5f8c\uff09'
         : ''
     )
   );
@@ -1044,7 +1044,7 @@ function planNodeHtml(node,depth=0){
                   >
                     ${esc(
                       (recipe.parents||[])
-                        .join(' ï¼ ')
+                        .join(' \uff0b ')
                     )}
                   </option>
                 `
@@ -1102,7 +1102,7 @@ function planNodeHtml(node,depth=0){
         location
           ? `
             <div class="plan-location">
-              ð ${esc(location)}
+              \ud83d\udccd ${esc(location)}
             </div>
           `
           : ''
@@ -1112,7 +1112,7 @@ function planNodeHtml(node,depth=0){
         egg
           ? `
             <div class="plan-egg">
-              ð¥ ${esc(egg)}
+              \ud83e\udd5a ${esc(egg)}
             </div>
           `
           : ''
@@ -1124,7 +1124,7 @@ function planNodeHtml(node,depth=0){
         node.cycle
           ? `
             <div class="small">
-              å¾ªç°ããéåã®ããå±éåæ­¢
+              \u5faa\u74b0\u3059\u308b\u914d\u5408\u306e\u305f\u3081\u5c55\u958b\u505c\u6b62
             </div>
           `
           : ''
@@ -1195,7 +1195,7 @@ function remainingHtml(stats){
   if(!items.length){
     return `
       <div class="plan-complete">
-        ð å¿è¦ç´ æã¯ãã¹ã¦æºåæ¸ã¿ã§ã
+        \ud83c\udf89 \u5fc5\u8981\u7d20\u6750\u306f\u3059\u3079\u3066\u6e96\u5099\u6e08\u307f\u3067\u3059
       </div>
     `;
   }
@@ -1219,7 +1219,7 @@ function remainingHtml(stats){
             </strong>
 
             <span class="material-count">
-              Ã${count}
+              \u00d7${count}
             </span>
           </div>
 
@@ -1227,7 +1227,7 @@ function remainingHtml(stats){
             locations.length
               ? `
                 <div class="material-location">
-                  ð
+                  \ud83d\udccd
                   ${esc(
                     locations
                       .slice(0,2)
@@ -1243,14 +1243,14 @@ function remainingHtml(stats){
             eggs.length
               ? `
                 <div class="material-egg">
-                  ð¥
+                  \ud83e\udd5a
                   ${esc(
                     eggs
                       .map(
                         egg=>
-                          `${egg.name}ã®åµ${
+                          `${egg.name}\u306e\u5375${
                             egg.postGameOnly
-                              ? 'ï¼ã¯ãªã¢å¾ï¼'
+                              ? '\uff08\u30af\u30ea\u30a2\u5f8c\uff09'
                               : ''
                           }`
                       )
@@ -1271,12 +1271,12 @@ function renderPlan(){
 
   if(!target){
     statusEl.textContent=
-      'ä½ãããã¢ã³ã¹ã¿ã¼ãå¥åãã¦ãã ãã';
+      '\u4f5c\u308a\u305f\u3044\u30e2\u30f3\u30b9\u30bf\u30fc\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044';
 
     results.innerHTML=`
       <div class="empty">
-        ä¸ã®æ¬ããç®æ¨ã¢ã³ã¹ã¿ã¼ãé¸ã³ã
-        ãéåã«ã¼ããä½æããæ¼ãã¦ãã ããã
+        \u4e0a\u306e\u6b04\u304b\u3089\u76ee\u6a19\u30e2\u30f3\u30b9\u30bf\u30fc\u3092\u9078\u3073\u3001
+        \u300c\u914d\u5408\u30eb\u30fc\u30c8\u3092\u4f5c\u6210\u300d\u3092\u62bc\u3057\u3066\u304f\u3060\u3055\u3044\u3002
       </div>
     `;
 
@@ -1287,11 +1287,11 @@ function renderPlan(){
 
   if(!monster){
     statusEl.textContent=
-      'ã¢ã³ã¹ã¿ã¼ãè¦ã¤ããã¾ãã';
+      '\u30e2\u30f3\u30b9\u30bf\u30fc\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093';
 
     results.innerHTML=`
       <div class="empty">
-        æ­£ããã¢ã³ã¹ã¿ã¼åãé¸æãã¦ãã ããã
+        \u6b63\u3057\u3044\u30e2\u30f3\u30b9\u30bf\u30fc\u540d\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002
       </div>
     `;
 
@@ -1310,7 +1310,7 @@ function renderPlan(){
   collectPlanStats(root,stats);
 
   statusEl.textContent=
-    `ç®æ¨ï¼${target}`;
+    `\u76ee\u6a19\uff1a${target}`;
 
   const progress=
     stats.total
@@ -1330,7 +1330,7 @@ function renderPlan(){
       </div>
 
       <div class="progress-text">
-        ä½ææ¸ã¿ï¼
+        \u4f5c\u6210\u6e08\u307f\uff1a
         ${stats.checked}
         /
         ${stats.total}
@@ -1347,13 +1347,13 @@ function renderPlan(){
         class="clearbutton"
         onclick="clearPlanChecks()"
       >
-        ãã§ãã¯ããã¹ã¦è§£é¤
+        \u30c1\u30a7\u30c3\u30af\u3092\u3059\u3079\u3066\u89e3\u9664
       </button>
     </section>
 
     <section class="card">
       <h2 class="plan-title">
-        éåç³»çµ±å³
+        \u914d\u5408\u7cfb\u7d71\u56f3
       </h2>
 
       <div class="plan-tree">
@@ -1363,7 +1363,7 @@ function renderPlan(){
 
     <section class="card">
       <h2 class="plan-title">
-        æ®ãå¿è¦ç´ æ
+        \u6b8b\u308a\u5fc5\u8981\u7d20\u6750
       </h2>
 
       ${remainingHtml(stats)}
@@ -1400,7 +1400,7 @@ function createPlan(){
 
   if(!findMonster(name)){
     statusEl.textContent=
-      'ã¢ã³ã¹ã¿ã¼ãè¦ã¤ããã¾ãã';
+      '\u30e2\u30f3\u30b9\u30bf\u30fc\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093';
 
     return;
   }
@@ -1437,7 +1437,7 @@ function updateTabs(){
 
   if(mode==='monster'){
     q.placeholder=
-      'ã¢ã³ã¹ã¿ã¼åã»ã¹ã­ã«ã»ç¹æ§ã»çæ¯å°ã»åµãå¥å';
+      '\u30e2\u30f3\u30b9\u30bf\u30fc\u540d\u30fb\u30b9\u30ad\u30eb\u30fb\u7279\u6027\u30fb\u751f\u606f\u5730\u30fb\u5375\u3092\u5165\u529b';
 
     sortRow.style.display=
       'flex';
@@ -1445,7 +1445,7 @@ function updateTabs(){
 
   if(mode==='skill'){
     q.placeholder=
-      'ã¹ã­ã«åã»ç¹æåãå¥å';
+      '\u30b9\u30ad\u30eb\u540d\u30fb\u7279\u6280\u540d\u3092\u5165\u529b';
 
     sortRow.style.display=
       'none';
@@ -1528,8 +1528,8 @@ sortSelect.addEventListener(
 function updateNet(){
   net.textContent=
     navigator.onLine
-      ? 'ãªã³ã©ã¤ã³'
-      : 'ãªãã©ã¤ã³';
+      ? '\u30aa\u30f3\u30e9\u30a4\u30f3'
+      : '\u30aa\u30d5\u30e9\u30a4\u30f3';
 }
 
 addEventListener(
@@ -1547,7 +1547,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=11',
+    './data.json?v=12',
     {
       cache:'no-store'
     }
@@ -1562,7 +1562,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=11',
+    './skills.json?v=12',
     {
       cache:'no-store'
     }
@@ -1603,12 +1603,12 @@ Promise.all([
   console.error(error);
 
   statusEl.textContent=
-    'ãã¼ã¿èª­ã¿è¾¼ã¿ã¨ã©ã¼';
+    '\u30c7\u30fc\u30bf\u8aad\u307f\u8fbc\u307f\u30a8\u30e9\u30fc';
 
   results.innerHTML=`
     <div class="empty">
-      data.json ã¾ãã¯
-      skills.json ãç¢ºèªãã¦ãã ããã
+      data.json \u307e\u305f\u306f
+      skills.json \u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002
     </div>
   `;
 });
@@ -1616,7 +1616,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=11'
+      './sw.js?v=12'
     )
     .catch(error=>
       console.warn(
