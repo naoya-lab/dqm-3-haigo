@@ -1,12 +1,12 @@
-const C='dqm3-v23';
+const C='dqm3-v24';
 
 const CORE=[
   './',
   './index.html',
-  './style.css?v=23',
-  './app.js?v=23',
-  './data.json?v=23',
-  './skills.json?v=23',
+  './style.css?v=24',
+  './app.js?v=24',
+  './data.json?v=24',
+  './skills.json?v=24',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png'
