@@ -1823,7 +1823,8 @@ function renderRecommendations(){
     recommendStrategy.value
     ||'stable';
 
-  const formation=recommendFormation.value
+  const formation=
+    recommendFormation.value
     ||'SSSS';
 
   const built=
@@ -1833,25 +1834,43 @@ function renderRecommendations(){
       formation
     );
 
-  statusEl.textContent=
-    `${cfg.icon} ${cfg.label} \u30fb S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210`;
+  const formationLabel={
+    SSSS:'S \u00d7 4',
+    LSS:'L \u00d7 1 + S \u00d7 2',
+    LL:'L \u00d7 2'
+  }[formation];
 
   const strategyText={
-    stable:'\u653b\u64832 + \u307f\u304c\u308f\u308a1 + \u56de\u5fa91',
-    power:'\u653b\u64833 + \u56de\u5fa91',
-    control:'\u4e3b\u529b2 + \u59a8\u5bb31 + \u56de\u5fa91'
+    stable:'\u5b89\u5b9a\u653b\u7565',
+    power:'\u706b\u529b\u91cd\u8996',
+    control:'\u59a8\u5bb3\u91cd\u8996'
   }[strategy];
 
-  const alternates=built.candidates
-    .filter(x=>
-      !built.team.some(
-        y=>y.monster.name===x.monster.name
-      )
-    )
-    .slice(0,5);
+  const roleSize=
+    formation==='LL'
+      ? 'L'
+      : 'S';
 
-  const tankCandidates=recTankCandidates();
-  const healerCandidates=recHealerCandidates();
+  const tankCandidates=
+    recTankCandidates(roleSize);
+
+  const healerCandidates=
+    recHealerCandidates(roleSize);
+
+  const alternates=[];
+  const seen=new Set(
+    built.team.map(x=>x.monster.name)
+  );
+
+  built.candidates.forEach(item=>{
+    if(alternates.length>=5) return;
+    if(seen.has(item.monster.name)) return;
+    seen.add(item.monster.name);
+    alternates.push(item);
+  });
+
+  statusEl.textContent=
+    `${cfg.icon} ${cfg.label} \u30fb ${formationLabel}`;
 
   results.innerHTML=`
     <section class="card rec-summary">
@@ -1860,28 +1879,36 @@ function renderRecommendations(){
       </div>
 
       <div class="rec-summary-text">
-        \u57fa\u672c\u69cb\u6210: ${esc(strategyText)}
+        \u57fa\u672c\u69cb\u6210: ${esc(formationLabel)} / ${esc(strategyText)}
       </div>
 
       <div class="rec-summary-text">
-        \u56f3\u9451\u306eS\u30b5\u30a4\u30ba\u7279\u6027\u3092\u81ea\u52d5\u63a1\u70b9\u3057\u3001
-        \u300c\u30b3\u30c4\u300d\u300c\u30d6\u30ec\u30a4\u30af\u5927\u300d\u307e\u305f\u306f
-        \u5bfe\u5fdc\u72b6\u614b\u7570\u5e38\u30d6\u30ec\u30a4\u30af\u3092\u512a\u5148\u3057\u3066\u3044\u307e\u3059\u3002
+        L\u30b5\u30a4\u30ba\u306fS\u7279\u6027\u306bL\u8ffd\u52a0\u7279\u6027\u3092\u52a0\u3048\u3066\u63a1\u70b9\u3057\u3001
+        \u30c6\u30fc\u30de\u9069\u6027\u306e\u3042\u308b\u30e2\u30f3\u30b9\u30bf\u30fc\u306e\u4e2d\u304b\u3089
         \u6700\u5927\u30b9\u30c6\u30fc\u30bf\u30b9\u3082\u52a0\u5473\u3057\u3066\u9806\u4f4d\u4ed8\u3051\u3057\u3066\u3044\u307e\u3059\u3002
       </div>
     </section>
 
     <div class="rec-grid">
-      ${built.team
-        .map((item,index)=>
-          recommendationCard(
-            item,
-            index,
-            cfg,
-            built.candidates
-          )
-        )
-        .join('')}
+      ${built.team.length
+        ? built.team
+            .map((item,index)=>
+              recommendationCard(
+                item,
+                index,
+                cfg,
+                built.candidates
+              )
+            )
+            .join('')
+        : `
+            <section class="card">
+              <div class="empty">
+                \u3053\u306e\u6761\u4ef6\u3067\u9069\u5408\u3059\u308b\u5019\u88dc\u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3002
+              </div>
+            </section>
+          `
+      }
     </div>
 
     <section class="card role-section">
@@ -1889,10 +1916,14 @@ function renderRecommendations(){
         \ud83d\udee1\ufe0f \u307f\u304c\u308f\u308a\u5f79\u304a\u3059\u3059\u3081
       </h2>
       <div class="role-note">
-        \u9ad8\u8010\u4e45\u30fb\u30e1\u30bf\u30eb\u7cfb\u7279\u6027\u30fb\u307f\u304c\u308f\u308a\u5411\u304d\u30b9\u30ad\u30eb\u3092\u512a\u5148\u3002
+        ${roleSize}\u30b5\u30a4\u30ba\u5019\u88dc\u3002
+        \u9ad8\u8010\u4e45\u30fb\u30e1\u30bf\u30eb\u7cfb\u7279\u6027\u30fbHP\u30fb\u5b88\u5099\u529b\u3092\u512a\u5148\u3002
       </div>
       <div class="role-candidate-list">
-        ${tankCandidates.map(x=>recRoleCandidateHtml(x,'tank',roleSize)).join('')}
+        ${tankCandidates.length
+          ? tankCandidates.map(x=>recRoleCandidateHtml(x,'tank',roleSize)).join('')
+          : '<div class="small">\u5019\u88dc\u306a\u3057</div>'
+        }
       </div>
     </section>
 
@@ -1901,10 +1932,14 @@ function renderRecommendations(){
         \ud83d\udc9a \u56de\u5fa9\u5f79\u304a\u3059\u3059\u3081
       </h2>
       <div class="role-note">
-        \u56de\u5fa9\u7cfb\u30b9\u30ad\u30eb\u30fb\u56de\u5fa9\u306e\u30b3\u30c4\u30fb\u81ea\u52d5\u56de\u5fa9\u7cfb\u7279\u6027\u3092\u512a\u5148\u3002
+        ${roleSize}\u30b5\u30a4\u30ba\u5019\u88dc\u3002
+        \u56de\u5fa9\u7279\u6027\u30fb\u304b\u3057\u3053\u3055\u30fbMP\u30fb\u3059\u3070\u3084\u3055\u3092\u512a\u5148\u3002
       </div>
       <div class="role-candidate-list">
-        ${healerCandidates.map(x=>recRoleCandidateHtml(x,'healer',roleSize)).join('')}
+        ${healerCandidates.length
+          ? healerCandidates.map(x=>recRoleCandidateHtml(x,'healer',roleSize)).join('')
+          : '<div class="small">\u5019\u88dc\u306a\u3057</div>'
+        }
       </div>
     </section>
 
@@ -1913,30 +1948,30 @@ function renderRecommendations(){
         \u5165\u308c\u66ff\u3048\u5019\u88dc
       </h2>
 
-      ${
-        alternates.length
-          ? alternates.map(x=>`
-              <div class="rec-alt">
-                ${monsterButton(x.monster.name)}
-                <span>
-                  ${esc(recReason(x.monster,cfg))}
-                </span>
-              </div>
-            `).join('')
-          : `
-              <div class="small">
-                \u8ffd\u52a0\u5019\u88dc\u304c\u3042\u308a\u307e\u305b\u3093\u3002
-              </div>
-            `
+      ${alternates.length
+        ? alternates.map(x=>`
+            <div class="rec-alt">
+              <span class="rec-size-badge ${x.size==='L'?'large':''}">
+                ${x.size||'S'}
+              </span>
+              ${monsterButton(x.monster.name)}
+              <span>
+                ${esc(recReason(x.monster,cfg))}
+              </span>
+            </div>
+          `).join('')
+        : `
+            <div class="small">
+              \u8ffd\u52a0\u5019\u88dc\u304c\u3042\u308a\u307e\u305b\u3093\u3002
+            </div>
+          `
       }
     </section>
 
     <section class="card rec-note">
       <strong>\u6ce8\u610f</strong><br>
-      \u30dc\u30b9\u306e\u8010\u6027\u3084L\u30b5\u30a4\u30ba\u8ffd\u52a0\u7279\u6027\u306b\u3088\u3063\u3066
-      \u6700\u9069\u89e3\u306f\u5909\u308f\u308a\u307e\u3059\u3002
-      \u3053\u306e\u7de8\u6210\u306f\u30b9\u30c8\u30fc\u30ea\u30fc\u5f8c\u534a\uff5e\u30af\u30ea\u30a2\u5f8c\u306e
-      \u6c4e\u7528S\u30b5\u30a4\u30ba4\u4f53\u7de8\u6210\u5411\u3051\u3067\u3059\u3002
+      \u30dc\u30b9\u306e\u8010\u6027\u3084\u884c\u52d5\u56de\u6570\u3001L\u8ffd\u52a0\u7279\u6027\u306b\u3088\u3063\u3066
+      \u5b9f\u969b\u306e\u6700\u9069\u89e3\u306f\u5909\u308f\u308a\u307e\u3059\u3002
     </section>
   `;
 }
@@ -2668,7 +2703,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=23',
+    './data.json?v=24',
     {
       cache:'no-store'
     }
@@ -2683,7 +2718,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=23',
+    './skills.json?v=24',
     {
       cache:'no-store'
     }
@@ -2738,7 +2773,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=23'
+      './sw.js?v=24'
     )
     .catch(error=>
       console.warn(
