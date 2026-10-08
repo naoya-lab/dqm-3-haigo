@@ -1,6 +1,7 @@
 let DB={monsters:[]};
 let SKILL_DB={skills:[]};
 let mode='monster';
+let STAT_THRESHOLDS={};
 
 const q=document.getElementById('q');
 const results=document.getElementById('results');
@@ -297,6 +298,77 @@ function useText(u){
   `;
 }
 
+const STAT_FIELDS=[
+  ['hp','\u6700\u5927HP'],
+  ['mp','\u6700\u5927MP'],
+  ['attack','\u653b\u6483\u529b'],
+  ['defence','\u5b88\u5099\u529b'],
+  ['agility','\u3059\u3070\u3084\u3055'],
+  ['wisdom','\u304b\u3057\u3053\u3055']
+];
+
+function percentile(sorted,p){
+  if(!sorted.length) return 0;
+  const index=(sorted.length-1)*p;
+  const lower=Math.floor(index);
+  const upper=Math.ceil(index);
+  if(lower===upper) return sorted[lower];
+  const weight=index-lower;
+  return sorted[lower]*(1-weight)+sorted[upper]*weight;
+}
+
+function prepareStatThresholds(){
+  STAT_THRESHOLDS={};
+  STAT_FIELDS.forEach(([key])=>{
+    const values=DB.monsters
+      .map(m=>Number(m.stats?.[key]||0))
+      .filter(v=>v>0)
+      .sort((a,b)=>a-b);
+    STAT_THRESHOLDS[key]=[
+      percentile(values,.2),
+      percentile(values,.4),
+      percentile(values,.6),
+      percentile(values,.8)
+    ];
+  });
+}
+
+function statStars(key,value){
+  const n=Number(value||0);
+  if(!n) return '\u2606\u2606\u2606\u2606\u2606';
+  const t=STAT_THRESHOLDS[key]||[];
+  let stars=1;
+  t.forEach(limit=>{ if(n>limit) stars+=1; });
+  stars=Math.min(5,stars);
+  return '\u2605'.repeat(stars)+'\u2606'.repeat(5-stars);
+}
+
+function monsterStatsHtml(monster){
+  const stats=monster.stats||{};
+  const hasStats=STAT_FIELDS.some(([key])=>Number(stats[key]||0)>0);
+  if(!hasStats){
+    return '<div class="small">\u30b9\u30c6\u30fc\u30bf\u30b9\u30c7\u30fc\u30bf\u672a\u53cd\u6620</div>';
+  }
+  return `
+    <div class="stat-grid">
+      ${STAT_FIELDS.map(([key,label])=>{
+        const value=Number(stats[key]||0);
+        const stars=statStars(key,value);
+        return `
+          <div class="stat-row">
+            <div class="stat-label">${label}</div>
+            <div class="stat-value">${value||'-'}</div>
+            <div class="stat-stars">${stars}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    <div class="stat-note">
+      \u2605\u306f\u5168526\u4f53\u306e\u6700\u5927\u5024\u5206\u5e03\u30925\u6bb5\u968e\u306b\u5206\u3051\u305f\u76f8\u5bfe\u8a55\u4fa1\u3067\u3059\u3002
+    </div>
+  `;
+}
+
 function monsterCard(m){
   const recipes=(m.recipes||[])
     .map(recipeText)
@@ -366,6 +438,9 @@ function monsterCard(m){
               : ''
           }
         </div>
+
+        <h2>\ud83d\udcca \u6700\u5927\u30b9\u30c6\u30fc\u30bf\u30b9</h2>
+        ${monsterStatsHtml(m)}
 
         <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
         ${monsterTalentsHtml(m)}
@@ -2346,7 +2421,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=17',
+    './data.json?v=18',
     {
       cache:'no-store'
     }
@@ -2361,7 +2436,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=17',
+    './skills.json?v=18',
     {
       cache:'no-store'
     }
@@ -2382,6 +2457,7 @@ Promise.all([
   ])=>{
     DB=monsterData;
     SKILL_DB=skillData;
+    prepareStatThresholds();
 
     monsterOptions.innerHTML=
       DB.monsters
@@ -2415,7 +2491,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=17'
+      './sw.js?v=18'
     )
     .catch(error=>
       console.warn(
