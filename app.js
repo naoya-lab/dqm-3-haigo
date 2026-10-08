@@ -343,6 +343,34 @@ function statStars(key,value){
   return '\u2605'.repeat(stars)+'\u2606'.repeat(5-stars);
 }
 
+function statPercentileScore(key,value){
+  const n=Number(value||0);
+  if(!n) return 0;
+  const values=DB.monsters
+    .map(m=>Number(m.stats?.[key]||0))
+    .filter(v=>v>0)
+    .sort((a,b)=>a-b);
+  if(!values.length) return 0;
+  let low=0;
+  let high=values.length;
+  while(low<high){
+    const mid=(low+high)>>1;
+    if(values[mid]<=n) low=mid+1;
+    else high=mid;
+  }
+  return Math.max(0,Math.min(1,low/values.length));
+}
+
+function statBlend(monster,weights){
+  const stats=monster.stats||{};
+  let total=0;
+  let weightSum=0;
+  Object.entries(weights).forEach(([key,weight])=>{
+    total+=statPercentileScore(key,stats[key])*weight;
+    weightSum+=weight;
+  });
+  return weightSum ? total/weightSum : 0;
+}
 function monsterStatsHtml(monster){
   const stats=monster.stats||{};
   const hasStats=STAT_FIELDS.some(([key])=>Number(stats[key]||0)>0);
@@ -1145,29 +1173,50 @@ function recTalentNames(monster){
 
 function recScore(monster,cfg){
   const traits=recTraitNames(monster);
-  let score=0;
+  let traitScore=0;
 
   cfg.traits.forEach((name,index)=>{
     if(traits.includes(name)){
-      score+=index===0?5:7;
+      traitScore+=index===0?5:7;
     }
   });
 
   const preferredIndex=cfg.preferred.indexOf(monster.name);
   if(preferredIndex>=0){
-    score+=6-preferredIndex;
+    traitScore+=6-preferredIndex;
   }
+
+  let statScore=0;
 
   if(cfg.kind==='status'){
     if(traits.some(x=>x.includes('\u30d6\u30ec\u30a4\u30af\u5927'))){
-      score+=1;
+      traitScore+=1;
     }
-    if(traits.some(x=>x.includes('\u3059\u3070\u3084\u3055'))){
-      score+=1;
-    }
+
+    statScore=statBlend(monster,{
+      agility:0.6,
+      hp:0.2,
+      defence:0.2
+    });
+
+    return traitScore*0.60 + statScore*10*0.40;
   }
 
-  return score;
+  const physical=statBlend(monster,{
+    attack:0.75,
+    agility:0.15,
+    hp:0.10
+  });
+
+  const magical=statBlend(monster,{
+    wisdom:0.65,
+    mp:0.25,
+    agility:0.10
+  });
+
+  statScore=Math.max(physical,magical);
+
+  return traitScore*0.60 + statScore*10*0.40;
 }
 
 function recCandidates(cfg){
@@ -1295,16 +1344,16 @@ function recFallbackTank(used){
 function recTankScore(monster){
   const traits=recTraitNames(monster);
   const talents=recTalentNames(monster);
-  let score=0;
+  let traitScore=0;
   const reasons=[];
 
   if(monster.name==='\u30b4\u30fc\u30eb\u30c7\u30f3\u30b9\u30e9\u30a4\u30e0'){
-    score+=10;
+    traitScore+=10;
     reasons.push('\u9ad8\u8010\u4e45\u306e\u5b9a\u756a\u5019\u88dc');
   }
 
   if(talents.some(x=>x.includes('\u9a0e\u58eb\u9053'))){
-    score+=8;
+    traitScore+=8;
     reasons.push('\u9a0e\u58eb\u9053');
   }
 
@@ -1319,10 +1368,17 @@ function recTankScore(monster){
 
   checks.forEach(([name,points])=>{
     if(traits.some(x=>x.includes(name))){
-      score+=points;
+      traitScore+=points;
       reasons.push(name);
     }
   });
+
+  const statScore=statBlend(monster,{
+    hp:0.5,
+    defence:0.5
+  });
+
+  const score=traitScore*0.50 + statScore*10*0.50;
 
   return {
     monster,
@@ -1334,21 +1390,21 @@ function recTankScore(monster){
 function recHealerScore(monster){
   const traits=recTraitNames(monster);
   const talents=recTalentNames(monster);
-  let score=0;
+  let traitScore=0;
   const reasons=[];
 
   if(monster.name==='\u30d9\u30db\u30de\u30b9\u30e9\u30a4\u30e0'){
-    score+=10;
+    traitScore+=10;
     reasons.push('\u56de\u5fa9\u5f79\u306e\u5b9a\u756a\u5019\u88dc');
   }
 
   talents.forEach(name=>{
     if(name.includes('\u8d85\u56de\u5fa9SP')){
-      score+=10;
+      traitScore+=10;
       reasons.push('\u8d85\u56de\u5fa9SP');
     }
     else if(name.includes('\u56de\u5fa9') || name.includes('\u30d2\u30fc\u30e9\u30fc')){
-      score+=6;
+      traitScore+=6;
       reasons.push(name);
     }
   });
@@ -1365,10 +1421,18 @@ function recHealerScore(monster){
 
   checks.forEach(([name,points])=>{
     if(traits.some(x=>x.includes(name))){
-      score+=points;
+      traitScore+=points;
       reasons.push(name);
     }
   });
+
+  const statScore=statBlend(monster,{
+    wisdom:0.4,
+    mp:0.4,
+    agility:0.2
+  });
+
+  const score=traitScore*0.50 + statScore*10*0.50;
 
   return {
     monster,
@@ -1494,16 +1558,13 @@ function buildRecommendedTeam(cfg,strategy){
 }
 
 function recStars(score){
-  const value=Math.max(
-    1,
-    Math.min(
-      5,
-      Math.ceil(score/3)
-    )
-  );
-
-  return '\u2605'.repeat(value)
-    +'\u2606'.repeat(5-value);
+  const n=Number(score||0);
+  let value=1;
+  if(n>=4) value=2;
+  if(n>=7) value=3;
+  if(n>=10) value=4;
+  if(n>=13) value=5;
+  return '\u2605'.repeat(value)+'\u2606'.repeat(5-value);
 }
 
 function recommendationCard(item,index,cfg,candidates){
@@ -1626,6 +1687,7 @@ function renderRecommendations(){
         \u56f3\u9451\u306eS\u30b5\u30a4\u30ba\u7279\u6027\u3092\u81ea\u52d5\u63a1\u70b9\u3057\u3001
         \u300c\u30b3\u30c4\u300d\u300c\u30d6\u30ec\u30a4\u30af\u5927\u300d\u307e\u305f\u306f
         \u5bfe\u5fdc\u72b6\u614b\u7570\u5e38\u30d6\u30ec\u30a4\u30af\u3092\u512a\u5148\u3057\u3066\u3044\u307e\u3059\u3002
+        \u6700\u5927\u30b9\u30c6\u30fc\u30bf\u30b9\u3082\u52a0\u5473\u3057\u3066\u9806\u4f4d\u4ed8\u3051\u3057\u3066\u3044\u307e\u3059\u3002
       </div>
     </section>
 
@@ -2421,7 +2483,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=18',
+    './data.json?v=19',
     {
       cache:'no-store'
     }
@@ -2436,7 +2498,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=18',
+    './skills.json?v=19',
     {
       cache:'no-store'
     }
@@ -2491,7 +2553,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=18'
+      './sw.js?v=19'
     )
     .catch(error=>
       console.warn(
