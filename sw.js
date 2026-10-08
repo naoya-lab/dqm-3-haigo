@@ -3,10 +3,10 @@ const C='dqm3-v17';
 const CORE=[
   './',
   './index.html',
-  './style.css?v=16',
-  './app.js?v=16',
-  './data.json?v=16',
-  './skills.json?v=16',
+  './style.css?v=17',
+  './app.js?v=17',
+  './data.json?v=17',
+  './skills.json?v=17',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png'
