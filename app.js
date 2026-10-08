@@ -1701,6 +1701,11 @@ function recommendationCard(item,index,cfg,candidates){
     item.role
   );
 
+  const breakdown=recAttackBreakdown(
+    monster,
+    cfg
+  );
+
   return `
     <section class="card rec-card">
       <div class="rec-rank">#${index+1}</div>
@@ -1721,6 +1726,8 @@ function recommendationCard(item,index,cfg,candidates){
         <strong>\u9078\u51fa\u7406\u7531:</strong>
         ${esc(recReason(monster,cfg))}
       </div>
+
+      ${recBreakdownHtml(breakdown)}
 
       <div class="rec-skills-title">
         \u63a8\u5968\u30b9\u30ad\u30eb
@@ -2605,7 +2612,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=20',
+    './data.json?v=21',
     {
       cache:'no-store'
     }
@@ -2620,7 +2627,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=20',
+    './skills.json?v=21',
     {
       cache:'no-store'
     }
@@ -2675,7 +2682,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=20'
+      './sw.js?v=21'
     )
     .catch(error=>
       console.warn(
