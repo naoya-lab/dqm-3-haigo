@@ -705,6 +705,61 @@ footer{
   line-height:1.6;
 }
 
+.role-section{
+  border-left:4px solid #d1d5db;
+}
+
+.role-note{
+  margin:-2px 0 8px;
+  color:#6b7280;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.role-candidate-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.role-candidate{
+  padding:10px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#f9fafb;
+}
+
+.role-candidate-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.role-candidate-head .jump{
+  font-weight:800;
+  font-size:15px;
+}
+
+.role-score{
+  flex:none;
+  color:#92400e;
+  font-size:12px;
+}
+
+.role-reason{
+  margin-top:5px;
+  color:#4b5563;
+  font-size:11px;
+  line-height:1.5;
+}
+
+.role-skills{
+  margin-top:6px;
+  font-size:12px;
+  line-height:1.7;
+}
+
 @media(max-width:420px){
   .recommend-controls{
     grid-template-columns:1fr;
