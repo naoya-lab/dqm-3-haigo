@@ -1458,6 +1458,7 @@ function recHealerCandidates(){
 }
 
 function recRoleCandidateHtml(item,role){
+  const breakdown=recRoleBreakdown(item.monster,role);
   const skills=role==='tank'
     ? ['\u9a0e\u58eb\u9053','HP\u30a2\u30c3\u30d74','\u5b88\u5099\u529b\u30a2\u30c3\u30d74']
     : ['\u8d85\u56de\u5fa9SP','MP\u30a2\u30c3\u30d74','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74'];
@@ -1471,6 +1472,7 @@ function recRoleCandidateHtml(item,role){
       <div class="role-reason">
         ${esc(item.reason||'\u5f79\u5272\u9069\u6027\u304b\u3089\u9078\u51fa')}
       </div>
+      ${recBreakdownHtml(breakdown,'\u7279\u6027\u9069\u6027')}
       <div class="role-skills">
         ${skills.map(recSkillHtml).join(' / ')}
       </div>
@@ -1565,6 +1567,126 @@ function recStars(score){
   if(n>=10) value=4;
   if(n>=13) value=5;
   return '\u2605'.repeat(value)+'\u2606'.repeat(5-value);
+}
+
+function recTraitBaseScore(monster,cfg){
+  const traits=recTraitNames(monster);
+  let traitScore=0;
+  cfg.traits.forEach((name,index)=>{
+    if(traits.includes(name)){
+      traitScore+=index===0?5:7;
+    }
+  });
+  const preferredIndex=cfg.preferred.indexOf(monster.name);
+  if(preferredIndex>=0){
+    traitScore+=6-preferredIndex;
+  }
+  if(cfg.kind==='status' && traits.some(x=>x.includes('\u30d6\u30ec\u30a4\u30af\u5927'))){
+    traitScore+=1;
+  }
+  return traitScore;
+}
+
+function recAttackBreakdown(monster,cfg){
+  const traitScore=recTraitBaseScore(monster,cfg);
+  const stats=monster.stats||{};
+
+  if(cfg.kind==='status'){
+    const statScore=statBlend(monster,{agility:0.6,hp:0.2,defence:0.2});
+    return {
+      traitScore,
+      statScore:statScore*10,
+      type:'\u72b6\u614b\u7570\u5e38\u578b',
+      fields:[
+        ['agility','\u3059\u3070\u3084\u3055',stats.agility],
+        ['hp','HP',stats.hp],
+        ['defence','\u5b88\u5099\u529b',stats.defence]
+      ]
+    };
+  }
+
+  const physical=statBlend(monster,{attack:0.75,agility:0.15,hp:0.10});
+  const magical=statBlend(monster,{wisdom:0.65,mp:0.25,agility:0.10});
+
+  if(physical>=magical){
+    return {
+      traitScore,
+      statScore:physical*10,
+      type:'\u7269\u7406\u578b',
+      fields:[
+        ['attack','\u653b\u6483\u529b',stats.attack],
+        ['agility','\u3059\u3070\u3084\u3055',stats.agility],
+        ['hp','HP',stats.hp]
+      ]
+    };
+  }
+
+  return {
+    traitScore,
+    statScore:magical*10,
+    type:'\u546a\u6587\u578b',
+    fields:[
+      ['wisdom','\u304b\u3057\u3053\u3055',stats.wisdom],
+      ['mp','MP',stats.mp],
+      ['agility','\u3059\u3070\u3084\u3055',stats.agility]
+    ]
+  };
+}
+
+function recRoleBreakdown(monster,role){
+  const stats=monster.stats||{};
+  if(role==='tank'){
+    const item=recTankScore(monster);
+    const statScore=statBlend(monster,{hp:0.5,defence:0.5})*10;
+    return {
+      statScore,
+      type:'\u307f\u304c\u308f\u308a\u578b',
+      fields:[
+        ['hp','HP',stats.hp],
+        ['defence','\u5b88\u5099\u529b',stats.defence]
+      ],
+      total:item.score
+    };
+  }
+  const item=recHealerScore(monster);
+  const statScore=statBlend(monster,{wisdom:0.4,mp:0.4,agility:0.2})*10;
+  return {
+    statScore,
+    type:'\u56de\u5fa9\u578b',
+    fields:[
+      ['wisdom','\u304b\u3057\u3053\u3055',stats.wisdom],
+      ['mp','MP',stats.mp],
+      ['agility','\u3059\u3070\u3084\u3055',stats.agility]
+    ],
+    total:item.score
+  };
+}
+
+function recBreakdownHtml(info,traitLabel='\u7279\u6027\u52a0\u70b9'){
+  return `
+    <div class="rec-breakdown">
+      <div class="rec-breakdown-title">\u8a55\u4fa1\u5185\u8a33 \u30fb ${esc(info.type)}</div>
+      ${info.traitScore!==undefined ? `
+        <div class="rec-breakdown-row">
+          <span>${traitLabel}</span>
+          <strong>${Number(info.traitScore).toFixed(1)}</strong>
+        </div>
+      ` : ''}
+      <div class="rec-breakdown-row">
+        <span>\u30b9\u30c6\u30fc\u30bf\u30b9\u9069\u6027</span>
+        <strong>${Number(info.statScore||0).toFixed(1)} / 10</strong>
+      </div>
+      <div class="rec-used-stats">
+        ${(info.fields||[]).map(([key,label,value])=>`
+          <div class="rec-used-stat">
+            <span>${label}</span>
+            <strong>${Number(value||0)||'-'}</strong>
+            <span class="rec-used-stars">${statStars(key,value)}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
 }
 
 function recommendationCard(item,index,cfg,candidates){
@@ -2483,7 +2605,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=19',
+    './data.json?v=20',
     {
       cache:'no-store'
     }
@@ -2498,7 +2620,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=19',
+    './skills.json?v=20',
     {
       cache:'no-store'
     }
@@ -2553,7 +2675,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=19'
+      './sw.js?v=20'
     )
     .catch(error=>
       console.warn(
