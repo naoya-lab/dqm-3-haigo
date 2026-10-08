@@ -760,6 +760,51 @@ footer{
   line-height:1.7;
 }
 
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:6px;
+}
+
+.stat-row{
+  display:grid;
+  grid-template-columns:88px 58px 1fr;
+  align-items:center;
+  gap:8px;
+  padding:7px 8px;
+  border:1px solid #eef2f7;
+  border-radius:9px;
+  background:#f9fafb;
+}
+
+.stat-label{
+  color:#374151;
+  font-size:12px;
+  font-weight:700;
+}
+
+.stat-value{
+  text-align:right;
+  color:#111827;
+  font-size:14px;
+  font-weight:800;
+  font-variant-numeric:tabular-nums;
+}
+
+.stat-stars{
+  color:#d97706;
+  font-size:14px;
+  letter-spacing:1px;
+  white-space:nowrap;
+}
+
+.stat-note{
+  margin-top:7px;
+  color:#6b7280;
+  font-size:10px;
+  line-height:1.5;
+}
+
 @media(max-width:420px){
   .recommend-controls{
     grid-template-columns:1fr;
