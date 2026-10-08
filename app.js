@@ -18,6 +18,7 @@ const planControls=document.getElementById('planControls');
 const recommendControls=document.getElementById('recommendControls');
 const recommendTarget=document.getElementById('recommendTarget');
 const recommendStrategy=document.getElementById('recommendStrategy');
+const recommendFormation=document.getElementById('recommendFormation');
 const planTarget=document.getElementById('planTarget');
 const buildPlanButton=document.getElementById('buildPlan');
 const monsterOptions=document.getElementById('monsterOptions');
@@ -1159,10 +1160,20 @@ const REC_CONFIG={
   }
 };
 
-function recTraitNames(monster){
-  return (monster.traits?.S||[])
+function recTraitNames(monster,size='S'){
+  const base=(monster.traits?.S||[])
     .map(x=>x.name)
     .filter(Boolean);
+
+  if(size!=='L'){
+    return base;
+  }
+
+  const extra=(monster.traits?.L||[])
+    .map(x=>x.name)
+    .filter(Boolean);
+
+  return [...new Set([...base,...extra])];
 }
 
 function recTalentNames(monster){
@@ -1171,8 +1182,8 @@ function recTalentNames(monster){
     .filter(Boolean);
 }
 
-function recScore(monster,cfg){
-  const traits=recTraitNames(monster);
+function recScore(monster,cfg,size='S'){
+  const traits=recTraitNames(monster,size);
   let traitScore=0;
 
   cfg.traits.forEach((name,index)=>{
@@ -1219,11 +1230,12 @@ function recScore(monster,cfg){
   return traitScore*0.60 + statScore*10*0.40;
 }
 
-function recCandidates(cfg){
+function recCandidates(cfg,size='S'){
   return DB.monsters
     .map(monster=>({
       monster,
-      score:recScore(monster,cfg)
+      score:recScore(monster,cfg,size),
+      size
     }))
     .filter(x=>x.score>0)
     .sort((a,b)=>
@@ -1341,8 +1353,8 @@ function recFallbackTank(used){
   return monster||null;
 }
 
-function recTankScore(monster){
-  const traits=recTraitNames(monster);
+function recTankScore(monster,size='S'){
+  const traits=recTraitNames(monster,size);
   const talents=recTalentNames(monster);
   let traitScore=0;
   const reasons=[];
@@ -1387,8 +1399,8 @@ function recTankScore(monster){
   };
 }
 
-function recHealerScore(monster){
-  const traits=recTraitNames(monster);
+function recHealerScore(monster,size='S'){
+  const traits=recTraitNames(monster,size);
   const talents=recTalentNames(monster);
   let traitScore=0;
   const reasons=[];
@@ -1441,24 +1453,24 @@ function recHealerScore(monster){
   };
 }
 
-function recTankCandidates(){
+function recTankCandidates(size='S'){
   return DB.monsters
-    .map(recTankScore)
+    .map(monster=>recTankScore(monster,size))
     .filter(x=>x.score>0)
     .sort((a,b)=>b.score-a.score)
     .slice(0,5);
 }
 
-function recHealerCandidates(){
+function recHealerCandidates(size='S'){
   return DB.monsters
-    .map(recHealerScore)
+    .map(monster=>recHealerScore(monster,size))
     .filter(x=>x.score>0)
     .sort((a,b)=>b.score-a.score)
     .slice(0,5);
 }
 
-function recRoleCandidateHtml(item,role){
-  const breakdown=recRoleBreakdown(item.monster,role);
+function recRoleCandidateHtml(item,role,size='S'){
+  const breakdown=recRoleBreakdown(item.monster,role,size);
   const skills=role==='tank'
     ? ['\u9a0e\u58eb\u9053','HP\u30a2\u30c3\u30d74','\u5b88\u5099\u529b\u30a2\u30c3\u30d74']
     : ['\u8d85\u56de\u5fa9SP','MP\u30a2\u30c3\u30d74','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74'];
@@ -1480,83 +1492,110 @@ function recRoleCandidateHtml(item,role){
   `;
 }
 
-function buildRecommendedTeam(cfg,strategy){
-  const candidates=recCandidates(cfg);
+function recBestRoleCandidate(role,size,used){
+  const list=role==='tank'
+    ? recTankCandidates(size)
+    : recHealerCandidates(size);
+
+  const item=list.find(x=>!used.has(x.monster.name));
+  if(!item) return null;
+  used.add(item.monster.name);
+  return item.monster;
+}
+
+function recBestThemeCandidate(cfg,size,used){
+  const item=recCandidates(cfg,size)
+    .find(x=>!used.has(x.monster.name));
+  if(!item) return null;
+  used.add(item.monster.name);
+  return item.monster;
+}
+function buildRecommendedTeam(cfg,strategy,formation='SSSS'){
   const used=new Set();
   const team=[];
 
-  const add=(monster,role)=>{
+  const add=(monster,role,size)=>{
     if(monster){
-      team.push({monster,role});
+      team.push({monster,role,size});
     }
   };
 
-  add(
-    recPickCandidate(candidates,used),
-    cfg.kind==='element'
-      ? '\u30e1\u30a4\u30f3\u30a2\u30bf\u30c3\u30ab\u30fc'
-      : '\u30e1\u30a4\u30f3\u4ed8\u4e0e\u5f79'
-  );
-
-  add(
-    recPickCandidate(candidates,used),
-    cfg.kind==='element'
-      ? '\u30b5\u30d6\u30a2\u30bf\u30c3\u30ab\u30fc'
-      : '\u30b5\u30d6\u4ed8\u4e0e\u30fb\u653b\u6483'
-  );
-
-  if(strategy==='power'){
+  if(formation==='LSS'){
     add(
-      recPickCandidate(candidates,used),
-      '\u706b\u529b\u88dc\u52a9'
+      recBestThemeCandidate(cfg,'L',used),
+      cfg.kind==='element' ? '\u30e1\u30a4\u30f3L\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3L\u4ed8\u4e0e\u5f79',
+      'L'
     );
-    add(
-      recFallbackHealer(used),
-      '\u56de\u5fa9'
-    );
+
+    if(strategy==='stable'){
+      add(recBestRoleCandidate('tank','S',used),'\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45','S');
+      add(recBestRoleCandidate('healer','S',used),'\u56de\u5fa9','S');
+    }
+    else{
+      add(recBestThemeCandidate(cfg,'S',used),strategy==='control'?'\u59a8\u5bb3\u88dc\u52a9':'\u30b5\u30d6\u30a2\u30bf\u30c3\u30ab\u30fc','S');
+      add(recBestRoleCandidate('healer','S',used),'\u56de\u5fa9','S');
+    }
   }
-  else if(strategy==='control'){
+  else if(formation==='LL'){
     add(
-      recPickCandidate(candidates,used),
-      cfg.kind==='status'
-        ? '\u59a8\u5bb3\u88dc\u52a9'
-        : '\u706b\u529b\u30fb\u59a8\u5bb3\u88dc\u52a9'
+      recBestThemeCandidate(cfg,'L',used),
+      cfg.kind==='element' ? '\u30e1\u30a4\u30f3L\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3L\u4ed8\u4e0e\u5f79',
+      'L'
     );
-    add(
-      recFallbackHealer(used),
-      '\u56de\u5fa9'
-    );
+
+    if(strategy==='stable'){
+      const tank=recTankCandidates('L').find(x=>!used.has(x.monster.name));
+      const healer=recHealerCandidates('L').find(x=>!used.has(x.monster.name));
+      const support=(
+        (tank?.score||0)>=(healer?.score||0)
+          ? {item:tank,role:'\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45'}
+          : {item:healer,role:'\u56de\u5fa9'}
+      );
+      if(support.item){
+        used.add(support.item.monster.name);
+        add(support.item.monster,support.role,'L');
+      }
+    }
+    else{
+      add(
+        recBestThemeCandidate(cfg,'L',used),
+        strategy==='control' ? '\u59a8\u5bb3\u88dc\u52a9' : '\u30b5\u30d6L\u30a2\u30bf\u30c3\u30ab\u30fc',
+        'L'
+      );
+    }
   }
   else{
     add(
-      recFallbackTank(used),
-      '\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45'
+      recBestThemeCandidate(cfg,'S',used),
+      cfg.kind==='element' ? '\u30e1\u30a4\u30f3\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3\u4ed8\u4e0e\u5f79',
+      'S'
     );
     add(
-      recFallbackHealer(used),
-      '\u56de\u5fa9'
+      recBestThemeCandidate(cfg,'S',used),
+      cfg.kind==='element' ? '\u30b5\u30d6\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30b5\u30d6\u4ed8\u4e0e\u30fb\u653b\u6483',
+      'S'
     );
-  }
 
-  while(team.length<4){
-    const next=recPickCandidate(candidates,used)
-      || DB.monsters.find(m=>!used.has(m.name));
-
-    if(!next){
-      break;
+    if(strategy==='power'){
+      add(recBestThemeCandidate(cfg,'S',used),'\u706b\u529b\u88dc\u52a9','S');
+      add(recBestRoleCandidate('healer','S',used),'\u56de\u5fa9','S');
     }
-
-    used.add(next.name);
-    team.push({
-      monster:next,
-      role:'\u88dc\u52a9\u5019\u88dc'
-    });
+    else if(strategy==='control'){
+      add(recBestThemeCandidate(cfg,'S',used),cfg.kind==='status'?'\u59a8\u5bb3\u88dc\u52a9':'\u706b\u529b\u30fb\u59a8\u5bb3\u88dc\u52a9','S');
+      add(recBestRoleCandidate('healer','S',used),'\u56de\u5fa9','S');
+    }
+    else{
+      add(recBestRoleCandidate('tank','S',used),'\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45','S');
+      add(recBestRoleCandidate('healer','S',used),'\u56de\u5fa9','S');
+    }
   }
 
-  return {
-    team,
-    candidates
-  };
+  const candidates=[
+    ...recCandidates(cfg,'S'),
+    ...recCandidates(cfg,'L')
+  ];
+
+  return {team,candidates};
 }
 
 function recStars(score){
@@ -1569,8 +1608,8 @@ function recStars(score){
   return '\u2605'.repeat(value)+'\u2606'.repeat(5-value);
 }
 
-function recTraitBaseScore(monster,cfg){
-  const traits=recTraitNames(monster);
+function recTraitBaseScore(monster,cfg,size='S'){
+  const traits=recTraitNames(monster,size);
   let traitScore=0;
   cfg.traits.forEach((name,index)=>{
     if(traits.includes(name)){
@@ -1587,8 +1626,8 @@ function recTraitBaseScore(monster,cfg){
   return traitScore;
 }
 
-function recAttackBreakdown(monster,cfg){
-  const traitScore=recTraitBaseScore(monster,cfg);
+function recAttackBreakdown(monster,cfg,size='S'){
+  const traitScore=recTraitBaseScore(monster,cfg,size);
   const stats=monster.stats||{};
 
   if(cfg.kind==='status'){
@@ -1633,10 +1672,10 @@ function recAttackBreakdown(monster,cfg){
   };
 }
 
-function recRoleBreakdown(monster,role){
+function recRoleBreakdown(monster,role,size='S'){
   const stats=monster.stats||{};
   if(role==='tank'){
-    const item=recTankScore(monster);
+    const item=recTankScore(monster,size);
     const statScore=statBlend(monster,{hp:0.5,defence:0.5})*10;
     return {
       statScore,
@@ -1648,7 +1687,7 @@ function recRoleBreakdown(monster,role){
       total:item.score
     };
   }
-  const item=recHealerScore(monster);
+  const item=recHealerScore(monster,size);
   const statScore=statBlend(monster,{wisdom:0.4,mp:0.4,agility:0.2})*10;
   return {
     statScore,
@@ -1692,7 +1731,7 @@ function recBreakdownHtml(info,traitLabel='\u7279\u6027\u52a0\u70b9'){
 function recommendationCard(item,index,cfg,candidates){
   const monster=item.monster;
   const score=(
-    candidates.find(x=>x.monster.name===monster.name)?.score
+    candidates.find(x=>x.monster.name===monster.name && x.size===item.size)?.score
     ||0
   );
 
@@ -1703,7 +1742,8 @@ function recommendationCard(item,index,cfg,candidates){
 
   const breakdown=recAttackBreakdown(
     monster,
-    cfg
+    cfg,
+    item.size||'S'
   );
 
   return `
@@ -1715,6 +1755,9 @@ function recommendationCard(item,index,cfg,candidates){
       </div>
 
       <div class="rec-role">
+        <span class="rec-size-badge ${item.size==='L'?'large':''}">
+          ${item.size||'S'}
+        </span>
         ${esc(item.role)}
       </div>
 
@@ -1776,10 +1819,14 @@ function renderRecommendations(){
     recommendStrategy.value
     ||'stable';
 
+  const formation=recommendFormation.value
+    ||'SSSS';
+
   const built=
     buildRecommendedTeam(
       cfg,
-      strategy
+      strategy,
+      formation
     );
 
   statusEl.textContent=
@@ -1841,7 +1888,7 @@ function renderRecommendations(){
         \u9ad8\u8010\u4e45\u30fb\u30e1\u30bf\u30eb\u7cfb\u7279\u6027\u30fb\u307f\u304c\u308f\u308a\u5411\u304d\u30b9\u30ad\u30eb\u3092\u512a\u5148\u3002
       </div>
       <div class="role-candidate-list">
-        ${tankCandidates.map(x=>recRoleCandidateHtml(x,'tank')).join('')}
+        ${tankCandidates.map(x=>recRoleCandidateHtml(x,'tank',roleSize)).join('')}
       </div>
     </section>
 
@@ -1853,7 +1900,7 @@ function renderRecommendations(){
         \u56de\u5fa9\u7cfb\u30b9\u30ad\u30eb\u30fb\u56de\u5fa9\u306e\u30b3\u30c4\u30fb\u81ea\u52d5\u56de\u5fa9\u7cfb\u7279\u6027\u3092\u512a\u5148\u3002
       </div>
       <div class="role-candidate-list">
-        ${healerCandidates.map(x=>recRoleCandidateHtml(x,'healer')).join('')}
+        ${healerCandidates.map(x=>recRoleCandidateHtml(x,'healer',roleSize)).join('')}
       </div>
     </section>
 
@@ -2547,6 +2594,11 @@ recommendStrategy.addEventListener(
   render
 );
 
+recommendFormation.addEventListener(
+  'change',
+  render
+);
+
 buildPlanButton.addEventListener(
   'click',
   createPlan
@@ -2612,7 +2664,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=21',
+    './data.json?v=22',
     {
       cache:'no-store'
     }
@@ -2627,7 +2679,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=21',
+    './skills.json?v=22',
     {
       cache:'no-store'
     }
@@ -2682,7 +2734,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=21'
+      './sw.js?v=22'
     )
     .catch(error=>
       console.warn(
