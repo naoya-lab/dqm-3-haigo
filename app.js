@@ -1217,6 +1217,128 @@ function recFallbackTank(used){
   return monster||null;
 }
 
+function recTankScore(monster){
+  const traits=recTraitNames(monster);
+  const talents=recTalentNames(monster);
+  let score=0;
+  const reasons=[];
+
+  if(monster.name==='\u30b4\u30fc\u30eb\u30c7\u30f3\u30b9\u30e9\u30a4\u30e0'){
+    score+=10;
+    reasons.push('\u9ad8\u8010\u4e45\u306e\u5b9a\u756a\u5019\u88dc');
+  }
+
+  if(talents.some(x=>x.includes('\u9a0e\u58eb\u9053'))){
+    score+=8;
+    reasons.push('\u9a0e\u58eb\u9053');
+  }
+
+  const checks=[
+    ['\u8d85\u30cf\u30fc\u30c9\u30e1\u30bf\u30eb\u30dc\u30c7\u30a3',9],
+    ['\u30cf\u30fc\u30c9\u30e1\u30bf\u30eb\u30dc\u30c7\u30a3',8],
+    ['\u30e1\u30bf\u30eb\u30dc\u30c7\u30a3',7],
+    ['\u304f\u3058\u3051\u306c\u5fc3',4],
+    ['\u4f1a\u5fc3\u304b\u3093\u305c\u3093\u30ac\u30fc\u30c9',4],
+    ['\u30ae\u30e3\u30f3\u30d6\u30eb\u30dc\u30c7\u30a3',2]
+  ];
+
+  checks.forEach(([name,points])=>{
+    if(traits.some(x=>x.includes(name))){
+      score+=points;
+      reasons.push(name);
+    }
+  });
+
+  return {
+    monster,
+    score,
+    reason:[...new Set(reasons)].slice(0,3).join(' + ')
+  };
+}
+
+function recHealerScore(monster){
+  const traits=recTraitNames(monster);
+  const talents=recTalentNames(monster);
+  let score=0;
+  const reasons=[];
+
+  if(monster.name==='\u30d9\u30db\u30de\u30b9\u30e9\u30a4\u30e0'){
+    score+=10;
+    reasons.push('\u56de\u5fa9\u5f79\u306e\u5b9a\u756a\u5019\u88dc');
+  }
+
+  talents.forEach(name=>{
+    if(name.includes('\u8d85\u56de\u5fa9SP')){
+      score+=10;
+      reasons.push('\u8d85\u56de\u5fa9SP');
+    }
+    else if(name.includes('\u56de\u5fa9') || name.includes('\u30d2\u30fc\u30e9\u30fc')){
+      score+=6;
+      reasons.push(name);
+    }
+  });
+
+  const checks=[
+    ['\u56de\u5fa9\u306e\u30b3\u30c4',7],
+    ['\u81ea\u52d5HP\u56de\u5fa9',3],
+    ['\u81ea\u52d5MP\u56de\u5fa9',3],
+    ['\u9b54\u529b\u306e\u98a8',2],
+    ['\u9b54\u529b\u306e\u5f37\u98a8',3],
+    ['\u7652\u3057\u306e\u529b',3],
+    ['\u7652\u3057\u306e\u5927\u529b',4]
+  ];
+
+  checks.forEach(([name,points])=>{
+    if(traits.some(x=>x.includes(name))){
+      score+=points;
+      reasons.push(name);
+    }
+  });
+
+  return {
+    monster,
+    score,
+    reason:[...new Set(reasons)].slice(0,3).join(' + ')
+  };
+}
+
+function recTankCandidates(){
+  return DB.monsters
+    .map(recTankScore)
+    .filter(x=>x.score>0)
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,5);
+}
+
+function recHealerCandidates(){
+  return DB.monsters
+    .map(recHealerScore)
+    .filter(x=>x.score>0)
+    .sort((a,b)=>b.score-a.score)
+    .slice(0,5);
+}
+
+function recRoleCandidateHtml(item,role){
+  const skills=role==='tank'
+    ? ['\u9a0e\u58eb\u9053','HP\u30a2\u30c3\u30d74','\u5b88\u5099\u529b\u30a2\u30c3\u30d74']
+    : ['\u8d85\u56de\u5fa9SP','MP\u30a2\u30c3\u30d74','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74'];
+
+  return `
+    <div class="role-candidate">
+      <div class="role-candidate-head">
+        <div>${monsterButton(item.monster.name)}</div>
+        <span class="role-score">${recStars(item.score)}</span>
+      </div>
+      <div class="role-reason">
+        ${esc(item.reason||'\u5f79\u5272\u9069\u6027\u304b\u3089\u9078\u51fa')}
+      </div>
+      <div class="role-skills">
+        ${skills.map(recSkillHtml).join(' / ')}
+      </div>
+    </div>
+  `;
+}
+
 function buildRecommendedTeam(cfg,strategy){
   const candidates=recCandidates(cfg);
   const used=new Set();
@@ -1412,6 +1534,9 @@ function renderRecommendations(){
     )
     .slice(0,5);
 
+  const tankCandidates=recTankCandidates();
+  const healerCandidates=recHealerCandidates();
+
   results.innerHTML=`
     <section class="card rec-summary">
       <div class="skillname">
@@ -1441,6 +1566,30 @@ function renderRecommendations(){
         )
         .join('')}
     </div>
+
+    <section class="card role-section">
+      <h2 class="plan-title">
+        \ud83d\udee1\ufe0f \u307f\u304c\u308f\u308a\u5f79\u304a\u3059\u3059\u3081
+      </h2>
+      <div class="role-note">
+        \u9ad8\u8010\u4e45\u30fb\u30e1\u30bf\u30eb\u7cfb\u7279\u6027\u30fb\u307f\u304c\u308f\u308a\u5411\u304d\u30b9\u30ad\u30eb\u3092\u512a\u5148\u3002
+      </div>
+      <div class="role-candidate-list">
+        ${tankCandidates.map(x=>recRoleCandidateHtml(x,'tank')).join('')}
+      </div>
+    </section>
+
+    <section class="card role-section">
+      <h2 class="plan-title">
+        \ud83d\udc9a \u56de\u5fa9\u5f79\u304a\u3059\u3059\u3081
+      </h2>
+      <div class="role-note">
+        \u56de\u5fa9\u7cfb\u30b9\u30ad\u30eb\u30fb\u56de\u5fa9\u306e\u30b3\u30c4\u30fb\u81ea\u52d5\u56de\u5fa9\u7cfb\u7279\u6027\u3092\u512a\u5148\u3002
+      </div>
+      <div class="role-candidate-list">
+        ${healerCandidates.map(x=>recRoleCandidateHtml(x,'healer')).join('')}
+      </div>
+    </section>
 
     <section class="card">
       <h2 class="plan-title">
@@ -2197,7 +2346,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=16',
+    './data.json?v=17',
     {
       cache:'no-store'
     }
@@ -2212,7 +2361,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=16',
+    './skills.json?v=17',
     {
       cache:'no-store'
     }
@@ -2266,7 +2415,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=16'
+      './sw.js?v=17'
     )
     .catch(error=>
       console.warn(
