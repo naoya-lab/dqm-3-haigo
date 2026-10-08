@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T11:35:17.279699+00:00",
+  "generatedAt": "2026-10-08T11:43:36.587277+00:00",
   "source": {
     "name": "MetalKid/DQM3_Database",
     "url": "https://github.com/MetalKid/DQM3_Database",
@@ -12,6 +12,14 @@
       "no": 1,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1410,
+        "mp": 430,
+        "attack": 460,
+        "defence": 370,
+        "agility": 640,
+        "wisdom": 260
+      },
       "talents": [
         {
           "name": "スラフォース",
@@ -154,6 +162,14 @@
       "no": 2,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1390,
+        "mp": 450,
+        "attack": 560,
+        "defence": 420,
+        "agility": 420,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "スイート",
@@ -260,6 +276,14 @@
       "no": 3,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1430,
+        "mp": 520,
+        "attack": 380,
+        "defence": 840,
+        "agility": 280,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -339,6 +363,14 @@
       "no": 4,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1340,
+        "mp": 540,
+        "attack": 550,
+        "defence": 240,
+        "agility": 490,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "ナチュラル",
@@ -410,6 +442,14 @@
       "no": 5,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 410,
+        "attack": 460,
+        "defence": 600,
+        "agility": 490,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "水の心",
@@ -512,6 +552,14 @@
       "no": 6,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1320,
+        "mp": 480,
+        "attack": 540,
+        "defence": 330,
+        "agility": 600,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "つむじ風",
@@ -666,6 +714,14 @@
       "no": 7,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1400,
+        "mp": 620,
+        "attack": 500,
+        "defence": 490,
+        "agility": 420,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "スラフォース",
@@ -784,6 +840,14 @@
       "no": 8,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1320,
+        "mp": 600,
+        "attack": 350,
+        "defence": 410,
+        "agility": 630,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "HP回復",
@@ -902,6 +966,14 @@
       "no": 9,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1400,
+        "mp": 380,
+        "attack": 520,
+        "defence": 410,
+        "agility": 480,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "ジャマー",
@@ -989,6 +1061,14 @@
       "no": 10,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 490,
+        "attack": 510,
+        "defence": 440,
+        "agility": 510,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "妖精",
@@ -1084,6 +1164,14 @@
       "no": 11,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1390,
+        "mp": 270,
+        "attack": 690,
+        "defence": 380,
+        "agility": 430,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "ウォリアー",
@@ -1163,6 +1251,14 @@
       "no": 12,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1370,
+        "mp": 480,
+        "attack": 500,
+        "defence": 580,
+        "agility": 390,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "氷結の心",
@@ -1279,6 +1375,14 @@
       "no": 13,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1410,
+        "mp": 470,
+        "attack": 460,
+        "defence": 820,
+        "agility": 210,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "てっぺき",
@@ -1359,6 +1463,14 @@
       "no": 14,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1340,
+        "mp": 390,
+        "attack": 570,
+        "defence": 510,
+        "agility": 490,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "電撃の心",
@@ -1453,6 +1565,14 @@
       "no": 15,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1320,
+        "mp": 410,
+        "attack": 580,
+        "defence": 590,
+        "agility": 470,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "騎士道",
@@ -1573,6 +1693,14 @@
       "no": 16,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1480,
+        "mp": 400,
+        "attack": 530,
+        "defence": 350,
+        "agility": 450,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "レッドソード",
@@ -1733,6 +1861,14 @@
       "no": 17,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1390,
+        "mp": 430,
+        "attack": 510,
+        "defence": 530,
+        "agility": 570,
+        "wisdom": 220
+      },
       "talents": [
         {
           "name": "ナチュラル",
@@ -1811,6 +1947,14 @@
       "no": 18,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1380,
+        "mp": 460,
+        "attack": 540,
+        "defence": 380,
+        "agility": 550,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "息吹",
@@ -1926,6 +2070,14 @@
       "no": 19,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1420,
+        "mp": 460,
+        "attack": 460,
+        "defence": 450,
+        "agility": 510,
+        "wisdom": 370
+      },
       "talents": [
         {
           "name": "イエローソード",
@@ -2025,6 +2177,14 @@
       "no": 20,
       "rank": "F",
       "family": "スライム系",
+      "stats": {
+        "hp": 1370,
+        "mp": 600,
+        "attack": 470,
+        "defence": 670,
+        "agility": 280,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "アッパー",
@@ -2104,6 +2264,14 @@
       "no": 21,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1280,
+        "mp": 550,
+        "attack": 510,
+        "defence": 370,
+        "agility": 600,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "HP回復",
@@ -2172,6 +2340,14 @@
       "no": 22,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1320,
+        "mp": 650,
+        "attack": 350,
+        "defence": 420,
+        "agility": 590,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "キューピット",
@@ -2286,6 +2462,14 @@
       "no": 23,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1280,
+        "mp": 420,
+        "attack": 480,
+        "defence": 490,
+        "agility": 640,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "キューピット",
@@ -2381,6 +2565,14 @@
       "no": 24,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 380,
+        "attack": 540,
+        "defence": 690,
+        "agility": 400,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "地の心",
@@ -2488,6 +2680,14 @@
       "no": 25,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 450,
+        "attack": 610,
+        "defence": 540,
+        "agility": 420,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "アッパー",
@@ -2604,6 +2804,14 @@
       "no": 26,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1340,
+        "mp": 410,
+        "attack": 490,
+        "defence": 380,
+        "agility": 630,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "火炎",
@@ -2699,6 +2907,14 @@
       "no": 27,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1340,
+        "mp": 590,
+        "attack": 400,
+        "defence": 420,
+        "agility": 530,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "いたずら",
@@ -2835,6 +3051,14 @@
       "no": 28,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1390,
+        "mp": 490,
+        "attack": 520,
+        "defence": 470,
+        "agility": 410,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "スタン",
@@ -2914,6 +3138,14 @@
       "no": 29,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 247,
+        "mp": 660,
+        "attack": 610,
+        "defence": 1200,
+        "agility": 1110,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "火の心",
@@ -3155,6 +3387,14 @@
       "no": 30,
       "rank": "E",
       "family": "スライム系",
+      "stats": {
+        "hp": 1380,
+        "mp": 440,
+        "attack": 580,
+        "defence": 540,
+        "agility": 460,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "電撃の心",
@@ -3250,6 +3490,14 @@
       "no": 31,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1410,
+        "mp": 350,
+        "attack": 490,
+        "defence": 550,
+        "agility": 370,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "王道",
@@ -3329,6 +3577,14 @@
       "no": 32,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1400,
+        "mp": 270,
+        "attack": 660,
+        "defence": 400,
+        "agility": 440,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -3420,6 +3676,14 @@
       "no": 33,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1370,
+        "mp": 450,
+        "attack": 550,
+        "defence": 420,
+        "agility": 530,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "息吹",
@@ -3499,6 +3763,14 @@
       "no": 34,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1390,
+        "mp": 360,
+        "attack": 540,
+        "defence": 640,
+        "agility": 440,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "火炎",
@@ -3599,6 +3871,14 @@
       "no": 35,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1270,
+        "mp": 460,
+        "attack": 560,
+        "defence": 430,
+        "agility": 530,
+        "wisdom": 750
+      },
       "talents": [
         {
           "name": "邪悪",
@@ -3682,6 +3962,14 @@
       "no": 36,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 480,
+        "attack": 470,
+        "defence": 360,
+        "agility": 600,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "スイート",
@@ -3788,6 +4076,14 @@
       "no": 37,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1330,
+        "mp": 560,
+        "attack": 510,
+        "defence": 580,
+        "agility": 410,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "吹雪",
@@ -3850,6 +4146,14 @@
       "no": 38,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1450,
+        "mp": 480,
+        "attack": 470,
+        "defence": 500,
+        "agility": 270,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "おじゃま虫",
@@ -3948,6 +4252,14 @@
       "no": 39,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1370,
+        "mp": 610,
+        "attack": 360,
+        "defence": 370,
+        "agility": 530,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "HP回復",
@@ -4056,6 +4368,14 @@
       "no": 40,
       "rank": "D",
       "family": "スライム系",
+      "stats": {
+        "hp": 1460,
+        "mp": 460,
+        "attack": 590,
+        "defence": 580,
+        "agility": 250,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "巨漢",
@@ -4160,6 +4480,14 @@
       "no": 41,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1390,
+        "mp": 450,
+        "attack": 510,
+        "defence": 400,
+        "agility": 420,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "アイドル",
@@ -4249,6 +4577,14 @@
       "no": 42,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1300,
+        "mp": 660,
+        "attack": 400,
+        "defence": 410,
+        "agility": 570,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "アクロバット",
@@ -4330,6 +4666,14 @@
       "no": 43,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1290,
+        "mp": 470,
+        "attack": 560,
+        "defence": 450,
+        "agility": 600,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "暗闇",
@@ -4427,6 +4771,14 @@
       "no": 44,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1320,
+        "mp": 500,
+        "attack": 510,
+        "defence": 330,
+        "agility": 610,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "全体回復",
@@ -4509,6 +4861,14 @@
       "no": 45,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1440,
+        "mp": 460,
+        "attack": 630,
+        "defence": 410,
+        "agility": 290,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "ポップスター",
@@ -4602,6 +4962,14 @@
       "no": 46,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 340,
+        "attack": 590,
+        "defence": 530,
+        "agility": 420,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "ライトニング",
@@ -4690,6 +5058,14 @@
       "no": 47,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 277,
+        "mp": 560,
+        "attack": 550,
+        "defence": 1200,
+        "agility": 1000,
+        "wisdom": 720
+      },
       "talents": [
         {
           "name": "ストーム",
@@ -4864,6 +5240,14 @@
       "no": 48,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1460,
+        "mp": 460,
+        "attack": 410,
+        "defence": 270,
+        "agility": 600,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -4943,6 +5327,14 @@
       "no": 49,
       "rank": "C",
       "family": "スライム系",
+      "stats": {
+        "hp": 1350,
+        "mp": 300,
+        "attack": 590,
+        "defence": 620,
+        "agility": 500,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "ジャスティス",
@@ -5026,6 +5418,14 @@
       "no": 50,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1270,
+        "mp": 510,
+        "attack": 530,
+        "defence": 430,
+        "agility": 570,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "カオス",
@@ -5107,6 +5507,14 @@
       "no": 51,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1360,
+        "mp": 650,
+        "attack": 390,
+        "defence": 350,
+        "agility": 440,
+        "wisdom": 800
+      },
       "talents": [
         {
           "name": "アイドル",
@@ -5184,6 +5592,14 @@
       "no": 52,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1300,
+        "mp": 500,
+        "attack": 500,
+        "defence": 740,
+        "agility": 380,
+        "wisdom": 700
+      },
       "talents": [
         {
           "name": "プロテクト",
@@ -5255,6 +5671,14 @@
       "no": 53,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1260,
+        "mp": 580,
+        "attack": 660,
+        "defence": 450,
+        "agility": 460,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "ジェネラル",
@@ -5348,6 +5772,14 @@
       "no": 54,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1410,
+        "mp": 490,
+        "attack": 350,
+        "defence": 570,
+        "agility": 420,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "全体回復",
@@ -5431,6 +5863,14 @@
       "no": 55,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1430,
+        "mp": 370,
+        "attack": 470,
+        "defence": 460,
+        "agility": 400,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "業火",
@@ -5532,6 +5972,14 @@
       "no": 56,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1400,
+        "mp": 380,
+        "attack": 500,
+        "defence": 630,
+        "agility": 430,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "全体回復",
@@ -5606,6 +6054,14 @@
       "no": 57,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 1340,
+        "mp": 430,
+        "attack": 590,
+        "defence": 260,
+        "agility": 610,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "ふうらいぼう",
@@ -5697,6 +6153,14 @@
       "no": 58,
       "rank": "B",
       "family": "スライム系",
+      "stats": {
+        "hp": 297,
+        "mp": 510,
+        "attack": 380,
+        "defence": 1200,
+        "agility": 1200,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "王道",
@@ -5840,6 +6304,14 @@
       "no": 59,
       "rank": "A",
       "family": "スライム系",
+      "stats": {
+        "hp": 280,
+        "mp": 750,
+        "attack": 430,
+        "defence": 1200,
+        "agility": 850,
+        "wisdom": 1030
+      },
       "talents": [
         {
           "name": "守護神",
@@ -5911,6 +6383,14 @@
       "no": 60,
       "rank": "A",
       "family": "スライム系",
+      "stats": {
+        "hp": 1270,
+        "mp": 420,
+        "attack": 630,
+        "defence": 590,
+        "agility": 520,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "てんのめぐみ",
@@ -5990,6 +6470,14 @@
       "no": 61,
       "rank": "A",
       "family": "スライム系",
+      "stats": {
+        "hp": 1380,
+        "mp": 390,
+        "attack": 580,
+        "defence": 470,
+        "agility": 420,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "皇帝",
@@ -6069,6 +6557,14 @@
       "no": 62,
       "rank": "A",
       "family": "スライム系",
+      "stats": {
+        "hp": 1350,
+        "mp": 330,
+        "attack": 480,
+        "defence": 480,
+        "agility": 580,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "ゆうき",
@@ -6140,6 +6636,14 @@
       "no": 63,
       "rank": "S",
       "family": "スライム系",
+      "stats": {
+        "hp": 1270,
+        "mp": 450,
+        "attack": 500,
+        "defence": 630,
+        "agility": 480,
+        "wisdom": 780
+      },
       "talents": [
         {
           "name": "賢者",
@@ -6219,6 +6723,14 @@
       "no": 64,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1410,
+        "mp": 280,
+        "attack": 640,
+        "defence": 530,
+        "agility": 450,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "じこぎせい",
@@ -6306,6 +6818,14 @@
       "no": 65,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1360,
+        "mp": 340,
+        "attack": 570,
+        "defence": 610,
+        "agility": 530,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "グリーンソード",
@@ -6426,6 +6946,14 @@
       "no": 66,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1360,
+        "mp": 310,
+        "attack": 640,
+        "defence": 480,
+        "agility": 560,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -6542,6 +7070,14 @@
       "no": 67,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1430,
+        "mp": 490,
+        "attack": 540,
+        "defence": 350,
+        "agility": 470,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "ドラゴンソウル",
@@ -6629,6 +7165,14 @@
       "no": 68,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1410,
+        "mp": 290,
+        "attack": 590,
+        "defence": 670,
+        "agility": 390,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "爆発の心",
@@ -6779,6 +7323,14 @@
       "no": 69,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1360,
+        "mp": 570,
+        "attack": 630,
+        "defence": 350,
+        "agility": 450,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "光の心",
@@ -6878,6 +7430,14 @@
       "no": 70,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1310,
+        "mp": 430,
+        "attack": 460,
+        "defence": 210,
+        "agility": 800,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "妖精",
@@ -7005,6 +7565,14 @@
       "no": 71,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1360,
+        "mp": 340,
+        "attack": 580,
+        "defence": 350,
+        "agility": 610,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "ドラゴンソウル",
@@ -7092,6 +7660,14 @@
       "no": 72,
       "rank": "G",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1370,
+        "mp": 430,
+        "attack": 610,
+        "defence": 430,
+        "agility": 420,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "毒舌",
@@ -7195,6 +7771,14 @@
       "no": 73,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1370,
+        "mp": 540,
+        "attack": 410,
+        "defence": 800,
+        "agility": 300,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -7321,6 +7905,14 @@
       "no": 74,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 310,
+        "attack": 510,
+        "defence": 318,
+        "agility": 722,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "毒舌",
@@ -7408,6 +8000,14 @@
       "no": 75,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 610,
+        "attack": 580,
+        "defence": 270,
+        "agility": 460,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "アッパー",
@@ -7501,6 +8101,14 @@
       "no": 76,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1330,
+        "mp": 360,
+        "attack": 630,
+        "defence": 470,
+        "agility": 510,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "みずげい",
@@ -7606,6 +8214,14 @@
       "no": 77,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1340,
+        "mp": 320,
+        "attack": 590,
+        "defence": 530,
+        "agility": 530,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "息吹",
@@ -7672,6 +8288,14 @@
       "no": 78,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1430,
+        "mp": 330,
+        "attack": 460,
+        "defence": 350,
+        "agility": 620,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "息吹",
@@ -7759,6 +8383,14 @@
       "no": 79,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1330,
+        "mp": 340,
+        "attack": 620,
+        "defence": 480,
+        "agility": 610,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "あばれんぼう",
@@ -7854,6 +8486,14 @@
       "no": 80,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 280,
+        "attack": 650,
+        "defence": 590,
+        "agility": 430,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "火炎",
@@ -7973,6 +8613,14 @@
       "no": 81,
       "rank": "F",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1330,
+        "mp": 330,
+        "attack": 660,
+        "defence": 490,
+        "agility": 520,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "ドラゴンソウル",
@@ -8035,6 +8683,14 @@
       "no": 82,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1300,
+        "mp": 370,
+        "attack": 580,
+        "defence": 670,
+        "agility": 400,
+        "wisdom": 700
+      },
       "talents": [
         {
           "name": "てっぺき",
@@ -8142,6 +8798,14 @@
       "no": 83,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 290,
+        "attack": 630,
+        "defence": 620,
+        "agility": 450,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "巨漢",
@@ -8266,6 +8930,14 @@
       "no": 84,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 310,
+        "attack": 580,
+        "defence": 460,
+        "agility": 510,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -8345,6 +9017,14 @@
       "no": 85,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 370,
+        "attack": 560,
+        "defence": 690,
+        "agility": 450,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -8430,6 +9110,14 @@
       "no": 86,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1370,
+        "mp": 340,
+        "attack": 690,
+        "defence": 370,
+        "agility": 460,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "あくしゅう",
@@ -8527,6 +9215,14 @@
       "no": 87,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1340,
+        "mp": 280,
+        "attack": 630,
+        "defence": 540,
+        "agility": 510,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "火炎",
@@ -8634,6 +9330,14 @@
       "no": 88,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1400,
+        "mp": 300,
+        "attack": 590,
+        "defence": 590,
+        "agility": 410,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "火炎",
@@ -8751,6 +9455,14 @@
       "no": 89,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1410,
+        "mp": 310,
+        "attack": 570,
+        "defence": 610,
+        "agility": 385,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "ナチュラル",
@@ -8846,6 +9558,14 @@
       "no": 90,
       "rank": "E",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 330,
+        "attack": 570,
+        "defence": 510,
+        "agility": 470,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -9006,6 +9726,14 @@
       "no": 91,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1420,
+        "mp": 330,
+        "attack": 560,
+        "defence": 620,
+        "agility": 420,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "レッドソード",
@@ -9117,6 +9845,14 @@
       "no": 92,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 350,
+        "attack": 650,
+        "defence": 600,
+        "agility": 420,
+        "wisdom": 250
+      },
       "talents": [
         {
           "name": "巨漢",
@@ -9196,6 +9932,14 @@
       "no": 93,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1330,
+        "mp": 290,
+        "attack": 520,
+        "defence": 600,
+        "agility": 490,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "吹雪",
@@ -9267,6 +10011,14 @@
       "no": 94,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1420,
+        "mp": 330,
+        "attack": 600,
+        "defence": 460,
+        "agility": 490,
+        "wisdom": 250
+      },
       "talents": [
         {
           "name": "ごうけつ",
@@ -9356,6 +10108,14 @@
       "no": 95,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 600,
+        "attack": 490,
+        "defence": 400,
+        "agility": 550,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ポップスター",
@@ -9447,6 +10207,14 @@
       "no": 96,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1370,
+        "mp": 310,
+        "attack": 570,
+        "defence": 470,
+        "agility": 530,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "ヒーロー",
@@ -9530,6 +10298,14 @@
       "no": 97,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 320,
+        "attack": 580,
+        "defence": 630,
+        "agility": 550,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "息吹",
@@ -9617,6 +10393,14 @@
       "no": 98,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 370,
+        "attack": 560,
+        "defence": 640,
+        "agility": 450,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "ガーディアン",
@@ -9712,6 +10496,14 @@
       "no": 99,
       "rank": "D",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1380,
+        "mp": 340,
+        "attack": 580,
+        "defence": 480,
+        "agility": 510,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "つむじ風",
@@ -9791,6 +10583,14 @@
       "no": 100,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1360,
+        "mp": 310,
+        "attack": 600,
+        "defence": 430,
+        "agility": 600,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "ワイルド",
@@ -9863,6 +10663,14 @@
       "no": 101,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1280,
+        "mp": 350,
+        "attack": 550,
+        "defence": 660,
+        "agility": 470,
+        "wisdom": 730
+      },
       "talents": [
         {
           "name": "フレア",
@@ -9949,6 +10757,14 @@
       "no": 102,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1410,
+        "mp": 280,
+        "attack": 680,
+        "defence": 280,
+        "agility": 510,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "業火",
@@ -10036,6 +10852,14 @@
       "no": 103,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 310,
+        "attack": 630,
+        "defence": 470,
+        "agility": 580,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "魔氷壁",
@@ -10145,6 +10969,14 @@
       "no": 104,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 340,
+        "attack": 580,
+        "defence": 380,
+        "agility": 550,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "暴風",
@@ -10216,6 +11048,14 @@
       "no": 105,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1400,
+        "mp": 390,
+        "attack": 560,
+        "defence": 660,
+        "agility": 390,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "フレア",
@@ -10290,6 +11130,14 @@
       "no": 106,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 290,
+        "attack": 640,
+        "defence": 540,
+        "agility": 440,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "ボマー",
@@ -10387,6 +11235,14 @@
       "no": 107,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1420,
+        "mp": 320,
+        "attack": 600,
+        "defence": 470,
+        "agility": 440,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "フレア",
@@ -10457,6 +11313,14 @@
       "no": 108,
       "rank": "C",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1400,
+        "mp": 330,
+        "attack": 610,
+        "defence": 640,
+        "agility": 410,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "水兵",
@@ -10557,6 +11421,14 @@
       "no": 109,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1400,
+        "mp": 270,
+        "attack": 610,
+        "defence": 640,
+        "agility": 420,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "クラッシャー",
@@ -10636,6 +11508,14 @@
       "no": 110,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 270,
+        "attack": 620,
+        "defence": 570,
+        "agility": 450,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "呼吸術",
@@ -10707,6 +11587,14 @@
       "no": 111,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1340,
+        "mp": 390,
+        "attack": 580,
+        "defence": 530,
+        "agility": 490,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "カリスマ",
@@ -10786,6 +11674,14 @@
       "no": 112,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1280,
+        "mp": 370,
+        "attack": 630,
+        "defence": 430,
+        "agility": 600,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "カオス",
@@ -10865,6 +11761,14 @@
       "no": 113,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1320,
+        "mp": 300,
+        "attack": 680,
+        "defence": 480,
+        "agility": 550,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "バーニング",
@@ -10946,6 +11850,14 @@
       "no": 114,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1290,
+        "mp": 500,
+        "attack": 570,
+        "defence": 640,
+        "agility": 390,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "インテリ",
@@ -11008,6 +11920,14 @@
       "no": 115,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1410,
+        "mp": 290,
+        "attack": 580,
+        "defence": 470,
+        "agility": 470,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "業火",
@@ -11093,6 +12013,14 @@
       "no": 116,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1420,
+        "mp": 310,
+        "attack": 550,
+        "defence": 400,
+        "agility": 390,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "業火",
@@ -11164,6 +12092,14 @@
       "no": 117,
       "rank": "B",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1370,
+        "mp": 320,
+        "attack": 590,
+        "defence": 690,
+        "agility": 380,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "ガーディアン",
@@ -11249,6 +12185,14 @@
       "no": 118,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1330,
+        "mp": 350,
+        "attack": 590,
+        "defence": 510,
+        "agility": 510,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "息じごく",
@@ -11322,6 +12266,14 @@
       "no": 119,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1400,
+        "mp": 300,
+        "attack": 520,
+        "defence": 590,
+        "agility": 390,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "皇帝",
@@ -11393,6 +12345,14 @@
       "no": 120,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1420,
+        "mp": 290,
+        "attack": 520,
+        "defence": 530,
+        "agility": 500,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "息じごく",
@@ -11472,6 +12432,14 @@
       "no": 121,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1380,
+        "mp": 430,
+        "attack": 550,
+        "defence": 390,
+        "agility": 560,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "神秘",
@@ -11543,6 +12511,14 @@
       "no": 122,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1410,
+        "mp": 350,
+        "attack": 630,
+        "defence": 420,
+        "agility": 390,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "業火",
@@ -11614,6 +12590,14 @@
       "no": 123,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1340,
+        "mp": 330,
+        "attack": 650,
+        "defence": 310,
+        "agility": 580,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "ディザスター",
@@ -11685,6 +12669,14 @@
       "no": 124,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 280,
+        "attack": 560,
+        "defence": 570,
+        "agility": 470,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "息じごく",
@@ -11756,6 +12748,14 @@
       "no": 125,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1430,
+        "mp": 320,
+        "attack": 590,
+        "defence": 610,
+        "agility": 370,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "ゴッドブレス",
@@ -11835,6 +12835,14 @@
       "no": 126,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1390,
+        "mp": 290,
+        "attack": 580,
+        "defence": 690,
+        "agility": 390,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "守護神",
@@ -11908,6 +12916,14 @@
       "no": 127,
       "rank": "A",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1340,
+        "mp": 490,
+        "attack": 500,
+        "defence": 440,
+        "agility": 490,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "皇帝",
@@ -11985,6 +13001,14 @@
       "no": 128,
       "rank": "S",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1360,
+        "mp": 280,
+        "attack": 570,
+        "defence": 470,
+        "agility": 500,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "グレイナル",
@@ -12056,6 +13080,14 @@
       "no": 129,
       "rank": "S",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1250,
+        "mp": 390,
+        "attack": 580,
+        "defence": 490,
+        "agility": 580,
+        "wisdom": 700
+      },
       "talents": [
         {
           "name": "じげんりゅう",
@@ -12127,6 +13159,14 @@
       "no": 130,
       "rank": "S",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1370,
+        "mp": 250,
+        "attack": 590,
+        "defence": 430,
+        "agility": 500,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "息じごく",
@@ -12198,6 +13238,14 @@
       "no": 131,
       "rank": "S",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1350,
+        "mp": 280,
+        "attack": 590,
+        "defence": 510,
+        "agility": 460,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "闇竜バルボロス",
@@ -12279,6 +13327,14 @@
       "no": 132,
       "rank": "S",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1290,
+        "mp": 340,
+        "attack": 610,
+        "defence": 650,
+        "agility": 460,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "竜王",
@@ -12358,6 +13414,14 @@
       "no": 133,
       "rank": "X",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1330,
+        "mp": 280,
+        "attack": 620,
+        "defence": 560,
+        "agility": 460,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "しんりゅう",
@@ -12431,6 +13495,14 @@
       "no": 134,
       "rank": "X",
       "family": "ドラゴン系",
+      "stats": {
+        "hp": 1340,
+        "mp": 280,
+        "attack": 630,
+        "defence": 650,
+        "agility": 480,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "竜神王",
@@ -12504,6 +13576,14 @@
       "no": 135,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1300,
+        "mp": 410,
+        "attack": 560,
+        "defence": 590,
+        "agility": 550,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "つむじ風",
@@ -12632,6 +13712,14 @@
       "no": 136,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1270,
+        "mp": 320,
+        "attack": 540,
+        "defence": 440,
+        "agility": 690,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "巨漢",
@@ -12745,6 +13833,14 @@
       "no": 137,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1390,
+        "mp": 620,
+        "attack": 470,
+        "defence": 460,
+        "agility": 330,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "ナチュラル",
@@ -12832,6 +13928,14 @@
       "no": 138,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 400,
+        "attack": 590,
+        "defence": 550,
+        "agility": 500,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "むしのしらせ",
@@ -12936,6 +14040,14 @@
       "no": 139,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1360,
+        "mp": 440,
+        "attack": 560,
+        "defence": 480,
+        "agility": 480,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "サポーター",
@@ -13054,6 +14166,14 @@
       "no": 140,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 460,
+        "attack": 570,
+        "defence": 560,
+        "agility": 490,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "グリーンソード",
@@ -13141,6 +14261,14 @@
       "no": 141,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 530,
+        "attack": 580,
+        "defence": 360,
+        "agility": 410,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "ヌメヌメ",
@@ -13259,6 +14387,14 @@
       "no": 142,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1350,
+        "mp": 610,
+        "attack": 490,
+        "defence": 440,
+        "agility": 460,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "ダンサー",
@@ -13371,6 +14507,14 @@
       "no": 143,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 550,
+        "attack": 590,
+        "defence": 340,
+        "agility": 550,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "つむじ風",
@@ -13458,6 +14602,14 @@
       "no": 144,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 520,
+        "attack": 520,
+        "defence": 460,
+        "agility": 400,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "みずげい",
@@ -13584,6 +14736,14 @@
       "no": 145,
       "rank": "G",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 340,
+        "attack": 560,
+        "defence": 440,
+        "agility": 505,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "水の心",
@@ -13710,6 +14870,14 @@
       "no": 146,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 390,
+        "attack": 620,
+        "defence": 527,
+        "agility": 493,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "あばれんぼう",
@@ -13813,6 +14981,14 @@
       "no": 147,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 420,
+        "attack": 600,
+        "defence": 407,
+        "agility": 433,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -13884,6 +15060,14 @@
       "no": 148,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 570,
+        "attack": 590,
+        "defence": 480,
+        "agility": 500,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "風の心",
@@ -13996,6 +15180,14 @@
       "no": 149,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1270,
+        "mp": 430,
+        "attack": 590,
+        "defence": 560,
+        "agility": 580,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "光の心",
@@ -14100,6 +15292,14 @@
       "no": 150,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1280,
+        "mp": 550,
+        "attack": 610,
+        "defence": 380,
+        "agility": 610,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "サポーター",
@@ -14228,6 +15428,14 @@
       "no": 151,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 310,
+        "attack": 630,
+        "defence": 490,
+        "agility": 460,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "グリーンソード",
@@ -14319,6 +15527,14 @@
       "no": 152,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1330,
+        "mp": 300,
+        "attack": 550,
+        "defence": 550,
+        "agility": 580,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "エンターテイナー",
@@ -14439,6 +15655,14 @@
       "no": 153,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1410,
+        "mp": 440,
+        "attack": 590,
+        "defence": 530,
+        "agility": 350,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "じこぎせい",
@@ -14526,6 +15750,14 @@
       "no": 154,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1390,
+        "mp": 350,
+        "attack": 580,
+        "defence": 720,
+        "agility": 410,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "むしのしらせ",
@@ -14597,6 +15829,14 @@
       "no": 155,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1340,
+        "mp": 480,
+        "attack": 560,
+        "defence": 590,
+        "agility": 400,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -14682,6 +15922,14 @@
       "no": 156,
       "rank": "F",
       "family": "自然系",
+      "stats": {
+        "hp": 1350,
+        "mp": 660,
+        "attack": 520,
+        "defence": 330,
+        "agility": 560,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "レッドソード",
@@ -14762,6 +16010,14 @@
       "no": 157,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1410,
+        "mp": 280,
+        "attack": 480,
+        "defence": 600,
+        "agility": 460,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "水の心",
@@ -14875,6 +16131,14 @@
       "no": 158,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 430,
+        "attack": 570,
+        "defence": 500,
+        "agility": 500,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "異常回復",
@@ -14984,6 +16248,14 @@
       "no": 159,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1360,
+        "mp": 350,
+        "attack": 510,
+        "defence": 350,
+        "agility": 680,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "むしのしらせ",
@@ -15091,6 +16363,14 @@
       "no": 160,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1330,
+        "mp": 300,
+        "attack": 570,
+        "defence": 720,
+        "agility": 520,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -15215,6 +16495,14 @@
       "no": 161,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 440,
+        "attack": 520,
+        "defence": 660,
+        "agility": 320,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -15310,6 +16598,14 @@
       "no": 162,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 340,
+        "attack": 500,
+        "defence": 530,
+        "agility": 550,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "しんそく",
@@ -15381,6 +16677,14 @@
       "no": 163,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1330,
+        "mp": 370,
+        "attack": 630,
+        "defence": 460,
+        "agility": 540,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "ジャマー",
@@ -15466,6 +16770,14 @@
       "no": 164,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 320,
+        "attack": 610,
+        "defence": 440,
+        "agility": 500,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "水の心",
@@ -15532,6 +16844,14 @@
       "no": 165,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1410,
+        "mp": 400,
+        "attack": 530,
+        "defence": 330,
+        "agility": 460,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "グリーンソード",
@@ -15603,6 +16923,14 @@
       "no": 166,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 430,
+        "attack": 530,
+        "defence": 500,
+        "agility": 600,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "異常回復",
@@ -15656,6 +16984,14 @@
       "no": 167,
       "rank": "E",
       "family": "自然系",
+      "stats": {
+        "hp": 1360,
+        "mp": 420,
+        "attack": 560,
+        "defence": 400,
+        "agility": 540,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "トリッキー",
@@ -15740,6 +17076,14 @@
       "no": 168,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1190,
+        "mp": 450,
+        "attack": 560,
+        "defence": 510,
+        "agility": 730,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "トリッキー",
@@ -15823,6 +17167,14 @@
       "no": 169,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 320,
+        "attack": 530,
+        "defence": 590,
+        "agility": 505,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "水の安らぎ",
@@ -15906,6 +17258,14 @@
       "no": 170,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 410,
+        "attack": 540,
+        "defence": 490,
+        "agility": 510,
+        "wisdom": 620
+      },
       "talents": [
         {
           "name": "スタン",
@@ -15968,6 +17328,14 @@
       "no": 171,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1330,
+        "mp": 460,
+        "attack": 550,
+        "defence": 530,
+        "agility": 500,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "ボマー",
@@ -16021,6 +17389,14 @@
       "no": 172,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1390,
+        "mp": 390,
+        "attack": 530,
+        "defence": 450,
+        "agility": 460,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "電撃の心",
@@ -16124,6 +17500,14 @@
       "no": 173,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 410,
+        "attack": 470,
+        "defence": 410,
+        "agility": 540,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "邪悪",
@@ -16217,6 +17601,14 @@
       "no": 174,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 560,
+        "attack": 520,
+        "defence": 270,
+        "agility": 580,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "アイスバーン",
@@ -16297,6 +17689,14 @@
       "no": 175,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 420,
+        "attack": 590,
+        "defence": 640,
+        "agility": 390,
+        "wisdom": 280
+      },
       "talents": [
         {
           "name": "ガーディアン",
@@ -16376,6 +17776,14 @@
       "no": 176,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1410,
+        "mp": 280,
+        "attack": 540,
+        "defence": 530,
+        "agility": 480,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "巨漢",
@@ -16473,6 +17881,14 @@
       "no": 177,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 340,
+        "attack": 590,
+        "defence": 430,
+        "agility": 470,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "おじゃま虫",
@@ -16574,6 +17990,14 @@
       "no": 178,
       "rank": "D",
       "family": "自然系",
+      "stats": {
+        "hp": 1410,
+        "mp": 400,
+        "attack": 550,
+        "defence": 470,
+        "agility": 480,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "全体回復",
@@ -16657,6 +18081,14 @@
       "no": 179,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1280,
+        "mp": 430,
+        "attack": 590,
+        "defence": 550,
+        "agility": 600,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "暴風",
@@ -16744,6 +18176,14 @@
       "no": 180,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 330,
+        "attack": 530,
+        "defence": 550,
+        "agility": 460,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "フレア",
@@ -16830,6 +18270,14 @@
       "no": 181,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 570,
+        "attack": 470,
+        "defence": 360,
+        "agility": 540,
+        "wisdom": 710
+      },
       "talents": [
         {
           "name": "アイドル",
@@ -16956,6 +18404,14 @@
       "no": 182,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1350,
+        "mp": 300,
+        "attack": 620,
+        "defence": 670,
+        "agility": 450,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "プロテクト",
@@ -17067,6 +18523,14 @@
       "no": 183,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 340,
+        "attack": 540,
+        "defence": 790,
+        "agility": 430,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "プロテクト",
@@ -17163,6 +18627,14 @@
       "no": 184,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1420,
+        "mp": 300,
+        "attack": 610,
+        "defence": 460,
+        "agility": 490,
+        "wisdom": 260
+      },
       "talents": [
         {
           "name": "水兵",
@@ -17234,6 +18706,14 @@
       "no": 185,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1360,
+        "mp": 360,
+        "attack": 580,
+        "defence": 450,
+        "agility": 510,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "呼吸術",
@@ -17322,6 +18802,14 @@
       "no": 186,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 430,
+        "attack": 580,
+        "defence": 410,
+        "agility": 560,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "カーニバル",
@@ -17401,6 +18889,14 @@
       "no": 187,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1340,
+        "mp": 480,
+        "attack": 500,
+        "defence": 400,
+        "agility": 470,
+        "wisdom": 720
+      },
       "talents": [
         {
           "name": "インテリ",
@@ -17469,6 +18965,14 @@
       "no": 188,
       "rank": "C",
       "family": "自然系",
+      "stats": {
+        "hp": 1260,
+        "mp": 350,
+        "attack": 540,
+        "defence": 500,
+        "agility": 640,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "アクロバット",
@@ -17551,6 +19055,14 @@
       "no": 189,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 320,
+        "attack": 470,
+        "defence": 300,
+        "agility": 540,
+        "wisdom": 780
+      },
       "talents": [
         {
           "name": "死の誘い",
@@ -17630,6 +19142,14 @@
       "no": 190,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 430,
+        "attack": 530,
+        "defence": 680,
+        "agility": 380,
+        "wisdom": 370
+      },
       "talents": [
         {
           "name": "ガーディアン",
@@ -17692,6 +19212,14 @@
       "no": 191,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 450,
+        "attack": 570,
+        "defence": 430,
+        "agility": 560,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "アクロバット",
@@ -17794,6 +19322,14 @@
       "no": 192,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 420,
+        "attack": 530,
+        "defence": 380,
+        "agility": 560,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "水の安らぎ",
@@ -17868,6 +19404,14 @@
       "no": 193,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1310,
+        "mp": 340,
+        "attack": 560,
+        "defence": 490,
+        "agility": 610,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "フレア",
@@ -17980,6 +19524,14 @@
       "no": 194,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1330,
+        "mp": 380,
+        "attack": 630,
+        "defence": 520,
+        "agility": 490,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "バーニング",
@@ -18082,6 +19634,14 @@
       "no": 195,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1390,
+        "mp": 390,
+        "attack": 560,
+        "defence": 440,
+        "agility": 480,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "カーニバル",
@@ -18144,6 +19704,14 @@
       "no": 196,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1420,
+        "mp": 420,
+        "attack": 480,
+        "defence": 560,
+        "agility": 350,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "インテリ",
@@ -18242,6 +19810,14 @@
       "no": 197,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 400,
+        "attack": 570,
+        "defence": 440,
+        "agility": 550,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "アイスバーン",
@@ -18340,6 +19916,14 @@
       "no": 198,
       "rank": "B",
       "family": "自然系",
+      "stats": {
+        "hp": 1340,
+        "mp": 400,
+        "attack": 600,
+        "defence": 430,
+        "agility": 540,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "暴風",
@@ -18447,6 +20031,14 @@
       "no": 199,
       "rank": "A",
       "family": "自然系",
+      "stats": {
+        "hp": 1450,
+        "mp": 320,
+        "attack": 660,
+        "defence": 260,
+        "agility": 420,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "ディザスター",
@@ -18518,6 +20110,14 @@
       "no": 200,
       "rank": "A",
       "family": "自然系",
+      "stats": {
+        "hp": 1320,
+        "mp": 450,
+        "attack": 470,
+        "defence": 370,
+        "agility": 630,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "神秘",
@@ -18607,6 +20207,14 @@
       "no": 201,
       "rank": "A",
       "family": "自然系",
+      "stats": {
+        "hp": 1290,
+        "mp": 300,
+        "attack": 610,
+        "defence": 680,
+        "agility": 540,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "ガーディアン",
@@ -18686,6 +20294,14 @@
       "no": 202,
       "rank": "A",
       "family": "自然系",
+      "stats": {
+        "hp": 1400,
+        "mp": 420,
+        "attack": 540,
+        "defence": 610,
+        "agility": 250,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -18757,6 +20373,14 @@
       "no": 203,
       "rank": "S",
       "family": "自然系",
+      "stats": {
+        "hp": 1370,
+        "mp": 500,
+        "attack": 590,
+        "defence": 410,
+        "agility": 490,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "ゴッドブレス",
@@ -18838,6 +20462,14 @@
       "no": 204,
       "rank": "S",
       "family": "自然系",
+      "stats": {
+        "hp": 1350,
+        "mp": 590,
+        "attack": 450,
+        "defence": 610,
+        "agility": 360,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "ゴッドブレス",
@@ -18917,6 +20549,14 @@
       "no": 205,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1380,
+        "mp": 450,
+        "attack": 610,
+        "defence": 380,
+        "agility": 440,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "ちからもち",
@@ -19021,6 +20661,14 @@
       "no": 206,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1330,
+        "mp": 300,
+        "attack": 630,
+        "defence": 580,
+        "agility": 520,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "いたずら",
@@ -19172,6 +20820,14 @@
       "no": 207,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1370,
+        "mp": 350,
+        "attack": 570,
+        "defence": 430,
+        "agility": 540,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "けもの道",
@@ -19317,6 +20973,14 @@
       "no": 208,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 310,
+        "attack": 660,
+        "defence": 520,
+        "agility": 440,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "ちからもち",
@@ -19404,6 +21068,14 @@
       "no": 209,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 350,
+        "attack": 570,
+        "defence": 490,
+        "agility": 550,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "地の心",
@@ -19491,6 +21163,14 @@
       "no": 210,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 320,
+        "attack": 550,
+        "defence": 550,
+        "agility": 460,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "ダンサー",
@@ -19570,6 +21250,14 @@
       "no": 211,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 480,
+        "attack": 560,
+        "defence": 510,
+        "agility": 450,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "ダウナー",
@@ -19679,6 +21367,14 @@
       "no": 212,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 360,
+        "attack": 470,
+        "defence": 630,
+        "agility": 485,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "息吹",
@@ -19781,6 +21477,14 @@
       "no": 213,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1420,
+        "mp": 570,
+        "attack": 470,
+        "defence": 360,
+        "agility": 370,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "グリーンソード",
@@ -19907,6 +21611,14 @@
       "no": 214,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 290,
+        "attack": 590,
+        "defence": 540,
+        "agility": 530,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "けもの道",
@@ -20033,6 +21745,14 @@
       "no": 215,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 360,
+        "attack": 590,
+        "defence": 370,
+        "agility": 570,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "つむじ風",
@@ -20149,6 +21869,14 @@
       "no": 216,
       "rank": "G",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 380,
+        "attack": 610,
+        "defence": 600,
+        "agility": 490,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "けもの道",
@@ -20244,6 +21972,14 @@
       "no": 217,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 300,
+        "attack": 630,
+        "defence": 529,
+        "agility": 511,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "吹雪",
@@ -20341,6 +22077,14 @@
       "no": 218,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 360,
+        "attack": 600,
+        "defence": 477,
+        "agility": 493,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "しんそく",
@@ -20436,6 +22180,14 @@
       "no": 219,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1300,
+        "mp": 370,
+        "attack": 450,
+        "defence": 430,
+        "agility": 700,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "アンチスペル",
@@ -20571,6 +22323,14 @@
       "no": 220,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 450,
+        "attack": 630,
+        "defence": 360,
+        "agility": 450,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "スリラー",
@@ -20670,6 +22430,14 @@
       "no": 221,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 320,
+        "attack": 590,
+        "defence": 620,
+        "agility": 460,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "イエローソード",
@@ -20749,6 +22517,14 @@
       "no": 222,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1330,
+        "mp": 350,
+        "attack": 610,
+        "defence": 430,
+        "agility": 570,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "ぬすっと",
@@ -20828,6 +22604,14 @@
       "no": 223,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 430,
+        "attack": 590,
+        "defence": 500,
+        "agility": 430,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "アンチブレス",
@@ -20899,6 +22683,14 @@
       "no": 224,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1310,
+        "mp": 420,
+        "attack": 630,
+        "defence": 430,
+        "agility": 560,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "悪魔のささやき",
@@ -20986,6 +22778,14 @@
       "no": 225,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 310,
+        "attack": 580,
+        "defence": 590,
+        "agility": 510,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ダンサー",
@@ -21065,6 +22865,14 @@
       "no": 226,
       "rank": "F",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 460,
+        "attack": 460,
+        "defence": 400,
+        "agility": 480,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "睡魔",
@@ -21144,6 +22952,14 @@
       "no": 227,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1310,
+        "mp": 300,
+        "attack": 600,
+        "defence": 480,
+        "agility": 640,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "ジャマー",
@@ -21227,6 +23043,14 @@
       "no": 228,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 350,
+        "attack": 600,
+        "defence": 450,
+        "agility": 560,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "いたずら",
@@ -21298,6 +23122,14 @@
       "no": 229,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 310,
+        "attack": 630,
+        "defence": 440,
+        "agility": 590,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "武術",
@@ -21383,6 +23215,14 @@
       "no": 230,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 370,
+        "attack": 610,
+        "defence": 320,
+        "agility": 550,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "あばれんぼう",
@@ -21507,6 +23347,14 @@
       "no": 231,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 330,
+        "attack": 610,
+        "defence": 390,
+        "agility": 610,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "ぬすっと",
@@ -21600,6 +23448,14 @@
       "no": 232,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1380,
+        "mp": 340,
+        "attack": 550,
+        "defence": 520,
+        "agility": 430,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "いたずら",
@@ -21716,6 +23572,14 @@
       "no": 233,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 560,
+        "attack": 440,
+        "defence": 460,
+        "agility": 435,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "息吹",
@@ -21786,6 +23650,14 @@
       "no": 234,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1410,
+        "mp": 490,
+        "attack": 350,
+        "defence": 390,
+        "agility": 520,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "火の心",
@@ -21877,6 +23749,14 @@
       "no": 235,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1380,
+        "mp": 490,
+        "attack": 620,
+        "defence": 540,
+        "agility": 300,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "氷結の心",
@@ -21964,6 +23844,14 @@
       "no": 236,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 320,
+        "attack": 650,
+        "defence": 550,
+        "agility": 490,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "バンデッド",
@@ -22085,6 +23973,14 @@
       "no": 237,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1320,
+        "mp": 310,
+        "attack": 580,
+        "defence": 530,
+        "agility": 530,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "氷結の心",
@@ -22195,6 +24091,14 @@
       "no": 238,
       "rank": "E",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 380,
+        "attack": 510,
+        "defence": 540,
+        "agility": 545,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "キューピット",
@@ -22261,6 +24165,14 @@
       "no": 239,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 290,
+        "attack": 640,
+        "defence": 380,
+        "agility": 550,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "あばれんぼう",
@@ -22346,6 +24258,14 @@
       "no": 240,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 290,
+        "attack": 550,
+        "defence": 510,
+        "agility": 570,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ワイルド",
@@ -22435,6 +24355,14 @@
       "no": 241,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 420,
+        "attack": 580,
+        "defence": 510,
+        "agility": 520,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "しんそく",
@@ -22514,6 +24442,14 @@
       "no": 242,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 300,
+        "attack": 640,
+        "defence": 440,
+        "agility": 580,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "マッドキラー",
@@ -22603,6 +24539,14 @@
       "no": 243,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 340,
+        "attack": 580,
+        "defence": 510,
+        "agility": 440,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "武術",
@@ -22684,6 +24628,14 @@
       "no": 244,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 330,
+        "attack": 640,
+        "defence": 510,
+        "agility": 490,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "ウォリアー",
@@ -22763,6 +24715,14 @@
       "no": 245,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1410,
+        "mp": 350,
+        "attack": 640,
+        "defence": 520,
+        "agility": 380,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "火炎",
@@ -22857,6 +24817,14 @@
       "no": 246,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 470,
+        "attack": 630,
+        "defence": 610,
+        "agility": 410,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "トロピカル",
@@ -22936,6 +24904,14 @@
       "no": 247,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1380,
+        "mp": 300,
+        "attack": 580,
+        "defence": 430,
+        "agility": 480,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "ワイルド",
@@ -23072,6 +25048,14 @@
       "no": 248,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 580,
+        "attack": 330,
+        "defence": 370,
+        "agility": 520,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "神の使い",
@@ -23165,6 +25149,14 @@
       "no": 249,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 430,
+        "attack": 580,
+        "defence": 510,
+        "agility": 430,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "おじゃま虫",
@@ -23242,6 +25234,14 @@
       "no": 250,
       "rank": "D",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1320,
+        "mp": 450,
+        "attack": 590,
+        "defence": 630,
+        "agility": 500,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "剣闘士",
@@ -23327,6 +25327,14 @@
       "no": 251,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 340,
+        "attack": 570,
+        "defence": 530,
+        "agility": 440,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "ごうけつ",
@@ -23401,6 +25409,14 @@
       "no": 252,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 330,
+        "attack": 610,
+        "defence": 530,
+        "agility": 480,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "ごうけつ",
@@ -23478,6 +25494,14 @@
       "no": 253,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1400,
+        "mp": 330,
+        "attack": 580,
+        "defence": 410,
+        "agility": 435,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "カリスマ",
@@ -23577,6 +25601,14 @@
       "no": 254,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 300,
+        "attack": 590,
+        "defence": 500,
+        "agility": 580,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "マッドキラー",
@@ -23677,6 +25709,14 @@
       "no": 255,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1380,
+        "mp": 300,
+        "attack": 670,
+        "defence": 530,
+        "agility": 460,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "スレイヤー",
@@ -23756,6 +25796,14 @@
       "no": 256,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1460,
+        "mp": 310,
+        "attack": 520,
+        "defence": 660,
+        "agility": 380,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "カーニバル",
@@ -23841,6 +25889,14 @@
       "no": 257,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1300,
+        "mp": 330,
+        "attack": 710,
+        "defence": 360,
+        "agility": 570,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "一文字",
@@ -23939,6 +25995,14 @@
       "no": 258,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 340,
+        "attack": 620,
+        "defence": 560,
+        "agility": 460,
+        "wisdom": 280
+      },
       "talents": [
         {
           "name": "クラッシャー",
@@ -24022,6 +26086,14 @@
       "no": 259,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1410,
+        "mp": 300,
+        "attack": 620,
+        "defence": 540,
+        "agility": 440,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "ごうけつ",
@@ -24109,6 +26181,14 @@
       "no": 260,
       "rank": "C",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 300,
+        "attack": 420,
+        "defence": 590,
+        "agility": 500,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "おじゃま虫",
@@ -24200,6 +26280,14 @@
       "no": 261,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1320,
+        "mp": 340,
+        "attack": 620,
+        "defence": 460,
+        "agility": 540,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "暴風",
@@ -24274,6 +26362,14 @@
       "no": 262,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 310,
+        "attack": 670,
+        "defence": 390,
+        "agility": 580,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "暗闇",
@@ -24375,6 +26471,14 @@
       "no": 263,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1290,
+        "mp": 520,
+        "attack": 500,
+        "defence": 510,
+        "agility": 510,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "ソーサラー",
@@ -24474,6 +26578,14 @@
       "no": 264,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1290,
+        "mp": 340,
+        "attack": 640,
+        "defence": 460,
+        "agility": 580,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "クラッシャー",
@@ -24559,6 +26671,14 @@
       "no": 265,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1310,
+        "mp": 370,
+        "attack": 650,
+        "defence": 490,
+        "agility": 540,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ワイルド",
@@ -24612,6 +26732,14 @@
       "no": 266,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 460,
+        "attack": 590,
+        "defence": 610,
+        "agility": 440,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "カーニバル",
@@ -24671,6 +26799,14 @@
       "no": 267,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1400,
+        "mp": 290,
+        "attack": 570,
+        "defence": 640,
+        "agility": 480,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "マッスル",
@@ -24742,6 +26878,14 @@
       "no": 268,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1330,
+        "mp": 300,
+        "attack": 590,
+        "defence": 490,
+        "agility": 610,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "アクロバット",
@@ -24827,6 +26971,14 @@
       "no": 269,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1390,
+        "mp": 300,
+        "attack": 560,
+        "defence": 500,
+        "agility": 500,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ワイルド",
@@ -24922,6 +27074,14 @@
       "no": 270,
       "rank": "B",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1370,
+        "mp": 350,
+        "attack": 560,
+        "defence": 510,
+        "agility": 470,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "ライトニング",
@@ -25018,6 +27178,14 @@
       "no": 271,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1240,
+        "mp": 420,
+        "attack": 650,
+        "defence": 430,
+        "agility": 660,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "武芸百般",
@@ -25089,6 +27257,14 @@
       "no": 272,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 320,
+        "attack": 520,
+        "defence": 560,
+        "agility": 450,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "ターミネーター",
@@ -25157,6 +27333,14 @@
       "no": 273,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1300,
+        "mp": 400,
+        "attack": 640,
+        "defence": 530,
+        "agility": 570,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "ダークホース",
@@ -25228,6 +27412,14 @@
       "no": 274,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1340,
+        "mp": 440,
+        "attack": 560,
+        "defence": 350,
+        "agility": 620,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "ふうらいぼう",
@@ -25311,6 +27503,14 @@
       "no": 275,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1360,
+        "mp": 280,
+        "attack": 610,
+        "defence": 640,
+        "agility": 460,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "マッスル",
@@ -25373,6 +27573,14 @@
       "no": 276,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1350,
+        "mp": 320,
+        "attack": 740,
+        "defence": 330,
+        "agility": 500,
+        "wisdom": 370
+      },
       "talents": [
         {
           "name": "ターミネーター",
@@ -25446,6 +27654,14 @@
       "no": 277,
       "rank": "A",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1310,
+        "mp": 440,
+        "attack": 590,
+        "defence": 530,
+        "agility": 580,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "息じごく",
@@ -25517,6 +27733,14 @@
       "no": 278,
       "rank": "S",
       "family": "魔獣系",
+      "stats": {
+        "hp": 1420,
+        "mp": 410,
+        "attack": 520,
+        "defence": 570,
+        "agility": 380,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "神舞",
@@ -25598,6 +27822,14 @@
       "no": 279,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 360,
+        "attack": 570,
+        "defence": 520,
+        "agility": 510,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "いしあたま",
@@ -25758,6 +27990,14 @@
       "no": 280,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1340,
+        "mp": 430,
+        "attack": 570,
+        "defence": 350,
+        "agility": 510,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "風の心",
@@ -25872,6 +28112,14 @@
       "no": 281,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1320,
+        "mp": 420,
+        "attack": 580,
+        "defence": 390,
+        "agility": 540,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "トリッキー",
@@ -25967,6 +28215,14 @@
       "no": 282,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1340,
+        "mp": 480,
+        "attack": 590,
+        "defence": 570,
+        "agility": 490,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "光の心",
@@ -26054,6 +28310,14 @@
       "no": 283,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1390,
+        "mp": 290,
+        "attack": 580,
+        "defence": 500,
+        "agility": 490,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "グリーンソード",
@@ -26158,6 +28422,14 @@
       "no": 284,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1390,
+        "mp": 540,
+        "attack": 440,
+        "defence": 540,
+        "agility": 430,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "地の心",
@@ -26281,6 +28553,14 @@
       "no": 285,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 460,
+        "attack": 610,
+        "defence": 520,
+        "agility": 480,
+        "wisdom": 260
+      },
       "talents": [
         {
           "name": "ダンサー",
@@ -26360,6 +28640,14 @@
       "no": 286,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 480,
+        "attack": 500,
+        "defence": 400,
+        "agility": 480,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "イエローソード",
@@ -26482,6 +28770,14 @@
       "no": 287,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1390,
+        "mp": 490,
+        "attack": 470,
+        "defence": 730,
+        "agility": 410,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "風の心",
@@ -26614,6 +28910,14 @@
       "no": 288,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1360,
+        "mp": 460,
+        "attack": 520,
+        "defence": 590,
+        "agility": 430,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "火の心",
@@ -26751,6 +29055,14 @@
       "no": 289,
       "rank": "G",
       "family": "物質系",
+      "stats": {
+        "hp": 1340,
+        "mp": 500,
+        "attack": 460,
+        "defence": 470,
+        "agility": 530,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "ダウナー",
@@ -26846,6 +29158,14 @@
       "no": 290,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 400,
+        "attack": 570,
+        "defence": 441,
+        "agility": 489,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "あばれんぼう",
@@ -26956,6 +29276,14 @@
       "no": 291,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1410,
+        "mp": 260,
+        "attack": 630,
+        "defence": 380,
+        "agility": 470,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "スリラー",
@@ -27035,6 +29363,14 @@
       "no": 292,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1410,
+        "mp": 310,
+        "attack": 550,
+        "defence": 630,
+        "agility": 440,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "いしあたま",
@@ -27122,6 +29458,14 @@
       "no": 293,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1340,
+        "mp": 370,
+        "attack": 600,
+        "defence": 470,
+        "agility": 510,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "イエローソード",
@@ -27210,6 +29554,14 @@
       "no": 294,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1380,
+        "mp": 460,
+        "attack": 600,
+        "defence": 450,
+        "agility": 410,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "アッパー",
@@ -27337,6 +29689,14 @@
       "no": 295,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1310,
+        "mp": 470,
+        "attack": 580,
+        "defence": 430,
+        "agility": 630,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "アサシン",
@@ -27415,6 +29775,14 @@
       "no": 296,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 530,
+        "attack": 600,
+        "defence": 530,
+        "agility": 310,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "いしあたま",
@@ -27502,6 +29870,14 @@
       "no": 297,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1310,
+        "mp": 360,
+        "attack": 600,
+        "defence": 510,
+        "agility": 570,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "剣術",
@@ -27598,6 +29974,14 @@
       "no": 298,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 280,
+        "attack": 630,
+        "defence": 590,
+        "agility": 450,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "スリラー",
@@ -27866,6 +30250,14 @@
       "no": 299,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1320,
+        "mp": 500,
+        "attack": 500,
+        "defence": 530,
+        "agility": 490,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "ジャマー",
@@ -28003,6 +30395,14 @@
       "no": 300,
       "rank": "F",
       "family": "物質系",
+      "stats": {
+        "hp": 1330,
+        "mp": 300,
+        "attack": 680,
+        "defence": 540,
+        "agility": 510,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "剣術",
@@ -28090,6 +30490,14 @@
       "no": 301,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1420,
+        "mp": 340,
+        "attack": 530,
+        "defence": 410,
+        "agility": 440,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "アサシン",
@@ -28195,6 +30603,14 @@
       "no": 302,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1380,
+        "mp": 360,
+        "attack": 540,
+        "defence": 560,
+        "agility": 450,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "火の心",
@@ -28266,6 +30682,14 @@
       "no": 303,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1290,
+        "mp": 490,
+        "attack": 470,
+        "defence": 620,
+        "agility": 530,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "ダウナー",
@@ -28361,6 +30785,14 @@
       "no": 304,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1380,
+        "mp": 320,
+        "attack": 530,
+        "defence": 660,
+        "agility": 520,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "つむじ風",
@@ -28475,6 +30907,14 @@
       "no": 305,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1360,
+        "mp": 360,
+        "attack": 560,
+        "defence": 480,
+        "agility": 460,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "カース",
@@ -28567,6 +31007,14 @@
       "no": 306,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1320,
+        "mp": 430,
+        "attack": 520,
+        "defence": 630,
+        "agility": 450,
+        "wisdom": 620
+      },
       "talents": [
         {
           "name": "光の心",
@@ -28629,6 +31077,14 @@
       "no": 307,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 530,
+        "attack": 530,
+        "defence": 350,
+        "agility": 450,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "かがくしゃ",
@@ -28711,6 +31167,14 @@
       "no": 308,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1330,
+        "mp": 380,
+        "attack": 610,
+        "defence": 720,
+        "agility": 450,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "てっぺき",
@@ -28793,6 +31257,14 @@
       "no": 309,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1360,
+        "mp": 290,
+        "attack": 610,
+        "defence": 690,
+        "agility": 420,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "剣術",
@@ -28884,6 +31356,14 @@
       "no": 310,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 280,
+        "attack": 620,
+        "defence": 780,
+        "agility": 320,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "じこぎせい",
@@ -29022,6 +31502,14 @@
       "no": 311,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1310,
+        "mp": 420,
+        "attack": 520,
+        "defence": 430,
+        "agility": 570,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "火の心",
@@ -29136,6 +31624,14 @@
       "no": 312,
       "rank": "E",
       "family": "物質系",
+      "stats": {
+        "hp": 1330,
+        "mp": 420,
+        "attack": 490,
+        "defence": 410,
+        "agility": 540,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "氷結の心",
@@ -29267,6 +31763,14 @@
       "no": 313,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1240,
+        "mp": 350,
+        "attack": 690,
+        "defence": 660,
+        "agility": 540,
+        "wisdom": 470
+      },
       "talents": [
         {
           "name": "剣闘士",
@@ -29378,6 +31882,14 @@
       "no": 314,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 430,
+        "attack": 570,
+        "defence": 550,
+        "agility": 370,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "ワイルド",
@@ -29486,6 +31998,14 @@
       "no": 315,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1380,
+        "mp": 380,
+        "attack": 630,
+        "defence": 590,
+        "agility": 380,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "ガーディアン",
@@ -29575,6 +32095,14 @@
       "no": 316,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 320,
+        "attack": 590,
+        "defence": 520,
+        "agility": 470,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "スタン",
@@ -29662,6 +32190,14 @@
       "no": 317,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1400,
+        "mp": 330,
+        "attack": 550,
+        "defence": 680,
+        "agility": 390,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "いしあたま",
@@ -29778,6 +32314,14 @@
       "no": 318,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1290,
+        "mp": 450,
+        "attack": 530,
+        "defence": 410,
+        "agility": 590,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "魔氷壁",
@@ -29896,6 +32440,14 @@
       "no": 319,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1410,
+        "mp": 540,
+        "attack": 420,
+        "defence": 530,
+        "agility": 410,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "スイート",
@@ -29984,6 +32536,14 @@
       "no": 320,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1360,
+        "mp": 370,
+        "attack": 570,
+        "defence": 520,
+        "agility": 440,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "吹雪",
@@ -30088,6 +32648,14 @@
       "no": 321,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1330,
+        "mp": 450,
+        "attack": 590,
+        "defence": 420,
+        "agility": 510,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "エンターテイナー",
@@ -30264,6 +32832,14 @@
       "no": 322,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 390,
+        "attack": 580,
+        "defence": 500,
+        "agility": 520,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "吹雪",
@@ -30377,6 +32953,14 @@
       "no": 323,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1330,
+        "mp": 410,
+        "attack": 560,
+        "defence": 550,
+        "agility": 500,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "火炎",
@@ -30510,6 +33094,14 @@
       "no": 324,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 370,
+        "attack": 580,
+        "defence": 530,
+        "agility": 450,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "火炎",
@@ -30609,6 +33201,14 @@
       "no": 325,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 290,
+        "attack": 580,
+        "defence": 680,
+        "agility": 420,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "マッスル",
@@ -30707,6 +33307,14 @@
       "no": 326,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1310,
+        "mp": 500,
+        "attack": 460,
+        "defence": 630,
+        "agility": 450,
+        "wisdom": 710
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -30785,6 +33393,14 @@
       "no": 327,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1300,
+        "mp": 460,
+        "attack": 490,
+        "defence": 430,
+        "agility": 630,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -30856,6 +33472,14 @@
       "no": 328,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1390,
+        "mp": 280,
+        "attack": 620,
+        "defence": 400,
+        "agility": 480,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "死の誘い",
@@ -30942,6 +33566,14 @@
       "no": 329,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1340,
+        "mp": 530,
+        "attack": 540,
+        "defence": 520,
+        "agility": 390,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -31025,6 +33657,14 @@
       "no": 330,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 480,
+        "attack": 510,
+        "defence": 440,
+        "agility": 500,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "アイスバーン",
@@ -31104,6 +33744,14 @@
       "no": 331,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1360,
+        "mp": 450,
+        "attack": 540,
+        "defence": 380,
+        "agility": 500,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "バーニング",
@@ -31195,6 +33843,14 @@
       "no": 332,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 510,
+        "attack": 590,
+        "defence": 500,
+        "agility": 420,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "カーニバル",
@@ -31274,6 +33930,14 @@
       "no": 333,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1310,
+        "mp": 360,
+        "attack": 610,
+        "defence": 590,
+        "agility": 520,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "邪悪",
@@ -31359,6 +34023,14 @@
       "no": 334,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1390,
+        "mp": 460,
+        "attack": 440,
+        "defence": 640,
+        "agility": 400,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "ロックスター",
@@ -31438,6 +34110,14 @@
       "no": 335,
       "rank": "C",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 530,
+        "attack": 420,
+        "defence": 460,
+        "agility": 500,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "バーニング",
@@ -31523,6 +34203,14 @@
       "no": 336,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1360,
+        "mp": 370,
+        "attack": 580,
+        "defence": 450,
+        "agility": 440,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "ジェネラル",
@@ -31594,6 +34282,14 @@
       "no": 337,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1400,
+        "mp": 490,
+        "attack": 470,
+        "defence": 300,
+        "agility": 420,
+        "wisdom": 730
+      },
       "talents": [
         {
           "name": "死の誘い",
@@ -31675,6 +34371,14 @@
       "no": 338,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1410,
+        "mp": 340,
+        "attack": 560,
+        "defence": 590,
+        "agility": 430,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "ボマー",
@@ -31754,6 +34458,14 @@
       "no": 339,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 280,
+        "attack": 590,
+        "defence": 680,
+        "agility": 460,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "王道",
@@ -31835,6 +34547,14 @@
       "no": 340,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 280,
+        "attack": 630,
+        "defence": 690,
+        "agility": 400,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "ロックスター",
@@ -31906,6 +34626,14 @@
       "no": 341,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1320,
+        "mp": 440,
+        "attack": 580,
+        "defence": 670,
+        "agility": 420,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "剣闘士",
@@ -31989,6 +34717,14 @@
       "no": 342,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1420,
+        "mp": 460,
+        "attack": 380,
+        "defence": 330,
+        "agility": 580,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -32072,6 +34808,14 @@
       "no": 343,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1410,
+        "mp": 430,
+        "attack": 540,
+        "defence": 610,
+        "agility": 390,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "フリーズ",
@@ -32165,6 +34909,14 @@
       "no": 344,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1410,
+        "mp": 330,
+        "attack": 510,
+        "defence": 470,
+        "agility": 440,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "デストロイ",
@@ -32244,6 +34996,14 @@
       "no": 345,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1290,
+        "mp": 330,
+        "attack": 580,
+        "defence": 620,
+        "agility": 530,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "デストロイ",
@@ -32315,6 +35075,14 @@
       "no": 346,
       "rank": "B",
       "family": "物質系",
+      "stats": {
+        "hp": 1350,
+        "mp": 400,
+        "attack": 600,
+        "defence": 450,
+        "agility": 460,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "一文字",
@@ -32398,6 +35166,14 @@
       "no": 347,
       "rank": "A",
       "family": "物質系",
+      "stats": {
+        "hp": 1280,
+        "mp": 370,
+        "attack": 670,
+        "defence": 560,
+        "agility": 580,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "マッドキラー",
@@ -32469,6 +35245,14 @@
       "no": 348,
       "rank": "A",
       "family": "物質系",
+      "stats": {
+        "hp": 1230,
+        "mp": 360,
+        "attack": 580,
+        "defence": 710,
+        "agility": 590,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "武芸百般",
@@ -32546,6 +35330,14 @@
       "no": 349,
       "rank": "A",
       "family": "物質系",
+      "stats": {
+        "hp": 1440,
+        "mp": 330,
+        "attack": 550,
+        "defence": 680,
+        "agility": 380,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "守護神",
@@ -32625,6 +35417,14 @@
       "no": 350,
       "rank": "A",
       "family": "物質系",
+      "stats": {
+        "hp": 1420,
+        "mp": 340,
+        "attack": 430,
+        "defence": 610,
+        "agility": 560,
+        "wisdom": 290
+      },
       "talents": [
         {
           "name": "絶望",
@@ -32704,6 +35504,14 @@
       "no": 351,
       "rank": "S",
       "family": "物質系",
+      "stats": {
+        "hp": 1370,
+        "mp": 290,
+        "attack": 630,
+        "defence": 650,
+        "agility": 500,
+        "wisdom": 220
+      },
       "talents": [
         {
           "name": "キラーマジンガ",
@@ -32777,6 +35585,14 @@
       "no": 352,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 420,
+        "attack": 560,
+        "defence": 520,
+        "agility": 500,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "アンチスペル",
@@ -32872,6 +35688,14 @@
       "no": 353,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 650,
+        "attack": 450,
+        "defence": 270,
+        "agility": 500,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "異常回復",
@@ -32996,6 +35820,14 @@
       "no": 354,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 340,
+        "attack": 550,
+        "defence": 670,
+        "agility": 450,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "ぼうぎょ",
@@ -33152,6 +35984,14 @@
       "no": 355,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1290,
+        "mp": 430,
+        "attack": 490,
+        "defence": 420,
+        "agility": 750,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "闇の心",
@@ -33320,6 +36160,14 @@
       "no": 356,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1320,
+        "mp": 490,
+        "attack": 410,
+        "defence": 590,
+        "agility": 520,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "風の心",
@@ -33399,6 +36247,14 @@
       "no": 357,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1380,
+        "mp": 330,
+        "attack": 590,
+        "defence": 430,
+        "agility": 530,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "妖精",
@@ -33486,6 +36342,14 @@
       "no": 358,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 420,
+        "attack": 430,
+        "defence": 570,
+        "agility": 480,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "魔術",
@@ -33621,6 +36485,14 @@
       "no": 359,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1390,
+        "mp": 440,
+        "attack": 530,
+        "defence": 350,
+        "agility": 460,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "スリラー",
@@ -33785,6 +36657,14 @@
       "no": 360,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 500,
+        "attack": 440,
+        "defence": 470,
+        "agility": 680,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "悪魔のささやき",
@@ -33881,6 +36761,14 @@
       "no": 361,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1420,
+        "mp": 630,
+        "attack": 490,
+        "defence": 510,
+        "agility": 370,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "ヌメヌメ",
@@ -33997,6 +36885,14 @@
       "no": 362,
       "rank": "G",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1410,
+        "mp": 460,
+        "attack": 520,
+        "defence": 500,
+        "agility": 460,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "アサシン",
@@ -34084,6 +36980,14 @@
       "no": 363,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1330,
+        "mp": 410,
+        "attack": 590,
+        "defence": 520,
+        "agility": 490,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "ジャマー",
@@ -34171,6 +37075,14 @@
       "no": 364,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1390,
+        "mp": 400,
+        "attack": 560,
+        "defence": 470,
+        "agility": 460,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "風の心",
@@ -34250,6 +37162,14 @@
       "no": 365,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1310,
+        "mp": 490,
+        "attack": 510,
+        "defence": 390,
+        "agility": 600,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "みわく",
@@ -34352,6 +37272,14 @@
       "no": 366,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1400,
+        "mp": 330,
+        "attack": 580,
+        "defence": 510,
+        "agility": 500,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "バンデッド",
@@ -34431,6 +37359,14 @@
       "no": 367,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1310,
+        "mp": 550,
+        "attack": 520,
+        "defence": 550,
+        "agility": 460,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "風の心",
@@ -34506,6 +37442,14 @@
       "no": 368,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1310,
+        "mp": 580,
+        "attack": 360,
+        "defence": 360,
+        "agility": 690,
+        "wisdom": 620
+      },
       "talents": [
         {
           "name": "水の心",
@@ -34603,6 +37547,14 @@
       "no": 369,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 350,
+        "attack": 590,
+        "defence": 500,
+        "agility": 460,
+        "wisdom": 510
+      },
       "talents": [
         {
           "name": "爆発の心",
@@ -34690,6 +37642,14 @@
       "no": 370,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 460,
+        "attack": 410,
+        "defence": 560,
+        "agility": 540,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "ダンサー",
@@ -34793,6 +37753,14 @@
       "no": 371,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 290,
+        "attack": 570,
+        "defence": 520,
+        "agility": 540,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "悪魔のささやき",
@@ -34919,6 +37887,14 @@
       "no": 372,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 360,
+        "attack": 570,
+        "defence": 600,
+        "agility": 520,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "みずげい",
@@ -34990,6 +37966,14 @@
       "no": 373,
       "rank": "F",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 430,
+        "attack": 690,
+        "defence": 380,
+        "agility": 460,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "爆発の心",
@@ -35111,6 +38095,14 @@
       "no": 374,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 360,
+        "attack": 670,
+        "defence": 390,
+        "agility": 460,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "ウォリアー",
@@ -35216,6 +38208,14 @@
       "no": 375,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 490,
+        "attack": 470,
+        "defence": 460,
+        "agility": 460,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "睡魔",
@@ -35334,6 +38334,14 @@
       "no": 376,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1430,
+        "mp": 310,
+        "attack": 650,
+        "defence": 510,
+        "agility": 380,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "巨漢",
@@ -35433,6 +38441,14 @@
       "no": 377,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 490,
+        "attack": 530,
+        "defence": 410,
+        "agility": 460,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "爆発の心",
@@ -35540,6 +38556,14 @@
       "no": 378,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 530,
+        "attack": 610,
+        "defence": 340,
+        "agility": 420,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "スイート",
@@ -35659,6 +38683,14 @@
       "no": 379,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1390,
+        "mp": 360,
+        "attack": 660,
+        "defence": 470,
+        "agility": 400,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "アンチスペル",
@@ -35767,6 +38799,14 @@
       "no": 380,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 400,
+        "attack": 610,
+        "defence": 440,
+        "agility": 550,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "毒舌",
@@ -35864,6 +38904,14 @@
       "no": 381,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1330,
+        "mp": 560,
+        "attack": 490,
+        "defence": 350,
+        "agility": 530,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "魔術",
@@ -36007,6 +39055,14 @@
       "no": 382,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 390,
+        "attack": 510,
+        "defence": 380,
+        "agility": 550,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "カース",
@@ -36137,6 +39193,14 @@
       "no": 383,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1330,
+        "mp": 430,
+        "attack": 510,
+        "defence": 430,
+        "agility": 550,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "睡魔",
@@ -36309,6 +39373,14 @@
       "no": 384,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 470,
+        "attack": 600,
+        "defence": 490,
+        "agility": 460,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "アンチスペル",
@@ -36406,6 +39478,14 @@
       "no": 385,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1320,
+        "mp": 430,
+        "attack": 530,
+        "defence": 470,
+        "agility": 540,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "邪悪",
@@ -36515,6 +39595,14 @@
       "no": 386,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 450,
+        "attack": 440,
+        "defence": 560,
+        "agility": 500,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "邪悪",
@@ -36602,6 +39690,14 @@
       "no": 387,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1310,
+        "mp": 550,
+        "attack": 520,
+        "defence": 550,
+        "agility": 460,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "火の心",
@@ -36664,6 +39760,14 @@
       "no": 388,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 410,
+        "attack": 440,
+        "defence": 380,
+        "agility": 510,
+        "wisdom": 730
+      },
       "talents": [
         {
           "name": "みわく",
@@ -36754,6 +39858,14 @@
       "no": 389,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 350,
+        "attack": 600,
+        "defence": 640,
+        "agility": 410,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "魔氷壁",
@@ -36853,6 +39965,14 @@
       "no": 390,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1400,
+        "mp": 300,
+        "attack": 670,
+        "defence": 640,
+        "agility": 390,
+        "wisdom": 240
+      },
       "talents": [
         {
           "name": "ごうけつ",
@@ -36940,6 +40060,14 @@
       "no": 391,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 490,
+        "attack": 480,
+        "defence": 470,
+        "agility": 550,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "魔術",
@@ -37014,6 +40142,14 @@
       "no": 392,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 350,
+        "attack": 520,
+        "defence": 600,
+        "agility": 470,
+        "wisdom": 530
+      },
       "talents": [
         {
           "name": "騎士道",
@@ -37105,6 +40241,14 @@
       "no": 393,
       "rank": "D",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1390,
+        "mp": 360,
+        "attack": 610,
+        "defence": 340,
+        "agility": 460,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -37200,6 +40344,14 @@
       "no": 394,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1390,
+        "mp": 330,
+        "attack": 540,
+        "defence": 490,
+        "agility": 420,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "ストーム",
@@ -37287,6 +40439,14 @@
       "no": 395,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1320,
+        "mp": 390,
+        "attack": 590,
+        "defence": 480,
+        "agility": 560,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "スレイヤー",
@@ -37404,6 +40564,14 @@
       "no": 396,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 350,
+        "attack": 620,
+        "defence": 450,
+        "agility": 460,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "剣闘士",
@@ -37519,6 +40687,14 @@
       "no": 397,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 650,
+        "attack": 380,
+        "defence": 350,
+        "agility": 480,
+        "wisdom": 820
+      },
       "talents": [
         {
           "name": "エスパー",
@@ -37606,6 +40782,14 @@
       "no": 398,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 530,
+        "attack": 540,
+        "defence": 500,
+        "agility": 490,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "プロテクト",
@@ -37680,6 +40864,14 @@
       "no": 399,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1430,
+        "mp": 310,
+        "attack": 590,
+        "defence": 620,
+        "agility": 400,
+        "wisdom": 270
+      },
       "talents": [
         {
           "name": "マッスル",
@@ -37773,6 +40965,14 @@
       "no": 400,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1260,
+        "mp": 530,
+        "attack": 520,
+        "defence": 500,
+        "agility": 570,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -37852,6 +41052,14 @@
       "no": 401,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 450,
+        "attack": 590,
+        "defence": 380,
+        "agility": 400,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "ヒーロー",
@@ -37968,6 +41176,14 @@
       "no": 402,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 360,
+        "attack": 580,
+        "defence": 650,
+        "agility": 420,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "カリスマ",
@@ -38045,6 +41261,14 @@
       "no": 403,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 330,
+        "attack": 660,
+        "defence": 430,
+        "agility": 580,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -38128,6 +41352,14 @@
       "no": 404,
       "rank": "C",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 350,
+        "attack": 650,
+        "defence": 480,
+        "agility": 560,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -38217,6 +41449,14 @@
       "no": 405,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1360,
+        "mp": 400,
+        "attack": 580,
+        "defence": 530,
+        "agility": 400,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "ストーム",
@@ -38316,6 +41556,14 @@
       "no": 406,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 420,
+        "attack": 470,
+        "defence": 450,
+        "agility": 510,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "ソーサラー",
@@ -38421,6 +41669,14 @@
       "no": 407,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 480,
+        "attack": 470,
+        "defence": 420,
+        "agility": 450,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "ソーサラー",
@@ -38498,6 +41754,14 @@
       "no": 408,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 280,
+        "attack": 700,
+        "defence": 630,
+        "agility": 430,
+        "wisdom": 250
+      },
       "talents": [
         {
           "name": "ごうけつ",
@@ -38569,6 +41833,14 @@
       "no": 409,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1400,
+        "mp": 270,
+        "attack": 630,
+        "defence": 630,
+        "agility": 430,
+        "wisdom": 280
+      },
       "talents": [
         {
           "name": "クラッシャー",
@@ -38656,6 +41928,14 @@
       "no": 410,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1330,
+        "mp": 350,
+        "attack": 580,
+        "defence": 510,
+        "agility": 590,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "アクロバット",
@@ -38751,6 +42031,14 @@
       "no": 411,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1240,
+        "mp": 380,
+        "attack": 470,
+        "defence": 640,
+        "agility": 630,
+        "wisdom": 720
+      },
       "talents": [
         {
           "name": "魔氷壁",
@@ -38836,6 +42124,14 @@
       "no": 412,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1420,
+        "mp": 310,
+        "attack": 670,
+        "defence": 340,
+        "agility": 490,
+        "wisdom": 250
+      },
       "talents": [
         {
           "name": "クラッシャー",
@@ -38929,6 +42225,14 @@
       "no": 413,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1390,
+        "mp": 380,
+        "attack": 520,
+        "defence": 380,
+        "agility": 550,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "アイスバーン",
@@ -39012,6 +42316,14 @@
       "no": 414,
       "rank": "B",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 470,
+        "attack": 520,
+        "defence": 390,
+        "agility": 520,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "魔氷壁",
@@ -39074,6 +42386,14 @@
       "no": 415,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1440,
+        "mp": 290,
+        "attack": 550,
+        "defence": 640,
+        "agility": 430,
+        "wisdom": 250
+      },
       "talents": [
         {
           "name": "ターミネーター",
@@ -39153,6 +42473,14 @@
       "no": 416,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1420,
+        "mp": 310,
+        "attack": 590,
+        "defence": 590,
+        "agility": 370,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "闘神",
@@ -39226,6 +42554,14 @@
       "no": 417,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1280,
+        "mp": 380,
+        "attack": 710,
+        "defence": 360,
+        "agility": 580,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "武芸百般",
@@ -39307,6 +42643,14 @@
       "no": 418,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1320,
+        "mp": 490,
+        "attack": 390,
+        "defence": 530,
+        "agility": 560,
+        "wisdom": 700
+      },
       "talents": [
         {
           "name": "賢者",
@@ -39380,6 +42724,14 @@
       "no": 419,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1400,
+        "mp": 280,
+        "attack": 660,
+        "defence": 550,
+        "agility": 410,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "闘神",
@@ -39453,6 +42805,14 @@
       "no": 420,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 280,
+        "attack": 580,
+        "defence": 640,
+        "agility": 480,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "ターミネーター",
@@ -39524,6 +42884,14 @@
       "no": 421,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 700,
+        "attack": 360,
+        "defence": 310,
+        "agility": 520,
+        "wisdom": 770
+      },
       "talents": [
         {
           "name": "ディザスター",
@@ -39595,6 +42963,14 @@
       "no": 422,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1340,
+        "mp": 350,
+        "attack": 510,
+        "defence": 560,
+        "agility": 490,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "禁術",
@@ -39668,6 +43044,14 @@
       "no": 423,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1370,
+        "mp": 360,
+        "attack": 660,
+        "defence": 530,
+        "agility": 410,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "闘神",
@@ -39739,6 +43123,14 @@
       "no": 424,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1350,
+        "mp": 400,
+        "attack": 520,
+        "defence": 550,
+        "agility": 430,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "禁術",
@@ -39812,6 +43204,14 @@
       "no": 425,
       "rank": "A",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1400,
+        "mp": 380,
+        "attack": 600,
+        "defence": 360,
+        "agility": 420,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "闘神",
@@ -39885,6 +43285,14 @@
       "no": 426,
       "rank": "S",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1260,
+        "mp": 500,
+        "attack": 410,
+        "defence": 550,
+        "agility": 610,
+        "wisdom": 770
+      },
       "talents": [
         {
           "name": "エビルプリースト",
@@ -39966,6 +43374,14 @@
       "no": 427,
       "rank": "S",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1240,
+        "mp": 600,
+        "attack": 680,
+        "defence": 330,
+        "agility": 510,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "絶望",
@@ -40037,6 +43453,14 @@
       "no": 428,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 500,
+        "attack": 620,
+        "defence": 400,
+        "agility": 470,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "ダウナー",
@@ -40171,6 +43595,14 @@
       "no": 429,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1340,
+        "mp": 420,
+        "attack": 580,
+        "defence": 550,
+        "agility": 500,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "あくしゅう",
@@ -40287,6 +43719,14 @@
       "no": 430,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 390,
+        "attack": 510,
+        "defence": 600,
+        "agility": 480,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "レッドソード",
@@ -40374,6 +43814,14 @@
       "no": 431,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1410,
+        "mp": 280,
+        "attack": 610,
+        "defence": 510,
+        "agility": 420,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "アンデッド",
@@ -40506,6 +43954,14 @@
       "no": 432,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 460,
+        "attack": 580,
+        "defence": 590,
+        "agility": 460,
+        "wisdom": 330
+      },
       "talents": [
         {
           "name": "ナチュラル",
@@ -40640,6 +44096,14 @@
       "no": 433,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1340,
+        "mp": 640,
+        "attack": 470,
+        "defence": 270,
+        "agility": 560,
+        "wisdom": 570
+      },
       "talents": [
         {
           "name": "アンデッド",
@@ -40792,6 +44256,14 @@
       "no": 434,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 380,
+        "attack": 560,
+        "defence": 630,
+        "agility": 530,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "ジャマー",
@@ -40894,6 +44366,14 @@
       "no": 435,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1330,
+        "mp": 420,
+        "attack": 530,
+        "defence": 500,
+        "agility": 590,
+        "wisdom": 420
+      },
       "talents": [
         {
           "name": "ヌメヌメ",
@@ -40965,6 +44445,14 @@
       "no": 436,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1420,
+        "mp": 430,
+        "attack": 440,
+        "defence": 530,
+        "agility": 460,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "キューピット",
@@ -41061,6 +44549,14 @@
       "no": 437,
       "rank": "G",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1390,
+        "mp": 520,
+        "attack": 350,
+        "defence": 550,
+        "agility": 470,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "火の心",
@@ -41185,6 +44681,14 @@
       "no": 438,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1410,
+        "mp": 320,
+        "attack": 410,
+        "defence": 520,
+        "agility": 510,
+        "wisdom": 580
+      },
       "talents": [
         {
           "name": "アンデッド",
@@ -41264,6 +44768,14 @@
       "no": 439,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1420,
+        "mp": 310,
+        "attack": 620,
+        "defence": 480,
+        "agility": 400,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "アンデッド",
@@ -41359,6 +44871,14 @@
       "no": 440,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1330,
+        "mp": 360,
+        "attack": 580,
+        "defence": 690,
+        "agility": 470,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "アンチブレス",
@@ -41498,6 +45018,14 @@
       "no": 441,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1270,
+        "mp": 440,
+        "attack": 480,
+        "defence": 470,
+        "agility": 670,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "カース",
@@ -41662,6 +45190,14 @@
       "no": 442,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1390,
+        "mp": 430,
+        "attack": 520,
+        "defence": 330,
+        "agility": 470,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -41749,6 +45285,14 @@
       "no": 443,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1440,
+        "mp": 430,
+        "attack": 580,
+        "defence": 340,
+        "agility": 390,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "ナチュラル",
@@ -41837,6 +45381,14 @@
       "no": 444,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1420,
+        "mp": 550,
+        "attack": 540,
+        "defence": 400,
+        "agility": 410,
+        "wisdom": 370
+      },
       "talents": [
         {
           "name": "地の心",
@@ -41924,6 +45476,14 @@
       "no": 445,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 420,
+        "attack": 580,
+        "defence": 560,
+        "agility": 450,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "アンデッド",
@@ -42023,6 +45583,14 @@
       "no": 446,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 440,
+        "attack": 550,
+        "defence": 430,
+        "agility": 520,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "闇の心",
@@ -42127,6 +45695,14 @@
       "no": 447,
       "rank": "F",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1260,
+        "mp": 540,
+        "attack": 580,
+        "defence": 520,
+        "agility": 500,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "みずげい",
@@ -42198,6 +45774,14 @@
       "no": 448,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 390,
+        "attack": 460,
+        "defence": 560,
+        "agility": 530,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "火炎",
@@ -42308,6 +45892,14 @@
       "no": 449,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 320,
+        "attack": 600,
+        "defence": 410,
+        "agility": 530,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "スリラー",
@@ -42428,6 +46020,14 @@
       "no": 450,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1390,
+        "mp": 400,
+        "attack": 580,
+        "defence": 460,
+        "agility": 480,
+        "wisdom": 360
+      },
       "talents": [
         {
           "name": "騎士道",
@@ -42527,6 +46127,14 @@
       "no": 451,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 430,
+        "attack": 530,
+        "defence": 520,
+        "agility": 480,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "カース",
@@ -42612,6 +46220,14 @@
       "no": 452,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1350,
+        "mp": 540,
+        "attack": 490,
+        "defence": 350,
+        "agility": 510,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "バンデッド",
@@ -42704,6 +46320,14 @@
       "no": 453,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 480,
+        "attack": 460,
+        "defence": 520,
+        "agility": 510,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "エンターテイナー",
@@ -42757,6 +46381,14 @@
       "no": 454,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 320,
+        "attack": 580,
+        "defence": 430,
+        "agility": 550,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "いたずら",
@@ -42878,6 +46510,14 @@
       "no": 455,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1350,
+        "mp": 370,
+        "attack": 600,
+        "defence": 350,
+        "agility": 560,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "ブルーソード",
@@ -42991,6 +46631,14 @@
       "no": 456,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 530,
+        "attack": 500,
+        "defence": 510,
+        "agility": 470,
+        "wisdom": 480
+      },
       "talents": [
         {
           "name": "あくしゅう",
@@ -43100,6 +46748,14 @@
       "no": 457,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1330,
+        "mp": 360,
+        "attack": 590,
+        "defence": 360,
+        "agility": 500,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "トリッキー",
@@ -43168,6 +46824,14 @@
       "no": 458,
       "rank": "E",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1280,
+        "mp": 460,
+        "attack": 550,
+        "defence": 690,
+        "agility": 470,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "みわく",
@@ -43263,6 +46927,14 @@
       "no": 459,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1300,
+        "mp": 470,
+        "attack": 410,
+        "defence": 610,
+        "agility": 580,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "死の誘い",
@@ -43384,6 +47056,14 @@
       "no": 460,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1410,
+        "mp": 310,
+        "attack": 660,
+        "defence": 310,
+        "agility": 500,
+        "wisdom": 320
+      },
       "talents": [
         {
           "name": "スレイヤー",
@@ -43528,6 +47208,14 @@
       "no": 461,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1250,
+        "mp": 520,
+        "attack": 630,
+        "defence": 620,
+        "agility": 420,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "怨念",
@@ -43611,6 +47299,14 @@
       "no": 462,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 390,
+        "attack": 490,
+        "defence": 350,
+        "agility": 620,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "アンチスペル",
@@ -43699,6 +47395,14 @@
       "no": 463,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1370,
+        "mp": 510,
+        "attack": 320,
+        "defence": 520,
+        "agility": 540,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "怨念",
@@ -43770,6 +47474,14 @@
       "no": 464,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1410,
+        "mp": 310,
+        "attack": 630,
+        "defence": 380,
+        "agility": 440,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "スリラー",
@@ -43857,6 +47569,14 @@
       "no": 465,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1440,
+        "mp": 330,
+        "attack": 590,
+        "defence": 400,
+        "agility": 430,
+        "wisdom": 370
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -43955,6 +47675,14 @@
       "no": 466,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 350,
+        "attack": 570,
+        "defence": 450,
+        "agility": 560,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "騎士道",
@@ -44070,6 +47798,14 @@
       "no": 467,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1280,
+        "mp": 520,
+        "attack": 520,
+        "defence": 440,
+        "agility": 570,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "アンチブレス",
@@ -44169,6 +47905,14 @@
       "no": 468,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1350,
+        "mp": 420,
+        "attack": 580,
+        "defence": 460,
+        "agility": 470,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "ボマー",
@@ -44226,6 +47970,14 @@
       "no": 469,
       "rank": "D",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 340,
+        "attack": 520,
+        "defence": 360,
+        "agility": 540,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "闇の心",
@@ -44323,6 +48075,14 @@
       "no": 470,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1340,
+        "mp": 510,
+        "attack": 490,
+        "defence": 590,
+        "agility": 390,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -44399,6 +48159,14 @@
       "no": 471,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 300,
+        "attack": 520,
+        "defence": 560,
+        "agility": 460,
+        "wisdom": 560
+      },
       "talents": [
         {
           "name": "ライトニング",
@@ -44470,6 +48238,14 @@
       "no": 472,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1390,
+        "mp": 320,
+        "attack": 620,
+        "defence": 320,
+        "agility": 580,
+        "wisdom": 300
+      },
       "talents": [
         {
           "name": "デストロイ",
@@ -44568,6 +48344,14 @@
       "no": 473,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1350,
+        "mp": 530,
+        "attack": 610,
+        "defence": 330,
+        "agility": 520,
+        "wisdom": 380
+      },
       "talents": [
         {
           "name": "ミステリアス",
@@ -44630,6 +48414,14 @@
       "no": 474,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1300,
+        "mp": 440,
+        "attack": 600,
+        "defence": 480,
+        "agility": 560,
+        "wisdom": 460
+      },
       "talents": [
         {
           "name": "剣闘士",
@@ -44723,6 +48515,14 @@
       "no": 475,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 400,
+        "attack": 500,
+        "defence": 590,
+        "agility": 480,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "スレイヤー",
@@ -44814,6 +48614,14 @@
       "no": 476,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1360,
+        "mp": 620,
+        "attack": 550,
+        "defence": 270,
+        "agility": 430,
+        "wisdom": 610
+      },
       "talents": [
         {
           "name": "水の安らぎ",
@@ -44893,6 +48701,14 @@
       "no": 477,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 550,
+        "attack": 470,
+        "defence": 350,
+        "agility": 530,
+        "wisdom": 720
+      },
       "talents": [
         {
           "name": "暗闇",
@@ -44972,6 +48788,14 @@
       "no": 478,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1350,
+        "mp": 300,
+        "attack": 630,
+        "defence": 470,
+        "agility": 510,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "マッドキラー",
@@ -45063,6 +48887,14 @@
       "no": 479,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1420,
+        "mp": 300,
+        "attack": 600,
+        "defence": 470,
+        "agility": 420,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "怨念",
@@ -45142,6 +48974,14 @@
       "no": 480,
       "rank": "C",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1400,
+        "mp": 400,
+        "attack": 420,
+        "defence": 590,
+        "agility": 530,
+        "wisdom": 410
+      },
       "talents": [
         {
           "name": "怨念",
@@ -45221,6 +49061,14 @@
       "no": 481,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1340,
+        "mp": 390,
+        "attack": 530,
+        "defence": 530,
+        "agility": 510,
+        "wisdom": 540
+      },
       "talents": [
         {
           "name": "ダークホース",
@@ -45304,6 +49152,14 @@
       "no": 482,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1410,
+        "mp": 280,
+        "attack": 640,
+        "defence": 480,
+        "agility": 440,
+        "wisdom": 340
+      },
       "talents": [
         {
           "name": "フリーズ",
@@ -45391,6 +49247,14 @@
       "no": 483,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1290,
+        "mp": 490,
+        "attack": 570,
+        "defence": 430,
+        "agility": 520,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "おじゃま虫",
@@ -45470,6 +49334,14 @@
       "no": 484,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1350,
+        "mp": 340,
+        "attack": 630,
+        "defence": 430,
+        "agility": 560,
+        "wisdom": 350
+      },
       "talents": [
         {
           "name": "剣闘士",
@@ -45553,6 +49425,14 @@
       "no": 485,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 330,
+        "attack": 580,
+        "defence": 620,
+        "agility": 530,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "デストロイ",
@@ -45629,6 +49509,14 @@
       "no": 486,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 370,
+        "attack": 570,
+        "defence": 440,
+        "agility": 470,
+        "wisdom": 490
+      },
       "talents": [
         {
           "name": "フリーズ",
@@ -45716,6 +49604,14 @@
       "no": 487,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1290,
+        "mp": 480,
+        "attack": 420,
+        "defence": 690,
+        "agility": 540,
+        "wisdom": 650
+      },
       "talents": [
         {
           "name": "デビルスマイル",
@@ -45807,6 +49703,14 @@
       "no": 488,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1280,
+        "mp": 560,
+        "attack": 580,
+        "defence": 430,
+        "agility": 500,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "怨念",
@@ -45878,6 +49782,14 @@
       "no": 489,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1320,
+        "mp": 370,
+        "attack": 600,
+        "defence": 480,
+        "agility": 410,
+        "wisdom": 750
+      },
       "talents": [
         {
           "name": "デストロイ",
@@ -45977,6 +49889,14 @@
       "no": 490,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1250,
+        "mp": 510,
+        "attack": 610,
+        "defence": 640,
+        "agility": 410,
+        "wisdom": 710
+      },
       "talents": [
         {
           "name": "つめたいまなざし",
@@ -46048,6 +49968,14 @@
       "no": 491,
       "rank": "B",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1310,
+        "mp": 620,
+        "attack": 320,
+        "defence": 500,
+        "agility": 610,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "怨念",
@@ -46125,6 +50053,14 @@
       "no": 492,
       "rank": "A",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1330,
+        "mp": 350,
+        "attack": 600,
+        "defence": 560,
+        "agility": 440,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "武芸百般",
@@ -46198,6 +50134,14 @@
       "no": 493,
       "rank": "A",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1310,
+        "mp": 440,
+        "attack": 600,
+        "defence": 390,
+        "agility": 520,
+        "wisdom": 590
+      },
       "talents": [
         {
           "name": "ターミネーター",
@@ -46269,6 +50213,14 @@
       "no": 494,
       "rank": "A",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1380,
+        "mp": 740,
+        "attack": 360,
+        "defence": 320,
+        "agility": 400,
+        "wisdom": 800
+      },
       "talents": [
         {
           "name": "賢者",
@@ -46340,6 +50292,14 @@
       "no": 495,
       "rank": "A",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1340,
+        "mp": 410,
+        "attack": 560,
+        "defence": 410,
+        "agility": 480,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "絶望",
@@ -46411,6 +50371,14 @@
       "no": 496,
       "rank": "S",
       "family": "ゾンビ系",
+      "stats": {
+        "hp": 1450,
+        "mp": 320,
+        "attack": 560,
+        "defence": 390,
+        "agility": 480,
+        "wisdom": 310
+      },
       "talents": [
         {
           "name": "息じごく",
@@ -46484,6 +50452,14 @@
       "no": 497,
       "rank": "C",
       "family": "？？？系",
+      "stats": {
+        "hp": 1320,
+        "mp": 460,
+        "attack": 610,
+        "defence": 510,
+        "agility": 520,
+        "wisdom": 390
+      },
       "talents": [
         {
           "name": "スレイヤー",
@@ -46546,6 +50522,14 @@
       "no": 498,
       "rank": "A",
       "family": "？？？系",
+      "stats": {
+        "hp": 1360,
+        "mp": 570,
+        "attack": 410,
+        "defence": 370,
+        "agility": 460,
+        "wisdom": 780
+      },
       "talents": [
         {
           "name": "バラモス",
@@ -46617,6 +50601,14 @@
       "no": 499,
       "rank": "A",
       "family": "？？？系",
+      "stats": {
+        "hp": 1280,
+        "mp": 560,
+        "attack": 490,
+        "defence": 450,
+        "agility": 510,
+        "wisdom": 770
+      },
       "talents": [
         {
           "name": "つめたいまなざし",
@@ -46694,6 +50686,14 @@
       "no": 500,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1410,
+        "mp": 370,
+        "attack": 420,
+        "defence": 520,
+        "agility": 370,
+        "wisdom": 790
+      },
       "talents": [
         {
           "name": "暗黒神ラプソーン",
@@ -46767,6 +50767,14 @@
       "no": 501,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1240,
+        "mp": 470,
+        "attack": 560,
+        "defence": 540,
+        "agility": 490,
+        "wisdom": 830
+      },
       "talents": [
         {
           "name": "オルゴ・デミーラ",
@@ -46840,6 +50848,14 @@
       "no": 502,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1350,
+        "mp": 590,
+        "attack": 470,
+        "defence": 380,
+        "agility": 390,
+        "wisdom": 810
+      },
       "talents": [
         {
           "name": "ゲマ",
@@ -46921,6 +50937,14 @@
       "no": 503,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1300,
+        "mp": 470,
+        "attack": 560,
+        "defence": 500,
+        "agility": 410,
+        "wisdom": 790
+      },
       "talents": [
         {
           "name": "シドー",
@@ -46994,6 +51018,14 @@
       "no": 504,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1290,
+        "mp": 330,
+        "attack": 740,
+        "defence": 550,
+        "agility": 380,
+        "wisdom": 620
+      },
       "talents": [
         {
           "name": "邪神ニズゼルファ",
@@ -47067,6 +51099,14 @@
       "no": 505,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1260,
+        "mp": 290,
+        "attack": 690,
+        "defence": 570,
+        "agility": 510,
+        "wisdom": 600
+      },
       "talents": [
         {
           "name": "守護者ラズバーン",
@@ -47138,6 +51178,14 @@
       "no": 506,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1330,
+        "mp": 380,
+        "attack": 720,
+        "defence": 420,
+        "agility": 420,
+        "wisdom": 500
+      },
       "talents": [
         {
           "name": "大魔王ウルノーガ",
@@ -47209,6 +51257,14 @@
       "no": 507,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1330,
+        "mp": 340,
+        "attack": 680,
+        "defence": 470,
+        "agility": 390,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "堕天使エルギオス",
@@ -47282,6 +51338,14 @@
       "no": 508,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1230,
+        "mp": 500,
+        "attack": 580,
+        "defence": 500,
+        "agility": 530,
+        "wisdom": 760
+      },
       "talents": [
         {
           "name": "デスタムーア",
@@ -47357,6 +51421,14 @@
       "no": 509,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1320,
+        "mp": 300,
+        "attack": 640,
+        "defence": 590,
+        "agility": 510,
+        "wisdom": 430
+      },
       "talents": [
         {
           "name": "デスピサロ",
@@ -47432,6 +51504,14 @@
       "no": 510,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1300,
+        "mp": 450,
+        "attack": 550,
+        "defence": 530,
+        "agility": 470,
+        "wisdom": 680
+      },
       "talents": [
         {
           "name": "ドルマゲス",
@@ -47503,6 +51583,14 @@
       "no": 511,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1390,
+        "mp": 490,
+        "attack": 440,
+        "defence": 480,
+        "agility": 440,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "ハーゴン",
@@ -47576,6 +51664,14 @@
       "no": 512,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1330,
+        "mp": 460,
+        "attack": 540,
+        "defence": 310,
+        "agility": 520,
+        "wisdom": 690
+      },
       "talents": [
         {
           "name": "ぴぴぼう",
@@ -47633,6 +51729,14 @@
       "no": 513,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1330,
+        "mp": 470,
+        "attack": 510,
+        "defence": 530,
+        "agility": 460,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "魔軍司令ホメロス",
@@ -47710,6 +51814,14 @@
       "no": 514,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1330,
+        "mp": 350,
+        "attack": 580,
+        "defence": 510,
+        "agility": 460,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "ミルドラース",
@@ -47785,6 +51897,14 @@
       "no": 515,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1350,
+        "mp": 410,
+        "attack": 470,
+        "defence": 460,
+        "agility": 510,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "ムドー",
@@ -47858,6 +51978,14 @@
       "no": 516,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1260,
+        "mp": 280,
+        "attack": 680,
+        "defence": 570,
+        "agility": 510,
+        "wisdom": 630
+      },
       "talents": [
         {
           "name": "冥獣王ネルゲル",
@@ -47939,6 +52067,14 @@
       "no": 517,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1360,
+        "mp": 550,
+        "attack": 530,
+        "defence": 370,
+        "agility": 540,
+        "wisdom": 400
+      },
       "talents": [
         {
           "name": "わたぼう",
@@ -48026,6 +52162,14 @@
       "no": 518,
       "rank": "S",
       "family": "？？？系",
+      "stats": {
+        "hp": 1310,
+        "mp": 590,
+        "attack": 490,
+        "defence": 330,
+        "agility": 560,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "ワルぼう",
@@ -48105,6 +52249,14 @@
       "no": 519,
       "rank": "X",
       "family": "？？？系",
+      "stats": {
+        "hp": 1400,
+        "mp": 290,
+        "attack": 520,
+        "defence": 480,
+        "agility": 470,
+        "wisdom": 550
+      },
       "talents": [
         {
           "name": "エスターク",
@@ -48169,6 +52321,14 @@
       "no": 520,
       "rank": "X",
       "family": "？？？系",
+      "stats": {
+        "hp": 1330,
+        "mp": 470,
+        "attack": 520,
+        "defence": 470,
+        "agility": 470,
+        "wisdom": 660
+      },
       "talents": [
         {
           "name": "神さま",
@@ -48242,6 +52402,14 @@
       "no": 521,
       "rank": "X",
       "family": "？？？系",
+      "stats": {
+        "hp": 1270,
+        "mp": 520,
+        "attack": 500,
+        "defence": 600,
+        "agility": 470,
+        "wisdom": 760
+      },
       "talents": [
         {
           "name": "ゾーマ",
@@ -48306,6 +52474,14 @@
       "no": 522,
       "rank": "X",
       "family": "？？？系",
+      "stats": {
+        "hp": 1340,
+        "mp": 290,
+        "attack": 740,
+        "defence": 370,
+        "agility": 480,
+        "wisdom": 440
+      },
       "talents": [
         {
           "name": "ダークドレアム",
@@ -48370,6 +52546,14 @@
       "no": 523,
       "rank": "X",
       "family": "？？？系",
+      "stats": {
+        "hp": 1360,
+        "mp": 320,
+        "attack": 520,
+        "defence": 560,
+        "agility": 450,
+        "wisdom": 640
+      },
       "talents": [
         {
           "name": "ラーミア",
@@ -48445,6 +52629,14 @@
       "no": 524,
       "rank": "G",
       "family": "スライム系",
+      "stats": {
+        "hp": 1340,
+        "mp": 390,
+        "attack": 570,
+        "defence": 510,
+        "agility": 490,
+        "wisdom": 520
+      },
       "talents": [
         {
           "name": "もりもりハッピー",
@@ -48507,6 +52699,14 @@
       "no": 525,
       "rank": "E",
       "family": "悪魔系",
+      "stats": {
+        "hp": 1300,
+        "mp": 290,
+        "attack": 570,
+        "defence": 520,
+        "agility": 540,
+        "wisdom": 670
+      },
       "talents": [
         {
           "name": "ハラハラフルーリー",
@@ -48575,6 +52775,14 @@
       "no": 526,
       "rank": "D",
       "family": "物質系",
+      "stats": {
+        "hp": 1310,
+        "mp": 360,
+        "attack": 610,
+        "defence": 590,
+        "agility": 520,
+        "wisdom": 450
+      },
       "talents": [
         {
           "name": "もぐもぐスマイル",
