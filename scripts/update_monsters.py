@@ -38,7 +38,7 @@ EXPECTED_COUNT = 526
 SESSION = requests.Session()
 SESSION.headers.update(
     {
-        "User-Agent": "naoya-lab-dqm3-data-builder/7.0",
+        "User-Agent": "naoya-lab-dqm3-data-builder/8.0",
         "Accept": "application/json,text/plain,*/*",
     }
 )
@@ -464,6 +464,14 @@ def main():
                 ).strip(),
             "family":
                 f"{family_name}\u7cfb",
+            "stats": {
+                "hp": int(monster.get("MaxHP") or 0),
+                "mp": int(monster.get("MaxMP") or 0),
+                "attack": int(monster.get("MaxAtt") or 0),
+                "defence": int(monster.get("MaxDef") or 0),
+                "agility": int(monster.get("MaxAgi") or 0),
+                "wisdom": int(monster.get("MaxWis") or 0),
+            },
             "talents": [],
             "traits": {
                 "S": [],
