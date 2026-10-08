@@ -1197,6 +1197,10 @@ function recScore(monster,cfg,size='S'){
     traitScore+=6-preferredIndex;
   }
 
+  if(traitScore<=0){
+    return 0;
+  }
+
   let statScore=0;
 
   if(cfg.kind==='status'){
@@ -2664,7 +2668,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=22',
+    './data.json?v=23',
     {
       cache:'no-store'
     }
@@ -2679,7 +2683,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=22',
+    './skills.json?v=23',
     {
       cache:'no-store'
     }
@@ -2734,7 +2738,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=22'
+      './sw.js?v=23'
     )
     .catch(error=>
       console.warn(
