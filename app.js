@@ -1234,16 +1234,62 @@ function recScore(monster,cfg,size='S'){
   return traitScore*0.60 + statScore*10*0.40;
 }
 
+function recNormalize100(items){
+  if(!items.length) return items;
+  const sorted=[...items]
+    .map(x=>Number(x.rawScore??x.score??0))
+    .sort((a,b)=>a-b);
+
+  return items.map(item=>{
+    const value=Number(item.rawScore??item.score??0);
+    let count=0;
+    for(const x of sorted){
+      if(x<=value) count++;
+    }
+    const score100=Math.round((count/sorted.length)*100);
+    return {...item,score100};
+  });
+}
+
+function recStars100(score100){
+  const n=Math.max(0,Math.min(100,Number(score100||0)));
+  let value=1;
+  if(n>=60) value=2;
+  if(n>=70) value=3;
+  if(n>=80) value=4;
+  if(n>=90) value=5;
+  return '\u2605'.repeat(value)+'\u2606'.repeat(5-value);
+}
+
+function recScoreLabel(score100){
+  const n=Math.max(0,Math.min(100,Math.round(Number(score100||0))));
+  return `${n}\u70b9 / ${recStars100(n)}`;
+}
+
+function recPercentile100(values,value){
+  const sorted=values
+    .map(Number)
+    .filter(v=>Number.isFinite(v) && v>0)
+    .sort((a,b)=>a-b);
+  if(!sorted.length) return 0;
+  let count=0;
+  for(const x of sorted){
+    if(x<=Number(value||0)) count++;
+  }
+  return Math.round((count/sorted.length)*100);
+}
 function recCandidates(cfg,size='S'){
-  return DB.monsters
+  const raw=DB.monsters
     .map(monster=>({
       monster,
-      score:recScore(monster,cfg,size),
+      rawScore:recScore(monster,cfg,size),
       size
     }))
-    .filter(x=>x.score>0)
+    .filter(x=>x.rawScore>0);
+
+  return recNormalize100(raw)
     .sort((a,b)=>
-      b.score-a.score
+      b.rawScore-a.rawScore
       ||
       String(a.monster.no||'').localeCompare(
         String(b.monster.no||''),
@@ -1458,18 +1504,28 @@ function recHealerScore(monster,size='S'){
 }
 
 function recTankCandidates(size='S'){
-  return DB.monsters
-    .map(monster=>recTankScore(monster,size))
-    .filter(x=>x.score>0)
-    .sort((a,b)=>b.score-a.score)
+  const raw=DB.monsters
+    .map(monster=>{
+      const item=recTankScore(monster,size);
+      return {...item,rawScore:item.score};
+    })
+    .filter(x=>x.rawScore>0);
+
+  return recNormalize100(raw)
+    .sort((a,b)=>b.rawScore-a.rawScore)
     .slice(0,5);
 }
 
 function recHealerCandidates(size='S'){
-  return DB.monsters
-    .map(monster=>recHealerScore(monster,size))
-    .filter(x=>x.score>0)
-    .sort((a,b)=>b.score-a.score)
+  const raw=DB.monsters
+    .map(monster=>{
+      const item=recHealerScore(monster,size);
+      return {...item,rawScore:item.score};
+    })
+    .filter(x=>x.rawScore>0);
+
+  return recNormalize100(raw)
+    .sort((a,b)=>b.rawScore-a.rawScore)
     .slice(0,5);
 }
 
@@ -1483,7 +1539,7 @@ function recRoleCandidateHtml(item,role,size='S'){
     <div class="role-candidate">
       <div class="role-candidate-head">
         <div>${monsterButton(item.monster.name)}</div>
-        <span class="role-score">${recStars(item.score)}</span>
+        <span class="role-score">${recScoreLabel(item.score100)}</span>
       </div>
       <div class="role-reason">
         ${esc(item.reason||'\u5f79\u5272\u9069\u6027\u304b\u3089\u9078\u51fa')}
@@ -1551,7 +1607,7 @@ function buildRecommendedTeam(cfg,strategy,formation='SSSS'){
       const tank=recTankCandidates('L').find(x=>!used.has(x.monster.name));
       const healer=recHealerCandidates('L').find(x=>!used.has(x.monster.name));
       const support=(
-        (tank?.score||0)>=(healer?.score||0)
+        (tank?.rawScore||0)>=(healer?.rawScore||0)
           ? {item:tank,role:'\u307f\u304c\u308f\u308a\u30fb\u8010\u4e45'}
           : {item:healer,role:'\u56de\u5fa9'}
       );
@@ -1603,13 +1659,7 @@ function buildRecommendedTeam(cfg,strategy,formation='SSSS'){
 }
 
 function recStars(score){
-  const n=Number(score||0);
-  let value=1;
-  if(n>=4) value=2;
-  if(n>=7) value=3;
-  if(n>=10) value=4;
-  if(n>=13) value=5;
-  return '\u2605'.repeat(value)+'\u2606'.repeat(5-value);
+  return recStars100(score);
 }
 
 function recTraitBaseScore(monster,cfg,size='S'){
@@ -1632,13 +1682,17 @@ function recTraitBaseScore(monster,cfg,size='S'){
 
 function recAttackBreakdown(monster,cfg,size='S'){
   const traitScore=recTraitBaseScore(monster,cfg,size);
+  const traitValues=DB.monsters
+    .map(m=>recTraitBaseScore(m,cfg,size))
+    .filter(v=>v>0);
+  const trait100=recPercentile100(traitValues,traitScore);
   const stats=monster.stats||{};
 
   if(cfg.kind==='status'){
     const statScore=statBlend(monster,{agility:0.6,hp:0.2,defence:0.2});
     return {
-      traitScore,
-      statScore:statScore*10,
+      traitScore:trait100,
+      statScore:Math.round(statScore*100),
       type:'\u72b6\u614b\u7570\u5e38\u578b',
       fields:[
         ['agility','\u3059\u3070\u3084\u3055',stats.agility],
@@ -1653,8 +1707,8 @@ function recAttackBreakdown(monster,cfg,size='S'){
 
   if(physical>=magical){
     return {
-      traitScore,
-      statScore:physical*10,
+      traitScore:trait100,
+      statScore:Math.round(physical*100),
       type:'\u7269\u7406\u578b',
       fields:[
         ['attack','\u653b\u6483\u529b',stats.attack],
@@ -1665,8 +1719,8 @@ function recAttackBreakdown(monster,cfg,size='S'){
   }
 
   return {
-    traitScore,
-    statScore:magical*10,
+    traitScore:trait100,
+    statScore:Math.round(magical*100),
     type:'\u546a\u6587\u578b',
     fields:[
       ['wisdom','\u304b\u3057\u3053\u3055',stats.wisdom],
@@ -1680,7 +1734,7 @@ function recRoleBreakdown(monster,role,size='S'){
   const stats=monster.stats||{};
   if(role==='tank'){
     const item=recTankScore(monster,size);
-    const statScore=statBlend(monster,{hp:0.5,defence:0.5})*10;
+    const statScore=Math.round(statBlend(monster,{hp:0.5,defence:0.5})*100);
     return {
       statScore,
       type:'\u307f\u304c\u308f\u308a\u578b',
@@ -1692,7 +1746,7 @@ function recRoleBreakdown(monster,role,size='S'){
     };
   }
   const item=recHealerScore(monster,size);
-  const statScore=statBlend(monster,{wisdom:0.4,mp:0.4,agility:0.2})*10;
+  const statScore=Math.round(statBlend(monster,{wisdom:0.4,mp:0.4,agility:0.2})*100);
   return {
     statScore,
     type:'\u56de\u5fa9\u578b',
@@ -1712,12 +1766,12 @@ function recBreakdownHtml(info,traitLabel='\u7279\u6027\u52a0\u70b9'){
       ${info.traitScore!==undefined ? `
         <div class="rec-breakdown-row">
           <span>${traitLabel}</span>
-          <strong>${Number(info.traitScore).toFixed(1)}</strong>
+          <strong>${Math.round(Number(info.traitScore||0))} / 100</strong>
         </div>
       ` : ''}
       <div class="rec-breakdown-row">
         <span>\u30b9\u30c6\u30fc\u30bf\u30b9\u9069\u6027</span>
-        <strong>${Number(info.statScore||0).toFixed(1)} / 10</strong>
+        <strong>${Math.round(Number(info.statScore||0))} / 100</strong>
       </div>
       <div class="rec-used-stats">
         ${(info.fields||[]).map(([key,label,value])=>`
@@ -1734,8 +1788,11 @@ function recBreakdownHtml(info,traitLabel='\u7279\u6027\u52a0\u70b9'){
 
 function recommendationCard(item,index,cfg,candidates){
   const monster=item.monster;
-  const score=(
-    candidates.find(x=>x.monster.name===monster.name && x.size===item.size)?.score
+  const score100=(
+    candidates.find(
+      x=>x.monster.name===monster.name
+        &&x.size===item.size
+    )?.score100
     ||0
   );
 
@@ -1765,8 +1822,8 @@ function recommendationCard(item,index,cfg,candidates){
         ${esc(item.role)}
       </div>
 
-      <div class="rec-stars">
-        ${recStars(score||3)}
+      <div class="rec-stars rec-score100">
+        ${recScoreLabel(score100)}
       </div>
 
       <div class="rec-reason">
@@ -2703,7 +2760,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=24',
+    './data.json?v=25',
     {
       cache:'no-store'
     }
@@ -2718,7 +2775,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=24',
+    './skills.json?v=25',
     {
       cache:'no-store'
     }
@@ -2773,7 +2830,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=24'
+      './sw.js?v=25'
     )
     .catch(error=>
       console.warn(
