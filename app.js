@@ -1,6 +1,8 @@
 let DB={monsters:[]};
 let SKILL_DB={skills:[]};
 let mode='monster';
+let monsterSearchValue='';
+let skillSearchValue='';
 let STAT_THRESHOLDS={};
 
 const q=document.getElementById('q');
@@ -49,17 +51,19 @@ function imgUrl(name){
 }
 
 function jumpMonster(name){
+  monsterSearchValue=name;
   mode='monster';
   updateTabs();
-  q.value=name;
+  q.value=monsterSearchValue;
   render();
   scrollTo({top:0,behavior:'smooth'});
 }
 
 function jumpSkill(name){
+  skillSearchValue=name;
   mode='skill';
   updateTabs();
-  q.value=name;
+  q.value=skillSearchValue;
   render();
   scrollTo({top:0,behavior:'smooth'});
 }
@@ -2646,7 +2650,7 @@ monsterTab.addEventListener(
   'click',
   ()=>{
     mode='monster';
-    q.value='';
+    q.value=monsterSearchValue;
     updateTabs();
     render();
   }
@@ -2656,7 +2660,7 @@ skillTab.addEventListener(
   'click',
   ()=>{
     mode='skill';
-    q.value='';
+    q.value=skillSearchValue;
     updateTabs();
     render();
   }
@@ -2730,7 +2734,15 @@ function render(){
 
 q.addEventListener(
   'input',
-  render
+  ()=>{
+    if(mode==='monster'){
+      monsterSearchValue=q.value;
+    }
+    else if(mode==='skill'){
+      skillSearchValue=q.value;
+    }
+    render();
+  }
 );
 
 sortSelect.addEventListener(
@@ -2760,7 +2772,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=25',
+    './data.json?v=26',
     {
       cache:'no-store'
     }
@@ -2775,7 +2787,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=25',
+    './skills.json?v=26',
     {
       cache:'no-store'
     }
@@ -2830,7 +2842,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=25'
+      './sw.js?v=26'
     )
     .catch(error=>
       console.warn(
