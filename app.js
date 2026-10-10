@@ -1090,6 +1090,22 @@ const REC_CONFIG={
     preferred:['\u3088\u308b\u306e\u3066\u3044\u304a\u3046'],
     skills:['\u95c7\u306e\u6975\u610f','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','MP\u30a2\u30c3\u30d74']
   },
+  critical:{
+    label:'\u4f1a\u5fc3',
+    icon:'\ud83d\udca5',
+    kind:'critical',
+    traits:[
+      '\u8d85\u4f1a\u5fc3\u7387\u30a2\u30c3\u30d7',
+      '\u4f1a\u5fc3\u7387\u30a2\u30c3\u30d7\u5927',
+      '\u30d4\u30f3\u30c1\u3067\u4f1a\u5fc3'
+    ],
+    preferred:[],
+    skills:[
+      '\u653b\u6483\u529b\u30a2\u30c3\u30d74',
+      '\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74',
+      'HP\u30a2\u30c3\u30d74'
+    ]
+  },
   sleep:{
     label:'\u7720\u308a',
     icon:'\ud83d\ude34',
@@ -1191,7 +1207,16 @@ function recScore(monster,cfg,size='S'){
   let traitScore=0;
 
   cfg.traits.forEach((name,index)=>{
-    if(traits.includes(name)){
+    if(!traits.includes(name)) return;
+
+    if(cfg.kind==='critical'){
+      traitScore+=[
+        10,
+        7,
+        4
+      ][index]||3;
+    }
+    else{
       traitScore+=index===0?5:7;
     }
   });
@@ -1206,6 +1231,16 @@ function recScore(monster,cfg,size='S'){
   }
 
   let statScore=0;
+
+  if(cfg.kind==='critical'){
+    statScore=statBlend(monster,{
+      attack:0.75,
+      agility:0.15,
+      hp:0.10
+    });
+
+    return traitScore*0.65 + statScore*10*0.35;
+  }
 
   if(cfg.kind==='status'){
     if(traits.some(x=>x.includes('\u30d6\u30ec\u30a4\u30af\u5927'))){
@@ -1309,6 +1344,10 @@ function recReason(monster,cfg){
 
   if(matched.length){
     return matched.join(' + ');
+  }
+
+  if(cfg.kind==='critical'){
+    return '\u4f1a\u5fc3\u7cfb\u7279\u6027 + \u7269\u7406\u30b9\u30c6\u30fc\u30bf\u30b9\u304b\u3089\u9078\u51fa';
   }
 
   if(cfg.preferred.includes(monster.name)){
@@ -1587,7 +1626,7 @@ function buildRecommendedTeam(cfg,strategy,formation='SSSS'){
   if(formation==='LSS'){
     add(
       recBestThemeCandidate(cfg,'L',used),
-      cfg.kind==='element' ? '\u30e1\u30a4\u30f3L\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3L\u4ed8\u4e0e\u5f79',
+      cfg.kind!=='status' ? '\u30e1\u30a4\u30f3L\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3L\u4ed8\u4e0e\u5f79',
       'L'
     );
 
@@ -1603,7 +1642,7 @@ function buildRecommendedTeam(cfg,strategy,formation='SSSS'){
   else if(formation==='LL'){
     add(
       recBestThemeCandidate(cfg,'L',used),
-      cfg.kind==='element' ? '\u30e1\u30a4\u30f3L\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3L\u4ed8\u4e0e\u5f79',
+      cfg.kind!=='status' ? '\u30e1\u30a4\u30f3L\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3L\u4ed8\u4e0e\u5f79',
       'L'
     );
 
@@ -1631,12 +1670,12 @@ function buildRecommendedTeam(cfg,strategy,formation='SSSS'){
   else{
     add(
       recBestThemeCandidate(cfg,'S',used),
-      cfg.kind==='element' ? '\u30e1\u30a4\u30f3\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3\u4ed8\u4e0e\u5f79',
+      cfg.kind!=='status' ? '\u30e1\u30a4\u30f3\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30e1\u30a4\u30f3\u4ed8\u4e0e\u5f79',
       'S'
     );
     add(
       recBestThemeCandidate(cfg,'S',used),
-      cfg.kind==='element' ? '\u30b5\u30d6\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30b5\u30d6\u4ed8\u4e0e\u30fb\u653b\u6483',
+      cfg.kind!=='status' ? '\u30b5\u30d6\u30a2\u30bf\u30c3\u30ab\u30fc' : '\u30b5\u30d6\u4ed8\u4e0e\u30fb\u653b\u6483',
       'S'
     );
 
@@ -1670,7 +1709,16 @@ function recTraitBaseScore(monster,cfg,size='S'){
   const traits=recTraitNames(monster,size);
   let traitScore=0;
   cfg.traits.forEach((name,index)=>{
-    if(traits.includes(name)){
+    if(!traits.includes(name)) return;
+
+    if(cfg.kind==='critical'){
+      traitScore+=[
+        10,
+        7,
+        4
+      ][index]||3;
+    }
+    else{
       traitScore+=index===0?5:7;
     }
   });
@@ -1691,6 +1739,25 @@ function recAttackBreakdown(monster,cfg,size='S'){
     .filter(v=>v>0);
   const trait100=recPercentile100(traitValues,traitScore);
   const stats=monster.stats||{};
+
+  if(cfg.kind==='critical'){
+    const statScore=statBlend(monster,{
+      attack:0.75,
+      agility:0.15,
+      hp:0.10
+    });
+
+    return {
+      traitScore:trait100,
+      statScore:Math.round(statScore*100),
+      type:'\u4f1a\u5fc3\u7269\u7406\u578b',
+      fields:[
+        ['attack','\u653b\u6483\u529b',stats.attack],
+        ['agility','\u3059\u3070\u3084\u3055',stats.agility],
+        ['hp','HP',stats.hp]
+      ]
+    };
+  }
 
   if(cfg.kind==='status'){
     const statScore=statBlend(monster,{agility:0.6,hp:0.2,defence:0.2});
@@ -2772,7 +2839,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=26',
+    './data.json?v=27',
     {
       cache:'no-store'
     }
@@ -2787,7 +2854,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=26',
+    './skills.json?v=27',
     {
       cache:'no-store'
     }
@@ -2842,7 +2909,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=26'
+      './sw.js?v=27'
     )
     .catch(error=>
       console.warn(
