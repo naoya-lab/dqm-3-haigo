@@ -977,3 +977,47 @@ footer{
   font-weight:700;
   color:#4b5563;
 }
+
+.sortrow{
+  flex-wrap:wrap;
+}
+.filter-toggle{
+  padding:7px 10px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  background:#fff;
+  font-weight:700;
+}
+.monster-filters{
+  margin-top:8px;
+  padding:10px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#fafafa;
+}
+.filter-group + .filter-group{
+  margin-top:10px;
+}
+.filter-title{
+  margin-bottom:6px;
+  font-size:12px;
+  font-weight:800;
+}
+.filter-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+.filter-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 8px;
+  border:1px solid #d1d5db;
+  border-radius:999px;
+  background:#fff;
+  font-size:12px;
+}
+.filter-chip input{
+  margin:0;
+}
