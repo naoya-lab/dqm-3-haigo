@@ -38,7 +38,7 @@
 
 <link
   rel="stylesheet"
-  href="./style.css?v=32"
+  href="./style.css?v=33"
 >
 
 <title>
@@ -144,6 +144,48 @@ DQM3 配合検索
 
       </select>
 
+      <select
+        id="sortDirection"
+        aria-label="昇順・降順"
+      >
+        <option value="asc">昇順</option>
+        <option value="desc">降順</option>
+      </select>
+
+      <button
+        id="filterToggle"
+        class="filter-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="monsterFilters"
+      >
+        ▶ 絞り込み
+      </button>
+
+    </div>
+
+    <div
+      id="monsterFilters"
+      class="monster-filters"
+      hidden
+    >
+      <div class="filter-group">
+        <div class="filter-title">ランク（複数選択可）</div>
+        <div id="rankFilters" class="filter-options"></div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">種族（複数選択可）</div>
+        <div id="familyFilters" class="filter-options"></div>
+      </div>
+
+      <button
+        id="clearFilters"
+        class="clearbutton"
+        type="button"
+      >
+        絞り込み解除
+      </button>
     </div>
 
   </div>
@@ -260,7 +302,7 @@ DQM3 配合検索
 
 
 <script
-  src="./app.js?v=32"
+  src="./app.js?v=33"
 ></script>
 
 </body>
