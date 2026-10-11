@@ -16,6 +16,12 @@ const skillTab=document.getElementById('skillTab');
 const planTab=document.getElementById('planTab');
 const recommendTab=document.getElementById('recommendTab');
 const sortSelect=document.getElementById('sortSelect');
+const sortDirection=document.getElementById('sortDirection');
+const filterToggle=document.getElementById('filterToggle');
+const monsterFilters=document.getElementById('monsterFilters');
+const rankFilters=document.getElementById('rankFilters');
+const familyFilters=document.getElementById('familyFilters');
+const clearFilters=document.getElementById('clearFilters');
 const sortRow=document.getElementById('sortRow');
 const normalSearch=document.getElementById('normalSearch');
 const planControls=document.getElementById('planControls');
@@ -556,6 +562,69 @@ function searchScore(name,term){
   return 3;
 }
 
+function selectedFilterValues(container){
+  if(!container) return [];
+  return [...container.querySelectorAll('input[type="checkbox"]:checked')]
+    .map(input=>input.value);
+}
+
+function renderMonsterFilters(){
+  const rankOrder=['X','S','A','B','C','D','E','F','G'];
+  const availableRanks=new Set(
+    DB.monsters
+      .map(m=>String(m.rank||'').toUpperCase())
+      .filter(Boolean)
+  );
+
+  rankFilters.innerHTML=
+    rankOrder
+      .filter(rank=>availableRanks.has(rank))
+      .map(rank=>`
+        <label class="filter-chip">
+          <input
+            type="checkbox"
+            value="${esc(rank)}"
+          >
+          <span>${esc(rank)}ランク</span>
+        </label>
+      `)
+      .join('');
+
+  const families=[...new Set(
+    DB.monsters
+      .map(m=>String(m.family||'').trim())
+      .filter(Boolean)
+  )].sort((a,b)=>a.localeCompare(b,'ja'));
+
+  familyFilters.innerHTML=
+    families
+      .map(family=>`
+        <label class="filter-chip">
+          <input
+            type="checkbox"
+            value="${esc(family)}"
+          >
+          <span>${esc(family)}</span>
+        </label>
+      `)
+      .join('');
+}
+
+function monsterMatchesFilters(monster){
+  const ranks=selectedFilterValues(rankFilters);
+  const families=selectedFilterValues(familyFilters);
+
+  const rankOk=
+    !ranks.length
+    ||ranks.includes(String(monster.rank||'').toUpperCase());
+
+  const familyOk=
+    !families.length
+    ||families.includes(String(monster.family||''));
+
+  return rankOk && familyOk;
+}
+
 function compareMonsters(a,b,term){
   if(term){
     const as=searchScore(a.name,term);
@@ -566,68 +635,45 @@ function compareMonsters(a,b,term){
     }
   }
 
+  let result=0;
+
   if(sortSelect.value==='name'){
     const aa=a.reading||a.name||'';
     const bb=b.reading||b.name||'';
-
-    const c=String(aa)
-      .localeCompare(
-        String(bb),
-        'ja'
-      );
-
-    if(c!==0){
-      return c;
-    }
+    result=String(aa).localeCompare(String(bb),'ja');
   }
-
-  if(sortSelect.value==='rank'){
+  else if(sortSelect.value==='rank'){
     const order={
-      X:0,
-      S:1,
-      A:2,
-      B:3,
+      G:0,
+      F:1,
+      E:2,
+      D:3,
       C:4,
-      D:5,
-      E:6,
-      F:7,
-      G:8
+      B:5,
+      A:6,
+      S:7,
+      X:8
     };
 
-    const ar=
-      order[
-        String(a.rank||'').toUpperCase()
-      ]
-      ??99;
-
-    const br=
-      order[
-        String(b.rank||'').toUpperCase()
-      ]
-      ??99;
-
-    if(ar!==br){
-      return ar-br;
-    }
+    const ar=order[String(a.rank||'').toUpperCase()]??99;
+    const br=order[String(b.rank||'').toUpperCase()]??99;
+    result=ar-br;
+  }
+  else if(sortSelect.value==='family'){
+    result=String(a.family||'')
+      .localeCompare(String(b.family||''),'ja');
+  }
+  else{
+    result=(a.no??9999)-(b.no??9999);
   }
 
-  if(sortSelect.value==='family'){
-    const c=String(a.family||'')
-      .localeCompare(
-        String(b.family||''),
-        'ja'
-      );
-
-    if(c!==0){
-      return c;
-    }
+  if(result===0 && sortSelect.value!=='number'){
+    result=(a.no??9999)-(b.no??9999);
   }
 
-  return (
-    (a.no??9999)
-    -
-    (b.no??9999)
-  );
+  return sortDirection.value==='desc'
+    ? -result
+    : result;
 }
 
 function renderMonsters(){
@@ -686,10 +732,13 @@ function renderMonsters(){
         ])
     ].join(' ');
 
-    return (
+    const searchOk=
       !term
-      ||
-      norm(text).includes(term)
+      ||norm(text).includes(term);
+
+    return (
+      searchOk
+      &&monsterMatchesFilters(m)
     );
   });
 
@@ -702,9 +751,13 @@ function renderMonsters(){
       )
   );
 
+  const hasFilters=
+    selectedFilterValues(rankFilters).length
+    ||selectedFilterValues(familyFilters).length;
+
   statusEl.textContent=
-    term
-      ? `\u691c\u7d22\u7d50\u679c\uff1a${found.length}\u4f53`
+    (term||hasFilters)
+      ? `\u8868\u793a\uff1a${found.length}\u4f53 / \u5168${DB.monsters.length}\u4f53`
       : `\u767b\u9332\uff1a${DB.monsters.length}\u4f53`;
 
   results.innerHTML=
@@ -2882,6 +2935,9 @@ function updateTabs(){
 
     sortRow.style.display=
       'none';
+    monsterFilters.hidden=true;
+    filterToggle.textContent='▶ 絞り込み';
+    filterToggle.setAttribute('aria-expanded','false');
   }
 
   if(isPlan){
@@ -2995,6 +3051,48 @@ sortSelect.addEventListener(
   render
 );
 
+sortDirection.addEventListener(
+  'change',
+  render
+);
+
+filterToggle.addEventListener(
+  'click',
+  ()=>{
+    const willOpen=monsterFilters.hidden;
+    monsterFilters.hidden=!willOpen;
+    filterToggle.textContent=
+      (willOpen?'▼':'▶')+' 絞り込み';
+    filterToggle.setAttribute(
+      'aria-expanded',
+      willOpen?'true':'false'
+    );
+  }
+);
+
+rankFilters.addEventListener(
+  'change',
+  render
+);
+
+familyFilters.addEventListener(
+  'change',
+  render
+);
+
+clearFilters.addEventListener(
+  'click',
+  ()=>{
+    [
+      ...rankFilters.querySelectorAll('input[type="checkbox"]'),
+      ...familyFilters.querySelectorAll('input[type="checkbox"]')
+    ].forEach(input=>{
+      input.checked=false;
+    });
+    render();
+  }
+);
+
 function updateNet(){
   net.textContent=
     navigator.onLine
@@ -3017,7 +3115,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=32',
+    './data.json?v=33',
     {
       cache:'no-store'
     }
@@ -3032,7 +3130,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=32',
+    './skills.json?v=33',
     {
       cache:'no-store'
     }
@@ -3047,7 +3145,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=32',
+    './ability_details.json?v=33',
     {
       cache:'no-store'
     }
@@ -3062,7 +3160,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=32',
+    './trait_details.json?v=33',
     {
       cache:'no-store'
     }
@@ -3088,6 +3186,7 @@ Promise.all([
     ABILITY_DETAILS=abilityDetailData.abilities||{};
     TRAIT_DETAILS=traitDetailData.traits||{};
     prepareStatThresholds();
+    renderMonsterFilters();
 
     monsterOptions.innerHTML=
       DB.monsters
@@ -3120,7 +3219,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=32'
+      './sw.js?v=33'
     )
     .catch(error=>
       console.warn(
