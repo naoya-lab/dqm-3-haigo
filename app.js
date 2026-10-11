@@ -1,5 +1,6 @@
 let DB={monsters:[]};
 let SKILL_DB={skills:[]};
+let ABILITY_DETAILS={};
 let mode='monster';
 let monsterSearchValue='';
 let skillSearchValue='';
@@ -899,17 +900,38 @@ function abilityTable(skill){
               -
               Number(b.points||0)
           )
-          .map(ability=>`
-            <div class="skillability">
-              <span class="skillpoints">
-                ${esc(ability.points)}P
-              </span>
+          .map(ability=>{
+            const detail=ABILITY_DETAILS[ability.name];
 
-              <span class="abilityname">
-                ${esc(ability.name)}
-              </span>
-            </div>
-          `)
+            return `
+              <div class="skillability">
+                <div class="skillability-main">
+                  <span class="skillpoints">
+                    ${esc(ability.points)}P
+                  </span>
+
+                  <span class="abilityname">
+                    ${esc(ability.name)}
+                  </span>
+
+                  ${detail ? `
+                    <span class="ability-class">
+                      ${esc(detail.category)}
+                    </span>
+                    <span class="ability-mp">
+                      MP ${esc(detail.mp)}
+                    </span>
+                  ` : ''}
+                </div>
+
+                ${detail ? `
+                  <div class="ability-description">
+                    ${esc(detail.description)}
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          })
           .join('')
       }
     </div>
@@ -1084,7 +1106,14 @@ function renderSkills(){
 
       const abilityText=
         (skill?.abilities||[])
-          .map(x=>x.name)
+          .map(x=>{
+            const detail=ABILITY_DETAILS[x.name];
+            return [
+              x.name,
+              detail?.category||'',
+              detail?.description||''
+            ].join(' ');
+          })
           .join(' ');
 
       const holderText=
@@ -2955,7 +2984,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=30',
+    './data.json?v=31',
     {
       cache:'no-store'
     }
@@ -2970,7 +2999,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=30',
+    './skills.json?v=31',
     {
       cache:'no-store'
     }
@@ -2982,15 +3011,32 @@ Promise.all([
       );
     }
     return response.json();
+  }),
+
+  fetch(
+    './ability_details.json?v=31',
+    {
+      cache:'no-store'
+    }
+  )
+  .then(response=>{
+    if(!response.ok){
+      throw new Error(
+        'ability_details.json'
+      );
+    }
+    return response.json();
   })
 ])
 .then(
   ([
     monsterData,
-    skillData
+    skillData,
+    abilityDetailData
   ])=>{
     DB=monsterData;
     SKILL_DB=skillData;
+    ABILITY_DETAILS=abilityDetailData.abilities||{};
     prepareStatThresholds();
 
     monsterOptions.innerHTML=
@@ -3016,8 +3062,7 @@ Promise.all([
 
   results.innerHTML=`
     <div class="empty">
-      data.json \u307e\u305f\u306f
-      skills.json \u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+      data.json\u30fbskills.json\u30fbability_details.json \u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002
     </div>
   `;
 });
@@ -3025,7 +3070,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=30'
+      './sw.js?v=31'
     )
     .catch(error=>
       console.warn(
