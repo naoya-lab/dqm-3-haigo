@@ -1090,3 +1090,37 @@ footer{
     padding:6px 8px;
   }
 }
+
+.monster-recommendation{
+  padding:10px 12px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#fafafa;
+}
+.recommend-role{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:8px;
+}
+.recommend-skill-list{
+  display:grid;
+  gap:6px;
+}
+.recommend-skill-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.recommend-skill-label{
+  min-width:52px;
+  font-size:11px;
+  font-weight:700;
+  color:#6b7280;
+}
+.recommend-reason{
+  margin-top:8px;
+  font-size:12px;
+  line-height:1.55;
+  color:#374151;
+}
