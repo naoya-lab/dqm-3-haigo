@@ -876,6 +876,46 @@ footer{
   color:#92400e;
 }
 
+.skill-description{
+  margin:10px 0 12px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#f8fafc;
+  color:#374151;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.skill-holder-section{
+  margin:10px 0 14px;
+}
+
+.skill-holder-toggle{
+  width:100%;
+  padding:9px 10px;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  background:#fff;
+  color:#1f2937;
+  text-align:left;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.skill-holder-list{
+  margin-top:8px;
+  padding:8px 10px;
+  border-left:3px solid #d1d5db;
+}
+
+.skill-holder-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  padding:5px 0;
+}
+
 @media(max-width:420px){
   .recommend-controls{
     grid-template-columns:1fr;
