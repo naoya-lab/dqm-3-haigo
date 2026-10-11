@@ -2,6 +2,7 @@ let DB={monsters:[]};
 let SKILL_DB={skills:[]};
 let ABILITY_DETAILS={};
 let TRAIT_DETAILS={};
+let MONSTER_RECOMMENDATIONS={};
 let mode='monster';
 let monsterSearchValue='';
 let skillSearchValue='';
@@ -432,6 +433,138 @@ function monsterStatsHtml(monster){
   `;
 }
 
+function monsterRecommendation(monster){
+  const saved=MONSTER_RECOMMENDATIONS[monster.name];
+  if(saved) return saved;
+
+  const traits=[
+    ...(monster.traits?.S||[]),
+    ...(monster.traits?.L||[])
+  ].map(x=>x.name);
+
+  const stats=monster.stats||{};
+  const attack=Number(stats.attack||0);
+  const wisdom=Number(stats.wisdom||0);
+
+  const statusMap=[
+    ['\u3069\u304f\u30d6\u30ec\u30a4\u30af\u5927','\u3069\u304f\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u3053\u3093\u3089\u3093\u30d6\u30ec\u30a4\u30af\u5927','\u3053\u3093\u3089\u3093\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u306d\u3080\u308a\u30d6\u30ec\u30a4\u30af\u5927','\u306d\u3080\u308a\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u30de\u30d2\u30d6\u30ec\u30a4\u30af\u5927','\u30de\u30d2\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u4f11\u307f\u30d6\u30ec\u30a4\u30af\u5927','\u4f11\u307f\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u5e7b\u60d1\u30d6\u30ec\u30a4\u30af\u5927','\u5e7b\u60d1\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u5c01\u3058\u30d6\u30ec\u30a4\u30af\u5927','\u5c01\u3058\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u5f31\u4f53\u5316\u30d6\u30ec\u30a4\u30af\u5927','\u5f31\u4f53\u5316\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc'],
+    ['\u5373\u6b7b\u30d6\u30ec\u30a4\u30af\u5927','\u5373\u6b7b\u59a8\u5bb3','\u30a2\u30b5\u30b7\u30f3'],
+    ['MP\u5438\u53ce\u30d6\u30ec\u30a4\u30af\u5927','MP\u5438\u53ce\u59a8\u5bb3','\u30b8\u30e3\u30de\u30fc']
+  ];
+
+  for(const [trait,role,skill] of statusMap){
+    if(traits.includes(trait)){
+      return {
+        role,
+        skills:[skill,'\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74'],
+        reason:`${trait}\u3092\u6d3b\u304b\u3057\u3066\u5148\u624b\u59a8\u5bb3\u3092\u72d9\u3046`
+      };
+    }
+  }
+
+  if(traits.includes('\u56de\u5fa9\u306e\u30b3\u30c4')){
+    return {
+      role:'\u56de\u5fa9',
+      skills:['\u8d85\u56de\u5fa9SP','MP\u30a2\u30c3\u30d74','\u3059\u3070\u3084\u3055\u30a2\u30c3\u30d74'],
+      reason:'\u56de\u5fa9\u306e\u30b3\u30c4\u3092\u6d3b\u304b\u3057\u3001\u56de\u5fa9\u91cf\u30fb\u7d99\u6226\u529b\u30fb\u884c\u52d5\u901f\u5ea6\u3092\u88dc\u3046'
+    };
+  }
+
+  const elements=[
+    ['\u706b','\u706b\u306e\u30b3\u30c4','\u706b\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u6c34','\u6c34\u306e\u30b3\u30c4','\u6c34\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u98a8','\u98a8\u306e\u30b3\u30c4','\u98a8\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u5730','\u5730\u306e\u30b3\u30c4','\u5730\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u7206\u767a','\u7206\u767a\u306e\u30b3\u30c4','\u7206\u767a\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u6c37\u7d50','\u6c37\u7d50\u306e\u30b3\u30c4','\u6c37\u7d50\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u96fb\u6483','\u96fb\u6483\u306e\u30b3\u30c4','\u96fb\u6483\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u5149','\u5149\u306e\u30b3\u30c4','\u5149\u30d6\u30ec\u30a4\u30af\u5927'],
+    ['\u95c7','\u95c7\u306e\u30b3\u30c4','\u95c7\u30d6\u30ec\u30a4\u30af\u5927']
+  ];
+
+  for(const [label,co,br] of elements){
+    if(traits.includes(co)||traits.includes(br)){
+      if(wisdom>attack){
+        return {
+          role:label+'\u546a\u6587',
+          skills:[label+'\u306e\u6975\u610f','\u304b\u3057\u3053\u3055\u30a2\u30c3\u30d74','MP\u30a2\u30c3\u30d74'],
+          reason:`${label}\u9069\u6027\u3068\u9ad8\u3081\u306e\u304b\u3057\u3053\u3055\u3092\u6d3b\u304b\u3059`
+        };
+      }
+
+      return {
+        role:label+'\u7269\u7406',
+        skills:['\u3051\u3093\u3054\u3046SP','\u653b\u6483\u529b\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74'],
+        reason:`${label}\u9069\u6027\u3068\u653b\u6483\u529b\u3092\u6d3b\u304b\u3059`
+      };
+    }
+  }
+
+  if(wisdom>attack*1.08){
+    return {
+      role:'\u546a\u6587',
+      skills:['\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP','\u304b\u3057\u3053\u3055\u30a2\u30c3\u30d74','MP\u30a2\u30c3\u30d74'],
+      reason:'\u9ad8\u3044\u304b\u3057\u3053\u3055\u3092\u6d3b\u304b\u3059'
+    };
+  }
+
+  const primary=(monster.talents||[]).find(x=>x.primary)?.name;
+  if(primary && !['\u3051\u3093\u3054\u3046SP','\u30b0\u30e9\u30f3\u30b9\u30da\u30ebSP'].includes(primary)){
+    return {
+      role:'\u4e07\u80fd',
+      skills:[primary,'\u653b\u6483\u529b\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74'],
+      reason:'\u56fa\u6709\u30b9\u30ad\u30eb\u3092\u8ef8\u306b\u4e3b\u80fd\u529b\u3068\u8010\u4e45\u3092\u88dc\u3046'
+    };
+  }
+
+  return {
+    role:'\u7269\u7406',
+    skills:['\u3051\u3093\u3054\u3046SP','\u653b\u6483\u529b\u30a2\u30c3\u30d74','HP\u30a2\u30c3\u30d74'],
+    reason:'\u9ad8\u3044\u653b\u6483\u529b\u3092\u6d3b\u304b\u3059'
+  };
+}
+
+function monsterRecommendationHtml(monster){
+  const rec=monsterRecommendation(monster);
+  if(!rec) return '';
+
+  return `
+    <div class="monster-recommendation">
+      <div class="recommend-role">
+        <span class="badge">\u5f79\u5272</span>
+        <strong>${esc(rec.role)}</strong>
+      </div>
+
+      <div class="recommend-skill-list">
+        ${(rec.skills||[]).map((name,index)=>`
+          <div class="recommend-skill-item">
+            <span class="recommend-skill-label">
+              \u30b9\u30ad\u30eb${index+1}
+            </span>
+            ${skillButton(name)}
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="recommend-reason">
+        <strong>\u7406\u7531\uff1a</strong>
+        ${esc(rec.reason||'')}
+      </div>
+
+      <div class="small">
+        S\u30b5\u30a4\u30ba\u57fa\u6e96\u3002\u5bfe\u4eba\u6226\u30fb\u7279\u5b9a\u30dc\u30b9\u30fbL\u30b5\u30a4\u30ba\u3067\u306f\u8abf\u6574\u304c\u5fc5\u8981\u3067\u3059\u3002
+      </div>
+    </div>
+  `;
+}
+
 function monsterCard(m){
   const recipes=(m.recipes||[])
     .map(recipeText)
@@ -507,6 +640,9 @@ function monsterCard(m){
 
         <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
         ${monsterTalentsHtml(m)}
+
+        <h2>\ud83c\udfaf \u304a\u3059\u3059\u3081\u30b9\u30ad\u30eb</h2>
+        ${monsterRecommendationHtml(m)}
 
         <h2>\u2b50 \u7279\u6027</h2>
         ${monsterTraitsHtml(m)}
@@ -3115,7 +3251,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=33',
+    './data.json?v=35',
     {
       cache:'no-store'
     }
@@ -3130,7 +3266,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=33',
+    './skills.json?v=35',
     {
       cache:'no-store'
     }
@@ -3145,7 +3281,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=33',
+    './ability_details.json?v=35',
     {
       cache:'no-store'
     }
@@ -3160,7 +3296,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=33',
+    './trait_details.json?v=35',
     {
       cache:'no-store'
     }
@@ -3172,6 +3308,21 @@ Promise.all([
       );
     }
     return response.json();
+  }),
+
+  fetch(
+    './monster_recommendations.json?v=35',
+    {
+      cache:'no-store'
+    }
+  )
+  .then(response=>{
+    if(!response.ok){
+      throw new Error(
+        'monster_recommendations.json'
+      );
+    }
+    return response.json();
   })
 ])
 .then(
@@ -3179,12 +3330,14 @@ Promise.all([
     monsterData,
     skillData,
     abilityDetailData,
-    traitDetailData
+    traitDetailData,
+    recommendationData
   ])=>{
     DB=monsterData;
     SKILL_DB=skillData;
     ABILITY_DETAILS=abilityDetailData.abilities||{};
     TRAIT_DETAILS=traitDetailData.traits||{};
+    MONSTER_RECOMMENDATIONS=recommendationData.recommendations||{};
     prepareStatThresholds();
     renderMonsterFilters();
 
@@ -3219,7 +3372,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=33'
+      './sw.js?v=35'
     )
     .catch(error=>
       console.warn(
