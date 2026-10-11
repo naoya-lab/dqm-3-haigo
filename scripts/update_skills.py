@@ -28,7 +28,7 @@ OUT = Path("skills.json")
 SESSION = requests.Session()
 
 SESSION.headers.update({
-    "User-Agent": "naoya-lab-dqm3-skill-builder/1.0",
+    "User-Agent": "naoya-lab-dqm3-skill-builder/2.0",
     "Accept": "application/json,text/plain,*/*",
 })
 
@@ -63,6 +63,154 @@ def fetch_json(url, attempts=4):
     raise RuntimeError(
         f"Failed to fetch {url}: {last_error}"
     )
+
+
+
+def skill_description_ja(skill: dict) -> str:
+    name = (
+        skill.get("JapaneseName")
+        or skill.get("Name")
+        or "特技"
+    ).strip()
+
+    text = (
+        skill.get("Description")
+        or ""
+    ).strip()
+
+    lower = text.lower()
+
+    if "all enemies" in lower:
+        target = "敵全体"
+    elif "single enemy" in lower or "one enemy" in lower:
+        target = "敵1体"
+    elif "all allies" in lower:
+        target = "味方全体"
+    elif "single ally" in lower or "one ally" in lower:
+        target = "味方1体"
+    else:
+        target = ""
+
+    if "revive" in lower:
+        return f"{target or '味方'}を復活させる。"
+
+    if "restore" in lower and "hp" in lower:
+        return f"{target or '味方'}のHPを回復する。"
+
+    if "restore" in lower and "mp" in lower:
+        return f"{target or '味方'}のMPを回復する。"
+
+    if "agility" in lower and ("increase" in lower or "raise" in lower):
+        return f"{target or '味方'}のすばやさを上げる。"
+
+    if "attack" in lower and ("increase" in lower or "raise" in lower):
+        return f"{target or '味方'}の攻撃力を上げる。"
+
+    if "defence" in lower and ("increase" in lower or "raise" in lower):
+        return f"{target or '味方'}の守備力を上げる。"
+
+    if "wisdom" in lower and ("increase" in lower or "raise" in lower):
+        return f"{target or '味方'}のかしこさを上げる。"
+
+    if "lowers its attack" in lower or "lowers attack" in lower:
+        return f"{target or '敵'}にダメージを与え、ときどき攻撃力を下げる。"
+
+    if "lowers its defence" in lower or "lowers defence" in lower:
+        return f"{target or '敵'}にダメージを与え、ときどき守備力を下げる。"
+
+    if "instant death" in lower or "kill" in lower:
+        if "damage" in lower:
+            return f"{target or '敵'}にダメージを与え、ときどき即死させる。"
+        return f"{target or '敵'}をときどき即死させる。"
+
+    status_map = [
+        ("sleep", "眠り"),
+        ("confus", "混乱"),
+        ("paraly", "マヒ"),
+        ("poison", "毒"),
+        ("dazzl", "幻惑"),
+        ("stun", "休み"),
+    ]
+
+    for key, jp in status_map:
+        if key in lower:
+            if "damage" in lower:
+                return f"{target or '敵'}にダメージを与え、ときどき{jp}状態にする。"
+            return f"{target or '敵'}をときどき{jp}状態にする。"
+
+    element_map = [
+        ("fire", "火"),
+        ("water", "水"),
+        ("wind", "風"),
+        ("earth", "地"),
+        ("explosive", "爆発"),
+        ("ice", "氷結"),
+        ("electric", "電撃"),
+        ("light", "光"),
+        ("dark", "闇"),
+        ("impact", "衝撃"),
+    ]
+
+    element = ""
+    for key, jp in element_map:
+        if key in lower:
+            element = jp
+            break
+
+    if "spell damage" in lower:
+        if element:
+            return f"{target or '敵'}に{element}属性の呪文ダメージを与える。"
+        return f"{target or '敵'}に呪文ダメージを与える。"
+
+    if "slashing damage" in lower:
+        if element:
+            return f"{target or '敵'}に{element}属性の斬撃ダメージを与える。"
+        return f"{target or '敵'}に斬撃ダメージを与える。"
+
+    if "damage" in lower:
+        if element:
+            return f"{target or '敵'}に{element}属性のダメージを与える。"
+        return f"{target or '敵'}にダメージを与える。"
+
+    if "prevents" in lower:
+        return f"{target or '敵'}の特定の行動・効果を封じる。"
+
+    if text:
+        return f"{name}の効果を持つ特技・呪文。"
+
+    return f"{name}を習得する。"
+
+
+def talent_trait_description_ja(trait: dict) -> str:
+    name = (
+        trait.get("JapaneseName")
+        or trait.get("Name")
+        or "特性"
+    ).strip()
+
+    bonus_map = [
+        ("HPBonus", "最大HP"),
+        ("MPBonus", "最大MP"),
+        ("AttackBonus", "攻撃力"),
+        ("DefenceBonus", "守備力"),
+        ("AgilityBonus", "すばやさ"),
+        ("WisdomBonus", "かしこさ"),
+    ]
+
+    for field, label in bonus_map:
+        value = trait.get(field)
+        if value is not None:
+            return f"{label}が{value}上がる。"
+
+    import re
+    match = re.search(r"([+-]\d+)", name)
+    if match:
+        value = match.group(1).replace("+", "")
+        label = name.split("+")[0].strip()
+        if label:
+            return f"{label}が{value}上がる。"
+
+    return f"{name}の効果を得る。"
 
 
 def main():
@@ -179,6 +327,12 @@ def main():
                 "points": int(row["Points"]),
                 "name": skill_name,
                 "type": "skill",
+                "description": skill_description_ja(
+                    skill
+                ),
+                "mpCost": int(
+                    skill.get("MPCost") or 0
+                ),
             })
 
 
@@ -211,6 +365,10 @@ def main():
                 "points": int(row["Points"]),
                 "name": trait_name,
                 "type": "trait",
+                "description":
+                    talent_trait_description_ja(
+                        trait
+                    ),
             })
 
 
