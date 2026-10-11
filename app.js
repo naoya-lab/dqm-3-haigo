@@ -916,10 +916,80 @@ function abilityTable(skill){
   `;
 }
 
+function skillHolders(name){
+  return DB.monsters
+    .filter(monster=>
+      (monster.talents||[])
+        .some(talent=>talent.name===name)
+    )
+    .sort((a,b)=>
+      Number(a.no||9999)-Number(b.no||9999)
+    );
+}
+
+function skillDescription(skill){
+  if(!skill){
+    return '\u8a73\u7d30\u30c7\u30fc\u30bf\u304c\u672a\u767b\u9332\u306e\u30b9\u30ad\u30eb\u3067\u3059\u3002';
+  }
+
+  const abilities=skill.abilities||[];
+  const active=abilities
+    .filter(x=>x.type==='skill')
+    .map(x=>x.name)
+    .filter(Boolean);
+  const passive=abilities
+    .filter(x=>x.type==='trait')
+    .map(x=>x.name)
+    .filter(Boolean);
+
+  const parts=[];
+
+  if(active.length){
+    const names=active.slice(0,3).map(x=>`\u300c${x}\u300d`).join('\u30fb');
+    parts.push(`${names}${active.length>3?'\u306a\u3069':''}\u306e\u7279\u6280\u30fb\u546a\u6587\u3092\u7fd2\u5f97\u3067\u304d\u308b\u3002`);
+  }
+
+  if(passive.length){
+    const names=passive.slice(0,3).map(x=>`\u300c${x}\u300d`).join('\u30fb');
+    parts.push(`${names}${passive.length>3?'\u306a\u3069':''}\u306e\u80fd\u529b\u4e0a\u6607\u30fb\u7279\u6027\u3082\u7fd2\u5f97\u3067\u304d\u308b\u3002`);
+  }
+
+  if(!parts.length){
+    parts.push('\u7fd2\u5f97\u5185\u5bb9\u306e\u8a73\u7d30\u306f\u672a\u767b\u9332\u3067\u3059\u3002');
+  }
+
+  if(skill.category){
+    parts.push(`\u5206\u985e\uff1a${skill.category}\u3002`);
+  }
+
+  return parts.join('');
+}
+
+function skillHolderHtml(monster){
+  return `
+    <div class="skill-holder-row">
+      ${monsterButton(monster.name)}
+      ${monster.rank?`<span class="mini-badge">${esc(monster.rank)}\u30e9\u30f3\u30af</span>`:''}
+      ${monster.family?`<span class="mini-badge">${esc(monster.family)}</span>`:''}
+    </div>
+  `;
+}
+
+window.toggleSkillHolders=function(id,button){
+  const body=document.getElementById(id);
+  if(!body) return;
+  const willOpen=body.hidden;
+  body.hidden=!willOpen;
+  button.textContent=(willOpen?'\u25bc':'\u25b6')+button.dataset.label;
+  button.setAttribute('aria-expanded',willOpen?'true':'false');
+};
 function skillCard(name){
   const skill=findSkill(name);
   const recipes=skillRecipesFor(name);
   const uses=skillUsesFor(name);
+  const holders=skillHolders(name);
+  const holderId='skill-holders-'+encodeURIComponent(name).replace(/%/g,'');
+  const holderLabel=` \u3053\u306e\u30b9\u30ad\u30eb\u3092\u6301\u3064\u30e2\u30f3\u30b9\u30bf\u30fc\uff08${holders.length}\u4f53\uff09`;
 
   return `
     <section class="card">
@@ -937,6 +1007,44 @@ function skillCard(name){
             `
             : ''
         }
+        ${
+          skill?.category
+            ? `<span class="badge">${esc(skill.category)}</span>`
+            : ''
+        }
+      </div>
+
+      <div class="skill-description">
+        ${esc(skillDescription(skill))}
+      </div>
+
+      <div class="skill-holder-section">
+        <button
+          class="skill-holder-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="${holderId}"
+          data-label="${esc(holderLabel)}"
+          onclick="toggleSkillHolders('${holderId}',this)"
+        >
+          \u25b6${esc(holderLabel)}
+        </button>
+
+        <div
+          id="${holderId}"
+          class="skill-holder-list"
+          hidden
+        >
+          ${
+            holders.length
+              ? holders.map(skillHolderHtml).join('')
+              : `
+                <div class="small">
+                  \u73fe\u5728\u306e\u56f3\u9451\u30c7\u30fc\u30bf\u3067\u306f\u6240\u6301\u30e2\u30f3\u30b9\u30bf\u30fc\u306f\u672a\u767b\u9332\u3067\u3059\u3002
+                </div>
+              `
+          }
+        </div>
       </div>
 
       <h2>\u899a\u3048\u308b\u7279\u6280\u30fb\u52b9\u679c</h2>
@@ -979,11 +1087,19 @@ function renderSkills(){
           .map(x=>x.name)
           .join(' ');
 
+      const holderText=
+        skillHolders(name)
+          .map(x=>x.name)
+          .join(' ');
+
+      const description=
+        skillDescription(skill);
+
       return (
         !term
         ||
         norm(
-          `${name} ${abilityText}`
+          `${name} ${abilityText} ${holderText} ${description}`
         ).includes(term)
       );
     })
@@ -2839,7 +2955,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=27',
+    './data.json?v=28',
     {
       cache:'no-store'
     }
@@ -2854,7 +2970,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=27',
+    './skills.json?v=28',
     {
       cache:'no-store'
     }
@@ -2909,7 +3025,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=27'
+      './sw.js?v=28'
     )
     .catch(error=>
       console.warn(
