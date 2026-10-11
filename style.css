@@ -916,6 +916,31 @@ footer{
   padding:5px 0;
 }
 
+.skillability{
+  display:block;
+}
+
+.skillability-main{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.ability-mp{
+  margin-left:auto;
+  font-size:11px;
+  color:#6b7280;
+  white-space:nowrap;
+}
+
+.ability-description{
+  margin:4px 0 7px 48px;
+  color:#4b5563;
+  font-size:12px;
+  line-height:1.55;
+}
+
 @media(max-width:420px){
   .recommend-controls{
     grid-template-columns:1fr;
