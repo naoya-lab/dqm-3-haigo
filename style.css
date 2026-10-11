@@ -1021,3 +1021,72 @@ footer{
 .filter-chip input{
   margin:0;
 }
+
+/* v34: compact, readable monster filter controls */
+.monster-filters{
+  color:#111827;
+  background:#fff;
+}
+
+.filter-title{
+  color:#111827;
+}
+
+.filter-options{
+  align-items:flex-start;
+}
+
+.filter-chip{
+  width:auto;
+  min-height:34px;
+  color:#111827;
+  background:#fff;
+  border:1px solid #d1d5db;
+  padding:6px 9px;
+  line-height:1.2;
+}
+
+.filter-chip input[type="checkbox"]{
+  appearance:auto;
+  -webkit-appearance:checkbox;
+  width:18px !important;
+  min-width:18px;
+  height:18px !important;
+  min-height:18px;
+  margin:0 !important;
+  padding:0 !important;
+  border-radius:3px;
+  flex:0 0 18px;
+}
+
+.filter-chip span{
+  color:#111827;
+  white-space:nowrap;
+}
+
+#sortDirection{
+  flex:none;
+  width:auto;
+  min-width:82px;
+  padding:9px 8px;
+  border:0;
+  border-radius:10px;
+  font-size:14px;
+  background:#fff;
+  color:#111827;
+}
+
+@media(max-width:420px){
+  .monster-filters{
+    padding:12px;
+  }
+
+  .filter-options{
+    gap:7px;
+  }
+
+  .filter-chip{
+    font-size:12px;
+    padding:6px 8px;
+  }
+}
