@@ -901,13 +901,28 @@ function abilityTable(skill){
           )
           .map(ability=>`
             <div class="skillability">
-              <span class="skillpoints">
-                ${esc(ability.points)}P
-              </span>
+              <div class="skillability-main">
+                <span class="skillpoints">
+                  ${esc(ability.points)}P
+                </span>
 
-              <span class="abilityname">
-                ${esc(ability.name)}
-              </span>
+                <span class="abilityname">
+                  ${esc(ability.name)}
+                </span>
+
+                ${
+                  ability.mpCost
+                    ? `<span class="ability-mp">MP ${esc(ability.mpCost)}</span>`
+                    : ''
+                }
+              </div>
+
+              <div class="ability-description">
+                ${esc(
+                  ability.description
+                  ||'説明未登録'
+                )}
+              </div>
             </div>
           `)
           .join('')
@@ -1084,7 +1099,7 @@ function renderSkills(){
 
       const abilityText=
         (skill?.abilities||[])
-          .map(x=>x.name)
+          .map(x=>`${x.name} ${x.description||''}`)
           .join(' ');
 
       const holderText=
@@ -2955,7 +2970,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=28',
+    './data.json?v=29',
     {
       cache:'no-store'
     }
@@ -2970,7 +2985,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=28',
+    './skills.json?v=29',
     {
       cache:'no-store'
     }
@@ -3025,7 +3040,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=28'
+      './sw.js?v=29'
     )
     .catch(error=>
       console.warn(
