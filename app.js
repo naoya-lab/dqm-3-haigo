@@ -174,51 +174,26 @@ function eggsHtml(monster){
 
 function monsterTalentsHtml(monster){
   const talents=monster.talents||[];
+  const primary=talents.filter(x=>x.primary);
 
-  if(!talents.length){
+  if(!primary.length){
     return `
       <div class="small">
-        \u30b9\u30ad\u30eb\u30c7\u30fc\u30bf\u672a\u767b\u9332
+        \u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
   }
 
-  const primary=talents.filter(x=>x.primary);
-  const others=talents.filter(x=>!x.primary);
-
   return `
     <div class="monster-talents">
-      ${
-        primary.length
-          ? `
-            <div class="monster-talent-row">
-              <span class="talent-label">\u57fa\u672c</span>
-              ${
-                primary
-                  .map(x=>skillButton(x.name))
-                  .join(' / ')
-              }
-            </div>
-          `
-          : ''
-      }
-
-      ${
-        others.length
-          ? `
-            <div class="monster-talent-row">
-              <span class="talent-label secondary">
-                \u8ffd\u52a0\u5019\u88dc
-              </span>
-              ${
-                others
-                  .map(x=>skillButton(x.name))
-                  .join(' / ')
-              }
-            </div>
-          `
-          : ''
-      }
+      <div class="monster-talent-row">
+        <span class="talent-label">\u57fa\u672c</span>
+        ${
+          primary
+            .map(x=>skillButton(x.name))
+            .join(' / ')
+        }
+      </div>
     </div>
   `;
 }
@@ -3251,7 +3226,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=35',
+    './data.json?v=36',
     {
       cache:'no-store'
     }
@@ -3266,7 +3241,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=35',
+    './skills.json?v=36',
     {
       cache:'no-store'
     }
@@ -3281,7 +3256,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=35',
+    './ability_details.json?v=36',
     {
       cache:'no-store'
     }
@@ -3296,7 +3271,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=35',
+    './trait_details.json?v=36',
     {
       cache:'no-store'
     }
@@ -3311,7 +3286,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=35',
+    './monster_recommendations.json?v=36',
     {
       cache:'no-store'
     }
@@ -3372,7 +3347,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=35'
+      './sw.js?v=36'
     )
     .catch(error=>
       console.warn(
