@@ -1124,3 +1124,49 @@ footer{
   line-height:1.55;
   color:#374151;
 }
+
+.monster-card-actions{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex:none;
+}
+
+.plan-jump-button{
+  flex:none;
+  min-height:38px;
+  padding:0 10px;
+  border:0;
+  border-radius:10px;
+  background:#eef2ff;
+  color:#3730a3;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.plan-jump-button:active{
+  transform:scale(.96);
+}
+
+@media(max-width:420px){
+  .monster-card-header{
+    gap:6px;
+  }
+
+  .name{
+    min-width:0;
+  }
+
+  .plan-jump-button{
+    min-height:36px;
+    padding:0 8px;
+    font-size:11px;
+  }
+
+  .collapse-button{
+    width:36px;
+    height:36px;
+  }
+}
