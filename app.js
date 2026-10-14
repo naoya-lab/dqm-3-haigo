@@ -36,6 +36,7 @@ const monsterOptions=document.getElementById('monsterOptions');
 const planSubtabs=document.getElementById('planSubtabs');
 const planCurrentTab=document.getElementById('planCurrentTab');
 const planSavedTab=document.getElementById('planSavedTab');
+const planMaterialsTab=document.getElementById('planMaterialsTab');
 
 function esc(s){
   return String(s??'').replace(/[&<>"']/g,c=>({
@@ -2984,6 +2985,184 @@ function remainingHtml(stats){
   ).join('');
 }
 
+function collectSavedPlanMaterials(){
+  const totals={};
+  const originalState=planState;
+
+  try{
+    for(const saved of savedPlans){
+      planState={
+        target:saved.target||'',
+        checked:clonePlanState(saved.checked||{}),
+        routes:clonePlanState(saved.routes||{})
+      };
+
+      const root=buildPlanNode(planState.target);
+      const stats={
+        total:0,
+        checked:0,
+        leaves:{}
+      };
+
+      collectPlanStats(root,stats);
+
+      for(const [name,count] of Object.entries(stats.leaves)){
+        totals[name]=(totals[name]||0)+count;
+      }
+    }
+  }
+  finally{
+    planState=originalState;
+  }
+
+  return totals;
+}
+
+function materialAggregateRows(items){
+  if(!items.length){
+    return `
+      <div class="small">
+        該当する素材はありません。
+      </div>
+    `;
+  }
+
+  return items.map(([name,count])=>{
+    const monster=findMonster(name);
+    const locations=monster?.locations||[];
+    const eggs=monster?.eggs||[];
+
+    return `
+      <div class="material-row material-total-row">
+        <div class="material-total-head">
+          <strong>${esc(name)}</strong>
+          <span class="material-count">×${count}</span>
+        </div>
+
+        ${locations.length ? `
+          <div class="material-location">
+            📍 ${esc(
+              locations
+                .slice(0,3)
+                .map(x=>x.name)
+                .join(' / ')
+            )}
+          </div>
+        ` : ''}
+
+        ${eggs.length ? `
+          <div class="material-egg">
+            🥚 ${esc(
+              eggs
+                .map(egg=>
+                  `${egg.name}の卵${egg.postGameOnly?'（クリア後）':''}`
+                )
+                .join(' / ')
+            )}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+function renderSavedMaterialTotals(){
+  updatePlanSavedTabLabel();
+
+  if(!savedPlans.length){
+    statusEl.textContent='保存ルートがありません';
+    results.innerHTML=`
+      <div class="empty">
+        まず「作成中」で配合ルートを作り、
+        保存ルートに登録してください。
+      </div>
+    `;
+    return;
+  }
+
+  const totals=collectSavedPlanMaterials();
+  const entries=Object.entries(totals)
+    .sort(
+      (a,b)=>
+        b[1]-a[1]
+        ||a[0].localeCompare(b[0],'ja')
+    );
+
+  const catchable=[];
+  const other=[];
+
+  for(const item of entries){
+    const monster=findMonster(item[0]);
+    if((monster?.locations||[]).length){
+      catchable.push(item);
+    }
+    else{
+      other.push(item);
+    }
+  }
+
+  const totalCount=entries.reduce(
+    (sum,[,count])=>sum+count,
+    0
+  );
+
+  const catchCount=catchable.reduce(
+    (sum,[,count])=>sum+count,
+    0
+  );
+
+  statusEl.textContent=
+    `保存${savedPlans.length}体分 / 必要素材 合計${totalCount}体`;
+
+  results.innerHTML=`
+    <section class="card material-total-summary">
+      <div class="skillname">
+        8体分の素材合計
+      </div>
+
+      <div class="material-total-stats">
+        <span class="badge">
+          保存ルート ${savedPlans.length}/${MAX_SAVED_PLANS}
+        </span>
+        <span class="badge">
+          捕まえる数 ${catchCount}体
+        </span>
+        <span class="badge">
+          素材総数 ${totalCount}体
+        </span>
+        <span class="badge">
+          種類 ${entries.length}種
+        </span>
+      </div>
+
+      <div class="small">
+        各保存ルートの選択中の配合経路を合算しています。
+        作成済みチェックが付いた枝は合計から除外します。
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="plan-title">
+        📍 捕まえるモンスター
+      </h2>
+      ${materialAggregateRows(catchable)}
+    </section>
+
+    ${other.length ? `
+      <section class="card">
+        <h2 class="plan-title">
+          🥚 その他の入手素材
+        </h2>
+        <div class="small material-total-note">
+          野生出現が登録されていない素材です。
+          卵や別の配合などでの入手が必要な場合があります。
+        </div>
+        ${materialAggregateRows(other)}
+      </section>
+    ` : ''}
+  `;
+}
+
 function renderSavedPlans(){
   updatePlanSavedTabLabel();
 
@@ -3221,6 +3400,11 @@ function updatePlanSubtabs(){
     planView==='saved'
   );
 
+  planMaterialsTab.classList.toggle(
+    'active',
+    planView==='materials'
+  );
+
   updatePlanSavedTabLabel();
 }
 
@@ -3256,7 +3440,7 @@ function updateTabs(){
     ||isRecommend;
 
   planControls.hidden=
-    !isPlan || planView==='saved';
+    !isPlan || planView==='saved' || planView==='materials';
 
   planSubtabs.hidden=
     !isPlan;
@@ -3339,6 +3523,15 @@ planSavedTab.addEventListener(
   }
 );
 
+planMaterialsTab.addEventListener(
+  'click',
+  ()=>{
+    planView='materials';
+    updateTabs();
+    renderSavedMaterialTotals();
+  }
+);
+
 recommendTab.addEventListener(
   'click',
   ()=>{
@@ -3395,6 +3588,11 @@ function render(){
 
   if(planView==='saved'){
     renderSavedPlans();
+    return;
+  }
+
+  if(planView==='materials'){
+    renderSavedMaterialTotals();
     return;
   }
 
@@ -3484,7 +3682,7 @@ loadSavedPlans();
 
 Promise.all([
   fetch(
-    './data.json?v=38',
+    './data.json?v=39',
     {
       cache:'no-store'
     }
@@ -3499,7 +3697,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=38',
+    './skills.json?v=39',
     {
       cache:'no-store'
     }
@@ -3514,7 +3712,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=38',
+    './ability_details.json?v=39',
     {
       cache:'no-store'
     }
@@ -3529,7 +3727,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=38',
+    './trait_details.json?v=39',
     {
       cache:'no-store'
     }
@@ -3544,7 +3742,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=38',
+    './monster_recommendations.json?v=39',
     {
       cache:'no-store'
     }
@@ -3605,7 +3803,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=38'
+      './sw.js?v=39'
     )
     .catch(error=>
       console.warn(
