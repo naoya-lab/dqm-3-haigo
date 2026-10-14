@@ -33,6 +33,9 @@ const recommendFormation=document.getElementById('recommendFormation');
 const planTarget=document.getElementById('planTarget');
 const buildPlanButton=document.getElementById('buildPlan');
 const monsterOptions=document.getElementById('monsterOptions');
+const planSubtabs=document.getElementById('planSubtabs');
+const planCurrentTab=document.getElementById('planCurrentTab');
+const planSavedTab=document.getElementById('planSavedTab');
 
 function esc(s){
   return String(s??'').replace(/[&<>"']/g,c=>({
@@ -2474,6 +2477,11 @@ function renderRecommendations(){
 }
 
 const PLAN_KEY='dqm3-plan-v2';
+const SAVED_PLANS_KEY='dqm3-saved-plans-v1';
+const MAX_SAVED_PLANS=8;
+
+let planView='current';
+let savedPlans=[];
 
 let planState={
   target:'',
@@ -2506,6 +2514,104 @@ function savePlanState(){
     JSON.stringify(planState)
   );
 }
+
+function loadSavedPlans(){
+  try{
+    const saved=localStorage.getItem(SAVED_PLANS_KEY);
+    const parsed=saved ? JSON.parse(saved) : [];
+    savedPlans=Array.isArray(parsed)
+      ? parsed.slice(0,MAX_SAVED_PLANS)
+      : [];
+  }
+  catch(error){
+    console.warn(error);
+    savedPlans=[];
+  }
+}
+
+function saveSavedPlans(){
+  localStorage.setItem(
+    SAVED_PLANS_KEY,
+    JSON.stringify(savedPlans)
+  );
+  updatePlanSavedTabLabel();
+}
+
+function updatePlanSavedTabLabel(){
+  if(planSavedTab){
+    planSavedTab.textContent=
+      `保存ルート ${savedPlans.length}/${MAX_SAVED_PLANS}`;
+  }
+}
+
+function clonePlanState(value){
+  return JSON.parse(JSON.stringify(value));
+}
+
+function saveCurrentPlanToSlot(){
+  const target=planState.target;
+
+  if(!target || !findMonster(target)){
+    statusEl.textContent='保存できる配合計画がありません';
+    return;
+  }
+
+  const existingIndex=savedPlans.findIndex(
+    item=>item.target===target
+  );
+
+  const entry={
+    target,
+    checked:clonePlanState(planState.checked||{}),
+    routes:clonePlanState(planState.routes||{}),
+    savedAt:Date.now()
+  };
+
+  if(existingIndex>=0){
+    savedPlans[existingIndex]=entry;
+  }
+  else{
+    if(savedPlans.length>=MAX_SAVED_PLANS){
+      statusEl.textContent=
+        `保存できるのは最大${MAX_SAVED_PLANS}体までです`;
+      return;
+    }
+    savedPlans.push(entry);
+  }
+
+  saveSavedPlans();
+  statusEl.textContent=`${target} の作成経路を保存しました`;
+  renderPlan();
+}
+
+function openSavedPlan(index){
+  const saved=savedPlans[index];
+  if(!saved) return;
+
+  planState={
+    target:saved.target||'',
+    checked:clonePlanState(saved.checked||{}),
+    routes:clonePlanState(saved.routes||{})
+  };
+  savePlanState();
+
+  planView='current';
+  mode='plan';
+  updateTabs();
+  renderPlan();
+  scrollTo({top:0,behavior:'smooth'});
+}
+
+function deleteSavedPlan(index){
+  if(index<0 || index>=savedPlans.length) return;
+  savedPlans.splice(index,1);
+  saveSavedPlans();
+  renderSavedPlans();
+}
+
+window.saveCurrentPlanToSlot=saveCurrentPlanToSlot;
+window.openSavedPlan=openSavedPlan;
+window.deleteSavedPlan=deleteSavedPlan;
 
 function nodeKey(target,path){
   return target+'::'+path;
@@ -2878,6 +2984,75 @@ function remainingHtml(stats){
   ).join('');
 }
 
+function renderSavedPlans(){
+  updatePlanSavedTabLabel();
+
+  statusEl.textContent=
+    `保存ルート：${savedPlans.length}/${MAX_SAVED_PLANS}体`;
+
+  if(!savedPlans.length){
+    results.innerHTML=`
+      <div class="empty">
+        保存した配合計画はありません。<br>
+        「作成中」で配合ルートを作り、
+        「この経路を保存」を押してください。
+      </div>
+    `;
+    return;
+  }
+
+  results.innerHTML=`
+    <section class="card saved-plan-list">
+      <div class="saved-plan-note">
+        最大${MAX_SAVED_PLANS}体まで保存できます。
+        配合ルートと作成済みチェック状態も一緒に保存します。
+      </div>
+
+      ${savedPlans.map((saved,index)=>{
+        const monster=findMonster(saved.target);
+        const checkedCount=
+          Object.values(saved.checked||{})
+            .filter(Boolean)
+            .length;
+
+        return `
+          <div class="saved-plan-row">
+            <div class="saved-plan-main">
+              <div class="saved-plan-name">
+                ${esc(saved.target)}
+              </div>
+
+              <div class="saved-plan-meta">
+                ${monster?.rank ? esc(monster.rank)+'ランク' : ''}
+                ${monster?.family ? ' / '+esc(monster.family) : ''}
+                ${checkedCount ? ' / 作成済み '+checkedCount+'件' : ''}
+              </div>
+            </div>
+
+            <div class="saved-plan-actions">
+              <button
+                class="saved-plan-open"
+                type="button"
+                onclick="openSavedPlan(${index})"
+              >
+                開く
+              </button>
+
+              <button
+                class="saved-plan-delete"
+                type="button"
+                onclick="deleteSavedPlan(${index})"
+              >
+                削除
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </section>
+  `;
+}
+
 function renderPlan(){
   const target=planState.target;
 
@@ -2955,12 +3130,21 @@ function renderPlan(){
         ></div>
       </div>
 
-      <button
-        class="clearbutton"
-        onclick="clearPlanChecks()"
-      >
-        \u30c1\u30a7\u30c3\u30af\u3092\u3059\u3079\u3066\u89e3\u9664
-      </button>
+      <div class="plan-summary-actions">
+        <button
+          class="save-plan-button"
+          onclick="saveCurrentPlanToSlot()"
+        >
+          💾 この経路を保存
+        </button>
+
+        <button
+          class="clearbutton"
+          onclick="clearPlanChecks()"
+        >
+          \u30c1\u30a7\u30c3\u30af\u3092\u3059\u3079\u3066\u89e3\u9664
+        </button>
+      </div>
     </section>
 
     <section class="card">
@@ -3018,8 +3202,26 @@ function createPlan(){
   }
 
   planState.target=name;
+  planView='current';
   savePlanState();
+  updatePlanSubtabs();
   renderPlan();
+}
+
+function updatePlanSubtabs(){
+  if(!planCurrentTab || !planSavedTab) return;
+
+  planCurrentTab.classList.toggle(
+    'active',
+    planView==='current'
+  );
+
+  planSavedTab.classList.toggle(
+    'active',
+    planView==='saved'
+  );
+
+  updatePlanSavedTabLabel();
 }
 
 function updateTabs(){
@@ -3054,6 +3256,9 @@ function updateTabs(){
     ||isRecommend;
 
   planControls.hidden=
+    !isPlan || planView==='saved';
+
+  planSubtabs.hidden=
     !isPlan;
 
   recommendControls.hidden=
@@ -3082,6 +3287,7 @@ function updateTabs(){
     planTarget.value=
       planState.target
       ||'';
+    updatePlanSubtabs();
   }
 }
 
@@ -3109,8 +3315,27 @@ planTab.addEventListener(
   'click',
   ()=>{
     mode='plan';
+    planView='current';
     updateTabs();
     render();
+  }
+);
+
+planCurrentTab.addEventListener(
+  'click',
+  ()=>{
+    planView='current';
+    updateTabs();
+    renderPlan();
+  }
+);
+
+planSavedTab.addEventListener(
+  'click',
+  ()=>{
+    planView='saved';
+    updateTabs();
+    renderSavedPlans();
   }
 );
 
@@ -3165,6 +3390,11 @@ function render(){
 
   if(mode==='recommend'){
     renderRecommendations();
+    return;
+  }
+
+  if(planView==='saved'){
+    renderSavedPlans();
     return;
   }
 
@@ -3250,10 +3480,11 @@ addEventListener(
 
 updateNet();
 loadPlanState();
+loadSavedPlans();
 
 Promise.all([
   fetch(
-    './data.json?v=37',
+    './data.json?v=38',
     {
       cache:'no-store'
     }
@@ -3268,7 +3499,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=37',
+    './skills.json?v=38',
     {
       cache:'no-store'
     }
@@ -3283,7 +3514,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=37',
+    './ability_details.json?v=38',
     {
       cache:'no-store'
     }
@@ -3298,7 +3529,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=37',
+    './trait_details.json?v=38',
     {
       cache:'no-store'
     }
@@ -3313,7 +3544,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=37',
+    './monster_recommendations.json?v=38',
     {
       cache:'no-store'
     }
@@ -3374,7 +3605,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=37'
+      './sw.js?v=38'
     )
     .catch(error=>
       console.warn(
