@@ -1262,3 +1262,42 @@ footer{
     flex-direction:column;
   }
 }
+
+.material-total-stats{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin:8px 0;
+}
+
+.material-total-row{
+  padding:10px 0;
+  border-top:1px solid #e5e7eb;
+}
+
+.material-total-row:first-child{
+  border-top:0;
+}
+
+.material-total-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.material-total-note{
+  margin-bottom:8px;
+}
+
+@media(max-width:420px){
+  .plan-subtabs{
+    gap:5px;
+  }
+
+  .plan-subtab{
+    min-height:36px;
+    padding:5px 6px;
+    font-size:11px;
+  }
+}
