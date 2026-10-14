@@ -1,12 +1,12 @@
-const C='dqm3-v37';
+const C='dqm3-v38';
 
 const CORE=[
   './',
   './index.html',
-  './style.css?v=37',
-  './app.js?v=37',
-  './data.json?v=37',
-  './skills.json?v=37','./ability_details.json?v=37','./trait_details.json?v=37','./monster_recommendations.json?v=37',
+  './style.css?v=38',
+  './app.js?v=38',
+  './data.json?v=38',
+  './skills.json?v=38','./ability_details.json?v=38','./trait_details.json?v=38','./monster_recommendations.json?v=38',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png'
