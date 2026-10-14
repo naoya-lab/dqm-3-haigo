@@ -87,8 +87,24 @@ function jumpSkill(name){
   scrollTo({top:0,behavior:'smooth'});
 }
 
+function jumpToPlan(name){
+  if(!findMonster(name)) return;
+
+  planState.target=name;
+  planState.checked={};
+  planState.routes={};
+  savePlanState();
+
+  mode='plan';
+  updateTabs();
+  planTarget.value=name;
+  renderPlan();
+  scrollTo({top:0,behavior:'smooth'});
+}
+
 window.jumpMonster=jumpMonster;
 window.jumpSkill=jumpSkill;
+window.jumpToPlan=jumpToPlan;
 
 function monsterButton(name){
   return `
@@ -574,15 +590,26 @@ function monsterCard(m){
           </a>
         </div>
 
-        <button
-          class="collapse-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="${cardId}"
-          onclick="toggleMonsterCard('${cardId}',this)"
-        >
-          &#9654;
-        </button>
+        <div class="monster-card-actions">
+          <button
+            class="plan-jump-button"
+            type="button"
+            onclick='jumpToPlan(${JSON.stringify(m.name)})'
+            aria-label="${esc(m.name)}の配合計画を開く"
+          >
+            🧬 配合計画
+          </button>
+
+          <button
+            class="collapse-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="${cardId}"
+            onclick="toggleMonsterCard('${cardId}',this)"
+          >
+            &#9654;
+          </button>
+        </div>
       </div>
 
       <div
@@ -3226,7 +3253,7 @@ loadPlanState();
 
 Promise.all([
   fetch(
-    './data.json?v=36',
+    './data.json?v=37',
     {
       cache:'no-store'
     }
@@ -3241,7 +3268,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=36',
+    './skills.json?v=37',
     {
       cache:'no-store'
     }
@@ -3256,7 +3283,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=36',
+    './ability_details.json?v=37',
     {
       cache:'no-store'
     }
@@ -3271,7 +3298,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=36',
+    './trait_details.json?v=37',
     {
       cache:'no-store'
     }
@@ -3286,7 +3313,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=36',
+    './monster_recommendations.json?v=37',
     {
       cache:'no-store'
     }
@@ -3347,7 +3374,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=36'
+      './sw.js?v=37'
     )
     .catch(error=>
       console.warn(
