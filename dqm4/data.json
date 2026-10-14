@@ -1,7 +1,7 @@
 {
   "game": "DQM4",
   "status": "公開一覧の全モンスター・未公開項目は確認待ち",
-  "checkedAt": "2026-10-07",
+  "checkedAt": "2026-10-15",
   "sourceUrl": "https://gamewith.jp/monsters4/563338",
   "listedCount": 358,
   "detailCount": 161,
@@ -337,13 +337,11 @@
           "type": "特殊配合",
           "source": "スライムナイト",
           "otherParents": [
-            "たけやりへい",
-            "たけやりへい",
-            "ゾンビ系"
+            "たけやりへい"
           ],
           "result": "さまようよろい",
           "sourceUrl": "https://gamewith.jp/monsters4/575881",
-          "note": "スライムナイト×たけやりへいたけやりへい×ゾンビ系"
+          "note": "スライムナイト×たけやりへい"
         }
       ]
     },
@@ -719,25 +717,21 @@
           "type": "特殊配合",
           "source": "バブルスライム",
           "otherParents": [
-            "メラゴースト",
-            "バブルスライム",
-            "ドラゴン系"
+            "メラゴースト"
           ],
           "result": "マグマスライム",
           "sourceUrl": "https://gamewith.jp/monsters4/575961",
-          "note": "バブルスライム×メラゴーストバブルスライム×ドラゴン系"
+          "note": "バブルスライム×メラゴースト"
         },
         {
           "type": "特殊配合",
           "source": "バブルスライム",
           "otherParents": [
-            "バブルスライム",
-            "メラゴースト",
             "ドラゴン系"
           ],
           "result": "マグマスライム",
           "sourceUrl": "https://gamewith.jp/monsters4/575961",
-          "note": "バブルスライム×メラゴーストバブルスライム×ドラゴン系"
+          "note": "バブルスライム×ドラゴン系"
         },
         {
           "type": "特殊配合",
@@ -1473,13 +1467,11 @@
           "type": "特殊配合",
           "source": "スノーム",
           "otherParents": [
-            "モーモン",
-            "ももんじゃ",
-            "悪魔系"
+            "モーモン"
           ],
           "result": "イエティ",
           "sourceUrl": "https://gamewith.jp/monsters4/575951",
-          "note": "モーモン×スノームももんじゃ×悪魔系"
+          "note": "モーモン×スノーム"
         }
       ]
     },
@@ -1699,11 +1691,19 @@
           "type": "特殊配合",
           "parents": [
             "バブルスライム",
-            "メラゴースト",
+            "メラゴースト"
+          ],
+          "note": "バブルスライム×メラゴースト",
+          "sourceUrl": "https://gamewith.jp/monsters4/575961",
+          "result": "マグマスライム"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "バブルスライム",
             "ドラゴン系"
           ],
-          "note": "バブルスライム×メラゴーストバブルスライム×ドラゴン系",
+          "note": "バブルスライム×ドラゴン系",
           "sourceUrl": "https://gamewith.jp/monsters4/575961",
           "result": "マグマスライム"
         }
@@ -2413,13 +2413,11 @@
           "type": "特殊配合",
           "source": "はなまきドラゴ",
           "otherParents": [
-            "ポイズンリザード",
-            "カバシラー",
             "スライム系"
           ],
           "result": "フーセンドラゴン",
           "sourceUrl": "https://gamewith.jp/monsters4/575917",
-          "note": "ポイズンリザード×カバシラーはなまきドラゴ×スライム系"
+          "note": "はなまきドラゴ×スライム系"
         },
         {
           "type": "特殊配合",
@@ -2531,13 +2529,11 @@
           "type": "特殊配合",
           "source": "ドラゴンキッズ",
           "otherParents": [
-            "フェアリードラゴン",
-            "スキッパー",
             "自然系"
           ],
           "result": "スマイルリザード",
           "sourceUrl": "https://gamewith.jp/monsters4/575976",
-          "note": "フェアリードラゴン×スキッパードラゴンキッズ×自然系"
+          "note": "ドラゴンキッズ×自然系"
         },
         {
           "type": "特殊配合",
@@ -2959,25 +2955,21 @@
           "type": "特殊配合",
           "source": "コドラ",
           "otherParents": [
-            "フーセンドラゴン",
-            "コドラ",
-            "物質系"
+            "フーセンドラゴン"
           ],
           "result": "デンデン竜",
           "sourceUrl": "https://gamewith.jp/monsters4/575962",
-          "note": "コドラ×フーセンドラゴンコドラ×物質系"
+          "note": "コドラ×フーセンドラゴン"
         },
         {
           "type": "特殊配合",
           "source": "コドラ",
           "otherParents": [
-            "コドラ",
-            "フーセンドラゴン",
             "物質系"
           ],
           "result": "デンデン竜",
           "sourceUrl": "https://gamewith.jp/monsters4/575962",
-          "note": "コドラ×フーセンドラゴンコドラ×物質系"
+          "note": "コドラ×物質系"
         }
       ]
     },
@@ -3139,11 +3131,19 @@
           "type": "特殊配合",
           "parents": [
             "ポイズンリザード",
-            "カバシラー",
+            "カバシラー"
+          ],
+          "note": "ポイズンリザード×カバシラー",
+          "sourceUrl": "https://gamewith.jp/monsters4/575917",
+          "result": "フーセンドラゴン"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "はなまきドラゴ",
             "スライム系"
           ],
-          "note": "ポイズンリザード×カバシラーはなまきドラゴ×スライム系",
+          "note": "はなまきドラゴ×スライム系",
           "sourceUrl": "https://gamewith.jp/monsters4/575917",
           "result": "フーセンドラゴン"
         }
@@ -3194,25 +3194,21 @@
           "type": "特殊配合",
           "source": "フーセンドラゴン",
           "otherParents": [
-            "コドラ",
-            "コドラ",
-            "物質系"
+            "コドラ"
           ],
           "result": "デンデン竜",
           "sourceUrl": "https://gamewith.jp/monsters4/575962",
-          "note": "コドラ×フーセンドラゴンコドラ×物質系"
+          "note": "コドラ×フーセンドラゴン"
         },
         {
           "type": "特殊配合",
           "source": "フーセンドラゴン",
           "otherParents": [
-            "ドラキー",
-            "ドラキー",
             "ドラキー"
           ],
           "result": "ジャンボドラキー",
           "sourceUrl": "https://gamewith.jp/monsters4/575993",
-          "note": "ドラキー×フーセンドラゴンドラキー×ドラキー"
+          "note": "ドラキー×フーセンドラゴン"
         }
       ]
     },
@@ -3541,25 +3537,21 @@
           "type": "特殊配合",
           "source": "フェアリードラゴン",
           "otherParents": [
-            "スキッパー",
-            "ドラゴンキッズ",
-            "自然系"
+            "スキッパー"
           ],
           "result": "スマイルリザード",
           "sourceUrl": "https://gamewith.jp/monsters4/575976",
-          "note": "フェアリードラゴン×スキッパードラゴンキッズ×自然系"
+          "note": "フェアリードラゴン×スキッパー"
         },
         {
           "type": "特殊配合",
           "source": "フェアリードラゴン",
           "otherParents": [
-            "メタッピー",
-            "はなカワセミ",
-            "物質系"
+            "メタッピー"
           ],
           "result": "トルトリーナ",
           "sourceUrl": "https://gamewith.jp/monsters4/576131",
-          "note": "メタッピー×フェアリードラゴンはなカワセミ×物質系"
+          "note": "メタッピー×フェアリードラゴン"
         }
       ]
     },
@@ -3684,13 +3676,11 @@
           "type": "特殊配合",
           "source": "ポイズンリザード",
           "otherParents": [
-            "カバシラー",
-            "はなまきドラゴ",
-            "スライム系"
+            "カバシラー"
           ],
           "result": "フーセンドラゴン",
           "sourceUrl": "https://gamewith.jp/monsters4/575917",
-          "note": "ポイズンリザード×カバシラーはなまきドラゴ×スライム系"
+          "note": "ポイズンリザード×カバシラー"
         },
         {
           "type": "特殊配合",
@@ -3797,11 +3787,19 @@
           "type": "特殊配合",
           "parents": [
             "コドラ",
-            "フーセンドラゴン",
+            "フーセンドラゴン"
+          ],
+          "note": "コドラ×フーセンドラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/575962",
+          "result": "デンデン竜"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "コドラ",
             "物質系"
           ],
-          "note": "コドラ×フーセンドラゴンコドラ×物質系",
+          "note": "コドラ×物質系",
           "sourceUrl": "https://gamewith.jp/monsters4/575962",
           "result": "デンデン竜"
         }
@@ -3881,11 +3879,19 @@
           "type": "特殊配合",
           "parents": [
             "フェアリードラゴン",
-            "スキッパー",
+            "スキッパー"
+          ],
+          "note": "フェアリードラゴン×スキッパー",
+          "sourceUrl": "https://gamewith.jp/monsters4/575976",
+          "result": "スマイルリザード"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ドラゴンキッズ",
             "自然系"
           ],
-          "note": "フェアリードラゴン×スキッパードラゴンキッズ×自然系",
+          "note": "ドラゴンキッズ×自然系",
           "sourceUrl": "https://gamewith.jp/monsters4/575976",
           "result": "スマイルリザード"
         }
@@ -4473,37 +4479,31 @@
           "type": "特殊配合",
           "source": "ナスビナーラ",
           "otherParents": [
-            "くしざしツインズ",
-            "メーダ",
             "ゾンビ系"
           ],
           "result": "キラーコーン",
           "sourceUrl": "https://gamewith.jp/monsters4/575953",
-          "note": "くしざしツインズ×メーダナスビナーラ×ゾンビ系"
+          "note": "ナスビナーラ×ゾンビ系"
         },
         {
           "type": "特殊配合",
           "source": "ナスビナーラ",
           "otherParents": [
-            "ベビーサタン",
-            "ベビーサタン",
-            "魔獣系"
+            "ベビーサタン"
           ],
           "result": "びっくりサタン",
           "sourceUrl": "https://gamewith.jp/monsters4/575966",
-          "note": "ベビーサタン×ナスビナーラベビーサタン×魔獣系"
+          "note": "ベビーサタン×ナスビナーラ"
         },
         {
           "type": "特殊配合",
           "source": "ナスビナーラ",
           "otherParents": [
-            "おばけヒトデ",
-            "フォンデュ",
-            "ゾンビ系"
+            "おばけヒトデ"
           ],
           "result": "わかめ王子",
           "sourceUrl": "https://gamewith.jp/monsters4/575913",
-          "note": "おばけヒトデ×ナスビナーラフォンデュ×ゾンビ系"
+          "note": "おばけヒトデ×ナスビナーラ"
         }
       ]
     },
@@ -4680,13 +4680,11 @@
           "type": "特殊配合",
           "source": "はなカワセミ",
           "otherParents": [
-            "メタッピー",
-            "フェアリードラゴン",
             "物質系"
           ],
           "result": "トルトリーナ",
           "sourceUrl": "https://gamewith.jp/monsters4/576131",
-          "note": "メタッピー×フェアリードラゴンはなカワセミ×物質系"
+          "note": "はなカワセミ×物質系"
         }
       ]
     },
@@ -5360,13 +5358,11 @@
           "type": "特殊配合",
           "source": "おおがらす",
           "otherParents": [
-            "くびながイタチ",
-            "がいこつ",
-            "魔獣系"
+            "くびながイタチ"
           ],
           "result": "スカルガルー",
           "sourceUrl": "https://gamewith.jp/monsters4/575963",
-          "note": "くびながイタチ×おおがらすがいこつ×魔獣系"
+          "note": "くびながイタチ×おおがらす"
         }
       ]
     },
@@ -5850,11 +5846,19 @@
           "type": "特殊配合",
           "parents": [
             "くしざしツインズ",
-            "メーダ",
+            "メーダ"
+          ],
+          "note": "くしざしツインズ×メーダ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575953",
+          "result": "キラーコーン"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ナスビナーラ",
             "ゾンビ系"
           ],
-          "note": "くしざしツインズ×メーダナスビナーラ×ゾンビ系",
+          "note": "ナスビナーラ×ゾンビ系",
           "sourceUrl": "https://gamewith.jp/monsters4/575953",
           "result": "キラーコーン"
         }
@@ -6156,13 +6160,11 @@
           "type": "特殊配合",
           "source": "くしざしツインズ",
           "otherParents": [
-            "メーダ",
-            "ナスビナーラ",
-            "ゾンビ系"
+            "メーダ"
           ],
           "result": "キラーコーン",
           "sourceUrl": "https://gamewith.jp/monsters4/575953",
-          "note": "くしざしツインズ×メーダナスビナーラ×ゾンビ系"
+          "note": "くしざしツインズ×メーダ"
         }
       ]
     },
@@ -6380,13 +6382,11 @@
           "type": "特殊配合",
           "source": "ズッキーニャ",
           "otherParents": [
-            "ビッグハット",
-            "ビッグハット",
-            "悪魔系"
+            "ビッグハット"
           ],
           "result": "オーク",
           "sourceUrl": "https://gamewith.jp/monsters4/575959",
-          "note": "ビッグハット×ズッキーニャビッグハット×悪魔系"
+          "note": "ビッグハット×ズッキーニャ"
         },
         {
           "type": "特殊配合",
@@ -6536,13 +6536,11 @@
           "type": "特殊配合",
           "source": "カバシラー",
           "otherParents": [
-            "ポイズンリザード",
-            "はなまきドラゴ",
-            "スライム系"
+            "ポイズンリザード"
           ],
           "result": "フーセンドラゴン",
           "sourceUrl": "https://gamewith.jp/monsters4/575917",
-          "note": "ポイズンリザード×カバシラーはなまきドラゴ×スライム系"
+          "note": "ポイズンリザード×カバシラー"
         },
         {
           "type": "特殊配合",
@@ -7147,13 +7145,11 @@
           "type": "特殊配合",
           "source": "ももんじゃ",
           "otherParents": [
-            "モーモン",
-            "スノーム",
             "悪魔系"
           ],
           "result": "イエティ",
           "sourceUrl": "https://gamewith.jp/monsters4/575951",
-          "note": "モーモン×スノームももんじゃ×悪魔系"
+          "note": "ももんじゃ×悪魔系"
         },
         {
           "type": "特殊配合",
@@ -7320,25 +7316,21 @@
           "type": "特殊配合",
           "source": "いっかくうさぎ",
           "otherParents": [
-            "いたずらもぐら",
-            "いっかくうさぎ",
-            "悪魔系"
+            "いたずらもぐら"
           ],
           "result": "ぬすっとウサギ",
           "sourceUrl": "https://gamewith.jp/monsters4/575965",
-          "note": "いっかくうさぎ×いたずらもぐらいっかくうさぎ×悪魔系"
+          "note": "いっかくうさぎ×いたずらもぐら"
         },
         {
           "type": "特殊配合",
           "source": "いっかくうさぎ",
           "otherParents": [
-            "いっかくうさぎ",
-            "いたずらもぐら",
             "悪魔系"
           ],
           "result": "ぬすっとウサギ",
           "sourceUrl": "https://gamewith.jp/monsters4/575965",
-          "note": "いっかくうさぎ×いたずらもぐらいっかくうさぎ×悪魔系"
+          "note": "いっかくうさぎ×悪魔系"
         },
         {
           "type": "特殊配合",
@@ -7515,13 +7507,11 @@
           "type": "特殊配合",
           "source": "くびながイタチ",
           "otherParents": [
-            "おおがらす",
-            "がいこつ",
-            "魔獣系"
+            "おおがらす"
           ],
           "result": "スカルガルー",
           "sourceUrl": "https://gamewith.jp/monsters4/575963",
-          "note": "くびながイタチ×おおがらすがいこつ×魔獣系"
+          "note": "くびながイタチ×おおがらす"
         }
       ]
     },
@@ -8080,13 +8070,11 @@
           "type": "特殊配合",
           "source": "いたずらもぐら",
           "otherParents": [
-            "いっかくうさぎ",
-            "いっかくうさぎ",
-            "悪魔系"
+            "いっかくうさぎ"
           ],
           "result": "ぬすっとウサギ",
           "sourceUrl": "https://gamewith.jp/monsters4/575965",
-          "note": "いっかくうさぎ×いたずらもぐらいっかくうさぎ×悪魔系"
+          "note": "いっかくうさぎ×いたずらもぐら"
         }
       ]
     },
@@ -8433,25 +8421,21 @@
           "type": "特殊配合",
           "source": "ビッグハット",
           "otherParents": [
-            "ズッキーニャ",
-            "ビッグハット",
-            "悪魔系"
+            "ズッキーニャ"
           ],
           "result": "オーク",
           "sourceUrl": "https://gamewith.jp/monsters4/575959",
-          "note": "ビッグハット×ズッキーニャビッグハット×悪魔系"
+          "note": "ビッグハット×ズッキーニャ"
         },
         {
           "type": "特殊配合",
           "source": "ビッグハット",
           "otherParents": [
-            "ビッグハット",
-            "ズッキーニャ",
             "悪魔系"
           ],
           "result": "オーク",
           "sourceUrl": "https://gamewith.jp/monsters4/575959",
-          "note": "ビッグハット×ズッキーニャビッグハット×悪魔系"
+          "note": "ビッグハット×悪魔系"
         }
       ]
     },
@@ -8798,11 +8782,19 @@
           "type": "特殊配合",
           "parents": [
             "モーモン",
-            "スノーム",
+            "スノーム"
+          ],
+          "note": "モーモン×スノーム",
+          "sourceUrl": "https://gamewith.jp/monsters4/575951",
+          "result": "イエティ"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ももんじゃ",
             "悪魔系"
           ],
-          "note": "モーモン×スノームももんじゃ×悪魔系",
+          "note": "ももんじゃ×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/575951",
           "result": "イエティ"
         }
@@ -9105,11 +9097,19 @@
           "type": "特殊配合",
           "parents": [
             "ビッグハット",
-            "ズッキーニャ",
+            "ズッキーニャ"
+          ],
+          "note": "ビッグハット×ズッキーニャ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575959",
+          "result": "オーク"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ビッグハット",
             "悪魔系"
           ],
-          "note": "ビッグハット×ズッキーニャビッグハット×悪魔系",
+          "note": "ビッグハット×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/575959",
           "result": "オーク"
         }
@@ -9235,11 +9235,19 @@
           "type": "特殊配合",
           "parents": [
             "いっかくうさぎ",
-            "いたずらもぐら",
+            "いたずらもぐら"
+          ],
+          "note": "いっかくうさぎ×いたずらもぐら",
+          "sourceUrl": "https://gamewith.jp/monsters4/575965",
+          "result": "ぬすっとウサギ"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "いっかくうさぎ",
             "悪魔系"
           ],
-          "note": "いっかくうさぎ×いたずらもぐらいっかくうさぎ×悪魔系",
+          "note": "いっかくうさぎ×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/575965",
           "result": "ぬすっとウサギ"
         }
@@ -9308,11 +9316,19 @@
           "type": "特殊配合",
           "parents": [
             "くびながイタチ",
-            "おおがらす",
+            "おおがらす"
+          ],
+          "note": "くびながイタチ×おおがらす",
+          "sourceUrl": "https://gamewith.jp/monsters4/575963",
+          "result": "スカルガルー"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "がいこつ",
             "魔獣系"
           ],
-          "note": "くびながイタチ×おおがらすがいこつ×魔獣系",
+          "note": "がいこつ×魔獣系",
           "sourceUrl": "https://gamewith.jp/monsters4/575963",
           "result": "スカルガルー"
         }
@@ -9753,37 +9769,21 @@
           "type": "特殊配合",
           "source": "ドラキー",
           "otherParents": [
-            "フーセンドラゴン",
-            "ドラキー",
-            "ドラキー"
+            "フーセンドラゴン"
           ],
           "result": "ジャンボドラキー",
           "sourceUrl": "https://gamewith.jp/monsters4/575993",
-          "note": "ドラキー×フーセンドラゴンドラキー×ドラキー"
+          "note": "ドラキー×フーセンドラゴン"
         },
         {
           "type": "特殊配合",
           "source": "ドラキー",
           "otherParents": [
-            "ドラキー",
-            "フーセンドラゴン",
             "ドラキー"
           ],
           "result": "ジャンボドラキー",
           "sourceUrl": "https://gamewith.jp/monsters4/575993",
-          "note": "ドラキー×フーセンドラゴンドラキー×ドラキー"
-        },
-        {
-          "type": "特殊配合",
-          "source": "ドラキー",
-          "otherParents": [
-            "ドラキー",
-            "フーセンドラゴン",
-            "ドラキー"
-          ],
-          "result": "ジャンボドラキー",
-          "sourceUrl": "https://gamewith.jp/monsters4/575993",
-          "note": "ドラキー×フーセンドラゴンドラキー×ドラキー"
+          "note": "ドラキー×ドラキー"
         }
       ]
     },
@@ -9864,13 +9864,11 @@
           "type": "特殊配合",
           "source": "モーモン",
           "otherParents": [
-            "スノーム",
-            "ももんじゃ",
-            "悪魔系"
+            "スノーム"
           ],
           "result": "イエティ",
           "sourceUrl": "https://gamewith.jp/monsters4/575951",
-          "note": "モーモン×スノームももんじゃ×悪魔系"
+          "note": "モーモン×スノーム"
         },
         {
           "type": "特殊配合",
@@ -9962,25 +9960,21 @@
           "type": "特殊配合",
           "source": "ベビーサタン",
           "otherParents": [
-            "ナスビナーラ",
-            "ベビーサタン",
-            "魔獣系"
+            "ナスビナーラ"
           ],
           "result": "びっくりサタン",
           "sourceUrl": "https://gamewith.jp/monsters4/575966",
-          "note": "ベビーサタン×ナスビナーラベビーサタン×魔獣系"
+          "note": "ベビーサタン×ナスビナーラ"
         },
         {
           "type": "特殊配合",
           "source": "ベビーサタン",
           "otherParents": [
-            "ベビーサタン",
-            "ナスビナーラ",
             "魔獣系"
           ],
           "result": "びっくりサタン",
           "sourceUrl": "https://gamewith.jp/monsters4/575966",
-          "note": "ベビーサタン×ナスビナーラベビーサタン×魔獣系"
+          "note": "ベビーサタン×魔獣系"
         }
       ]
     },
@@ -10729,13 +10723,11 @@
           "type": "特殊配合",
           "source": "メーダ",
           "otherParents": [
-            "くしざしツインズ",
-            "ナスビナーラ",
-            "ゾンビ系"
+            "くしざしツインズ"
           ],
           "result": "キラーコーン",
           "sourceUrl": "https://gamewith.jp/monsters4/575953",
-          "note": "くしざしツインズ×メーダナスビナーラ×ゾンビ系"
+          "note": "くしざしツインズ×メーダ"
         },
         {
           "type": "特殊配合",
@@ -10751,13 +10743,11 @@
           "type": "特殊配合",
           "source": "メーダ",
           "otherParents": [
-            "ナイトウイプス",
-            "ランタンこぞう",
-            "悪魔系"
+            "ナイトウイプス"
           ],
           "result": "はりつきあくま",
           "sourceUrl": "https://gamewith.jp/monsters4/576136",
-          "note": "メーダ×ナイトウイプスランタンこぞう×悪魔系"
+          "note": "メーダ×ナイトウイプス"
         },
         {
           "type": "特殊配合",
@@ -11033,11 +11023,19 @@
           "type": "特殊配合",
           "parents": [
             "ベビーサタン",
-            "ナスビナーラ",
+            "ナスビナーラ"
+          ],
+          "note": "ベビーサタン×ナスビナーラ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575966",
+          "result": "びっくりサタン"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ベビーサタン",
             "魔獣系"
           ],
-          "note": "ベビーサタン×ナスビナーラベビーサタン×魔獣系",
+          "note": "ベビーサタン×魔獣系",
           "sourceUrl": "https://gamewith.jp/monsters4/575966",
           "result": "びっくりサタン"
         }
@@ -11450,11 +11448,19 @@
           "type": "特殊配合",
           "parents": [
             "ドラキー",
-            "フーセンドラゴン",
+            "フーセンドラゴン"
+          ],
+          "note": "ドラキー×フーセンドラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/575993",
+          "result": "ジャンボドラキー"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ドラキー",
             "ドラキー"
           ],
-          "note": "ドラキー×フーセンドラゴンドラキー×ドラキー",
+          "note": "ドラキー×ドラキー",
           "sourceUrl": "https://gamewith.jp/monsters4/575993",
           "result": "ジャンボドラキー"
         }
@@ -11523,11 +11529,19 @@
           "type": "特殊配合",
           "parents": [
             "メーダ",
-            "ナイトウイプス",
+            "ナイトウイプス"
+          ],
+          "note": "メーダ×ナイトウイプス",
+          "sourceUrl": "https://gamewith.jp/monsters4/576136",
+          "result": "はりつきあくま"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ランタンこぞう",
             "悪魔系"
           ],
-          "note": "メーダ×ナイトウイプスランタンこぞう×悪魔系",
+          "note": "ランタンこぞう×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/576136",
           "result": "はりつきあくま"
         }
@@ -11972,11 +11986,19 @@
           "type": "特殊配合",
           "parents": [
             "スライムナイト",
-            "たけやりへい",
+            "たけやりへい"
+          ],
+          "note": "スライムナイト×たけやりへい",
+          "sourceUrl": "https://gamewith.jp/monsters4/575881",
+          "result": "さまようよろい"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "たけやりへい",
             "ゾンビ系"
           ],
-          "note": "スライムナイト×たけやりへいたけやりへい×ゾンビ系",
+          "note": "たけやりへい×ゾンビ系",
           "sourceUrl": "https://gamewith.jp/monsters4/575881",
           "result": "さまようよろい"
         }
@@ -12271,13 +12293,11 @@
           "type": "特殊配合",
           "source": "スキッパー",
           "otherParents": [
-            "フェアリードラゴン",
-            "ドラゴンキッズ",
-            "自然系"
+            "フェアリードラゴン"
           ],
           "result": "スマイルリザード",
           "sourceUrl": "https://gamewith.jp/monsters4/575976",
-          "note": "フェアリードラゴン×スキッパードラゴンキッズ×自然系"
+          "note": "フェアリードラゴン×スキッパー"
         },
         {
           "type": "特殊配合",
@@ -12671,11 +12691,19 @@
           "type": "特殊配合",
           "parents": [
             "おばけヒトデ",
-            "ナスビナーラ",
+            "ナスビナーラ"
+          ],
+          "note": "おばけヒトデ×ナスビナーラ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575913",
+          "result": "わかめ王子"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "フォンデュ",
             "ゾンビ系"
           ],
-          "note": "おばけヒトデ×ナスビナーラフォンデュ×ゾンビ系",
+          "note": "フォンデュ×ゾンビ系",
           "sourceUrl": "https://gamewith.jp/monsters4/575913",
           "result": "わかめ王子"
         }
@@ -12964,13 +12992,11 @@
           "type": "特殊配合",
           "source": "メラゴースト",
           "otherParents": [
-            "バブルスライム",
-            "バブルスライム",
-            "ドラゴン系"
+            "バブルスライム"
           ],
           "result": "マグマスライム",
           "sourceUrl": "https://gamewith.jp/monsters4/575961",
-          "note": "バブルスライム×メラゴーストバブルスライム×ドラゴン系"
+          "note": "バブルスライム×メラゴースト"
         },
         {
           "type": "特殊配合",
@@ -13259,13 +13285,11 @@
           "type": "特殊配合",
           "source": "おばけヒトデ",
           "otherParents": [
-            "ナスビナーラ",
-            "フォンデュ",
-            "ゾンビ系"
+            "ナスビナーラ"
           ],
           "result": "わかめ王子",
           "sourceUrl": "https://gamewith.jp/monsters4/575913",
-          "note": "おばけヒトデ×ナスビナーラフォンデュ×ゾンビ系"
+          "note": "おばけヒトデ×ナスビナーラ"
         }
       ]
     },
@@ -13624,13 +13648,11 @@
           "type": "特殊配合",
           "source": "がいこつ",
           "otherParents": [
-            "くびながイタチ",
-            "おおがらす",
             "魔獣系"
           ],
           "result": "スカルガルー",
           "sourceUrl": "https://gamewith.jp/monsters4/575963",
-          "note": "くびながイタチ×おおがらすがいこつ×魔獣系"
+          "note": "がいこつ×魔獣系"
         },
         {
           "type": "特殊配合",
@@ -13858,13 +13880,11 @@
           "type": "特殊配合",
           "source": "ナイトウイプス",
           "otherParents": [
-            "メーダ",
-            "ランタンこぞう",
-            "悪魔系"
+            "メーダ"
           ],
           "result": "はりつきあくま",
           "sourceUrl": "https://gamewith.jp/monsters4/576136",
-          "note": "メーダ×ナイトウイプスランタンこぞう×悪魔系"
+          "note": "メーダ×ナイトウイプス"
         },
         {
           "type": "特殊配合",
@@ -14443,25 +14463,21 @@
           "type": "特殊配合",
           "source": "たけやりへい",
           "otherParents": [
-            "スライムナイト",
-            "たけやりへい",
-            "ゾンビ系"
+            "スライムナイト"
           ],
           "result": "さまようよろい",
           "sourceUrl": "https://gamewith.jp/monsters4/575881",
-          "note": "スライムナイト×たけやりへいたけやりへい×ゾンビ系"
+          "note": "スライムナイト×たけやりへい"
         },
         {
           "type": "特殊配合",
           "source": "たけやりへい",
           "otherParents": [
-            "スライムナイト",
-            "たけやりへい",
             "ゾンビ系"
           ],
           "result": "さまようよろい",
           "sourceUrl": "https://gamewith.jp/monsters4/575881",
-          "note": "スライムナイト×たけやりへいたけやりへい×ゾンビ系"
+          "note": "たけやりへい×ゾンビ系"
         }
       ]
     },
@@ -15197,13 +15213,11 @@
           "type": "特殊配合",
           "source": "フォンデュ",
           "otherParents": [
-            "おばけヒトデ",
-            "ナスビナーラ",
             "ゾンビ系"
           ],
           "result": "わかめ王子",
           "sourceUrl": "https://gamewith.jp/monsters4/575913",
-          "note": "おばけヒトデ×ナスビナーラフォンデュ×ゾンビ系"
+          "note": "フォンデュ×ゾンビ系"
         }
       ]
     },
@@ -15455,13 +15469,11 @@
           "type": "特殊配合",
           "source": "ランタンこぞう",
           "otherParents": [
-            "メーダ",
-            "ナイトウイプス",
             "悪魔系"
           ],
           "result": "はりつきあくま",
           "sourceUrl": "https://gamewith.jp/monsters4/576136",
-          "note": "メーダ×ナイトウイプスランタンこぞう×悪魔系"
+          "note": "ランタンこぞう×悪魔系"
         },
         {
           "type": "特殊配合",
@@ -15654,13 +15666,11 @@
           "type": "特殊配合",
           "source": "メタッピー",
           "otherParents": [
-            "フェアリードラゴン",
-            "はなカワセミ",
-            "物質系"
+            "フェアリードラゴン"
           ],
           "result": "トルトリーナ",
           "sourceUrl": "https://gamewith.jp/monsters4/576131",
-          "note": "メタッピー×フェアリードラゴンはなカワセミ×物質系"
+          "note": "メタッピー×フェアリードラゴン"
         }
       ]
     },
@@ -15927,11 +15937,19 @@
           "type": "特殊配合",
           "parents": [
             "メタッピー",
-            "フェアリードラゴン",
+            "フェアリードラゴン"
+          ],
+          "note": "メタッピー×フェアリードラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/576131",
+          "result": "トルトリーナ"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "はなカワセミ",
             "物質系"
           ],
-          "note": "メタッピー×フェアリードラゴンはなカワセミ×物質系",
+          "note": "はなカワセミ×物質系",
           "sourceUrl": "https://gamewith.jp/monsters4/576131",
           "result": "トルトリーナ"
         }
