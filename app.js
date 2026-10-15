@@ -27,6 +27,7 @@ const sortRow=document.getElementById('sortRow');
 const normalSearch=document.getElementById('normalSearch');
 const planControls=document.getElementById('planControls');
 const recommendControls=document.getElementById('recommendControls');
+const recommendPanelToggle=document.getElementById('recommendPanelToggle');
 const recommendTarget=document.getElementById('recommendTarget');
 const recommendStrategy=document.getElementById('recommendStrategy');
 const recommendFormation=document.getElementById('recommendFormation');
@@ -2484,8 +2485,10 @@ const PLAN_KEY='dqm3-plan-v2';
 const SAVED_PLANS_KEY='dqm3-saved-plans-v1';
 const MAX_SAVED_PLANS=8;
 const PLAN_PANEL_KEY='dqm3-plan-panel-expanded-v1';
+const RECOMMEND_PANEL_KEY='dqm3-recommend-panel-expanded-v1';
 
 let planPanelExpanded=true;
+let recommendPanelExpanded=true;
 let planView='current';
 let savedPlans=[];
 
@@ -2521,6 +2524,54 @@ function savePlanState(){
     PLAN_KEY,
     JSON.stringify(planState)
   );
+}
+
+function loadRecommendPanelState(){
+  try{
+    const saved=localStorage.getItem(RECOMMEND_PANEL_KEY);
+    if(saved!==null){
+      recommendPanelExpanded=saved==='true';
+    }
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function saveRecommendPanelState(){
+  try{
+    localStorage.setItem(
+      RECOMMEND_PANEL_KEY,
+      String(recommendPanelExpanded)
+    );
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function updateRecommendPanelVisibility(){
+  const isRecommend=mode==='recommend';
+
+  recommendPanelToggle.hidden=!isRecommend;
+
+  if(!isRecommend){
+    recommendControls.hidden=true;
+    return;
+  }
+
+  recommendPanelToggle.textContent=
+    recommendPanelExpanded
+      ? '▲ 編成条件を収納'
+      : '▼ 編成条件を展開';
+
+  recommendPanelToggle.setAttribute(
+    'aria-expanded',
+    recommendPanelExpanded?'true':'false'
+  );
+
+  recommendControls.hidden=
+    !recommendPanelExpanded;
 }
 
 function loadPlanPanelState(){
@@ -3124,14 +3175,20 @@ function collectSavedPlanMaterials(){
   const totals={};
   const originalState=planState;
 
+  const aggregateMinRankEnabled=
+    Boolean(originalState.minRankEnabled);
+
+  const aggregateMinRank=
+    originalState.minRank||'D';
+
   try{
     for(const saved of savedPlans){
       planState={
         target:saved.target||'',
         checked:clonePlanState(saved.checked||{}),
         routes:clonePlanState(saved.routes||{}),
-        minRankEnabled:Boolean(saved.minRankEnabled),
-        minRank:saved.minRank||'D'
+        minRankEnabled:aggregateMinRankEnabled,
+        minRank:aggregateMinRank
       };
 
       const root=buildPlanNode(planState.target);
@@ -3203,6 +3260,34 @@ function materialAggregateRows(items){
   }).join('');
 }
 
+function isSpecialSynthesisOnly(monster){
+  const recipes=monster?.recipes||[];
+  if(!recipes.length) return false;
+
+  return recipes.every(recipe=>{
+    if(recipe.type==='4体配合'){
+      return true;
+    }
+
+    const parents=recipe.parents||[];
+    if(!parents.length) return false;
+
+    return parents.every(parent=>
+      Boolean(findMonster(parent))
+    );
+  });
+}
+
+function isOtherAcquisitionMaterial(monster){
+  if(!monster) return false;
+
+  if((monster.eggs||[]).length){
+    return true;
+  }
+
+  return isSpecialSynthesisOnly(monster);
+}
+
 function renderSavedMaterialTotals(){
   updatePlanSavedTabLabel();
 
@@ -3230,11 +3315,12 @@ function renderSavedMaterialTotals(){
 
   for(const item of entries){
     const monster=findMonster(item[0]);
-    if((monster?.locations||[]).length){
-      catchable.push(item);
+
+    if(isOtherAcquisitionMaterial(monster)){
+      other.push(item);
     }
     else{
-      other.push(item);
+      catchable.push(item);
     }
   }
 
@@ -3275,6 +3361,9 @@ function renderSavedMaterialTotals(){
       <div class="small">
         各保存ルートの選択中の配合経路を合算しています。
         作成済みチェックが付いた枝は合計から除外します。
+        ${planState.minRankEnabled
+          ? '現在の最低'+esc(planState.minRank||'D')+'ランク設定を8体すべてに適用しています。'
+          : '最低ランク指定はOFFです。'}
       </div>
     </section>
 
@@ -3288,11 +3377,10 @@ function renderSavedMaterialTotals(){
     ${other.length ? `
       <section class="card">
         <h2 class="plan-title">
-          🥚 その他の入手素材
+          🥚 その他の素材
         </h2>
         <div class="small material-total-note">
-          野生出現が登録されていない素材です。
-          卵や別の配合などでの入手が必要な場合があります。
+          卵で入手するモンスター、または特殊配合でのみ入手できるモンスターです。
         </div>
         ${materialAggregateRows(other)}
       </section>
@@ -3587,8 +3675,7 @@ function updateTabs(){
 
   updatePlanPanelVisibility();
 
-  recommendControls.hidden=
-    !isRecommend;
+  updateRecommendPanelVisibility();
 
   if(mode==='monster'){
     q.placeholder=
@@ -3694,6 +3781,15 @@ planPanelToggle.addEventListener(
     planPanelExpanded=!planPanelExpanded;
     savePlanPanelState();
     updatePlanPanelVisibility();
+  }
+);
+
+recommendPanelToggle.addEventListener(
+  'click',
+  ()=>{
+    recommendPanelExpanded=!recommendPanelExpanded;
+    saveRecommendPanelState();
+    updateRecommendPanelVisibility();
   }
 );
 
@@ -3876,10 +3972,11 @@ updateNet();
 loadPlanState();
 loadSavedPlans();
 loadPlanPanelState();
+loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=42',
+    './data.json?v=43',
     {
       cache:'no-store'
     }
@@ -3894,7 +3991,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=42',
+    './skills.json?v=43',
     {
       cache:'no-store'
     }
@@ -3909,7 +4006,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=42',
+    './ability_details.json?v=43',
     {
       cache:'no-store'
     }
@@ -3924,7 +4021,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=42',
+    './trait_details.json?v=43',
     {
       cache:'no-store'
     }
@@ -3939,7 +4036,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=42',
+    './monster_recommendations.json?v=43',
     {
       cache:'no-store'
     }
@@ -4000,7 +4097,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=42'
+      './sw.js?v=43'
     )
     .catch(error=>
       console.warn(
