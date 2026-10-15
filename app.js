@@ -2655,7 +2655,7 @@ function shouldStopAtMinRank(monster){
     return false;
   }
 
-  return monsterRank<minimumRank;
+  return monsterRank<=minimumRank;
 }
 
 function buildPlanNode(
@@ -2775,12 +2775,22 @@ function shortEgg(monster){
 }
 
 function planNodeHtml(node,depth=0){
-  const checked=
+  const manualChecked=
     Boolean(
       planState.checked[
         node.key
       ]
     );
+
+  const autoChecked=
+    Boolean(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    );
+
+  const checked=
+    manualChecked
+    ||autoChecked;
 
   const indent=
     Math.min(depth,8);
@@ -2840,6 +2850,8 @@ function planNodeHtml(node,depth=0){
           type="checkbox"
           class="plan-check"
           ${checked?'checked':''}
+          ${autoChecked?'disabled':''}
+          ${autoChecked?'title="最低ランク以下のため自動チェック"':''}
           onchange='togglePlanCheck(
             ${JSON.stringify(node.key)},
             this.checked
@@ -2865,6 +2877,12 @@ function planNodeHtml(node,depth=0){
             `
             : ''
         }
+
+        ${autoChecked ? `
+          <span class="mini-badge auto-rank-badge">
+            自動チェック
+          </span>
+        ` : ''}
       </div>
 
       ${
@@ -2923,7 +2941,13 @@ function planNodeHtml(node,depth=0){
 function collectPlanStats(node,stats){
   stats.total++;
 
-  if(planState.checked[node.key]){
+  if(
+    planState.checked[node.key]
+    ||(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    )
+  ){
     stats.checked++;
     return;
   }
@@ -3359,7 +3383,7 @@ function renderPlan(){
         <div class="plan-rank-summary">
           配合する最低ランク：
           <strong>${esc(planState.minRank)}</strong>
-          （これより下は捕獲素材として扱います）
+          （このランク以下は自動チェックして素材合計から除外します）
         </div>
       ` : ''}
 
@@ -3785,7 +3809,7 @@ loadSavedPlans();
 
 Promise.all([
   fetch(
-    './data.json?v=40',
+    './data.json?v=41',
     {
       cache:'no-store'
     }
@@ -3800,7 +3824,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=40',
+    './skills.json?v=41',
     {
       cache:'no-store'
     }
@@ -3815,7 +3839,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=40',
+    './ability_details.json?v=41',
     {
       cache:'no-store'
     }
@@ -3830,7 +3854,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=40',
+    './trait_details.json?v=41',
     {
       cache:'no-store'
     }
@@ -3845,7 +3869,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=40',
+    './monster_recommendations.json?v=41',
     {
       cache:'no-store'
     }
@@ -3906,7 +3930,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=40'
+      './sw.js?v=41'
     )
     .catch(error=>
       console.warn(
