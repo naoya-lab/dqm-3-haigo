@@ -38,7 +38,7 @@
 
 <link
   rel="stylesheet"
-  href="./style.css?v=39"
+  href="./style.css?v=40"
 >
 
 <title>
@@ -272,6 +272,32 @@ DQM3 配合検索
       配合ルートを作成
     </button>
 
+    <div class="plan-rank-control">
+      <label class="plan-rank-check">
+        <input
+          id="planMinRankEnabled"
+          type="checkbox"
+        >
+        <span>最低ランクを指定</span>
+      </label>
+
+      <select
+        id="planMinRank"
+        aria-label="配合する最低ランク"
+        disabled
+      >
+        <option value="G">Gランク</option>
+        <option value="F">Fランク</option>
+        <option value="E">Eランク</option>
+        <option value="D" selected>Dランク</option>
+        <option value="C">Cランク</option>
+        <option value="B">Bランク</option>
+        <option value="A">Aランク</option>
+        <option value="S">Sランク</option>
+        <option value="X">Xランク</option>
+      </select>
+    </div>
+
   </div>
 
   <div
@@ -332,7 +358,7 @@ DQM3 配合検索
 
 
 <script
-  src="./app.js?v=39"
+  src="./app.js?v=40"
 ></script>
 
 </body>
