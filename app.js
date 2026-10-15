@@ -2483,7 +2483,7 @@ function renderRecommendations(){
 
 const PLAN_KEY='dqm3-plan-v2';
 const SAVED_PLANS_KEY='dqm3-saved-plans-v1';
-const MAX_SAVED_PLANS=8;
+const MAX_SAVED_PLANS=16;
 const PLAN_PANEL_KEY='dqm3-plan-panel-expanded-v1';
 const RECOMMEND_PANEL_KEY='dqm3-recommend-panel-expanded-v1';
 
@@ -3340,7 +3340,7 @@ function renderSavedMaterialTotals(){
   results.innerHTML=`
     <section class="card material-total-summary">
       <div class="skillname">
-        8体分の素材合計
+        16体分の素材合計
       </div>
 
       <div class="material-total-stats">
@@ -3362,7 +3362,7 @@ function renderSavedMaterialTotals(){
         各保存ルートの選択中の配合経路を合算しています。
         作成済みチェックが付いた枝は合計から除外します。
         ${planState.minRankEnabled
-          ? '現在の最低'+esc(planState.minRank||'D')+'ランク設定を8体すべてに適用しています。'
+          ? '現在の最低'+esc(planState.minRank||'D')+'ランク設定を16体すべてに適用しています。'
           : '最低ランク指定はOFFです。'}
       </div>
     </section>
@@ -3976,7 +3976,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=43',
+    './data.json?v=44',
     {
       cache:'no-store'
     }
@@ -3991,7 +3991,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=43',
+    './skills.json?v=44',
     {
       cache:'no-store'
     }
@@ -4006,7 +4006,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=43',
+    './ability_details.json?v=44',
     {
       cache:'no-store'
     }
@@ -4021,7 +4021,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=43',
+    './trait_details.json?v=44',
     {
       cache:'no-store'
     }
@@ -4036,7 +4036,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=43',
+    './monster_recommendations.json?v=44',
     {
       cache:'no-store'
     }
@@ -4097,7 +4097,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=43'
+      './sw.js?v=44'
     )
     .catch(error=>
       console.warn(
