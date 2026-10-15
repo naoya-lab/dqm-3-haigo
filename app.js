@@ -37,6 +37,7 @@ const planSubtabs=document.getElementById('planSubtabs');
 const planCurrentTab=document.getElementById('planCurrentTab');
 const planSavedTab=document.getElementById('planSavedTab');
 const planMaterialsTab=document.getElementById('planMaterialsTab');
+const planPanelToggle=document.getElementById('planPanelToggle');
 const planMinRankEnabled=document.getElementById('planMinRankEnabled');
 const planMinRank=document.getElementById('planMinRank');
 
@@ -2482,7 +2483,9 @@ function renderRecommendations(){
 const PLAN_KEY='dqm3-plan-v2';
 const SAVED_PLANS_KEY='dqm3-saved-plans-v1';
 const MAX_SAVED_PLANS=8;
+const PLAN_PANEL_KEY='dqm3-plan-panel-expanded-v1';
 
+let planPanelExpanded=true;
 let planView='current';
 let savedPlans=[];
 
@@ -2518,6 +2521,64 @@ function savePlanState(){
     PLAN_KEY,
     JSON.stringify(planState)
   );
+}
+
+function loadPlanPanelState(){
+  try{
+    const saved=localStorage.getItem(PLAN_PANEL_KEY);
+    if(saved!==null){
+      planPanelExpanded=saved==='true';
+    }
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function savePlanPanelState(){
+  try{
+    localStorage.setItem(
+      PLAN_PANEL_KEY,
+      String(planPanelExpanded)
+    );
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function updatePlanPanelVisibility(){
+  const isPlan=mode==='plan';
+
+  planPanelToggle.hidden=!isPlan;
+
+  if(!isPlan){
+    planControls.hidden=true;
+    planSubtabs.hidden=true;
+    return;
+  }
+
+  planPanelToggle.textContent=
+    planPanelExpanded
+      ? '▲ 操作パネルを収納'
+      : '▼ 操作パネルを展開';
+
+  planPanelToggle.setAttribute(
+    'aria-expanded',
+    planPanelExpanded?'true':'false'
+  );
+
+  if(!planPanelExpanded){
+    planControls.hidden=true;
+    planSubtabs.hidden=true;
+    return;
+  }
+
+  planControls.hidden=
+    planView==='saved'
+    ||planView==='materials';
+
+  planSubtabs.hidden=false;
 }
 
 function loadSavedPlans(){
@@ -3524,11 +3585,7 @@ function updateTabs(){
     isPlan
     ||isRecommend;
 
-  planControls.hidden=
-    !isPlan || planView==='saved' || planView==='materials';
-
-  planSubtabs.hidden=
-    !isPlan;
+  updatePlanPanelVisibility();
 
   recommendControls.hidden=
     !isRecommend;
@@ -3606,6 +3663,7 @@ planCurrentTab.addEventListener(
   ()=>{
     planView='current';
     updateTabs();
+    updatePlanPanelVisibility();
     renderPlan();
   }
 );
@@ -3615,6 +3673,7 @@ planSavedTab.addEventListener(
   ()=>{
     planView='saved';
     updateTabs();
+    updatePlanPanelVisibility();
     renderSavedPlans();
   }
 );
@@ -3624,7 +3683,17 @@ planMaterialsTab.addEventListener(
   ()=>{
     planView='materials';
     updateTabs();
+    updatePlanPanelVisibility();
     renderSavedMaterialTotals();
+  }
+);
+
+planPanelToggle.addEventListener(
+  'click',
+  ()=>{
+    planPanelExpanded=!planPanelExpanded;
+    savePlanPanelState();
+    updatePlanPanelVisibility();
   }
 );
 
@@ -3806,10 +3875,11 @@ addEventListener(
 updateNet();
 loadPlanState();
 loadSavedPlans();
+loadPlanPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=41',
+    './data.json?v=42',
     {
       cache:'no-store'
     }
@@ -3824,7 +3894,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=41',
+    './skills.json?v=42',
     {
       cache:'no-store'
     }
@@ -3839,7 +3909,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=41',
+    './ability_details.json?v=42',
     {
       cache:'no-store'
     }
@@ -3854,7 +3924,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=41',
+    './trait_details.json?v=42',
     {
       cache:'no-store'
     }
@@ -3869,7 +3939,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=41',
+    './monster_recommendations.json?v=42',
     {
       cache:'no-store'
     }
@@ -3930,7 +4000,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=41'
+      './sw.js?v=42'
     )
     .catch(error=>
       console.warn(
