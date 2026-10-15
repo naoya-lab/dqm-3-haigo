@@ -1301,3 +1301,70 @@ footer{
     font-size:11px;
   }
 }
+
+.plan-rank-control{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:100%;
+  margin-top:4px;
+  padding:8px 10px;
+  border:1px solid #4b5563;
+  border-radius:10px;
+  background:#1f2937;
+}
+
+.plan-rank-check{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#f3f4f6;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.plan-rank-check input[type="checkbox"]{
+  appearance:auto;
+  -webkit-appearance:checkbox;
+  width:18px !important;
+  height:18px !important;
+  min-width:18px;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+#planMinRank{
+  margin-left:auto;
+  min-width:92px;
+  padding:7px 8px;
+  border:0;
+  border-radius:8px;
+  background:#fff;
+  color:#111827;
+  font-size:13px;
+}
+
+#planMinRank:disabled{
+  opacity:.45;
+}
+
+.plan-rank-summary{
+  margin-top:7px;
+  padding:6px 8px;
+  border-radius:8px;
+  background:#eef2ff;
+  color:#3730a3;
+  font-size:11px;
+  line-height:1.45;
+}
+
+@media(max-width:420px){
+  .plan-rank-control{
+    flex-wrap:wrap;
+  }
+
+  #planMinRank{
+    min-width:88px;
+  }
+}
