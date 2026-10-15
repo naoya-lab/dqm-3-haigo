@@ -37,6 +37,8 @@ const planSubtabs=document.getElementById('planSubtabs');
 const planCurrentTab=document.getElementById('planCurrentTab');
 const planSavedTab=document.getElementById('planSavedTab');
 const planMaterialsTab=document.getElementById('planMaterialsTab');
+const planMinRankEnabled=document.getElementById('planMinRankEnabled');
+const planMinRank=document.getElementById('planMinRank');
 
 function esc(s){
   return String(s??'').replace(/[&<>"']/g,c=>({
@@ -2487,7 +2489,9 @@ let savedPlans=[];
 let planState={
   target:'',
   checked:{},
-  routes:{}
+  routes:{},
+  minRankEnabled:false,
+  minRank:'D'
 };
 
 function loadPlanState(){
@@ -2565,6 +2569,8 @@ function saveCurrentPlanToSlot(){
     target,
     checked:clonePlanState(planState.checked||{}),
     routes:clonePlanState(planState.routes||{}),
+    minRankEnabled:Boolean(planState.minRankEnabled),
+    minRank:planState.minRank||'D',
     savedAt:Date.now()
   };
 
@@ -2592,7 +2598,9 @@ function openSavedPlan(index){
   planState={
     target:saved.target||'',
     checked:clonePlanState(saved.checked||{}),
-    routes:clonePlanState(saved.routes||{})
+    routes:clonePlanState(saved.routes||{}),
+    minRankEnabled:Boolean(saved.minRankEnabled),
+    minRank:saved.minRank||'D'
   };
   savePlanState();
 
@@ -2616,6 +2624,38 @@ window.deleteSavedPlan=deleteSavedPlan;
 
 function nodeKey(target,path){
   return target+'::'+path;
+}
+
+const PLAN_RANK_ORDER={
+  G:0,
+  F:1,
+  E:2,
+  D:3,
+  C:4,
+  B:5,
+  A:6,
+  S:7,
+  X:8
+};
+
+function shouldStopAtMinRank(monster){
+  if(!planState.minRankEnabled) return false;
+
+  const monsterRank=
+    PLAN_RANK_ORDER[
+      String(monster?.rank||'').toUpperCase()
+    ];
+
+  const minimumRank=
+    PLAN_RANK_ORDER[
+      String(planState.minRank||'D').toUpperCase()
+    ];
+
+  if(monsterRank===undefined || minimumRank===undefined){
+    return false;
+  }
+
+  return monsterRank<minimumRank;
 }
 
 function buildPlanNode(
@@ -2646,6 +2686,16 @@ function buildPlanNode(
       key,
       monster,
       cycle:true,
+      children:[]
+    };
+  }
+
+  if(shouldStopAtMinRank(monster)){
+    return {
+      name,
+      key,
+      monster,
+      minRankStop:true,
       children:[]
     };
   }
@@ -2994,7 +3044,9 @@ function collectSavedPlanMaterials(){
       planState={
         target:saved.target||'',
         checked:clonePlanState(saved.checked||{}),
-        routes:clonePlanState(saved.routes||{})
+        routes:clonePlanState(saved.routes||{}),
+        minRankEnabled:Boolean(saved.minRankEnabled),
+        minRank:saved.minRank||'D'
       };
 
       const root=buildPlanNode(planState.target);
@@ -3205,6 +3257,7 @@ function renderSavedPlans(){
                 ${monster?.rank ? esc(monster.rank)+'ランク' : ''}
                 ${monster?.family ? ' / '+esc(monster.family) : ''}
                 ${checkedCount ? ' / 作成済み '+checkedCount+'件' : ''}
+                ${saved.minRankEnabled ? ' / 最低'+esc(saved.minRank||'D')+'ランク' : ''}
               </div>
             </div>
 
@@ -3301,6 +3354,14 @@ function renderPlan(){
         /
         ${stats.total}
       </div>
+
+      ${planState.minRankEnabled ? `
+        <div class="plan-rank-summary">
+          配合する最低ランク：
+          <strong>${esc(planState.minRank)}</strong>
+          （これより下は捕獲素材として扱います）
+        </div>
+      ` : ''}
 
       <div class="progressbar">
         <div
@@ -3471,6 +3532,17 @@ function updateTabs(){
     planTarget.value=
       planState.target
       ||'';
+
+    planMinRankEnabled.checked=
+      Boolean(planState.minRankEnabled);
+
+    planMinRank.value=
+      planState.minRank
+      ||'D';
+
+    planMinRank.disabled=
+      !planState.minRankEnabled;
+
     updatePlanSubtabs();
   }
 }
@@ -3559,6 +3631,37 @@ recommendFormation.addEventListener(
 buildPlanButton.addEventListener(
   'click',
   createPlan
+);
+
+planMinRankEnabled.addEventListener(
+  'change',
+  ()=>{
+    planState.minRankEnabled=
+      planMinRankEnabled.checked;
+
+    planMinRank.disabled=
+      !planState.minRankEnabled;
+
+    savePlanState();
+
+    if(mode==='plan' && planView==='current'){
+      renderPlan();
+    }
+  }
+);
+
+planMinRank.addEventListener(
+  'change',
+  ()=>{
+    planState.minRank=
+      planMinRank.value;
+
+    savePlanState();
+
+    if(mode==='plan' && planView==='current'){
+      renderPlan();
+    }
+  }
 );
 
 planTarget.addEventListener(
@@ -3682,7 +3785,7 @@ loadSavedPlans();
 
 Promise.all([
   fetch(
-    './data.json?v=39',
+    './data.json?v=40',
     {
       cache:'no-store'
     }
@@ -3697,7 +3800,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=39',
+    './skills.json?v=40',
     {
       cache:'no-store'
     }
@@ -3712,7 +3815,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=39',
+    './ability_details.json?v=40',
     {
       cache:'no-store'
     }
@@ -3727,7 +3830,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=39',
+    './trait_details.json?v=40',
     {
       cache:'no-store'
     }
@@ -3742,7 +3845,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=39',
+    './monster_recommendations.json?v=40',
     {
       cache:'no-store'
     }
@@ -3803,7 +3906,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=39'
+      './sw.js?v=40'
     )
     .catch(error=>
       console.warn(
