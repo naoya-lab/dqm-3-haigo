@@ -38,7 +38,7 @@
 
 <link
   rel="stylesheet"
-  href="./style.css?v=2"
+  href="./style.css?v=3"
 >
 
 <title>
@@ -53,7 +53,8 @@ DQM4 配合検索
 
 <header>
 
-  <p class="game-switch"><a href="../">モンスターズ3へ</a> ／ モンスターズ4</p>
+  <nav aria-label="ゲーム切り替え"><a href="../">モンスターズ3へ</a> ／ モンスターズ4</nav>
+
   <div class="headrow">
 
     <h1>
@@ -139,12 +140,88 @@ DQM4 配合検索
           種族順
         </option>
 
+        <option value="hp">
+          HP
+        </option>
+
+        <option value="mp">
+          MP
+        </option>
+
+        <option value="attack">
+          攻撃力
+        </option>
+
+        <option value="defence">
+          守備力
+        </option>
+
+        <option value="agility">
+          すばやさ
+        </option>
+
+        <option value="wisdom">
+          かしこさ
+        </option>
+
       </select>
 
+      <select
+        id="sortDirection"
+        aria-label="昇順・降順"
+      >
+        <option value="asc">昇順</option>
+        <option value="desc">降順</option>
+      </select>
+
+      <button
+        id="filterToggle"
+        class="filter-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="monsterFilters"
+      >
+        ▶ 絞り込み
+      </button>
+
+    </div>
+
+    <div
+      id="monsterFilters"
+      class="monster-filters"
+      hidden
+    >
+      <div class="filter-group">
+        <div class="filter-title">ランク（複数選択可）</div>
+        <div id="rankFilters" class="filter-options"></div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-title">種族（複数選択可）</div>
+        <div id="familyFilters" class="filter-options"></div>
+      </div>
+
+      <button
+        id="clearFilters"
+        class="clearbutton"
+        type="button"
+      >
+        絞り込み解除
+      </button>
     </div>
 
   </div>
 
+
+  <button
+    id="recommendPanelToggle"
+    class="recommend-panel-toggle"
+    type="button"
+    hidden
+    aria-expanded="true"
+  >
+    ▲ 編成条件を収納
+  </button>
 
   <div
     id="recommendControls"
@@ -164,6 +241,9 @@ DQM4 配合検索
           <option value="electric">⚡ 電撃</option>
           <option value="light">✨ 光</option>
           <option value="dark">🌑 闇</option>
+        </optgroup>
+        <optgroup label="特殊火力">
+          <option value="critical">💥 会心</option>
         </optgroup>
         <optgroup label="状態異常・妨害">
           <option value="sleep">😴 眠り</option>
@@ -187,7 +267,26 @@ DQM4 配合検索
         <option value="control">妨害重視</option>
       </select>
     </label>
+
+    <label>
+      編成サイズ
+      <select id="recommendFormation" disabled title="DQM4の編成データは確認待ちです">
+        <option value="SSSS">S × 4</option>
+        <option value="LSS">L × 1 ＋ S × 2</option>
+        <option value="LL">L × 2</option>
+      </select>
+    </label>
   </div>
+
+  <button
+    id="planPanelToggle"
+    class="plan-panel-toggle"
+    type="button"
+    hidden
+    aria-expanded="true"
+  >
+    ▲ 操作パネルを収納
+  </button>
 
   <div
     id="planControls"
@@ -215,13 +314,69 @@ DQM4 配合検索
       配合ルートを作成
     </button>
 
+    <div class="plan-rank-control">
+      <label class="plan-rank-check">
+        <input
+          id="planMinRankEnabled"
+          type="checkbox"
+        >
+        <span>最低ランクを指定</span>
+      </label>
+
+      <select
+        id="planMinRank"
+        aria-label="配合する最低ランク"
+        disabled
+      >
+        <option value="G">Gランク</option>
+        <option value="F">Fランク</option>
+        <option value="E">Eランク</option>
+        <option value="D" selected>Dランク</option>
+        <option value="C">Cランク</option>
+        <option value="B">Bランク</option>
+        <option value="A">Aランク</option>
+        <option value="S">Sランク</option>
+        <option value="X">Xランク</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div
+    id="planSubtabs"
+    class="plan-subtabs"
+    hidden
+  >
+    <button
+      id="planCurrentTab"
+      class="plan-subtab active"
+      type="button"
+    >
+      作成中
+    </button>
+
+    <button
+      id="planSavedTab"
+      class="plan-subtab"
+      type="button"
+    >
+      保存ルート 0/16
+    </button>
+
+    <button
+      id="planMaterialsTab"
+      class="plan-subtab"
+      type="button"
+    >
+      素材合計
+    </button>
   </div>
 
 </header>
 
 
 <main>
-  <section class="preparation-note">現在公開されている全モンスターを登録しています。詳細公開済みのモンスターは配合・スキル・特性も検索できます。<br>未公開の番号・ランク・習得レベルなどは確認待ちです。おすすめ編成は未登録です。</section>
+<section class="preparation-note">公開情報に基づくDQM4データです。未公開の数値・習得条件は確認待ちです。ステータス順は数値登録後に利用できます。</section>
 
   <div
     id="status"
@@ -246,10 +401,9 @@ DQM4 配合検索
 
 
 <script
-  src="./app.js?v=2"
+  src="./app.js?v=3"
 ></script>
 
 </body>
 
 </html>
-

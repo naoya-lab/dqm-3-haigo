@@ -1,7 +1,13 @@
+let RECOMMEND_DB={teams:[]};
 let DB={monsters:[]};
 let SKILL_DB={skills:[]};
-let RECOMMEND_DB={teams:[]};
+let ABILITY_DETAILS={};
+let TRAIT_DETAILS={};
+let MONSTER_RECOMMENDATIONS={};
 let mode='monster';
+let monsterSearchValue='';
+let skillSearchValue='';
+let STAT_THRESHOLDS={};
 
 const q=document.getElementById('q');
 const results=document.getElementById('results');
@@ -12,15 +18,30 @@ const skillTab=document.getElementById('skillTab');
 const planTab=document.getElementById('planTab');
 const recommendTab=document.getElementById('recommendTab');
 const sortSelect=document.getElementById('sortSelect');
+const sortDirection=document.getElementById('sortDirection');
+const filterToggle=document.getElementById('filterToggle');
+const monsterFilters=document.getElementById('monsterFilters');
+const rankFilters=document.getElementById('rankFilters');
+const familyFilters=document.getElementById('familyFilters');
+const clearFilters=document.getElementById('clearFilters');
 const sortRow=document.getElementById('sortRow');
 const normalSearch=document.getElementById('normalSearch');
 const planControls=document.getElementById('planControls');
 const recommendControls=document.getElementById('recommendControls');
+const recommendPanelToggle=document.getElementById('recommendPanelToggle');
 const recommendTarget=document.getElementById('recommendTarget');
 const recommendStrategy=document.getElementById('recommendStrategy');
+const recommendFormation=document.getElementById('recommendFormation');
 const planTarget=document.getElementById('planTarget');
 const buildPlanButton=document.getElementById('buildPlan');
 const monsterOptions=document.getElementById('monsterOptions');
+const planSubtabs=document.getElementById('planSubtabs');
+const planCurrentTab=document.getElementById('planCurrentTab');
+const planSavedTab=document.getElementById('planSavedTab');
+const planMaterialsTab=document.getElementById('planMaterialsTab');
+const planPanelToggle=document.getElementById('planPanelToggle');
+const planMinRankEnabled=document.getElementById('planMinRankEnabled');
+const planMinRank=document.getElementById('planMinRank');
 
 function esc(s){
   return String(s??'').replace(/[&<>"']/g,c=>({
@@ -38,6 +59,16 @@ function norm(s){
     .replace(/[\s\u30fb\uff65\u30fc]/g,'');
 }
 
+function traitDetail(name){
+  const key=String(name||'');
+  return (
+    TRAIT_DETAILS[key]
+    ||TRAIT_DETAILS[key.replace(/～/g,'〜')]
+    ||TRAIT_DETAILS[key.replace(/〜/g,'～')]
+    ||null
+  );
+}
+
 function findMonster(name){
   return DB.monsters.find(m=>m.name===name);
 }
@@ -48,23 +79,41 @@ function imgUrl(name){
 }
 
 function jumpMonster(name){
+  monsterSearchValue=name;
   mode='monster';
   updateTabs();
-  q.value=name;
+  q.value=monsterSearchValue;
   render();
   scrollTo({top:0,behavior:'smooth'});
 }
 
 function jumpSkill(name){
+  skillSearchValue=name;
   mode='skill';
   updateTabs();
-  q.value=name;
+  q.value=skillSearchValue;
   render();
+  scrollTo({top:0,behavior:'smooth'});
+}
+
+function jumpToPlan(name){
+  if(!findMonster(name)) return;
+
+  planState.target=name;
+  planState.checked={};
+  planState.routes={};
+  savePlanState();
+
+  mode='plan';
+  updateTabs();
+  planTarget.value=name;
+  renderPlan();
   scrollTo({top:0,behavior:'smooth'});
 }
 
 window.jumpMonster=jumpMonster;
 window.jumpSkill=jumpSkill;
+window.jumpToPlan=jumpToPlan;
 
 function monsterButton(name){
   return `
@@ -150,51 +199,26 @@ function eggsHtml(monster){
 
 function monsterTalentsHtml(monster){
   const talents=monster.talents||[];
+  const primary=talents.filter(x=>x.primary);
 
-  if(!talents.length){
+  if(!primary.length){
     return `
       <div class="small">
-        \u30b9\u30ad\u30eb\u30c7\u30fc\u30bf\u672a\u767b\u9332
+        \u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
   }
 
-  const primary=talents.filter(x=>x.primary);
-  const others=talents.filter(x=>!x.primary);
-
   return `
     <div class="monster-talents">
-      ${
-        primary.length
-          ? `
-            <div class="monster-talent-row">
-              <span class="talent-label">\u57fa\u672c</span>
-              ${
-                primary
-                  .map(x=>skillButton(x.name))
-                  .join(' / ')
-              }
-            </div>
-          `
-          : ''
-      }
-
-      ${
-        others.length
-          ? `
-            <div class="monster-talent-row">
-              <span class="talent-label secondary">
-                \u8ffd\u52a0\u5019\u88dc
-              </span>
-              ${
-                others
-                  .map(x=>skillButton(x.name))
-                  .join(' / ')
-              }
-            </div>
-          `
-          : ''
-      }
+      <div class="monster-talent-row">
+        <span class="talent-label">\u57fa\u672c</span>
+        ${
+          primary
+            .map(x=>skillButton(x.name))
+            .join(' / ')
+        }
+      </div>
     </div>
   `;
 }
@@ -301,13 +325,114 @@ function useText(u){
   `;
 }
 
+const STAT_FIELDS=[
+  ['hp','\u6700\u5927HP'],
+  ['mp','\u6700\u5927MP'],
+  ['attack','\u653b\u6483\u529b'],
+  ['defence','\u5b88\u5099\u529b'],
+  ['agility','\u3059\u3070\u3084\u3055'],
+  ['wisdom','\u304b\u3057\u3053\u3055']
+];
+
+function percentile(sorted,p){
+  if(!sorted.length) return 0;
+  const index=(sorted.length-1)*p;
+  const lower=Math.floor(index);
+  const upper=Math.ceil(index);
+  if(lower===upper) return sorted[lower];
+  const weight=index-lower;
+  return sorted[lower]*(1-weight)+sorted[upper]*weight;
+}
+
+function prepareStatThresholds(){
+  STAT_THRESHOLDS={};
+  STAT_FIELDS.forEach(([key])=>{
+    const values=DB.monsters
+      .map(m=>Number(m.stats?.[key]||0))
+      .filter(v=>v>0)
+      .sort((a,b)=>a-b);
+    STAT_THRESHOLDS[key]=[
+      percentile(values,.2),
+      percentile(values,.4),
+      percentile(values,.6),
+      percentile(values,.8)
+    ];
+  });
+}
+
+function statStars(key,value){
+  const n=Number(value||0);
+  if(!n) return '\u2606\u2606\u2606\u2606\u2606';
+  const t=STAT_THRESHOLDS[key]||[];
+  let stars=1;
+  t.forEach(limit=>{ if(n>limit) stars+=1; });
+  stars=Math.min(5,stars);
+  return '\u2605'.repeat(stars)+'\u2606'.repeat(5-stars);
+}
+
+function statPercentileScore(key,value){
+  const n=Number(value||0);
+  if(!n) return 0;
+  const values=DB.monsters
+    .map(m=>Number(m.stats?.[key]||0))
+    .filter(v=>v>0)
+    .sort((a,b)=>a-b);
+  if(!values.length) return 0;
+  let low=0;
+  let high=values.length;
+  while(low<high){
+    const mid=(low+high)>>1;
+    if(values[mid]<=n) low=mid+1;
+    else high=mid;
+  }
+  return Math.max(0,Math.min(1,low/values.length));
+}
+
+function statBlend(monster,weights){
+  const stats=monster.stats||{};
+  let total=0;
+  let weightSum=0;
+  Object.entries(weights).forEach(([key,weight])=>{
+    total+=statPercentileScore(key,stats[key])*weight;
+    weightSum+=weight;
+  });
+  return weightSum ? total/weightSum : 0;
+}
+function monsterStatsHtml(monster){
+  const stats=monster.stats||{};
+  const hasStats=STAT_FIELDS.some(([key])=>Number(stats[key]||0)>0);
+  if(!hasStats){
+    return '<div class="small">\u30b9\u30c6\u30fc\u30bf\u30b9\u30c7\u30fc\u30bf\u672a\u53cd\u6620</div>';
+  }
+  return `
+    <div class="stat-grid">
+      ${STAT_FIELDS.map(([key,label])=>{
+        const value=Number(stats[key]||0);
+        const stars=statStars(key,value);
+        return `
+          <div class="stat-row">
+            <div class="stat-label">${label}</div>
+            <div class="stat-value">${value||'-'}</div>
+            <div class="stat-stars">${stars}</div>
+          </div>
+        `;
+      }).join('')}
+    </div>
+    <div class="stat-note">
+      \u2605\u306f登録済みデータ\u306e\u6700\u5927\u5024\u5206\u5e03\u30925\u6bb5\u968e\u306b\u5206\u3051\u305f\u76f8\u5bfe\u8a55\u4fa1\u3067\u3059\u3002
+    </div>
+  `;
+}
+
+function monsterRecommendationHtml(){return '<div class="small">DQM4のおすすめスキルは確認待ちです。</div>'; }
+
 function monsterCard(m){
   const recipes=(m.recipes||[])
     .map(recipeText)
     .join('')
     || `
       <div class="small">
-        \u914d\u5408\u3067\u306e\u5165\u624b未登録・確認待ち
+        \u914d\u5408\u3067\u306e\u5165\u624b\u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
 
@@ -316,11 +441,11 @@ function monsterCard(m){
     .join('')
     || `
       <div class="small">
-        \u7279\u6b8a\u306a\u914d\u5408\u5148未登録・確認待ち
+        \u7279\u6b8a\u306a\u914d\u5408\u5148\u306a\u3057\uff0f\u672a\u767b\u9332
       </div>
     `;
 
-  const cardId=`monster-${m.id||m.no||DB.monsters.indexOf(m)}`;
+  const cardId=`monster-${DB.monsters.indexOf(m)}`;
 
   return `
     <section class="card">
@@ -335,15 +460,26 @@ function monsterCard(m){
           </a>
         </div>
 
-        <button
-          class="collapse-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="${cardId}"
-          onclick="toggleMonsterCard('${cardId}',this)"
-        >
-          &#9654;
-        </button>
+        <div class="monster-card-actions">
+          <button
+            class="plan-jump-button"
+            type="button"
+            onclick='jumpToPlan(${JSON.stringify(m.name)})'
+            aria-label="${esc(m.name)}の配合計画を開く"
+          >
+            🧬 配合計画
+          </button>
+
+          <button
+            class="collapse-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="${cardId}"
+            onclick="toggleMonsterCard('${cardId}',this)"
+          >
+            &#9654;
+          </button>
+        </div>
       </div>
 
       <div
@@ -353,7 +489,6 @@ function monsterCard(m){
       >
         <div class="meta">
           <span class="badge">${m.dataStatus==='announced'?'登場確認・詳細待ち':'詳細データあり'}</span>
-          ${m.nameStatus?`<span class="badge">${esc(m.nameStatus)}</span>`:''}
           ${
             m.no
               ? `<span class="badge">No.${esc(m.no)}</span>`
@@ -373,9 +508,14 @@ function monsterCard(m){
           }
         </div>
 
-        ${sourceLink(m.sourceUrl)}
+        <h2>\ud83d\udcca \u6700\u5927\u30b9\u30c6\u30fc\u30bf\u30b9</h2>
+        ${monsterStatsHtml(m)}
+
         <h2>\ud83d\udcd8 \u6240\u6301\u30b9\u30ad\u30eb</h2>
         ${monsterTalentsHtml(m)}
+
+        <h2>\ud83c\udfaf \u304a\u3059\u3059\u3081\u30b9\u30ad\u30eb</h2>
+        ${monsterRecommendationHtml(m)}
 
         <h2>\u2b50 \u7279\u6027</h2>
         ${monsterTraitsHtml(m)}
@@ -431,6 +571,69 @@ function searchScore(name,term){
   return 3;
 }
 
+function selectedFilterValues(container){
+  if(!container) return [];
+  return [...container.querySelectorAll('input[type="checkbox"]:checked')]
+    .map(input=>input.value);
+}
+
+function renderMonsterFilters(){
+  const rankOrder=['X','S','A','B','C','D','E','F','G'];
+  const availableRanks=new Set(
+    DB.monsters
+      .map(m=>String(m.rank||'').toUpperCase())
+      .filter(Boolean)
+  );
+
+  rankFilters.innerHTML=
+    rankOrder
+      .filter(rank=>availableRanks.has(rank))
+      .map(rank=>`
+        <label class="filter-chip">
+          <input
+            type="checkbox"
+            value="${esc(rank)}"
+          >
+          <span>${esc(rank)}ランク</span>
+        </label>
+      `)
+      .join('');
+
+  const families=[...new Set(
+    DB.monsters
+      .map(m=>String(m.family||'').trim())
+      .filter(Boolean)
+  )].sort((a,b)=>a.localeCompare(b,'ja'));
+
+  familyFilters.innerHTML=
+    families
+      .map(family=>`
+        <label class="filter-chip">
+          <input
+            type="checkbox"
+            value="${esc(family)}"
+          >
+          <span>${esc(family)}</span>
+        </label>
+      `)
+      .join('');
+}
+
+function monsterMatchesFilters(monster){
+  const ranks=selectedFilterValues(rankFilters);
+  const families=selectedFilterValues(familyFilters);
+
+  const rankOk=
+    !ranks.length
+    ||ranks.includes(String(monster.rank||'').toUpperCase());
+
+  const familyOk=
+    !families.length
+    ||families.includes(String(monster.family||''));
+
+  return rankOk && familyOk;
+}
+
 function compareMonsters(a,b,term){
   if(term){
     const as=searchScore(a.name,term);
@@ -441,68 +644,62 @@ function compareMonsters(a,b,term){
     }
   }
 
+  let result=0;
+
   if(sortSelect.value==='name'){
     const aa=a.reading||a.name||'';
     const bb=b.reading||b.name||'';
-
-    const c=String(aa)
-      .localeCompare(
-        String(bb),
-        'ja'
-      );
-
-    if(c!==0){
-      return c;
-    }
+    result=String(aa).localeCompare(String(bb),'ja');
   }
-
-  if(sortSelect.value==='rank'){
+  else if(sortSelect.value==='rank'){
     const order={
-      X:0,
-      S:1,
-      A:2,
-      B:3,
+      G:0,
+      F:1,
+      E:2,
+      D:3,
       C:4,
-      D:5,
-      E:6,
-      F:7,
-      G:8
+      B:5,
+      A:6,
+      S:7,
+      X:8
     };
 
-    const ar=
-      order[
-        String(a.rank||'').toUpperCase()
-      ]
-      ??99;
-
-    const br=
-      order[
-        String(b.rank||'').toUpperCase()
-      ]
-      ??99;
-
-    if(ar!==br){
-      return ar-br;
-    }
+    const ar=order[String(a.rank||'').toUpperCase()]??99;
+    const br=order[String(b.rank||'').toUpperCase()]??99;
+    result=ar-br;
+  }
+  else if(sortSelect.value==='family'){
+    result=String(a.family||'')
+      .localeCompare(String(b.family||''),'ja');
+  }
+  else if(
+    [
+      'hp',
+      'mp',
+      'attack',
+      'defence',
+      'agility',
+      'wisdom'
+    ].includes(sortSelect.value)
+  ){
+    const key=sortSelect.value;
+    const aMissing=!(Number(a.stats?.[key])>0),bMissing=!(Number(b.stats?.[key])>0);
+    if(aMissing!==bMissing)return aMissing?1:-1;
+    const av=Number(a.stats?.[key]||0);
+    const bv=Number(b.stats?.[key]||0);
+    result=av-bv;
+  }
+  else{
+    result=(a.no??9999)-(b.no??9999);
   }
 
-  if(sortSelect.value==='family'){
-    const c=String(a.family||'')
-      .localeCompare(
-        String(b.family||''),
-        'ja'
-      );
-
-    if(c!==0){
-      return c;
-    }
+  if(result===0 && sortSelect.value!=='number'){
+    result=(a.no??9999)-(b.no??9999);
   }
 
-  return (
-    (a.no??9999)
-    -
-    (b.no??9999)
-  );
+  return sortDirection.value==='desc'
+    ? -result
+    : result;
 }
 
 function renderMonsters(){
@@ -561,10 +758,13 @@ function renderMonsters(){
         ])
     ].join(' ');
 
-    return (
+    const searchOk=
       !term
-      ||
-      norm(text).includes(term)
+      ||norm(text).includes(term);
+
+    return (
+      searchOk
+      &&monsterMatchesFilters(m)
     );
   });
 
@@ -577,10 +777,14 @@ function renderMonsters(){
       )
   );
 
+  const hasFilters=
+    selectedFilterValues(rankFilters).length
+    ||selectedFilterValues(familyFilters).length;
+
   statusEl.textContent=
-    term
-      ? `\u691c\u7d22\u7d50\u679c\uff1a${found.length}\u4f53`
-      : `登録：${DB.monsters.length}体（詳細あり：${DB.detailCount??0}体）`;
+    (term||hasFilters)
+      ? `\u8868\u793a\uff1a${found.length}\u4f53 / \u5168${DB.monsters.length}\u4f53`
+      : `\u767b\u9332\uff1a${DB.monsters.length}\u4f53`;
 
   results.innerHTML=
     found.length
@@ -798,27 +1002,124 @@ function abilityTable(skill){
               -
               Number(b.points||0)
           )
-          .map(ability=>`
-            <div class="skillability">
-              <span class="skillpoints">
-                ${esc(ability.points)}P
-              </span>
+          .map(ability=>{
+            const isTrait=ability.type==='trait';
+            const detail=isTrait
+              ? traitDetail(ability.name)
+              : ABILITY_DETAILS[ability.name];
 
-              <span class="abilityname">
-                ${esc(ability.name)}
-              </span>
-            </div>
-          `)
+            return `
+              <div class="skillability">
+                <div class="skillability-main">
+                  <span class="skillpoints">
+                    ${esc(ability.points)}P
+                  </span>
+
+                  <span class="abilityname">
+                    ${esc(ability.name)}
+                  </span>
+
+                  ${detail ? `
+                    <span class="ability-class">
+                      ${esc(detail.category)}
+                    </span>
+
+                    ${
+                      !isTrait && detail.mp!==undefined
+                        ? `<span class="ability-mp">MP ${esc(detail.mp)}</span>`
+                        : ''
+                    }
+                  ` : ''}
+                </div>
+
+                ${detail?.description ? `
+                  <div class="ability-description">
+                    ${esc(detail.description)}
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          })
           .join('')
       }
     </div>
   `;
 }
 
+function skillHolders(name){
+  return DB.monsters
+    .filter(monster=>
+      (monster.talents||[])
+        .some(talent=>talent.name===name)
+    )
+    .sort((a,b)=>
+      Number(a.no||9999)-Number(b.no||9999)
+    );
+}
+
+function skillDescription(skill){
+  if(!skill){
+    return '\u8a73\u7d30\u30c7\u30fc\u30bf\u304c\u672a\u767b\u9332\u306e\u30b9\u30ad\u30eb\u3067\u3059\u3002';
+  }
+
+  const abilities=skill.abilities||[];
+  const active=abilities
+    .filter(x=>x.type==='skill'||!x.type)
+    .map(x=>x.name)
+    .filter(Boolean);
+  const passive=abilities
+    .filter(x=>x.type==='trait')
+    .map(x=>x.name)
+    .filter(Boolean);
+
+  const parts=[];
+
+  if(active.length){
+    const names=active.slice(0,3).map(x=>`\u300c${x}\u300d`).join('\u30fb');
+    parts.push(`${names}${active.length>3?'\u306a\u3069':''}\u306e\u7279\u6280\u30fb\u546a\u6587\u3092\u7fd2\u5f97\u3067\u304d\u308b\u3002`);
+  }
+
+  if(passive.length){
+    const names=passive.slice(0,3).map(x=>`\u300c${x}\u300d`).join('\u30fb');
+    parts.push(`${names}${passive.length>3?'\u306a\u3069':''}\u306e\u80fd\u529b\u4e0a\u6607\u30fb\u7279\u6027\u3082\u7fd2\u5f97\u3067\u304d\u308b\u3002`);
+  }
+
+  if(!parts.length){
+    parts.push('\u7fd2\u5f97\u5185\u5bb9\u306e\u8a73\u7d30\u306f\u672a\u767b\u9332\u3067\u3059\u3002');
+  }
+
+  if(skill.category){
+    parts.push(`\u5206\u985e\uff1a${skill.category}\u3002`);
+  }
+
+  return parts.join('');
+}
+
+function skillHolderHtml(monster){
+  return `
+    <div class="skill-holder-row">
+      ${monsterButton(monster.name)}
+      ${monster.rank?`<span class="mini-badge">${esc(monster.rank)}\u30e9\u30f3\u30af</span>`:''}
+      ${monster.family?`<span class="mini-badge">${esc(monster.family)}</span>`:''}
+    </div>
+  `;
+}
+
+window.toggleSkillHolders=function(id,button){
+  const body=document.getElementById(id);
+  if(!body) return;
+  const willOpen=body.hidden;
+  body.hidden=!willOpen;
+  button.textContent=(willOpen?'\u25bc':'\u25b6')+button.dataset.label;
+  button.setAttribute('aria-expanded',willOpen?'true':'false');
+};
 function skillCard(name){
   const skill=findSkill(name);
   const recipes=skillRecipesFor(name);
   const uses=skillUsesFor(name);
+  const holders=skillHolders(name);
+  const holderId='skill-holders-'+encodeURIComponent(name).replace(/%/g,'');
+  const holderLabel=` \u3053\u306e\u30b9\u30ad\u30eb\u3092\u6301\u3064\u30e2\u30f3\u30b9\u30bf\u30fc\uff08${holders.length}\u4f53\uff09`;
 
   return `
     <section class="card">
@@ -836,9 +1137,46 @@ function skillCard(name){
             `
             : ''
         }
+        ${
+          skill?.category
+            ? `<span class="badge">${esc(skill.category)}</span>`
+            : ''
+        }
       </div>
 
-      ${sourceLink(skill?.sourceUrl)}
+      <div class="skill-description">
+        ${esc(skillDescription(skill))}
+      </div>
+
+      <div class="skill-holder-section">
+        <button
+          class="skill-holder-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="${holderId}"
+          data-label="${esc(holderLabel)}"
+          onclick="toggleSkillHolders('${holderId}',this)"
+        >
+          \u25b6${esc(holderLabel)}
+        </button>
+
+        <div
+          id="${holderId}"
+          class="skill-holder-list"
+          hidden
+        >
+          ${
+            holders.length
+              ? holders.map(skillHolderHtml).join('')
+              : `
+                <div class="small">
+                  \u73fe\u5728\u306e\u56f3\u9451\u30c7\u30fc\u30bf\u3067\u306f\u6240\u6301\u30e2\u30f3\u30b9\u30bf\u30fc\u306f\u672a\u767b\u9332\u3067\u3059\u3002
+                </div>
+              `
+          }
+        </div>
+      </div>
+
       <h2>\u899a\u3048\u308b\u7279\u6280\u30fb\u52b9\u679c</h2>
       ${abilityTable(skill)}
 
@@ -848,7 +1186,7 @@ function skillCard(name){
           ? recipes.map(skillRoute).join('')
           : `
             <div class="small">
-              \u4f5c\u6210\u6761\u4ef6未登録・確認待ち
+              \u4f5c\u6210\u6761\u4ef6\u306a\u3057\uff0f\u672a\u767b\u9332
             </div>
           `
       }
@@ -859,7 +1197,7 @@ function skillCard(name){
           ? uses.map(skillRoute).join('')
           : `
             <div class="small">
-              \u4e0a\u4f4d\u30b9\u30ad\u30eb未登録・確認待ち
+              \u4e0a\u4f4d\u30b9\u30ad\u30eb\u306a\u3057\uff0f\u672a\u767b\u9332
             </div>
           `
       }
@@ -868,8 +1206,6 @@ function skillCard(name){
 }
 
 function renderSkills(){
-  if(!SKILL_DB.skills.length){statusEl.textContent='スキル情報は確認待ち';results.innerHTML='<div class="empty">確認済みのスキルを順次登録します。</div>';return;}
-
   const term=norm(q.value);
 
   const found=allSkillNames()
@@ -878,14 +1214,33 @@ function renderSkills(){
 
       const abilityText=
         (skill?.abilities||[])
+          .map(x=>{
+            const detail=
+              x.type==='trait'
+                ? traitDetail(x.name)
+                : ABILITY_DETAILS[x.name];
+
+            return [
+              x.name,
+              detail?.category||'',
+              detail?.description||''
+            ].join(' ');
+          })
+          .join(' ');
+
+      const holderText=
+        skillHolders(name)
           .map(x=>x.name)
           .join(' ');
+
+      const description=
+        skillDescription(skill);
 
       return (
         !term
         ||
         norm(
-          `${name} ${abilityText}`
+          `${name} ${abilityText} ${holderText} ${description}`
         ).includes(term)
       );
     })
@@ -937,17 +1292,24 @@ function renderRecommendations(){
     '<div class="empty">このテーマ・方針の編成は未登録です。モンスターズ4で確認できた特性・スキルをもとに追加します。</div>';
 }
 
-function sourceLink(url){
-  try{if(new URL(url).protocol!=='https:')return '';}catch{return '';}
-  return `<a class="small" target="_blank" rel="noopener noreferrer" href="${esc(url)}">出典を確認</a>`;
-}
 
 const PLAN_KEY='dqm4-plan-v1';
+const SAVED_PLANS_KEY='dqm4-saved-plans-v1';
+const MAX_SAVED_PLANS=16;
+const PLAN_PANEL_KEY='dqm4-plan-panel-expanded-v1';
+const RECOMMEND_PANEL_KEY='dqm4-recommend-panel-expanded-v1';
+
+let planPanelExpanded=true;
+let recommendPanelExpanded=true;
+let planView='current';
+let savedPlans=[];
 
 let planState={
   target:'',
   checked:{},
-  routes:{}
+  routes:{},
+  minRankEnabled:false,
+  minRank:'D'
 };
 
 function loadPlanState(){
@@ -969,15 +1331,251 @@ function loadPlanState(){
   }
 }
 
-function savePlanState(){
-  try{localStorage.setItem(
-    PLAN_KEY,
-    JSON.stringify(planState)
-  );}catch(error){console.warn(error);statusEl.textContent='この端末では配合計画を保存できません';}
+function savePlanState(){try{localStorage.setItem(PLAN_KEY,JSON.stringify(planState));}catch(error){console.warn(error);statusEl.textContent='この端末では計画を保存できません';}}
+
+function loadRecommendPanelState(){
+  try{
+    const saved=localStorage.getItem(RECOMMEND_PANEL_KEY);
+    if(saved!==null){
+      recommendPanelExpanded=saved==='true';
+    }
+  }
+  catch(error){
+    console.warn(error);
+  }
 }
+
+function saveRecommendPanelState(){
+  try{
+    localStorage.setItem(
+      RECOMMEND_PANEL_KEY,
+      String(recommendPanelExpanded)
+    );
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function updateRecommendPanelVisibility(){
+  const isRecommend=mode==='recommend';
+
+  recommendPanelToggle.hidden=!isRecommend;
+
+  if(!isRecommend){
+    recommendControls.hidden=true;
+    return;
+  }
+
+  recommendPanelToggle.textContent=
+    recommendPanelExpanded
+      ? '▲ 編成条件を収納'
+      : '▼ 編成条件を展開';
+
+  recommendPanelToggle.setAttribute(
+    'aria-expanded',
+    recommendPanelExpanded?'true':'false'
+  );
+
+  recommendControls.hidden=
+    !recommendPanelExpanded;
+}
+
+function loadPlanPanelState(){
+  try{
+    const saved=localStorage.getItem(PLAN_PANEL_KEY);
+    if(saved!==null){
+      planPanelExpanded=saved==='true';
+    }
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function savePlanPanelState(){
+  try{
+    localStorage.setItem(
+      PLAN_PANEL_KEY,
+      String(planPanelExpanded)
+    );
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function updatePlanPanelVisibility(){
+  const isPlan=mode==='plan';
+
+  planPanelToggle.hidden=!isPlan;
+
+  if(!isPlan){
+    planControls.hidden=true;
+    planSubtabs.hidden=true;
+    return;
+  }
+
+  planPanelToggle.textContent=
+    planPanelExpanded
+      ? '▲ 操作パネルを収納'
+      : '▼ 操作パネルを展開';
+
+  planPanelToggle.setAttribute(
+    'aria-expanded',
+    planPanelExpanded?'true':'false'
+  );
+
+  if(!planPanelExpanded){
+    planControls.hidden=true;
+    planSubtabs.hidden=true;
+    return;
+  }
+
+  planControls.hidden=
+    planView==='saved'
+    ||planView==='materials';
+
+  planSubtabs.hidden=false;
+}
+
+function loadSavedPlans(){
+  try{
+    const saved=localStorage.getItem(SAVED_PLANS_KEY);
+    const parsed=saved ? JSON.parse(saved) : [];
+    savedPlans=Array.isArray(parsed)
+      ? parsed.slice(0,MAX_SAVED_PLANS)
+      : [];
+  }
+  catch(error){
+    console.warn(error);
+    savedPlans=[];
+  }
+}
+
+function saveSavedPlans(){
+  try{localStorage.setItem(
+    SAVED_PLANS_KEY,
+    JSON.stringify(savedPlans)
+  );}catch(error){console.warn(error);statusEl.textContent="保存容量が不足しています";return false;}
+  updatePlanSavedTabLabel();
+  return true;
+}
+
+function updatePlanSavedTabLabel(){
+  if(planSavedTab){
+    planSavedTab.textContent=
+      `保存ルート ${savedPlans.length}/${MAX_SAVED_PLANS}`;
+  }
+}
+
+function clonePlanState(value){
+  return JSON.parse(JSON.stringify(value));
+}
+
+function saveCurrentPlanToSlot(){
+  const target=planState.target;
+
+  if(!target || !findMonster(target)){
+    statusEl.textContent='保存できる配合計画がありません';
+    return;
+  }
+
+  const existingIndex=savedPlans.findIndex(
+    item=>item.target===target
+  );
+
+  const entry={
+    target,
+    checked:clonePlanState(planState.checked||{}),
+    routes:clonePlanState(planState.routes||{}),
+    minRankEnabled:Boolean(planState.minRankEnabled),
+    minRank:planState.minRank||'D',
+    savedAt:Date.now()
+  };
+
+  if(existingIndex>=0){
+    savedPlans[existingIndex]=entry;
+  }
+  else{
+    if(savedPlans.length>=MAX_SAVED_PLANS){
+      statusEl.textContent=
+        `保存できるのは最大${MAX_SAVED_PLANS}体までです`;
+      return;
+    }
+    savedPlans.push(entry);
+  }
+
+  if(!saveSavedPlans())return;
+  statusEl.textContent=`${target} の作成経路を保存しました`;
+  renderPlan();
+}
+
+function openSavedPlan(index){
+  const saved=savedPlans[index];
+  if(!saved) return;
+
+  planState={
+    target:saved.target||'',
+    checked:clonePlanState(saved.checked||{}),
+    routes:clonePlanState(saved.routes||{}),
+    minRankEnabled:Boolean(saved.minRankEnabled),
+    minRank:saved.minRank||'D'
+  };
+  savePlanState();
+
+  planView='current';
+  mode='plan';
+  updateTabs();
+  renderPlan();
+  scrollTo({top:0,behavior:'smooth'});
+}
+
+function deleteSavedPlan(index){
+  if(index<0 || index>=savedPlans.length) return;
+  savedPlans.splice(index,1);
+  saveSavedPlans();
+  renderSavedPlans();
+}
+
+window.saveCurrentPlanToSlot=saveCurrentPlanToSlot;
+window.openSavedPlan=openSavedPlan;
+window.deleteSavedPlan=deleteSavedPlan;
 
 function nodeKey(target,path){
   return target+'::'+path;
+}
+
+const PLAN_RANK_ORDER={
+  G:0,
+  F:1,
+  E:2,
+  D:3,
+  C:4,
+  B:5,
+  A:6,
+  S:7,
+  X:8
+};
+
+function shouldStopAtMinRank(monster){
+  if(!planState.minRankEnabled) return false;
+
+  const monsterRank=
+    PLAN_RANK_ORDER[
+      String(monster?.rank||'').toUpperCase()
+    ];
+
+  const minimumRank=
+    PLAN_RANK_ORDER[
+      String(planState.minRank||'D').toUpperCase()
+    ];
+
+  if(monsterRank===undefined || minimumRank===undefined){
+    return false;
+  }
+
+  return monsterRank<=minimumRank;
 }
 
 function buildPlanNode(
@@ -1008,6 +1606,16 @@ function buildPlanNode(
       key,
       monster,
       cycle:true,
+      children:[]
+    };
+  }
+
+  if(shouldStopAtMinRank(monster)){
+    return {
+      name,
+      key,
+      monster,
+      minRankStop:true,
       children:[]
     };
   }
@@ -1087,12 +1695,22 @@ function shortEgg(monster){
 }
 
 function planNodeHtml(node,depth=0){
-  const checked=
+  const manualChecked=
     Boolean(
       planState.checked[
         node.key
       ]
     );
+
+  const autoChecked=
+    Boolean(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    );
+
+  const checked=
+    manualChecked
+    ||autoChecked;
 
   const indent=
     Math.min(depth,8);
@@ -1124,7 +1742,8 @@ function planNodeHtml(node,depth=0){
                     }
                   >
                     ${esc(
-                      recipe.note || (recipe.parents||[]).join(' \uff0b ')
+                      (recipe.parents||[])
+                        .join(' \uff0b ')
                     )}
                   </option>
                 `
@@ -1151,6 +1770,8 @@ function planNodeHtml(node,depth=0){
           type="checkbox"
           class="plan-check"
           ${checked?'checked':''}
+          ${autoChecked?'disabled':''}
+          ${autoChecked?'title="最低ランク以下のため自動チェック"':''}
           onchange='togglePlanCheck(
             ${JSON.stringify(node.key)},
             this.checked
@@ -1176,6 +1797,12 @@ function planNodeHtml(node,depth=0){
             `
             : ''
         }
+
+        ${autoChecked ? `
+          <span class="mini-badge auto-rank-badge">
+            自動チェック
+          </span>
+        ` : ''}
       </div>
 
       ${
@@ -1235,7 +1862,13 @@ function planNodeHtml(node,depth=0){
 function collectPlanStats(node,stats){
   stats.total++;
 
-  if(planState.checked[node.key]){
+  if(
+    planState.checked[node.key]
+    ||(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    )
+  ){
     stats.checked++;
     return;
   }
@@ -1347,6 +1980,289 @@ function remainingHtml(stats){
   ).join('');
 }
 
+function collectSavedPlanMaterials(){
+  const totals={};
+  const originalState=planState;
+
+  const aggregateMinRankEnabled=
+    Boolean(originalState.minRankEnabled);
+
+  const aggregateMinRank=
+    originalState.minRank||'D';
+
+  try{
+    for(const saved of savedPlans){
+      planState={
+        target:saved.target||'',
+        checked:clonePlanState(saved.checked||{}),
+        routes:clonePlanState(saved.routes||{}),
+        minRankEnabled:aggregateMinRankEnabled,
+        minRank:aggregateMinRank
+      };
+
+      const root=buildPlanNode(planState.target);
+      const stats={
+        total:0,
+        checked:0,
+        leaves:{}
+      };
+
+      collectPlanStats(root,stats);
+
+      for(const [name,count] of Object.entries(stats.leaves)){
+        totals[name]=(totals[name]||0)+count;
+      }
+    }
+  }
+  finally{
+    planState=originalState;
+  }
+
+  return totals;
+}
+
+function materialAggregateRows(items){
+  if(!items.length){
+    return `
+      <div class="small">
+        該当する素材はありません。
+      </div>
+    `;
+  }
+
+  return items.map(([name,count])=>{
+    const monster=findMonster(name);
+    const locations=monster?.locations||[];
+    const eggs=monster?.eggs||[];
+
+    return `
+      <div class="material-row material-total-row">
+        <div class="material-total-head">
+          <strong>${esc(name)}</strong>
+          <span class="material-count">×${count}</span>
+        </div>
+
+        ${locations.length ? `
+          <div class="material-location">
+            📍 ${esc(
+              locations
+                .slice(0,3)
+                .map(x=>x.name)
+                .join(' / ')
+            )}
+          </div>
+        ` : ''}
+
+        ${eggs.length ? `
+          <div class="material-egg">
+            🥚 ${esc(
+              eggs
+                .map(egg=>
+                  `${egg.name}の卵${egg.postGameOnly?'（クリア後）':''}`
+                )
+                .join(' / ')
+            )}
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+function isSpecialSynthesisOnly(monster){
+  const recipes=monster?.recipes||[];
+  if(!recipes.length) return false;
+
+  return recipes.every(recipe=>{
+    if(recipe.type==='4体配合'){
+      return true;
+    }
+
+    const parents=recipe.parents||[];
+    if(!parents.length) return false;
+
+    return parents.every(parent=>
+      Boolean(findMonster(parent))
+    );
+  });
+}
+
+function isOtherAcquisitionMaterial(monster){return Boolean(monster&&(monster.eggs||[]).length)||monster?.acquisitionStatus==='specialOnly';}
+
+function renderSavedMaterialTotals(){
+  updatePlanSavedTabLabel();
+
+  if(!savedPlans.length){
+    statusEl.textContent='保存ルートがありません';
+    results.innerHTML=`
+      <div class="empty">
+        まず「作成中」で配合ルートを作り、
+        保存ルートに登録してください。
+      </div>
+    `;
+    return;
+  }
+
+  const totals=collectSavedPlanMaterials();
+  const entries=Object.entries(totals)
+    .sort(
+      (a,b)=>
+        b[1]-a[1]
+        ||a[0].localeCompare(b[0],'ja')
+    );
+
+  const catchable=[];
+  const other=[];
+  const unknown=[];
+
+  for(const item of entries){
+    const monster=findMonster(item[0]);
+
+    if((monster?.locations||[]).length){
+      catchable.push(item);
+    }else if(isOtherAcquisitionMaterial(monster)){
+      other.push(item);
+    }
+    else{
+      unknown.push(item);
+    }
+  }
+
+  const totalCount=entries.reduce(
+    (sum,[,count])=>sum+count,
+    0
+  );
+
+  const catchCount=catchable.reduce(
+    (sum,[,count])=>sum+count,
+    0
+  );
+
+  statusEl.textContent=
+    `保存${savedPlans.length}体分 / 必要素材 合計${totalCount}体`;
+
+  results.innerHTML=`
+    <section class="card material-total-summary">
+      <div class="skillname">
+        保存ルートの素材合計
+      </div>
+
+      <div class="material-total-stats">
+        <span class="badge">
+          保存ルート ${savedPlans.length}/${MAX_SAVED_PLANS}
+        </span>
+        <span class="badge">
+          捕まえる数 ${catchCount}体
+        </span>
+        <span class="badge">
+          素材総数 ${totalCount}体
+        </span>
+        <span class="badge">
+          種類 ${entries.length}種
+        </span>
+      </div>
+
+      <div class="small">
+        各保存ルートの選択中の配合経路を合算しています。
+        作成済みチェックが付いた枝は合計から除外します。
+        ${planState.minRankEnabled
+          ? '現在の最低'+esc(planState.minRank||'D')+'ランク設定を16体すべてに適用しています。'
+          : '最低ランク指定はOFFです。'}
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="plan-title">
+        📍 捕まえるモンスター
+      </h2>
+      ${materialAggregateRows(catchable)}
+    </section>
+
+    ${unknown.length?`<section class="card"><h2>入手方法・系統条件の確認待ち</h2>${materialAggregateRows(unknown)}</section>`:''}
+    ${other.length ? `
+      <section class="card">
+        <h2 class="plan-title">
+          🥚 その他の素材
+        </h2>
+        <div class="small material-total-note">
+          卵で入手するモンスター、または特殊配合でのみ入手できるモンスターです。
+        </div>
+        ${materialAggregateRows(other)}
+      </section>
+    ` : ''}
+  `;
+}
+
+function renderSavedPlans(){
+  updatePlanSavedTabLabel();
+
+  statusEl.textContent=
+    `保存ルート：${savedPlans.length}/${MAX_SAVED_PLANS}体`;
+
+  if(!savedPlans.length){
+    results.innerHTML=`
+      <div class="empty">
+        保存した配合計画はありません。<br>
+        「作成中」で配合ルートを作り、
+        「この経路を保存」を押してください。
+      </div>
+    `;
+    return;
+  }
+
+  results.innerHTML=`
+    <section class="card saved-plan-list">
+      <div class="saved-plan-note">
+        最大${MAX_SAVED_PLANS}体まで保存できます。
+        配合ルートと作成済みチェック状態も一緒に保存します。
+      </div>
+
+      ${savedPlans.map((saved,index)=>{
+        const monster=findMonster(saved.target);
+        const checkedCount=
+          Object.values(saved.checked||{})
+            .filter(Boolean)
+            .length;
+
+        return `
+          <div class="saved-plan-row">
+            <div class="saved-plan-main">
+              <div class="saved-plan-name">
+                ${esc(saved.target)}
+              </div>
+
+              <div class="saved-plan-meta">
+                ${monster?.rank ? esc(monster.rank)+'ランク' : ''}
+                ${monster?.family ? ' / '+esc(monster.family) : ''}
+                ${checkedCount ? ' / 作成済み '+checkedCount+'件' : ''}
+                ${saved.minRankEnabled ? ' / 最低'+esc(saved.minRank||'D')+'ランク' : ''}
+              </div>
+            </div>
+
+            <div class="saved-plan-actions">
+              <button
+                class="saved-plan-open"
+                type="button"
+                onclick="openSavedPlan(${index})"
+              >
+                開く
+              </button>
+
+              <button
+                class="saved-plan-delete"
+                type="button"
+                onclick="deleteSavedPlan(${index})"
+              >
+                削除
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('')}
+    </section>
+  `;
+}
+
 function renderPlan(){
   const target=planState.target;
 
@@ -1417,6 +2333,14 @@ function renderPlan(){
         ${stats.total}
       </div>
 
+      ${planState.minRankEnabled ? `
+        <div class="plan-rank-summary">
+          配合する最低ランク：
+          <strong>${esc(planState.minRank)}</strong>
+          （このランク以下は自動チェックして素材合計から除外します）
+        </div>
+      ` : ''}
+
       <div class="progressbar">
         <div
           class="progressbar-inner"
@@ -1424,12 +2348,21 @@ function renderPlan(){
         ></div>
       </div>
 
-      <button
-        class="clearbutton"
-        onclick="clearPlanChecks()"
-      >
-        \u30c1\u30a7\u30c3\u30af\u3092\u3059\u3079\u3066\u89e3\u9664
-      </button>
+      <div class="plan-summary-actions">
+        <button
+          class="save-plan-button"
+          onclick="saveCurrentPlanToSlot()"
+        >
+          💾 この経路を保存
+        </button>
+
+        <button
+          class="clearbutton"
+          onclick="clearPlanChecks()"
+        >
+          \u30c1\u30a7\u30c3\u30af\u3092\u3059\u3079\u3066\u89e3\u9664
+        </button>
+      </div>
     </section>
 
     <section class="card">
@@ -1487,8 +2420,31 @@ function createPlan(){
   }
 
   planState.target=name;
+  planView='current';
   savePlanState();
+  updatePlanSubtabs();
   renderPlan();
+}
+
+function updatePlanSubtabs(){
+  if(!planCurrentTab || !planSavedTab) return;
+
+  planCurrentTab.classList.toggle(
+    'active',
+    planView==='current'
+  );
+
+  planSavedTab.classList.toggle(
+    'active',
+    planView==='saved'
+  );
+
+  planMaterialsTab.classList.toggle(
+    'active',
+    planView==='materials'
+  );
+
+  updatePlanSavedTabLabel();
 }
 
 function updateTabs(){
@@ -1522,11 +2478,9 @@ function updateTabs(){
     isPlan
     ||isRecommend;
 
-  planControls.hidden=
-    !isPlan;
+  updatePlanPanelVisibility();
 
-  recommendControls.hidden=
-    !isRecommend;
+  updateRecommendPanelVisibility();
 
   if(mode==='monster'){
     q.placeholder=
@@ -1542,12 +2496,27 @@ function updateTabs(){
 
     sortRow.style.display=
       'none';
+    monsterFilters.hidden=true;
+    filterToggle.textContent='▶ 絞り込み';
+    filterToggle.setAttribute('aria-expanded','false');
   }
 
   if(isPlan){
     planTarget.value=
       planState.target
       ||'';
+
+    planMinRankEnabled.checked=
+      Boolean(planState.minRankEnabled);
+
+    planMinRank.value=
+      planState.minRank
+      ||'D';
+
+    planMinRank.disabled=
+      !planState.minRankEnabled;
+
+    updatePlanSubtabs();
   }
 }
 
@@ -1555,7 +2524,7 @@ monsterTab.addEventListener(
   'click',
   ()=>{
     mode='monster';
-    q.value='';
+    q.value=monsterSearchValue;
     updateTabs();
     render();
   }
@@ -1565,7 +2534,7 @@ skillTab.addEventListener(
   'click',
   ()=>{
     mode='skill';
-    q.value='';
+    q.value=skillSearchValue;
     updateTabs();
     render();
   }
@@ -1575,8 +2544,57 @@ planTab.addEventListener(
   'click',
   ()=>{
     mode='plan';
+    planView='current';
     updateTabs();
     render();
+  }
+);
+
+planCurrentTab.addEventListener(
+  'click',
+  ()=>{
+    planView='current';
+    updateTabs();
+    updatePlanPanelVisibility();
+    renderPlan();
+  }
+);
+
+planSavedTab.addEventListener(
+  'click',
+  ()=>{
+    planView='saved';
+    updateTabs();
+    updatePlanPanelVisibility();
+    renderSavedPlans();
+  }
+);
+
+planMaterialsTab.addEventListener(
+  'click',
+  ()=>{
+    planView='materials';
+    updateTabs();
+    updatePlanPanelVisibility();
+    renderSavedMaterialTotals();
+  }
+);
+
+planPanelToggle.addEventListener(
+  'click',
+  ()=>{
+    planPanelExpanded=!planPanelExpanded;
+    savePlanPanelState();
+    updatePlanPanelVisibility();
+  }
+);
+
+recommendPanelToggle.addEventListener(
+  'click',
+  ()=>{
+    recommendPanelExpanded=!recommendPanelExpanded;
+    saveRecommendPanelState();
+    updateRecommendPanelVisibility();
   }
 );
 
@@ -1599,9 +2617,45 @@ recommendStrategy.addEventListener(
   render
 );
 
+recommendFormation.addEventListener(
+  'change',
+  render
+);
+
 buildPlanButton.addEventListener(
   'click',
   createPlan
+);
+
+planMinRankEnabled.addEventListener(
+  'change',
+  ()=>{
+    planState.minRankEnabled=
+      planMinRankEnabled.checked;
+
+    planMinRank.disabled=
+      !planState.minRankEnabled;
+
+    savePlanState();
+
+    if(mode==='plan' && planView==='current'){
+      renderPlan();
+    }
+  }
+);
+
+planMinRank.addEventListener(
+  'change',
+  ()=>{
+    planState.minRank=
+      planMinRank.value;
+
+    savePlanState();
+
+    if(mode==='plan' && planView==='current'){
+      renderPlan();
+    }
+  }
 );
 
 planTarget.addEventListener(
@@ -1629,17 +2683,77 @@ function render(){
     return;
   }
 
+  if(planView==='saved'){
+    renderSavedPlans();
+    return;
+  }
+
+  if(planView==='materials'){
+    renderSavedMaterialTotals();
+    return;
+  }
+
   renderPlan();
 }
 
 q.addEventListener(
   'input',
-  render
+  ()=>{
+    if(mode==='monster'){
+      monsterSearchValue=q.value;
+    }
+    else if(mode==='skill'){
+      skillSearchValue=q.value;
+    }
+    render();
+  }
 );
 
 sortSelect.addEventListener(
   'change',
   render
+);
+
+sortDirection.addEventListener(
+  'change',
+  render
+);
+
+filterToggle.addEventListener(
+  'click',
+  ()=>{
+    const willOpen=monsterFilters.hidden;
+    monsterFilters.hidden=!willOpen;
+    filterToggle.textContent=
+      (willOpen?'▼':'▶')+' 絞り込み';
+    filterToggle.setAttribute(
+      'aria-expanded',
+      willOpen?'true':'false'
+    );
+  }
+);
+
+rankFilters.addEventListener(
+  'change',
+  render
+);
+
+familyFilters.addEventListener(
+  'change',
+  render
+);
+
+clearFilters.addEventListener(
+  'click',
+  ()=>{
+    [
+      ...rankFilters.querySelectorAll('input[type="checkbox"]'),
+      ...familyFilters.querySelectorAll('input[type="checkbox"]')
+    ].forEach(input=>{
+      input.checked=false;
+    });
+    render();
+  }
 );
 
 function updateNet(){
@@ -1661,65 +2775,25 @@ addEventListener(
 
 updateNet();
 loadPlanState();
+loadSavedPlans();
+loadPlanPanelState();
+loadRecommendPanelState();
 
-Promise.all([
-  fetch('./recommendations.json?v=2',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('recommendations.json');return r.json();}),
-  fetch(
-    './data.json?v=2',
-    {
-      cache:'no-store'
-    }
-  )
-  .then(response=>{
-    if(!response.ok){
-      throw new Error(
-        'data.json'
-      );
-    }
-    return response.json();
-  }),
-
-  fetch(
-    './skills.json?v=2',
-    {
-      cache:'no-store'
-    }
-  )
-  .then(response=>{
-    if(!response.ok){
-      throw new Error(
-        'skills.json'
-      );
-    }
-    return response.json();
-  })
-])
-.then(
-  ([
-    recommendationData,
-    monsterData,
-    skillData
-  ])=>{
-    if(!Array.isArray(monsterData.monsters)||!Array.isArray(skillData.skills)||!Array.isArray(recommendationData.teams))throw new Error("Invalid database");
-    RECOMMEND_DB=recommendationData;
-    DB=monsterData;
-    SKILL_DB=skillData;
-
-    monsterOptions.innerHTML=
-      DB.monsters
-        .map(
-          monster=>`
-            <option
-              value="${esc(monster.name)}"
-            ></option>
-          `
-        )
-        .join('');
-
-    updateTabs();
-    render();
+Promise.all(['data.json','skills.json','recommendations.json'].map(async file=>{
+  const response=await fetch('./'+file+'?v=3',{cache:'no-store'});
+  if(!response.ok)throw new Error(file);
+  return response.json();
+})).then(([monsterData,skillData,recommendationData])=>{
+  if(monsterData.game!=='DQM4'||!Array.isArray(monsterData.monsters)||!Array.isArray(skillData.skills)||!Array.isArray(recommendationData.teams))throw new Error('Invalid DQM4 database');
+  DB=monsterData;SKILL_DB=skillData;RECOMMEND_DB=recommendationData;
+  prepareStatThresholds();renderMonsterFilters();
+  for(const [key,label] of STAT_FIELDS){
+    const option=sortSelect.querySelector('option[value="'+key+'"]');
+    if(option&&!DB.monsters.some(m=>Number(m.stats?.[key])>0)){option.disabled=true;option.textContent=label+'（数値未登録）';}
   }
-)
+  monsterOptions.innerHTML=DB.monsters.map(m=>`<option value="${esc(m.name)}"></option>`).join('');
+  updateTabs();render();
+})
 .catch(error=>{
   console.error(error);
 
@@ -1728,8 +2802,7 @@ Promise.all([
 
   results.innerHTML=`
     <div class="empty">
-      data.json・recommendations.json \u307e\u305f\u306f
-      skills.json \u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002
+      data.json・skills.json・recommendations.json \u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002
     </div>
   `;
 });
@@ -1737,7 +2810,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=2'
+      './sw.js?v=3'
     )
     .catch(error=>
       console.warn(
@@ -1745,5 +2818,10 @@ if('serviceWorker' in navigator){
         error
       )
     );
+}
+
+function sourceLink(url){
+  try{if(new URL(url).protocol!=='https:')return '';}catch{return '';}
+  return `<a class="small" target="_blank" rel="noopener noreferrer" href="${esc(url)}">出典を確認</a>`;
 }
 
