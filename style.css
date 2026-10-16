@@ -1422,3 +1422,54 @@ footer{
     font-size:11px;
   }
 }
+
+/* v46: safer plan tree tapping */
+.plan-node-head{
+  gap:12px;
+}
+
+.plan-check{
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+  margin-right:2px;
+}
+
+.plan-name{
+  min-height:34px;
+  padding:5px 8px;
+  border-radius:8px;
+  line-height:1.35;
+  text-align:left;
+}
+
+.plan-name:active{
+  background:#eef2ff;
+}
+
+.plan-location,
+.plan-egg{
+  margin-left:38px;
+}
+
+.route-select{
+  width:calc(100% - 38px);
+  margin-left:38px;
+}
+
+@media(max-width:420px){
+  .plan-node-head{
+    gap:13px;
+  }
+
+  .plan-check{
+    width:24px;
+    height:24px;
+    flex-basis:24px;
+  }
+
+  .plan-name{
+    min-height:38px;
+    padding:7px 9px;
+  }
+}
