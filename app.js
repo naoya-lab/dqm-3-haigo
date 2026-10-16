@@ -809,6 +809,21 @@ function compareMonsters(a,b,term){
     result=String(a.family||'')
       .localeCompare(String(b.family||''),'ja');
   }
+  else if(
+    [
+      'hp',
+      'mp',
+      'attack',
+      'defence',
+      'agility',
+      'wisdom'
+    ].includes(sortSelect.value)
+  ){
+    const key=sortSelect.value;
+    const av=Number(a.stats?.[key]||0);
+    const bv=Number(b.stats?.[key]||0);
+    result=av-bv;
+  }
   else{
     result=(a.no??9999)-(b.no??9999);
   }
@@ -3976,7 +3991,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=44',
+    './data.json?v=45',
     {
       cache:'no-store'
     }
@@ -3991,7 +4006,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=44',
+    './skills.json?v=45',
     {
       cache:'no-store'
     }
@@ -4006,7 +4021,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=44',
+    './ability_details.json?v=45',
     {
       cache:'no-store'
     }
@@ -4021,7 +4036,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=44',
+    './trait_details.json?v=45',
     {
       cache:'no-store'
     }
@@ -4036,7 +4051,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=44',
+    './monster_recommendations.json?v=45',
     {
       cache:'no-store'
     }
@@ -4097,7 +4112,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=44'
+      './sw.js?v=45'
     )
     .catch(error=>
       console.warn(
