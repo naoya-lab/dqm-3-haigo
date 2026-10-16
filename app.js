@@ -5,6 +5,7 @@ let TRAIT_DETAILS={};
 let MONSTER_RECOMMENDATIONS={};
 let mode='monster';
 let monsterSearchValue='';
+let planReturnScrollY=0;
 let skillSearchValue='';
 let STAT_THRESHOLDS={};
 
@@ -78,6 +79,10 @@ function imgUrl(name){
 }
 
 function jumpMonster(name){
+  if(mode==='plan'){
+    planReturnScrollY=window.scrollY||0;
+  }
+
   monsterSearchValue=name;
   mode='monster';
   updateTabs();
@@ -2722,12 +2727,22 @@ function openSavedPlan(index){
   const saved=savedPlans[index];
   if(!saved) return;
 
+  const restoredMinRankEnabled=
+    saved.minRankEnabled===undefined
+      ? Boolean(planState.minRankEnabled)
+      : Boolean(saved.minRankEnabled);
+
+  const restoredMinRank=
+    saved.minRank
+    ||planState.minRank
+    ||'D';
+
   planState={
     target:saved.target||'',
     checked:clonePlanState(saved.checked||{}),
     routes:clonePlanState(saved.routes||{}),
-    minRankEnabled:Boolean(saved.minRankEnabled),
-    minRank:saved.minRank||'D'
+    minRankEnabled:restoredMinRankEnabled,
+    minRank:restoredMinRank
   };
   savePlanState();
 
@@ -2764,6 +2779,31 @@ const PLAN_RANK_ORDER={
   S:7,
   X:8
 };
+
+function preserveAutoRankChecks(){
+  if(
+    !planState.minRankEnabled
+    ||!planState.target
+    ||!findMonster(planState.target)
+  ){
+    return;
+  }
+
+  const root=buildPlanNode(planState.target);
+
+  function visit(node){
+    if(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    ){
+      planState.checked[node.key]=true;
+    }
+
+    (node.children||[]).forEach(visit);
+  }
+
+  visit(root);
+}
 
 function shouldStopAtMinRank(monster){
   if(!planState.minRankEnabled) return false;
@@ -3733,6 +3773,10 @@ function updateTabs(){
 monsterTab.addEventListener(
   'click',
   ()=>{
+    if(mode==='plan'){
+      planReturnScrollY=window.scrollY||0;
+    }
+
     mode='monster';
     q.value=monsterSearchValue;
     updateTabs();
@@ -3757,6 +3801,13 @@ planTab.addEventListener(
     planView='current';
     updateTabs();
     render();
+
+    requestAnimationFrame(()=>{
+      scrollTo({
+        top:planReturnScrollY||0,
+        behavior:'auto'
+      });
+    });
   }
 );
 
@@ -3840,8 +3891,18 @@ buildPlanButton.addEventListener(
 planMinRankEnabled.addEventListener(
   'change',
   ()=>{
-    planState.minRankEnabled=
+    const willEnable=
       planMinRankEnabled.checked;
+
+    if(
+      planState.minRankEnabled
+      &&!willEnable
+    ){
+      preserveAutoRankChecks();
+    }
+
+    planState.minRankEnabled=
+      willEnable;
 
     planMinRank.disabled=
       !planState.minRankEnabled;
@@ -3991,7 +4052,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=45',
+    './data.json?v=46',
     {
       cache:'no-store'
     }
@@ -4006,7 +4067,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=45',
+    './skills.json?v=46',
     {
       cache:'no-store'
     }
@@ -4021,7 +4082,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=45',
+    './ability_details.json?v=46',
     {
       cache:'no-store'
     }
@@ -4036,7 +4097,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=45',
+    './trait_details.json?v=46',
     {
       cache:'no-store'
     }
@@ -4051,7 +4112,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=45',
+    './monster_recommendations.json?v=46',
     {
       cache:'no-store'
     }
@@ -4112,7 +4173,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=45'
+      './sw.js?v=46'
     )
     .catch(error=>
       console.warn(
