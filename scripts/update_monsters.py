@@ -803,6 +803,18 @@ def main():
                 )
         )
 
+    # User-verified acquisition override:
+    # カンダタは金の卵からのみ出現する。
+    for record in records_by_id.values():
+        if record["name"] == "カンダタ":
+            record["eggs"] = [
+                {
+                    "name": "金",
+                    "identifier": "gold",
+                    "postGameOnly": False,
+                }
+            ]
+
     # \u914d\u5408
     recipe_parent_ids = {}
 
