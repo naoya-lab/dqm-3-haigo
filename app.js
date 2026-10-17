@@ -593,14 +593,32 @@ function monsterCard(m){
   return `
     <section class="card">
       <div class="monster-card-header">
-        <div class="name">
-          <a
-            target="_blank"
-            rel="noopener"
-            href="${imgUrl(m.name)}"
+        <div class="monster-card-title">
+          <label
+            class="monster-acquired"
+            title="入手済み"
           >
-            ${esc(m.name)}
-          </a>
+            <input
+              type="checkbox"
+              data-acquired-name="${esc(m.name)}"
+              ${acquiredMonsters.has(m.name)?'checked':''}
+              onchange='toggleMonsterAcquired(
+                ${JSON.stringify(m.name)},
+                this.checked
+              )'
+            >
+            <span>入手済み</span>
+          </label>
+
+          <div class="name">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="${imgUrl(m.name)}"
+            >
+              ${esc(m.name)}
+            </a>
+          </div>
         </div>
 
         <div class="monster-card-actions">
@@ -2506,11 +2524,13 @@ const SAVED_PLANS_KEY='dqm3-saved-plans-v1';
 const MAX_SAVED_PLANS=16;
 const PLAN_PANEL_KEY='dqm3-plan-panel-expanded-v1';
 const RECOMMEND_PANEL_KEY='dqm3-recommend-panel-expanded-v1';
+const ACQUIRED_MONSTERS_KEY='dqm3-acquired-monsters-v1';
 
 let planPanelExpanded=true;
 let recommendPanelExpanded=true;
 let planView='current';
 let savedPlans=[];
+let acquiredMonsters=new Set();
 
 let planState={
   target:'',
@@ -2519,6 +2539,65 @@ let planState={
   minRankEnabled:false,
   minRank:'D'
 };
+
+function loadAcquiredMonsters(){
+  try{
+    const saved=localStorage.getItem(ACQUIRED_MONSTERS_KEY);
+    const parsed=saved ? JSON.parse(saved) : [];
+    acquiredMonsters=new Set(
+      Array.isArray(parsed)
+        ? parsed.filter(Boolean)
+        : []
+    );
+  }
+  catch(error){
+    console.warn(error);
+    acquiredMonsters=new Set();
+  }
+}
+
+function saveAcquiredMonsters(){
+  try{
+    localStorage.setItem(
+      ACQUIRED_MONSTERS_KEY,
+      JSON.stringify(
+        [...acquiredMonsters]
+          .sort((a,b)=>a.localeCompare(b,'ja'))
+      )
+    );
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function setMonsterAcquired(name,checked){
+  if(!name) return;
+
+  if(checked){
+    acquiredMonsters.add(name);
+  }
+  else{
+    acquiredMonsters.delete(name);
+  }
+
+  saveAcquiredMonsters();
+}
+
+window.toggleMonsterAcquired=
+  function(name,checked){
+    setMonsterAcquired(name,checked);
+
+    document
+      .querySelectorAll(
+        'input[data-acquired-name]'
+      )
+      .forEach(input=>{
+        if(input.dataset.acquiredName===name){
+          input.checked=checked;
+        }
+      });
+  };
 
 function loadPlanState(){
   try{
@@ -3020,6 +3099,7 @@ function planNodeHtml(node,depth=0){
           ${autoChecked?'title="最低ランク以下のため自動チェック"':''}
           onchange='togglePlanCheck(
             ${JSON.stringify(node.key)},
+            ${JSON.stringify(node.name)},
             this.checked
           )'
         >
@@ -3692,8 +3772,13 @@ function renderPlan(){
 }
 
 window.togglePlanCheck=
-  function(key,checked){
+  function(key,name,checked){
     planState.checked[key]=checked;
+
+    if(checked){
+      setMonsterAcquired(name,true);
+    }
+
     savePlanState();
     renderPlanKeepingPosition();
   };
@@ -4103,12 +4188,13 @@ addEventListener(
 updateNet();
 loadPlanState();
 loadSavedPlans();
+loadAcquiredMonsters();
 loadPlanPanelState();
 loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=48',
+    './data.json?v=49',
     {
       cache:'no-store'
     }
@@ -4123,7 +4209,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=48',
+    './skills.json?v=49',
     {
       cache:'no-store'
     }
@@ -4138,7 +4224,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=48',
+    './ability_details.json?v=49',
     {
       cache:'no-store'
     }
@@ -4153,7 +4239,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=48',
+    './trait_details.json?v=49',
     {
       cache:'no-store'
     }
@@ -4168,7 +4254,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=48',
+    './monster_recommendations.json?v=49',
     {
       cache:'no-store'
     }
@@ -4229,7 +4315,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=48'
+      './sw.js?v=49'
     )
     .catch(error=>
       console.warn(
