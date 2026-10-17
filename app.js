@@ -3513,17 +3513,7 @@ function renderSavedPlans(){
 }
 
 function visiblePlanDepth(node,depth=0){
-  const checked=
-    Boolean(planState.checked[node.key])
-    ||Boolean(
-      node.monster
-      &&shouldStopAtMinRank(node.monster)
-    );
-
-  if(
-    checked
-    ||!node.children?.length
-  ){
+  if(!node.children?.length){
     return depth;
   }
 
@@ -3536,6 +3526,36 @@ function visiblePlanDepth(node,depth=0){
       )
     )
   );
+}
+
+function renderPlanKeepingPosition(){
+  const tree=
+    document.querySelector('.plan-tree');
+
+  const treeScrollLeft=
+    tree?.scrollLeft
+    ||0;
+
+  const pageScrollY=
+    window.scrollY
+    ||0;
+
+  renderPlan();
+
+  requestAnimationFrame(()=>{
+    const nextTree=
+      document.querySelector('.plan-tree');
+
+    if(nextTree){
+      nextTree.scrollLeft=
+        treeScrollLeft;
+    }
+
+    scrollTo({
+      top:pageScrollY,
+      behavior:'auto'
+    });
+  });
 }
 
 function renderPlan(){
@@ -3675,7 +3695,7 @@ window.togglePlanCheck=
   function(key,checked){
     planState.checked[key]=checked;
     savePlanState();
-    renderPlan();
+    renderPlanKeepingPosition();
   };
 
 window.changePlanRoute=
@@ -3684,7 +3704,7 @@ window.changePlanRoute=
       Number(value);
 
     savePlanState();
-    renderPlan();
+    renderPlanKeepingPosition();
   };
 
 window.clearPlanChecks=
@@ -4088,7 +4108,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=47',
+    './data.json?v=48',
     {
       cache:'no-store'
     }
@@ -4103,7 +4123,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=47',
+    './skills.json?v=48',
     {
       cache:'no-store'
     }
@@ -4118,7 +4138,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=47',
+    './ability_details.json?v=48',
     {
       cache:'no-store'
     }
@@ -4133,7 +4153,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=47',
+    './trait_details.json?v=48',
     {
       cache:'no-store'
     }
@@ -4148,7 +4168,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=47',
+    './monster_recommendations.json?v=48',
     {
       cache:'no-store'
     }
@@ -4209,7 +4229,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=47'
+      './sw.js?v=48'
     )
     .catch(error=>
       console.warn(
