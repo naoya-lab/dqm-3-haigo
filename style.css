@@ -1538,3 +1538,59 @@ footer{
     min-width:235px;
   }
 }
+
+/* v49: acquired monster tracking */
+.monster-card-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  flex:1;
+}
+
+.monster-acquired{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  flex:none;
+  min-height:34px;
+  padding:3px 6px;
+  border-radius:8px;
+  background:#f3f4f6;
+  color:#374151;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.monster-acquired input[type="checkbox"]{
+  appearance:auto;
+  -webkit-appearance:checkbox;
+  width:20px !important;
+  height:20px !important;
+  min-width:20px;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.monster-card-title .name{
+  min-width:0;
+}
+
+@media(max-width:420px){
+  .monster-card-title{
+    gap:7px;
+  }
+
+  .monster-acquired{
+    min-height:32px;
+    padding:2px 5px;
+    font-size:10px;
+  }
+
+  .monster-acquired input[type="checkbox"]{
+    width:22px !important;
+    height:22px !important;
+    min-width:22px;
+  }
+}
