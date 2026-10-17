@@ -2959,8 +2959,7 @@ function planNodeHtml(node,depth=0){
     manualChecked
     ||autoChecked;
 
-  const indent=
-    Math.min(depth,8);
+  const indent=depth;
 
   const routeSelect=
     (
@@ -3513,6 +3512,32 @@ function renderSavedPlans(){
   `;
 }
 
+function visiblePlanDepth(node,depth=0){
+  const checked=
+    Boolean(planState.checked[node.key])
+    ||Boolean(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    );
+
+  if(
+    checked
+    ||!node.children?.length
+  ){
+    return depth;
+  }
+
+  return Math.max(
+    depth,
+    ...node.children.map(
+      child=>visiblePlanDepth(
+        child,
+        depth+1
+      )
+    )
+  );
+}
+
 function renderPlan(){
   const target=planState.target;
 
@@ -3547,6 +3572,9 @@ function renderPlan(){
 
   const root=
     buildPlanNode(target);
+
+  const treeDepth=
+    visiblePlanDepth(root);
 
   const stats={
     total:0,
@@ -3620,8 +3648,16 @@ function renderPlan(){
         \u914d\u5408\u7cfb\u7d71\u56f3
       </h2>
 
-      <div class="plan-tree">
-        ${planNodeHtml(root)}
+      <div
+        class="plan-tree"
+        aria-label="配合系統図。深い階層は横にスクロールできます"
+      >
+        <div
+          class="plan-tree-canvas"
+          style="--tree-depth:${treeDepth}"
+        >
+          ${planNodeHtml(root)}
+        </div>
       </div>
     </section>
 
@@ -4052,7 +4088,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=46',
+    './data.json?v=47',
     {
       cache:'no-store'
     }
@@ -4067,7 +4103,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=46',
+    './skills.json?v=47',
     {
       cache:'no-store'
     }
@@ -4082,7 +4118,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=46',
+    './ability_details.json?v=47',
     {
       cache:'no-store'
     }
@@ -4097,7 +4133,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=46',
+    './trait_details.json?v=47',
     {
       cache:'no-store'
     }
@@ -4112,7 +4148,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=46',
+    './monster_recommendations.json?v=47',
     {
       cache:'no-store'
     }
@@ -4173,7 +4209,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=46'
+      './sw.js?v=47'
     )
     .catch(error=>
       console.warn(
