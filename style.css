@@ -1473,3 +1473,68 @@ footer{
     padding:7px 9px;
   }
 }
+
+/* v47: deep plan tree horizontal scrolling */
+.plan-tree{
+  overflow-x:auto;
+  overflow-y:visible;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+  padding-bottom:8px;
+}
+
+.plan-tree-canvas{
+  --plan-indent:36px;
+  min-width:max(
+    100%,
+    calc(
+      320px
+      + var(--tree-depth)
+      * var(--plan-indent)
+    )
+  );
+}
+
+.plan-node{
+  box-sizing:border-box;
+  margin-left:
+    calc(
+      var(--depth)
+      * var(--plan-indent)
+    );
+  width:
+    calc(
+      100%
+      - var(--depth)
+      * var(--plan-indent)
+    );
+  min-width:250px;
+}
+
+.plan-node-head{
+  position:relative;
+}
+
+/* 階層の違いが見分けやすいよう、2段目以降に薄いガイドを出す */
+.plan-node[style*="--depth:1"],
+.plan-node[style*="--depth:2"],
+.plan-node[style*="--depth:3"],
+.plan-node[style*="--depth:4"],
+.plan-node[style*="--depth:5"],
+.plan-node[style*="--depth:6"],
+.plan-node[style*="--depth:7"],
+.plan-node[style*="--depth:8"],
+.plan-node[style*="--depth:9"]{
+  border-left:2px solid #e5e7eb;
+  padding-left:8px;
+}
+
+@media(max-width:420px){
+  .plan-tree-canvas{
+    --plan-indent:34px;
+  }
+
+  .plan-node{
+    min-width:235px;
+  }
+}
