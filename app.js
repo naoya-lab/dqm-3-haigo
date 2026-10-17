@@ -26,6 +26,7 @@ const familyFilters=document.getElementById('familyFilters');
 const clearFilters=document.getElementById('clearFilters');
 const sortRow=document.getElementById('sortRow');
 const normalSearch=document.getElementById('normalSearch');
+const acquiredCount=document.getElementById('acquiredCount');
 const planControls=document.getElementById('planControls');
 const recommendControls=document.getElementById('recommendControls');
 const recommendPanelToggle=document.getElementById('recommendPanelToggle');
@@ -2554,6 +2555,22 @@ function loadAcquiredMonsters(){
     console.warn(error);
     acquiredMonsters=new Set();
   }
+
+  updateAcquiredCount();
+}
+
+function updateAcquiredCount(){
+  if(!acquiredCount) return;
+
+  const total=
+    DB?.monsters?.length
+    ||526;
+
+  acquiredCount.textContent=
+    `入手済み ${acquiredMonsters.size}/${total}`;
+
+  acquiredCount.hidden=
+    mode!=='monster';
 }
 
 function saveAcquiredMonsters(){
@@ -2582,6 +2599,7 @@ function setMonsterAcquired(name,checked){
   }
 
   saveAcquiredMonsters();
+  updateAcquiredCount();
 }
 
 window.toggleMonsterAcquired=
@@ -3872,6 +3890,7 @@ function updateTabs(){
   updatePlanPanelVisibility();
 
   updateRecommendPanelVisibility();
+  updateAcquiredCount();
 
   if(mode==='monster'){
     q.placeholder=
@@ -4194,7 +4213,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=49',
+    './data.json?v=50',
     {
       cache:'no-store'
     }
@@ -4209,7 +4228,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=49',
+    './skills.json?v=50',
     {
       cache:'no-store'
     }
@@ -4224,7 +4243,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=49',
+    './ability_details.json?v=50',
     {
       cache:'no-store'
     }
@@ -4239,7 +4258,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=49',
+    './trait_details.json?v=50',
     {
       cache:'no-store'
     }
@@ -4254,7 +4273,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=49',
+    './monster_recommendations.json?v=50',
     {
       cache:'no-store'
     }
@@ -4315,7 +4334,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=49'
+      './sw.js?v=50'
     )
     .catch(error=>
       console.warn(
