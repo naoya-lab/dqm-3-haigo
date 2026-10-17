@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T00:58:02.949034+00:00",
+  "generatedAt": "2026-10-17T11:14:12.299165+00:00",
   "source": {
     "name": "MetalKid/DQM3_Database",
     "url": "https://github.com/MetalKid/DQM3_Database",
@@ -50503,7 +50503,13 @@
         ]
       },
       "locations": [],
-      "eggs": [],
+      "eggs": [
+        {
+          "name": "金",
+          "identifier": "gold",
+          "postGameOnly": false
+        }
+      ],
       "recipes": [],
       "uses": [
         {
