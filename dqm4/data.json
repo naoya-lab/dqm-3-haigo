@@ -1,9 +1,9 @@
 {
   "game": "DQM4",
   "status": "公開一覧の全モンスター・未公開項目は確認待ち",
-  "checkedAt": "2026-10-15",
+  "checkedAt": "2026-10-20",
   "sourceUrl": "https://gamewith.jp/monsters4/563338",
-  "listedCount": 358,
+  "listedCount": 373,
   "detailCount": 161,
   "monsters": [
     {
@@ -16704,6 +16704,293 @@
       "dataStatus": "announced",
       "nameStatus": "",
       "uses": []
+    },
+    {
+      "id": "announced-359",
+      "name": "ダークキング",
+      "no": null,
+      "rank": "",
+      "family": "スライム系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-360",
+      "name": "もりもりベス",
+      "no": null,
+      "rank": "",
+      "family": "スライム系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-361",
+      "name": "コアトル",
+      "no": null,
+      "rank": "",
+      "family": "ドラゴン系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-362",
+      "name": "スノードラゴン",
+      "no": null,
+      "rank": "",
+      "family": "ドラゴン系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-363",
+      "name": "むつでエビ",
+      "no": null,
+      "rank": "",
+      "family": "自然系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-364",
+      "name": "バッファロン",
+      "no": null,
+      "rank": "",
+      "family": "魔獣系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-365",
+      "name": "ねこまどう",
+      "no": null,
+      "rank": "",
+      "family": "魔獣系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-366",
+      "name": "ネーレウス",
+      "no": null,
+      "rank": "",
+      "family": "悪魔系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-367",
+      "name": "オーガー",
+      "no": null,
+      "rank": "",
+      "family": "悪魔系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-368",
+      "name": "フーラズーラ",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-369",
+      "name": "ポムポムボム",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-370",
+      "name": "マタンゴ",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-371",
+      "name": "デススパーク",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-372",
+      "name": "ストーンマン",
+      "no": null,
+      "rank": "",
+      "family": "物質系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
+    },
+    {
+      "id": "announced-373",
+      "name": "ツボック",
+      "no": null,
+      "rank": "",
+      "family": "物質系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": "",
+      "uses": []
     }
-  ]
+  ],
+  "dataVersion": "2026.10.20",
+  "appVersion": "4"
 }

@@ -2780,7 +2780,7 @@ loadPlanPanelState();
 loadRecommendPanelState();
 
 Promise.all(['data.json','skills.json','recommendations.json'].map(async file=>{
-  const response=await fetch('./'+file+'?v=3',{cache:'no-store'});
+  const response=await fetch('./'+file+'?v=4',{cache:'no-store'});
   if(!response.ok)throw new Error(file);
   return response.json();
 })).then(([monsterData,skillData,recommendationData])=>{
@@ -2810,7 +2810,7 @@ Promise.all(['data.json','skills.json','recommendations.json'].map(async file=>{
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=3'
+      './sw.js?v=4'
     )
     .catch(error=>
       console.warn(
