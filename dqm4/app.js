@@ -6,6 +6,7 @@ let TRAIT_DETAILS={};
 let MONSTER_RECOMMENDATIONS={};
 let mode='monster';
 let monsterSearchValue='';
+let planReturnScrollY=0;
 let skillSearchValue='';
 let STAT_THRESHOLDS={};
 
@@ -26,6 +27,7 @@ const familyFilters=document.getElementById('familyFilters');
 const clearFilters=document.getElementById('clearFilters');
 const sortRow=document.getElementById('sortRow');
 const normalSearch=document.getElementById('normalSearch');
+const acquiredCount=document.getElementById('acquiredCount');
 const planControls=document.getElementById('planControls');
 const recommendControls=document.getElementById('recommendControls');
 const recommendPanelToggle=document.getElementById('recommendPanelToggle');
@@ -79,6 +81,10 @@ function imgUrl(name){
 }
 
 function jumpMonster(name){
+  if(mode==='plan'){
+    planReturnScrollY=window.scrollY||0;
+  }
+
   monsterSearchValue=name;
   mode='monster';
   updateTabs();
@@ -450,14 +456,32 @@ function monsterCard(m){
   return `
     <section class="card">
       <div class="monster-card-header">
-        <div class="name">
-          <a
-            target="_blank"
-            rel="noopener"
-            href="${imgUrl(m.name)}"
+        <div class="monster-card-title">
+          <label
+            class="monster-acquired"
+            title="入手済み"
           >
-            ${esc(m.name)}
-          </a>
+            <input
+              type="checkbox"
+              data-acquired-name="${esc(m.name)}"
+              ${acquiredMonsters.has(m.name)?'checked':''}
+              onchange='toggleMonsterAcquired(
+                ${JSON.stringify(m.name)},
+                this.checked
+              )'
+            >
+            <span>入手済み</span>
+          </label>
+
+          <div class="name">
+            <a
+              target="_blank"
+              rel="noopener"
+              href="${imgUrl(m.name)}"
+            >
+              ${esc(m.name)}
+            </a>
+          </div>
         </div>
 
         <div class="monster-card-actions">
@@ -1298,11 +1322,13 @@ const SAVED_PLANS_KEY='dqm4-saved-plans-v1';
 const MAX_SAVED_PLANS=16;
 const PLAN_PANEL_KEY='dqm4-plan-panel-expanded-v1';
 const RECOMMEND_PANEL_KEY='dqm4-recommend-panel-expanded-v1';
+const ACQUIRED_MONSTERS_KEY='dqm4-acquired-monsters-v1';
 
 let planPanelExpanded=true;
 let recommendPanelExpanded=true;
 let planView='current';
 let savedPlans=[];
+let acquiredMonsters=new Set();
 
 let planState={
   target:'',
@@ -1311,6 +1337,82 @@ let planState={
   minRankEnabled:false,
   minRank:'D'
 };
+
+function loadAcquiredMonsters(){
+  try{
+    const saved=localStorage.getItem(ACQUIRED_MONSTERS_KEY);
+    const parsed=saved ? JSON.parse(saved) : [];
+    acquiredMonsters=new Set(
+      Array.isArray(parsed)
+        ? parsed.filter(Boolean)
+        : []
+    );
+  }
+  catch(error){
+    console.warn(error);
+    acquiredMonsters=new Set();
+  }
+
+  updateAcquiredCount();
+}
+
+function updateAcquiredCount(){
+  if(!acquiredCount) return;
+
+  const total=
+    DB?.monsters?.length
+    ||0;
+
+  acquiredCount.textContent=
+    `入手済み ${DB.monsters.filter(m=>acquiredMonsters.has(m.name)).length}/${total}`;
+
+  acquiredCount.hidden=
+    mode!=='monster';
+}
+
+function saveAcquiredMonsters(){
+  try{
+    localStorage.setItem(
+      ACQUIRED_MONSTERS_KEY,
+      JSON.stringify(
+        [...acquiredMonsters]
+          .sort((a,b)=>a.localeCompare(b,'ja'))
+      )
+    );
+  }
+  catch(error){
+    console.warn(error);
+  }
+}
+
+function setMonsterAcquired(name,checked){
+  if(!name||!findMonster(name)) return;
+
+  if(checked){
+    acquiredMonsters.add(name);
+  }
+  else{
+    acquiredMonsters.delete(name);
+  }
+
+  saveAcquiredMonsters();
+  updateAcquiredCount();
+}
+
+window.toggleMonsterAcquired=
+  function(name,checked){
+    setMonsterAcquired(name,checked);
+
+    document
+      .querySelectorAll(
+        'input[data-acquired-name]'
+      )
+      .forEach(input=>{
+        if(input.dataset.acquiredName===name){
+          input.checked=checked;
+        }
+      });
+  };
 
 function loadPlanState(){
   try{
@@ -1515,12 +1617,22 @@ function openSavedPlan(index){
   const saved=savedPlans[index];
   if(!saved) return;
 
+  const restoredMinRankEnabled=
+    saved.minRankEnabled===undefined
+      ? Boolean(planState.minRankEnabled)
+      : Boolean(saved.minRankEnabled);
+
+  const restoredMinRank=
+    saved.minRank
+    ||planState.minRank
+    ||'D';
+
   planState={
     target:saved.target||'',
     checked:clonePlanState(saved.checked||{}),
     routes:clonePlanState(saved.routes||{}),
-    minRankEnabled:Boolean(saved.minRankEnabled),
-    minRank:saved.minRank||'D'
+    minRankEnabled:restoredMinRankEnabled,
+    minRank:restoredMinRank
   };
   savePlanState();
 
@@ -1637,7 +1749,7 @@ function buildPlanNode(
       ??0
     );
 
-  if(routeIndex>=recipes.length){
+  if(!Number.isInteger(routeIndex)||routeIndex<0||routeIndex>=recipes.length){
     routeIndex=0;
   }
 
@@ -1712,8 +1824,7 @@ function planNodeHtml(node,depth=0){
     manualChecked
     ||autoChecked;
 
-  const indent=
-    Math.min(depth,8);
+  const indent=depth;
 
   const routeSelect=
     (
@@ -1774,6 +1885,7 @@ function planNodeHtml(node,depth=0){
           ${autoChecked?'title="最低ランク以下のため自動チェック"':''}
           onchange='togglePlanCheck(
             ${JSON.stringify(node.key)},
+            ${JSON.stringify(node.name)},
             this.checked
           )'
         >
@@ -2298,6 +2410,9 @@ function renderPlan(){
   const root=
     buildPlanNode(target);
 
+  const treeDepth=
+    visiblePlanDepth(root);
+
   const stats={
     total:0,
     checked:0,
@@ -2370,8 +2485,16 @@ function renderPlan(){
         \u914d\u5408\u7cfb\u7d71\u56f3
       </h2>
 
-      <div class="plan-tree">
-        ${planNodeHtml(root)}
+      <div
+        class="plan-tree"
+        aria-label="配合系統図。深い階層は横にスクロールできます"
+      >
+        <div
+          class="plan-tree-canvas"
+          style="--tree-depth:${treeDepth}"
+        >
+          ${planNodeHtml(root)}
+        </div>
       </div>
     </section>
 
@@ -2386,10 +2509,15 @@ function renderPlan(){
 }
 
 window.togglePlanCheck=
-  function(key,checked){
+  function(key,name,checked){
     planState.checked[key]=checked;
+
+    if(checked){
+      setMonsterAcquired(name,true);
+    }
+
     savePlanState();
-    renderPlan();
+    renderPlanKeepingPosition();
   };
 
 window.changePlanRoute=
@@ -2398,7 +2526,7 @@ window.changePlanRoute=
       Number(value);
 
     savePlanState();
-    renderPlan();
+    renderPlanKeepingPosition();
   };
 
 window.clearPlanChecks=
@@ -2481,6 +2609,7 @@ function updateTabs(){
   updatePlanPanelVisibility();
 
   updateRecommendPanelVisibility();
+  updateAcquiredCount();
 
   if(mode==='monster'){
     q.placeholder=
@@ -2523,6 +2652,10 @@ function updateTabs(){
 monsterTab.addEventListener(
   'click',
   ()=>{
+    if(mode==='plan'){
+      planReturnScrollY=window.scrollY||0;
+    }
+
     mode='monster';
     q.value=monsterSearchValue;
     updateTabs();
@@ -2547,6 +2680,13 @@ planTab.addEventListener(
     planView='current';
     updateTabs();
     render();
+
+    requestAnimationFrame(()=>{
+      scrollTo({
+        top:planReturnScrollY||0,
+        behavior:'auto'
+      });
+    });
   }
 );
 
@@ -2595,6 +2735,7 @@ recommendPanelToggle.addEventListener(
     recommendPanelExpanded=!recommendPanelExpanded;
     saveRecommendPanelState();
     updateRecommendPanelVisibility();
+  updateAcquiredCount();
   }
 );
 
@@ -2630,8 +2771,18 @@ buildPlanButton.addEventListener(
 planMinRankEnabled.addEventListener(
   'change',
   ()=>{
-    planState.minRankEnabled=
+    const willEnable=
       planMinRankEnabled.checked;
+
+    if(
+      planState.minRankEnabled
+      &&!willEnable
+    ){
+      preserveAutoRankChecks();
+    }
+
+    planState.minRankEnabled=
+      willEnable;
 
     planMinRank.disabled=
       !planState.minRankEnabled;
@@ -2776,11 +2927,12 @@ addEventListener(
 updateNet();
 loadPlanState();
 loadSavedPlans();
+loadAcquiredMonsters();
 loadPlanPanelState();
 loadRecommendPanelState();
 
 Promise.all(['data.json','skills.json','recommendations.json'].map(async file=>{
-  const response=await fetch('./'+file+'?v=4',{cache:'no-store'});
+  const response=await fetch('./'+file+'?v=5',{cache:'no-store'});
   if(!response.ok)throw new Error(file);
   return response.json();
 })).then(([monsterData,skillData,recommendationData])=>{
@@ -2810,7 +2962,7 @@ Promise.all(['data.json','skills.json','recommendations.json'].map(async file=>{
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=4'
+      './sw.js?v=5'
     )
     .catch(error=>
       console.warn(
@@ -2823,5 +2975,79 @@ if('serviceWorker' in navigator){
 function sourceLink(url){
   try{if(new URL(url).protocol!=='https:')return '';}catch{return '';}
   return `<a class="small" target="_blank" rel="noopener noreferrer" href="${esc(url)}">出典を確認</a>`;
+}
+
+
+function preserveAutoRankChecks(){
+  if(
+    !planState.minRankEnabled
+    ||!planState.target
+    ||!findMonster(planState.target)
+  ){
+    return;
+  }
+
+  const root=buildPlanNode(planState.target);
+
+  function visit(node){
+    if(
+      node.monster
+      &&shouldStopAtMinRank(node.monster)
+    ){
+      planState.checked[node.key]=true;
+    }
+
+    (node.children||[]).forEach(visit);
+  }
+
+  visit(root);
+}
+
+
+function visiblePlanDepth(node,depth=0){
+  if(!node.children?.length){
+    return depth;
+  }
+
+  return Math.max(
+    depth,
+    ...node.children.map(
+      child=>visiblePlanDepth(
+        child,
+        depth+1
+      )
+    )
+  );
+}
+
+
+function renderPlanKeepingPosition(){
+  const tree=
+    document.querySelector('.plan-tree');
+
+  const treeScrollLeft=
+    tree?.scrollLeft
+    ||0;
+
+  const pageScrollY=
+    window.scrollY
+    ||0;
+
+  renderPlan();
+
+  requestAnimationFrame(()=>{
+    const nextTree=
+      document.querySelector('.plan-tree');
+
+    if(nextTree){
+      nextTree.scrollLeft=
+        treeScrollLeft;
+    }
+
+    scrollTo({
+      top:pageScrollY,
+      behavior:'auto'
+    });
+  });
 }
 

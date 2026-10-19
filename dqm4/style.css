@@ -1424,3 +1424,196 @@ footer{
 }
 
 .preparation-note{padding:14px;margin:12px 0;border:1px solid #334155;border-radius:10px;line-height:1.7;color:#cbd5e1}
+
+/* v46: safer plan tree tapping */
+.plan-node-head{
+  gap:12px;
+}
+
+.plan-check{
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+  margin-right:2px;
+}
+
+.plan-name{
+  min-height:34px;
+  padding:5px 8px;
+  border-radius:8px;
+  line-height:1.35;
+  text-align:left;
+}
+
+.plan-name:active{
+  background:#eef2ff;
+}
+
+.plan-location,
+.plan-egg{
+  margin-left:38px;
+}
+
+.route-select{
+  width:calc(100% - 38px);
+  margin-left:38px;
+}
+
+@media(max-width:420px){
+  .plan-node-head{
+    gap:13px;
+  }
+
+  .plan-check{
+    width:24px;
+    height:24px;
+    flex-basis:24px;
+  }
+
+  .plan-name{
+    min-height:38px;
+    padding:7px 9px;
+  }
+}
+
+/* v47: deep plan tree horizontal scrolling */
+.plan-tree{
+  overflow-x:auto;
+  overflow-y:visible;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain;
+  padding-bottom:8px;
+}
+
+.plan-tree-canvas{
+  --plan-indent:36px;
+  min-width:max(
+    100%,
+    calc(
+      320px
+      + var(--tree-depth)
+      * var(--plan-indent)
+    )
+  );
+}
+
+.plan-node{
+  box-sizing:border-box;
+  margin-left:
+    calc(
+      var(--depth)
+      * var(--plan-indent)
+    );
+  width:
+    calc(
+      100%
+      - var(--depth)
+      * var(--plan-indent)
+    );
+  min-width:250px;
+}
+
+.plan-node-head{
+  position:relative;
+}
+
+/* 階層の違いが見分けやすいよう、2段目以降に薄いガイドを出す */
+.plan-node[style*="--depth:1"],
+.plan-node[style*="--depth:2"],
+.plan-node[style*="--depth:3"],
+.plan-node[style*="--depth:4"],
+.plan-node[style*="--depth:5"],
+.plan-node[style*="--depth:6"],
+.plan-node[style*="--depth:7"],
+.plan-node[style*="--depth:8"],
+.plan-node[style*="--depth:9"]{
+  border-left:2px solid #e5e7eb;
+  padding-left:8px;
+}
+
+@media(max-width:420px){
+  .plan-tree-canvas{
+    --plan-indent:34px;
+  }
+
+  .plan-node{
+    min-width:235px;
+  }
+}
+
+/* v49: acquired monster tracking */
+.monster-card-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+  flex:1;
+}
+
+.monster-acquired{
+  display:flex;
+  align-items:center;
+  gap:4px;
+  flex:none;
+  min-height:34px;
+  padding:3px 6px;
+  border-radius:8px;
+  background:#f3f4f6;
+  color:#374151;
+  font-size:11px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.monster-acquired input[type="checkbox"]{
+  appearance:auto;
+  -webkit-appearance:checkbox;
+  width:20px !important;
+  height:20px !important;
+  min-width:20px;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.monster-card-title .name{
+  min-width:0;
+}
+
+@media(max-width:420px){
+  .monster-card-title{
+    gap:7px;
+  }
+
+  .monster-acquired{
+    min-height:32px;
+    padding:2px 5px;
+    font-size:10px;
+  }
+
+  .monster-acquired input[type="checkbox"]{
+    width:22px !important;
+    height:22px !important;
+    min-width:22px;
+  }
+}
+
+/* v50: acquired monster count */
+.acquired-count{
+  margin:4px 0 8px;
+  padding:0 2px;
+  color:#f3f4f6;
+  font-size:12px;
+  font-weight:800;
+  text-align:left;
+}
+
+.acquired-count[hidden]{
+  display:none;
+}
+
+@media(max-width:420px){
+  .acquired-count{
+    margin-bottom:6px;
+    font-size:11px;
+  }
+}
