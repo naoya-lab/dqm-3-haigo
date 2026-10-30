@@ -1,4 +1,4 @@
-const C='dqm3-v50';
+const C='dqm3-v51';
 
 const CORE=[
   './',
@@ -83,7 +83,7 @@ self.addEventListener(
       );
 
 
-    if(url.origin!==self.location.origin || url.pathname.startsWith(new URL('./dqm4/', self.registration.scope).pathname)){
+    if(url.origin!==self.location.origin || !url.href.startsWith(self.registration.scope) || url.pathname.startsWith(new URL('./dqm4/', self.registration.scope).pathname)){
       return;
     }
 
@@ -107,39 +107,19 @@ self.addEventListener(
           }
         )
         .then(response=>{
-
-          const copy=
-            response.clone();
-
-          caches
-            .open(C)
-            .then(
-              cache=>
-                cache.put(
-                  event.request,
-                  copy
-                )
-            );
-
+          if(response.ok){
+            const copy=response.clone();
+            event.waitUntil(caches.open(C).then(cache=>cache.put(event.request,copy)).catch(error=>console.warn('Cache write failed',error)));
+          }
           return response;
         })
-        .catch(
-          ()=>{
-
-            return caches
-              .match(
-                event.request
-              )
-              .then(
-                response=>
-                  response
-                  ||
-                  caches.match(
-                    './index.html'
-                  )
-              );
-          }
-        )
+        .catch(async()=>{
+          const cache=await caches.open(C);
+          const saved=await cache.match(event.request);
+          if(saved)return saved;
+          if(event.request.mode==='navigate')return await cache.match('./index.html')||Response.error();
+          return Response.error();
+        })
 
       );
 
