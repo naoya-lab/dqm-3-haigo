@@ -106,11 +106,22 @@ self.addEventListener(
             cache:'no-store'
           }
         )
-        .then(response=>{
+        .then(async response=>{
           if(response.ok){
             const copy=response.clone();
-            event.waitUntil(caches.open(C).then(cache=>cache.put(event.request,copy)).catch(error=>console.warn('Cache write failed',error)));
+
+            try{
+              const cache=await caches.open(C);
+              await cache.put(event.request,copy);
+            }
+            catch(error){
+              console.warn(
+                'Cache write failed',
+                error
+              );
+            }
           }
+
           return response;
         })
         .catch(async()=>{
