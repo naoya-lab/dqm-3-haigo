@@ -3,10 +3,17 @@ const C='dqm3-v51';
 const CORE=[
   './',
   './index.html',
-  './style.css?v=50',
-  './app.js?v=50',
-  './data.json?v=50',
-  './skills.json?v=50','./ability_details.json?v=50','./trait_details.json?v=50','./monster_recommendations.json?v=50',
+  './style.css?v=51',
+  './app.js?v=51',
+  './common.js?v=51',
+  './monsters.js?v=51',
+  './skills.js?v=51',
+  './recommend.js?v=51',
+  './storage.js?v=51',
+  './plan.js?v=51',
+
+  './data.json?v=51',
+  './skills.json?v=51','./ability_details.json?v=51','./trait_details.json?v=51','./monster_recommendations.json?v=51',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png'
