@@ -1,22 +1,23 @@
-const C='dqm3-v51';
+const C='dqm3-v52';
 
 const CORE=[
   './',
   './index.html',
-  './style.css?v=51',
-  './app.js?v=51',
-  './common.js?v=51',
-  './monsters.js?v=51',
-  './skills.js?v=51',
-  './recommend.js?v=51',
-  './storage.js?v=51',
-  './plan.js?v=51',
+  './style.css?v=52',
+  './app.js?v=52',
+  './common.js?v=52',
+  './monsters.js?v=52',
+  './skills.js?v=52',
+  './recommend.js?v=52',
+  './storage.js?v=52',
+  './plan.js?v=52',
 
-  './data.json?v=51',
-  './skills.json?v=51','./ability_details.json?v=51','./trait_details.json?v=51','./monster_recommendations.json?v=51',
+  './data.json?v=52',
+  './skills.json?v=52','./ability_details.json?v=52','./trait_details.json?v=52','./monster_recommendations.json?v=52',
   './manifest.webmanifest',
   './icon-192.png',
-  './icon-512.png'
+  './icon-512.png',
+  './app-icon-20261029-192.png'
 ];
 
 

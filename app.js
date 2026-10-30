@@ -317,6 +317,8 @@ familyFilters.addEventListener(
   render
 );
 
+document.getElementById('acquiredFilter').addEventListener('change',render);
+
 clearFilters.addEventListener(
   'click',
   ()=>{
@@ -326,6 +328,7 @@ clearFilters.addEventListener(
     ].forEach(input=>{
       input.checked=false;
     });
+    document.getElementById('acquiredFilter').value='all';
     render();
   }
 );
@@ -356,7 +359,7 @@ loadRecommendPanelState();
 
 Promise.all([
   fetch(
-    './data.json?v=51',
+    './data.json?v=52',
     {
       cache:'no-store'
     }
@@ -371,7 +374,7 @@ Promise.all([
   }),
 
   fetch(
-    './skills.json?v=51',
+    './skills.json?v=52',
     {
       cache:'no-store'
     }
@@ -386,7 +389,7 @@ Promise.all([
   }),
 
   fetch(
-    './ability_details.json?v=51',
+    './ability_details.json?v=52',
     {
       cache:'no-store'
     }
@@ -401,7 +404,7 @@ Promise.all([
   }),
 
   fetch(
-    './trait_details.json?v=51',
+    './trait_details.json?v=52',
     {
       cache:'no-store'
     }
@@ -416,7 +419,7 @@ Promise.all([
   }),
 
   fetch(
-    './monster_recommendations.json?v=51',
+    './monster_recommendations.json?v=52',
     {
       cache:'no-store'
     }
@@ -477,7 +480,7 @@ Promise.all([
 if('serviceWorker' in navigator){
   navigator.serviceWorker
     .register(
-      './sw.js?v=51'
+      './sw.js?v=52'
     )
     .catch(error=>
       console.warn(

@@ -325,14 +325,16 @@ function planNodeHtml(node,depth=0){
     shortEgg(node.monster);
 
   return `
+    <div class="plan-branch">
     <div
-      class="plan-node"
+      class="plan-node ${autoChecked?'is-auto-checked':manualChecked?'is-manual-checked':''}"
       style="--depth:${indent}"
     >
       <div class="plan-node-head">
         <input
           type="checkbox"
           class="plan-check"
+          aria-label="${esc(node.name)}：${autoChecked?'最低ランク自動チェック':'作成済みチェック（素材から除外）'}"
           ${checked?'checked':''}
           ${autoChecked?'disabled':''}
           ${autoChecked?'title="最低ランク以下のため自動チェック"':''}
@@ -363,9 +365,11 @@ function planNodeHtml(node,depth=0){
             : ''
         }
 
+        ${acquiredMonsters.has(node.name) ? '<span class="mini-badge acquired-badge">✓ 入手済み</span>' : ''}
+        ${manualChecked && !autoChecked ? '<span class="mini-badge manual-check-badge">✓ 作成済み</span>' : ''}
         ${autoChecked ? `
           <span class="mini-badge auto-rank-badge">
-            自動チェック
+            最低ランク自動
           </span>
         ` : ''}
       </div>
@@ -409,7 +413,7 @@ function planNodeHtml(node,depth=0){
         &&
         node.children.length
       )
-        ? node.children
+        ? '<div class="plan-children">'+node.children
             .map(
               child=>
                 planNodeHtml(
@@ -417,9 +421,10 @@ function planNodeHtml(node,depth=0){
                   depth+1
                 )
             )
-            .join('')
+            .join('')+'</div>'
         : ''
     }
+    </div>
   `;
 }
 
@@ -870,10 +875,7 @@ function renderPlanKeepingPosition(){
         treeScrollLeft;
     }
 
-    scrollTo({
-      top:pageScrollY,
-      behavior:'auto'
-    });
+    scrollTo({left:0,top:pageScrollY,behavior:'auto'});
   });
 }
 
@@ -987,6 +989,7 @@ function renderPlan(){
         \u914d\u5408\u7cfb\u7d71\u56f3
       </h2>
 
+      <p class="plan-legend">✓ 入手済みは所持の目印です。素材の除外は「作成済み」チェック、または最低ランク自動チェックで決まります。</p>
       <div
         class="plan-tree"
         aria-label="配合系統図。深い階層は横にスクロールできます"

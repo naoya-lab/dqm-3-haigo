@@ -1515,20 +1515,6 @@ footer{
   position:relative;
 }
 
-/* 階層の違いが見分けやすいよう、2段目以降に薄いガイドを出す */
-.plan-node[style*="--depth:1"],
-.plan-node[style*="--depth:2"],
-.plan-node[style*="--depth:3"],
-.plan-node[style*="--depth:4"],
-.plan-node[style*="--depth:5"],
-.plan-node[style*="--depth:6"],
-.plan-node[style*="--depth:7"],
-.plan-node[style*="--depth:8"],
-.plan-node[style*="--depth:9"]{
-  border-left:2px solid #e5e7eb;
-  padding-left:8px;
-}
-
 @media(max-width:420px){
   .plan-tree-canvas{
     --plan-indent:34px;
@@ -1613,5 +1599,124 @@ footer{
   .acquired-count{
     margin-bottom:6px;
     font-size:11px;
+  }
+}
+
+/* v52: unobtrusive data management and structurally connected tree guides */
+.data-settings{
+  margin:20px 0;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  background:#fff;
+  font-size:13px;
+}
+.data-settings summary{
+  cursor:pointer;
+  min-height:32px;
+  padding:6px 0;
+  font-weight:700;
+}
+.data-settings p{
+  line-height:1.6;
+}
+.backup-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.backup-actions button,#acquiredFilter{
+  min-height:44px;
+  padding:8px 12px;
+  max-width:100%;
+}
+.plan-legend{
+  font-size:12px;
+  color:#4b5563;
+  line-height:1.6;
+}
+.plan-tree{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow-x:auto;
+  overflow-anchor:none;
+}
+.plan-tree-canvas{
+  --plan-indent:30px;
+  min-width:max(100%,calc(320px + var(--tree-depth)*var(--plan-indent)));
+}
+.plan-branch{
+  position:relative;
+  min-width:0;
+}
+.plan-children{
+  margin-left:var(--plan-indent);
+  border-left:1px solid #cbd5e1;
+}
+.plan-children>.plan-branch{
+  padding-left:12px;
+}
+.plan-children>.plan-branch::before{
+  content:"";
+  position:absolute;
+  top:27px;
+  left:0;
+  width:12px;
+  border-top:1px solid #cbd5e1;
+}
+.plan-tree .plan-node{
+  margin-left:0;
+  width:100%;
+  min-width:250px;
+  border-left:0;
+  padding:8px 6px;
+}
+.plan-node-head{
+  flex-wrap:wrap;
+  gap:6px 10px;
+}
+.plan-name{
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+.plan-node.is-manual-checked{
+  background:#f0f7f2;
+  border-radius:8px;
+}
+.plan-node.is-auto-checked{
+  background:#fff8e7;
+  border-radius:8px;
+}
+.plan-node .acquired-badge{
+  background:#e0f2fe;
+  color:#075985;
+}
+.plan-node .manual-check-badge{
+  background:#dcfce7;
+  color:#166534;
+}
+.plan-node .auto-rank-badge{
+  background:#fef3c7;
+  color:#854d0e;
+}
+.plan-tree .plan-check{
+  min-width:44px;
+  min-height:44px;
+  flex-basis:44px;
+  cursor:pointer;
+}
+.plan-tree .plan-check:disabled{
+  cursor:default;
+}
+.plan-tree .route-select{
+  max-width:calc(100% - 38px);
+}
+@media(max-width:420px){
+  .plan-tree-canvas{
+    --plan-indent:24px;
+  }
+  .plan-tree .plan-node{
+    min-width:240px;
   }
 }

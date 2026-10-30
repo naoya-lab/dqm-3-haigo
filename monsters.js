@@ -653,7 +653,13 @@ function monsterMatchesFilters(monster){
     !families.length
     ||families.includes(String(monster.family||''));
 
-  return rankOk && familyOk;
+  const acquiredFilter=document.getElementById('acquiredFilter').value;
+  const acquired=acquiredMonsters.has(monster.name);
+  const acquiredOk=acquiredFilter==='all'
+    ||(acquiredFilter==='acquired' && acquired)
+    ||(acquiredFilter==='missing' && !acquired);
+
+  return rankOk && familyOk && acquiredOk;
 }
 
 function compareMonsters(a,b,term){
@@ -799,7 +805,8 @@ function renderMonsters(){
 
   const hasFilters=
     selectedFilterValues(rankFilters).length
-    ||selectedFilterValues(familyFilters).length;
+    ||selectedFilterValues(familyFilters).length
+    ||document.getElementById('acquiredFilter').value!=='all';
 
   statusEl.textContent=
     (term||hasFilters)
@@ -815,4 +822,54 @@ function renderMonsters(){
         </div>
       `;
 }
+
+
+function updateAcquiredCount(){
+  if(!acquiredCount) return;
+
+  const total=
+    DB?.monsters?.length
+    ||526;
+
+  acquiredCount.textContent=
+    `入手済み ${acquiredMonsters.size}/${total}`;
+
+  acquiredCount.hidden=
+    mode!=='monster';
+}
+
+function setMonsterAcquired(name,checked){
+  if(!name) return;
+
+  if(checked){
+    acquiredMonsters.add(name);
+  }
+  else{
+    acquiredMonsters.delete(name);
+  }
+
+  saveAcquiredMonsters();
+  updateAcquiredCount();
+}
+
+window.toggleMonsterAcquired=
+  function(name,checked){
+    setMonsterAcquired(name,checked);
+
+    document
+      .querySelectorAll(
+        'input[data-acquired-name]'
+      )
+      .forEach(input=>{
+        if(input.dataset.acquiredName===name){
+          input.checked=checked;
+        }
+      });
+
+    if(mode==='monster' && document.getElementById('acquiredFilter').value!=='all'){
+      const top=window.scrollY;
+      renderMonsters();
+      window.scrollTo({top,behavior:'auto'});
+    }
+  };
 
