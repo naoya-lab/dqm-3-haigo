@@ -37,7 +37,7 @@
 
 <link
   rel="stylesheet"
-  href="./style.css?v=5"
+  href="./style.css?v=6"
 >
 
 <title>
@@ -103,7 +103,7 @@ DQM4 配合検索
 
 
   <div id="normalSearch">
-    <div id="acquiredCount" class="acquired-count">入手済み 0/373</div>
+    <div id="acquiredCount" class="acquired-count">入手済み 0/379</div>
 
     <input
       id="q"
@@ -199,6 +199,15 @@ DQM4 配合検索
       <div class="filter-group">
         <div class="filter-title">種族（複数選択可）</div>
         <div id="familyFilters" class="filter-options"></div>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-title" for="acquiredFilter">入手状況</label>
+        <select id="acquiredFilter">
+          <option value="all">すべて</option>
+          <option value="acquired">入手済みのみ</option>
+          <option value="missing">未入手のみ</option>
+        </select>
       </div>
 
       <button
@@ -387,11 +396,22 @@ DQM4 配合検索
 
   <div id="results"></div>
 
+  <details class="data-settings">
+    <summary>設定・データ管理</summary>
+    <p>入手済み・配合計画・保存ルート・折りたたみ設定をJSONに保存します。復元するとDQM4の保存データを置き換えます。</p>
+    <div class="backup-actions">
+      <button id="exportBackup" type="button">バックアップを保存</button>
+      <button id="importBackup" type="button">バックアップを復元</button>
+      <input id="backupFile" type="file" accept="application/json,.json" hidden>
+    </div>
+    <p id="backupStatus" role="status" aria-live="polite"></p>
+  </details>
+
 </main>
 
 
 <footer>
-  <div id="appVersion">DQM4 v5 · データ確認：2026年10月20日</div>
+  <div id="appVersion">DQM4 v6 · データ確認：2026年11月3日</div>
 
   モンスター名をタップすると画像検索を開きます。<br>
 
@@ -401,9 +421,13 @@ DQM4 配合検索
 </footer>
 
 
-<script
-  src="./app.js?v=5"
-></script>
+<script src="./common.js?v=6"></script>
+<script src="./monsters.js?v=6"></script>
+<script src="./skills.js?v=6"></script>
+<script src="./recommend.js?v=6"></script>
+<script src="./storage.js?v=6"></script>
+<script src="./plan.js?v=6"></script>
+<script src="./app.js?v=6"></script>
 
 
 <style id="safe-update-style">#safe-app-update{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:2147483640;background:#176e78;color:#fff;border:2px solid #fff;border-radius:999px;padding:10px 14px;font:600 13px -apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif;box-shadow:0 3px 15px #0005;cursor:pointer}#safe-update[disabled]{opacity:.7}</style>

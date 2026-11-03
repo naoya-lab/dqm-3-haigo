@@ -1,9 +1,9 @@
 {
   "game": "DQM4",
   "status": "公開一覧の全モンスター・未公開項目は確認待ち",
-  "checkedAt": "2026-10-07",
+  "checkedAt": "2026-11-03",
   "sourceUrl": "https://gamewith.jp/monsters4/563338",
-  "listedCount": 358,
+  "listedCount": 379,
   "detailCount": 161,
   "monsters": [
     {
@@ -1385,11 +1385,18 @@
           "type": "特殊配合",
           "parents": [
             "バブルスライム",
-            "メラゴースト",
+            "メラゴースト"
+          ],
+          "note": "バブルスライム×メラゴースト",
+          "sourceUrl": "https://gamewith.jp/monsters4/575961"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "バブルスライム",
             "ドラゴン系"
           ],
-          "note": "バブルスライム×メラゴーストバブルスライム×ドラゴン系",
+          "note": "バブルスライム×ドラゴン系",
           "sourceUrl": "https://gamewith.jp/monsters4/575961"
         }
       ],
@@ -1953,6 +1960,78 @@
     {
       "id": "listed-51",
       "name": "もりもりスライム",
+      "no": null,
+      "rank": "",
+      "family": "スライム系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-359",
+      "name": "ダークキング",
+      "no": null,
+      "rank": "",
+      "family": "スライム系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-360",
+      "name": "もりもりベス",
+      "no": null,
+      "rank": "",
+      "family": "スライム系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "listed-9127709f9095",
+      "name": "たまねぎキング",
+      "no": null,
+      "rank": "",
+      "family": "スライム系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "listed-56297d42309f",
+      "name": "ダークスライム",
       "no": null,
       "rank": "",
       "family": "スライム系",
@@ -2611,11 +2690,18 @@
           "type": "特殊配合",
           "parents": [
             "ポイズンリザード",
-            "カバシラー",
+            "カバシラー"
+          ],
+          "note": "ポイズンリザード×カバシラー",
+          "sourceUrl": "https://gamewith.jp/monsters4/575917"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "はなまきドラゴ",
             "スライム系"
           ],
-          "note": "ポイズンリザード×カバシラーはなまきドラゴ×スライム系",
+          "note": "はなまきドラゴ×スライム系",
           "sourceUrl": "https://gamewith.jp/monsters4/575917"
         }
       ],
@@ -3145,11 +3231,18 @@
           "type": "特殊配合",
           "parents": [
             "コドラ",
-            "フーセンドラゴン",
+            "フーセンドラゴン"
+          ],
+          "note": "コドラ×フーセンドラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/575962"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "コドラ",
             "物質系"
           ],
-          "note": "コドラ×フーセンドラゴンコドラ×物質系",
+          "note": "コドラ×物質系",
           "sourceUrl": "https://gamewith.jp/monsters4/575962"
         }
       ],
@@ -3215,11 +3308,18 @@
           "type": "特殊配合",
           "parents": [
             "フェアリードラゴン",
-            "スキッパー",
+            "スキッパー"
+          ],
+          "note": "フェアリードラゴン×スキッパー",
+          "sourceUrl": "https://gamewith.jp/monsters4/575976"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ドラゴンキッズ",
             "自然系"
           ],
-          "note": "フェアリードラゴン×スキッパードラゴンキッズ×自然系",
+          "note": "ドラゴンキッズ×自然系",
           "sourceUrl": "https://gamewith.jp/monsters4/575976"
         }
       ],
@@ -3644,6 +3744,78 @@
     {
       "id": "listed-92",
       "name": "ドラゴン",
+      "no": null,
+      "rank": "",
+      "family": "ドラゴン系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-361",
+      "name": "コアトル",
+      "no": null,
+      "rank": "",
+      "family": "ドラゴン系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-362",
+      "name": "スノードラゴン",
+      "no": null,
+      "rank": "",
+      "family": "ドラゴン系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "listed-2ba9053d401d",
+      "name": "りゅうはかせ",
+      "no": null,
+      "rank": "",
+      "family": "ドラゴン系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "listed-55439705c13b",
+      "name": "かればなドラゴ",
       "no": null,
       "rank": "",
       "family": "ドラゴン系",
@@ -4871,11 +5043,18 @@
           "type": "特殊配合",
           "parents": [
             "くしざしツインズ",
-            "メーダ",
+            "メーダ"
+          ],
+          "note": "くしざしツインズ×メーダ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575953"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ナスビナーラ",
             "ゾンビ系"
           ],
-          "note": "くしざしツインズ×メーダナスビナーラ×ゾンビ系",
+          "note": "ナスビナーラ×ゾンビ系",
           "sourceUrl": "https://gamewith.jp/monsters4/575953"
         }
       ],
@@ -5770,6 +5949,24 @@
     {
       "id": "listed-147",
       "name": "スノーグリフォン",
+      "no": null,
+      "rank": "",
+      "family": "自然系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-363",
+      "name": "むつでエビ",
       "no": null,
       "rank": "",
       "family": "自然系",
@@ -7317,11 +7514,18 @@
           "type": "特殊配合",
           "parents": [
             "モーモン",
-            "スノーム",
+            "スノーム"
+          ],
+          "note": "モーモン×スノーム",
+          "sourceUrl": "https://gamewith.jp/monsters4/575951"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ももんじゃ",
             "悪魔系"
           ],
-          "note": "モーモン×スノームももんじゃ×悪魔系",
+          "note": "ももんじゃ×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/575951"
         }
       ],
@@ -7554,11 +7758,18 @@
           "type": "特殊配合",
           "parents": [
             "ビッグハット",
-            "ズッキーニャ",
+            "ズッキーニャ"
+          ],
+          "note": "ビッグハット×ズッキーニャ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575959"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ビッグハット",
             "悪魔系"
           ],
-          "note": "ビッグハット×ズッキーニャビッグハット×悪魔系",
+          "note": "ビッグハット×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/575959"
         }
       ],
@@ -7678,11 +7889,18 @@
           "type": "特殊配合",
           "parents": [
             "いっかくうさぎ",
-            "いたずらもぐら",
+            "いたずらもぐら"
+          ],
+          "note": "いっかくうさぎ×いたずらもぐら",
+          "sourceUrl": "https://gamewith.jp/monsters4/575965"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "いっかくうさぎ",
             "悪魔系"
           ],
-          "note": "いっかくうさぎ×いたずらもぐらいっかくうさぎ×悪魔系",
+          "note": "いっかくうさぎ×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/575965"
         }
       ],
@@ -7748,11 +7966,18 @@
           "type": "特殊配合",
           "parents": [
             "くびながイタチ",
-            "おおがらす",
+            "おおがらす"
+          ],
+          "note": "くびながイタチ×おおがらす",
+          "sourceUrl": "https://gamewith.jp/monsters4/575963"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "がいこつ",
             "魔獣系"
           ],
-          "note": "くびながイタチ×おおがらすがいこつ×魔獣系",
+          "note": "がいこつ×魔獣系",
           "sourceUrl": "https://gamewith.jp/monsters4/575963"
         }
       ],
@@ -8045,6 +8270,42 @@
     {
       "id": "listed-205",
       "name": "トンブレロ",
+      "no": null,
+      "rank": "",
+      "family": "魔獣系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-364",
+      "name": "バッファロン",
+      "no": null,
+      "rank": "",
+      "family": "魔獣系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-365",
+      "name": "ねこまどう",
       "no": null,
       "rank": "",
       "family": "魔獣系",
@@ -9123,11 +9384,18 @@
           "type": "特殊配合",
           "parents": [
             "ベビーサタン",
-            "ナスビナーラ",
+            "ナスビナーラ"
+          ],
+          "note": "ベビーサタン×ナスビナーラ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575966"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ベビーサタン",
             "魔獣系"
           ],
-          "note": "ベビーサタン×ナスビナーラベビーサタン×魔獣系",
+          "note": "ベビーサタン×魔獣系",
           "sourceUrl": "https://gamewith.jp/monsters4/575966"
         }
       ],
@@ -9483,11 +9751,18 @@
           "type": "特殊配合",
           "parents": [
             "ドラキー",
-            "フーセンドラゴン",
+            "フーセンドラゴン"
+          ],
+          "note": "ドラキー×フーセンドラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/575993"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ドラキー",
             "ドラキー"
           ],
-          "note": "ドラキー×フーセンドラゴンドラキー×ドラキー",
+          "note": "ドラキー×ドラキー",
           "sourceUrl": "https://gamewith.jp/monsters4/575993"
         }
       ],
@@ -9553,11 +9828,18 @@
           "type": "特殊配合",
           "parents": [
             "メーダ",
-            "ナイトウイプス",
+            "ナイトウイプス"
+          ],
+          "note": "メーダ×ナイトウイプス",
+          "sourceUrl": "https://gamewith.jp/monsters4/576136"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "ランタンこぞう",
             "悪魔系"
           ],
-          "note": "メーダ×ナイトウイプスランタンこぞう×悪魔系",
+          "note": "ランタンこぞう×悪魔系",
           "sourceUrl": "https://gamewith.jp/monsters4/576136"
         }
       ],
@@ -9852,6 +10134,78 @@
       "nameStatus": ""
     },
     {
+      "id": "announced-366",
+      "name": "ネーレウス",
+      "no": null,
+      "rank": "",
+      "family": "悪魔系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-367",
+      "name": "オーガー",
+      "no": null,
+      "rank": "",
+      "family": "悪魔系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "listed-575a5c3bfdcb",
+      "name": "Vジャンキーマ",
+      "no": null,
+      "rank": "",
+      "family": "悪魔系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "listed-b0bdcf656f5c",
+      "name": "ギガンテス",
+      "no": null,
+      "rank": "",
+      "family": "悪魔系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
       "id": "listed-254",
       "name": "ゴースト",
       "no": 464,
@@ -9934,11 +10288,18 @@
           "type": "特殊配合",
           "parents": [
             "スライムナイト",
-            "たけやりへい",
+            "たけやりへい"
+          ],
+          "note": "スライムナイト×たけやりへい",
+          "sourceUrl": "https://gamewith.jp/monsters4/575881"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "たけやりへい",
             "ゾンビ系"
           ],
-          "note": "スライムナイト×たけやりへいたけやりへい×ゾンビ系",
+          "note": "たけやりへい×ゾンビ系",
           "sourceUrl": "https://gamewith.jp/monsters4/575881"
         }
       ],
@@ -10508,11 +10869,18 @@
           "type": "特殊配合",
           "parents": [
             "おばけヒトデ",
-            "ナスビナーラ",
+            "ナスビナーラ"
+          ],
+          "note": "おばけヒトデ×ナスビナーラ",
+          "sourceUrl": "https://gamewith.jp/monsters4/575913"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "フォンデュ",
             "ゾンビ系"
           ],
-          "note": "おばけヒトデ×ナスビナーラフォンデュ×ゾンビ系",
+          "note": "フォンデュ×ゾンビ系",
           "sourceUrl": "https://gamewith.jp/monsters4/575913"
         }
       ],
@@ -11737,6 +12105,78 @@
     {
       "id": "listed-300",
       "name": "ボーンナイト",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-368",
+      "name": "フーラズーラ",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-369",
+      "name": "ポムポムボム",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-370",
+      "name": "マタンゴ",
+      "no": null,
+      "rank": "",
+      "family": "ゾンビ系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-371",
+      "name": "デススパーク",
       "no": null,
       "rank": "",
       "family": "ゾンビ系",
@@ -13149,11 +13589,18 @@
           "type": "特殊配合",
           "parents": [
             "メタッピー",
-            "フェアリードラゴン",
+            "フェアリードラゴン"
+          ],
+          "note": "メタッピー×フェアリードラゴン",
+          "sourceUrl": "https://gamewith.jp/monsters4/576131"
+        },
+        {
+          "type": "特殊配合",
+          "parents": [
             "はなカワセミ",
             "物質系"
           ],
-          "note": "メタッピー×フェアリードラゴンはなカワセミ×物質系",
+          "note": "はなカワセミ×物質系",
           "sourceUrl": "https://gamewith.jp/monsters4/576131"
         }
       ],
@@ -13759,6 +14206,42 @@
     {
       "id": "listed-354",
       "name": "てれびあん",
+      "no": null,
+      "rank": "",
+      "family": "物質系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-372",
+      "name": "ストーンマン",
+      "no": null,
+      "rank": "",
+      "family": "物質系",
+      "recipes": [],
+      "locations": [],
+      "talents": [],
+      "traits": {
+        "S": [],
+        "L": []
+      },
+      "eggs": [],
+      "sourceUrl": "https://gamewith.jp/monsters4/563338",
+      "dataStatus": "announced",
+      "nameStatus": ""
+    },
+    {
+      "id": "announced-373",
+      "name": "ツボック",
       "no": null,
       "rank": "",
       "family": "物質系",

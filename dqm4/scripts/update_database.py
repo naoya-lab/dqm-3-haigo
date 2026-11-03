@@ -3,7 +3,8 @@ import argparse
 import hashlib
 import json
 import re
-from datetime import datetime, timezone
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.request import Request, urlopen
 from lxml import html
@@ -56,7 +57,7 @@ def collect(page):
                 # The listing specifies names and sizes, not acquisition levels.
                 monster['traits'][size] = [{'name': traits[k]['n'], 'level': None} for k in raw.get(key, []) if k in traits]
             for block in raw.get('b', []):
-                for fragment in block.get('t', []):
+                for fragment in (line for entry in block.get('t', []) for line in re.split(r'<br\s*/?>', entry, flags=re.I) if line.strip()):
                     plain = text(fragment)
                     if block['l'] == 'スカ':
                         monster['locations'].extend({'name': text(line), 'sourceUrl': monster['sourceUrl']} for line in re.split(r'<br\s*/?>', fragment) if text(line))
@@ -83,7 +84,7 @@ def collect(page):
             abilities.append({'name': name, 'points': ability['sp']})
         skill_entries.append({'name': raw['n'], 'abilities': abilities, 'maxPoints': max((a['points'] for a in abilities), default=0),
                               'recipes': [], 'evolvesTo': [], 'sourceUrl': 'https://gamewith.jp/monsters4/' + raw['aid']})
-    stamp = datetime.now(timezone.utc).date().isoformat()
+    stamp = datetime.now(ZoneInfo("Asia/Tokyo")).date().isoformat()
     return ({'game': 'DQM4', 'status': '公開一覧の全モンスター・未公開項目は確認待ち', 'checkedAt': stamp,
              'sourceUrl': URL, 'listedCount': len(monsters), 'detailCount': len(details), 'monsters': monsters},
             {'game': 'DQM4', 'checkedAt': stamp, 'sourceUrl': URL, 'skills': skill_entries})

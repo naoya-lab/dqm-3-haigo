@@ -1,6 +1,6 @@
 {
   "game": "DQM4",
-  "checkedAt": "2026-10-20",
+  "checkedAt": "2026-11-03",
   "sourceUrl": "https://gamewith.jp/monsters4/563338",
   "skills": [
     {
@@ -3802,6 +3802,5 @@
       "evolvesTo": [],
       "sourceUrl": "https://gamewith.jp/monsters4/576301"
     }
-  ],
-  "dataVersion": "2026.10.20"
+  ]
 }
